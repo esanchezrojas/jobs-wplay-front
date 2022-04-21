@@ -1,0 +1,26 @@
+.hover {
+    color: rgb(130, 252, 221);
+}
+
+tr:hover td {
+    color: rgb(210, 241, 234);
+}
+
+
+/**
+.sensor:hover+.info {
+    background: green;
+}
+*/
+
+.info:hover {
+    background: rgb(230, 230, 247);
+}
+
+.btnCard:focus {
+    box-shadow: none;
+}
+
+.container {
+    margin: 0px 20px;
+}

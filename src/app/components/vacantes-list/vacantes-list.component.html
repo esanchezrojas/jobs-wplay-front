@@ -1,0 +1,58 @@
+<!--Vacantes Grid-->
+<div class="container mt-5">
+    <div class="row">
+
+        <div class="col-4 mt-5 py-2">
+
+            <form>
+                <div class="mb-3">
+
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Palabra Clave" [(ngModel)]="filterPost" name="filterPost">
+
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+        <!--Cards -->
+        <div class="col-sm-12 col-md-12 col-lg-8 mt-5">
+            <div class="row">
+
+
+                <div *ngFor="let vacante of vacantes | paginate: {itemsPerPage: 3, currentPage: page, totalItems: totalVacantes } | filter: filterPost " class=" py-2 col-sm-12 col-md-4 col-lg-4">
+
+                    <div class="card shadow info">
+
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted text-start">{{vacante.area}}</h6>
+                            <h1 class="card-title fw-bold text-start"> <a href="#" class="btn stretched-link btnCard">{{vacante.nombreVacante}} </a></h1>
+                            <p class="card-text text-muted text-start">{{vacante.descripcion}}</p>
+                            <div class="card-footer text-muted text-start">
+                                {{vacante.ciudad}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fixed-bottom text-center">
+                <pagination-controls class="text-center" (pageChange)="page = $event"></pagination-controls>
+            </div>
+        </div>
+
+        <!--End Cards-->
+    </div>
+</div>
+
+
+
+
+<!--
+End of vacantes grid-->
