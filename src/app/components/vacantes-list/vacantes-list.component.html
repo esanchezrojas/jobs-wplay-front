@@ -6,17 +6,19 @@
         <div class="col-sm-4">
 
             <div class="sticky-top py-2">
-                <div class="card shadow p-3 mb-5 bg-body rounded">
+                <div class="card shadow p-3 mb-5 bg-body">
                     <form>
-                        <div class="row text-center py-3">
+                        <div class="row text-center  py-3">
 
-                            <div class="col">
-                                <div class="card border border-danger">
-                                    <h1>40</h1>
+                            <div class="col-5">
+                                <div class="card border border-danger rounded  fw-bold">
+                                    <h1 class=" fw-bold">{{totalVacantes}}</h1>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="h1">Vacantes</div>
+                            <div class="col-7">
+                                <div class="text-start">
+                                    <h3 class=" fw-bold">VACANTES DISPONIBLES</h3>
+                                </div>
                             </div>
                         </div>
                         <div class="mb-3">
@@ -53,7 +55,7 @@
         <div class="col-sm-8 ">
             <div class="row">
 
-                <div *ngFor="let vacante of vacantes | paginate: {itemsPerPage: 8, currentPage: page, totalItems: totalVacantes } | filter: filterPost " class="py-2 col-sm-12 col-md-4 col-lg-4">
+                <div *ngFor="let vacante of vacantes | paginate: {itemsPerPage: 8, currentPage: page, totalItems: totalVacantes } | filter: filterPost " class="py-2 col-sm-12 col-md-4 col-lg-4" [routerLink]="['/','post',vacante.id]">
 
                     <div class="card shadow info">
 
@@ -64,9 +66,9 @@
                             <p class="card-text text-muted text-start">{{vacante.descripcion}}
                             </p>
                             <hr>
-                            <a href="#" (clik)="openAdd()" class="btn stretched-link btnCard">
-                                <h6 class="card-subtitle text-muted text-start">{{vacante.ciudad}}</h6>
-                            </a>
+
+                            <h6 class="card-subtitle text-muted text-start">{{vacante.ciudad}}</h6>
+
 
 
                             <!--
@@ -83,7 +85,7 @@
                     </div>
                 </div>
                 <div class="sticky-buttom align-center">
-                    <pagination-controls class="text-center" (pageChange)="page = $event"></pagination-controls>
+                    <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
                 </div>
             </div>
 
