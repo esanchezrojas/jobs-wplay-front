@@ -2,17 +2,6 @@
     color: rgb(130, 252, 221);
 }
 
-tr:hover td {
-    color: rgb(210, 241, 234);
-}
-
-
-/**
-.sensor:hover+.info {
-    background: green;
-}
-*/
-
 .info:hover {
     background: rgb(230, 230, 247);
 }
@@ -21,6 +10,15 @@ tr:hover td {
     box-shadow: none;
 }
 
-.container {
-    margin: 0px 20px;
+.stic {
+    margin-top: 48px;
+}
+
+.contain {
+    padding-top: 0.5%;
+    padding-bottom: 25%;
+    background-color: rgb(175, 175, 175);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100vw;
 }
