@@ -1,17 +1,6 @@
-.hover {
-    color: rgb(130, 252, 221);
-}
-
 .info:hover {
     background: rgb(230, 230, 247);
-}
-
-.btnCard:focus {
-    box-shadow: none;
-}
-
-.stic {
-    margin-top: 48px;
+    cursor: pointer;
 }
 
 .contain {

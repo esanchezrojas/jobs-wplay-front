@@ -1,0 +1,78 @@
+<!-- Modal -->
+<div class="modal fade" id="modalFormacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal Formación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!--File 1-->
+                <div class="row g-2">
+
+                    <div class="col-sm-12 col-md-6">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-school"></i></span>
+                            <input type="text" class="form-control" placeholder="Nombre de la institución" aria-label="Celular" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-book"></i></span>
+                            <input type="text" class="form-control" placeholder="Programa académico" aria-label="Celular" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <!--End File 1-->
+
+
+
+
+                <!--File 2-->
+                <div class="row g-2">
+
+
+
+                    <div class="col-sm-12 col-md-6">
+
+                        <div class="input-group mb-3">
+                            <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-graduation-cap"></i></label>
+                            <select class="form-select" id="inputGroupSelect01">
+                              <option class="text-muted" selected>Nivel Académico</option>
+                              <option *ngFor="let nivel of niveles" value="1">{{nivel}}</option>
+                             
+                            </select>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                        <div class="input-group mb-3">
+
+
+                            <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-check-to-slot"></i></label>
+                            <select class="form-select" id="inputGroupSelect01">
+                              <option class="text-muted" selected>Estado</option>
+                              <option *ngFor="let estado of estados" value="1">{{estado}}</option>
+                             
+                            </select>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!--End File 2-->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

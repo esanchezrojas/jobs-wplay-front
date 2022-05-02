@@ -1,0 +1,12 @@
+span {
+    background-color: rgb(13, 202, 240);
+}
+
+.dates {
+    background-color: rgb(13, 202, 240);
+    font-weight: bold;
+}
+
+tr:hover td {
+    color: rgb(13, 202, 240);
+}

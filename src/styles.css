@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+h1,
+h2,
+h6 {
+    font-family: Oswald, sans-serif;
+}
+
+p {
+    font-family: Neue, sans-serif;
+}

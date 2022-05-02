@@ -1,14 +1,74 @@
 <!--Data: {{response | json}}-->
+<header>
+    <app-header></app-header>
 
-<div class="row">
+    <div class="banner " style="background-image: url('{{response.imagen}}');">
 
-    <div class="col">
-        <h1>{{response.nombreVacante}}</h1>
+        <div class="container mt-5 rounded" style="background-color: rgba(0, 0, 0, 0.1);">
+            <div class="d-flex  h-100">
+                <div class="text-white mt-5">
+                    <h1 class="mb-3">{{response.nombreVacante}}</h1>
+                    <p class="mb-4">{{response.descripcion}}</p>
+
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div class="col">
-        <h1>{{response.descripcion}}</h1>
+</header>
+
+
+<div class="px-5 mt-4">
+    <div class="row ">
+
+
+
+        <div class="card shadow p-3 bg-body rounded col-sm-5 col-md-8 mb-2">
+            <h2>Proposito:</h2>
+            <p>* {{response.proposito}}</p>
+            <br>
+            <h2>Responsabilidades:</h2>
+            <p *ngFor="let responsabilidad of response.responsabilidades ">* {{responsabilidad}}</p>
+            <br>
+            <h2>Conocimientos:</h2>
+            <p>{{response.conocimientos}}</p>
+
+
+        </div>
+
+
+        <div class="col-sm-7 col-md-4 mb-3">
+            <div class="row mb-2">
+                <div class="col-12">
+                    <div class="card shadow p-3 bg-body rounded ">
+                        <h6 class="text-muted">{{response.area}}</h6>
+                        <h2>{{response.nombreVacante}}</h2>
+
+                        <div class="btnApply mt-3" [routerLink]="['/','aplicar']">
+                            <div class="d-grid gap-2 text-center ">
+                                <p class="rounded fw-bold py-2" style="background-color: rgb(13, 202, 240);">APLICAR A ESTA OFERTA</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="card shadow p-3 bg-body rounded px-4">
+                <h2>Tipo de contrato:</h2>
+                <h6 class="text-muted">{{response.tipo_de_contrato}}</h6>
+                <br>
+                <h2>Horario:</h2>
+                <h6 class="text-muted">{{response.horario}}</h6>
+                <br>
+                <h2>Beneficios:</h2>
+                <h6 class="text-muted" *ngFor="let beneficio of response.beneficios">* {{beneficio}}</h6>
+            </div>
+        </div>
     </div>
-    <div class="col">
-        <h1>{{response.area}}</h1>
-    </div>
+</div>
+<div class="col">
+    <app-footer></app-footer>
 </div>

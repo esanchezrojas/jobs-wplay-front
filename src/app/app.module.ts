@@ -10,10 +10,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { FormFilterComponent } from './components/form-filter/form-filter.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FilterPipe } from './pipes/filter.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ApplyFormComponent } from './components/apply-form/apply-form.component';
+import { ModalExperienciaComponent } from './components/modals/modal-experiencia/modal-experiencia.component';
+import { ModalFormacionComponent } from './components/modals/modal-formacion/modal-formacion.component';
 
 @NgModule({
   declarations: [
@@ -24,14 +27,17 @@ import { FooterComponent } from './components/footer/footer.component';
     FilterPipe,
     ItemDetailComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    ApplyFormComponent,
+    ModalExperienciaComponent,
+    ModalFormacionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
-    FormsModule
+    FormsModule,ReactiveFormsModule
 
   ],
   providers: [],

@@ -1,0 +1,27 @@
+/* Default height for small devices */
+
+.banner {
+    height: 250px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-image: url('https://www.ctisoluciones.com/sites/default/files/styles/banner_home/public/import/article/2019/02/Tips-a-seguir-para-ofrecer-un-servicio-de-call-center-moderno.jpg');*/
+}
+
+#intro-example {
+    height: 200px;
+    background-repeat: no-repeat;
+}
+
+
+/* Height for devices larger than 992px */
+
+@media (min-width: 992px) {
+    #intro-example {
+        height: 600px;
+    }
+}
+
+.btnApply:hover {
+    cursor: pointer;
+}

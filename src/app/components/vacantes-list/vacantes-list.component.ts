@@ -25,7 +25,8 @@ export class VacantesListComponent implements OnInit {
       nombreVacante: "Agente de soporte",
       descripcion: "Encargado de brindar el soporte en el chat online a los jugadores de la plataforma",
       ciudad: "Medellín",
-      imagen: "https://img.freepik.com/foto-gratis/empleados-estan-sonriendo-trabajando-computadoras_85574-2756.jpg?w=740"
+      imagen: "https://img.freepik.com/foto-gratis/empleados-estan-sonriendo-trabajando-computadoras_85574-2756.jpg?w=740",
+      c_vacantes: ""
   },
   {
       id: 1,
@@ -33,7 +34,8 @@ export class VacantesListComponent implements OnInit {
       nombreVacante: "Community Manager",
       descripcion: "Encargado de administrar el CEO del sitio web y las estadisticas de Google Analytics ",
       ciudad: "Medellín",
-      imagen: "https://img.freepik.com/foto-gratis/empresario-analizando-informe-financiero-empresa-graficos-realidad-aumentada_34141-360.jpg?w=740"
+      imagen: "https://img.freepik.com/foto-gratis/empresario-analizando-informe-financiero-empresa-graficos-realidad-aumentada_34141-360.jpg?w=740",
+      c_vacantes: "5 Vacantes"
   },
   {
       id: 2,
@@ -49,7 +51,8 @@ export class VacantesListComponent implements OnInit {
       nombreVacante: "Practicante de contabilidad",
       descripcion: "Encargado de asistir en los registros contables PUC y los libros de mayor",
       ciudad: "Bogotá",
-      imagen: "https://img.freepik.com/foto-gratis/contador-calculando-ganancias-graficas-analisis-financiero_74855-4937.jpg?t=st=1650654964~exp=1650655564~hmac=27a76086c94b56d8670d94667fbadedcd7dd8a0209c302610594c7dcf9d1ae69&w=740"
+      imagen: "https://img.freepik.com/foto-gratis/contador-calculando-ganancias-graficas-analisis-financiero_74855-4937.jpg?t=st=1650654964~exp=1650655564~hmac=27a76086c94b56d8670d94667fbadedcd7dd8a0209c302610594c7dcf9d1ae69&w=740",
+      c_vacantes: "5 Vacantes"
   },
   {
     id: 4,
@@ -89,7 +92,8 @@ export class VacantesListComponent implements OnInit {
   nombreVacante: "Agente de soporte",
   descripcion: "Encargado de brindar el soporte en el chat online a los jugadores de la plataforma",
   ciudad: "Medellín",
-  imagen: "https://img.freepik.com/foto-gratis/empleados-estan-sonriendo-trabajando-computadoras_85574-2756.jpg?w=740"
+  imagen: "https://img.freepik.com/foto-gratis/empleados-estan-sonriendo-trabajando-computadoras_85574-2756.jpg?w=740",
+  c_vacantes: "6 Vacantes"
 },
 {
   id: 9,
@@ -120,8 +124,7 @@ export class VacantesListComponent implements OnInit {
   
   
   totalVacantes = this.vacantes.length;
-  public id:any;
-  public response:any;
+  
   
   constructor(private route: ActivatedRoute) { }
   ngOnInit(): void {
@@ -130,19 +133,11 @@ export class VacantesListComponent implements OnInit {
     this.openAdd();
 
 
-    this.route.paramMap.subscribe( (paramMap:any) =>{
-      const {params} = paramMap
-      console.log(params.variable)
-      this.cargarData(params.variable)
-    })
+   
     
   }
 
-  cargarData(id:number){
-   
-    this.response = this.vacantes[id];
-
-  }
+  
 
   openAdd(){
     console.log('presionando boton')
