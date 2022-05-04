@@ -9,3 +9,21 @@ h6 {
 p {
     font-family: Neue, sans-serif;
 }
+
+body {
+    background: #f0f0f0;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #D3CBB8, #f0f0f0);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #D3CBB8, #f0f0f0);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card {
+    background: #ffffff;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #e6e4df, #ffffff);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #e6e4df, #ffffff);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

@@ -17,6 +17,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ApplyFormComponent } from './components/apply-form/apply-form.component';
 import { ModalExperienciaComponent } from './components/modals/modal-experiencia/modal-experiencia.component';
 import { ModalFormacionComponent } from './components/modals/modal-formacion/modal-formacion.component';
+import { TagInputModule } from 'ngx-chips';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ModalFormacionComponent } from './components/modals/modal-formacion/mod
     AppRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
-    FormsModule,ReactiveFormsModule
+    FormsModule,ReactiveFormsModule,
+    TagInputModule
 
   ],
   providers: [],

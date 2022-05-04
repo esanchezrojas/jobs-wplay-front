@@ -2,134 +2,140 @@
 <div class="modal fade" id="modalExperiencia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal Experiencia</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!--File 1-->
-                <div class="row g-2">
-
-                    <div class="col-sm-12 col-md-4">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-building"></i></span>
-                            <input type="text" class="form-control" placeholder="Empresa" aria-label="Celular" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 col-md-4">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-network-wired"></i></span>
-                            <input type="text" class="form-control" placeholder="Cargo" aria-label="Celular" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 col-md-4">
-
-
-                        <div class="input-group mb-3">
-                            <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-location-dot"></i></label>
-                            <select class="form-select" id="inputGroupSelect01">
-                              <option selected>Ciudad</option>
-                              <option *ngFor="let ciudad of ciudades" value="1">{{ciudad}}</option>
-                            </select>
-                        </div>
-
-
-                    </div>
-
+            <form id="registerForm" name="registerForm" [formGroup]="form" (ngSubmit)="enviar(form.value)">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal Experiencia</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <!--End File 1-->
+                <div class="modal-body">
 
 
+                    <!--File 1-->
+                    <div class="row g-2">
 
-
-                <!--File 2-->
-                <div class="row g-2">
-
-
-
-                    <div class="col-sm-12 col-md-12">
-                        <div class="mb-3">
-                            <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                                <label for="floatingTextarea2">Describe el cargo y funciones</label>
+                        <div class="col-sm-12 col-md-4">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-building"></i></span>
+                                <input type="text" name="empresa" formControlName="empresa" class="form-control" placeholder="Empresa" aria-label="Empresa" aria-describedby="basic-addon1">
                             </div>
                         </div>
-                    </div>
 
-
-                </div>
-                <!--End File 2-->
-
-                <!--File 3-->
-                <div class="row g-2">
-
-
-
-                    <div class="col-sm-12 col-md-3">
-                        <div class="input-group mb-3">
-                            <label class="input-group-text dates" for="inputGroupSelect01">Año inicio</label>
-                            <select class="form-select" id="inputGroupSelect01">
-                              <option selected>Año</option>
-                              <option *ngFor="let year of years" value="1">{{year}}</option>
-                            </select>
+                        <div class="col-sm-12 col-md-4">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-network-wired"></i></span>
+                                <input type="text" name="cargo" formControlName="cargo" class="form-control" placeholder="Cargo" aria-label="Cargo" aria-describedby="basic-addon1">
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-sm-12 col-md-3">
-                        <div class="input-group mb-3">
-                            <label class="input-group-text dates" for="inputGroupSelect01">Mes inicio</label>
-                            <select class="form-select" id="inputGroupSelect01">
+                        <div class="col-sm-12 col-md-4">
+
+
+                            <div class="input-group mb-3">
+                                <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-location-dot"></i></label>
+                                <select name="ciudad" formControlName="ciudad" class="form-select" id="inputGroupSelect01">
+                              <option selected>Ciudad</option>
+                              <option  *ngFor="let ciudad of ciudades">{{ciudad}}</option>
+                            </select>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <!--End File 1-->
+
+
+
+
+                    <!--File 2-->
+                    <div class="row g-2">
+
+
+
+                        <div class="col-sm-12 col-md-12">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <textarea name="funciones" formControlName="funciones" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                    <label for="floatingTextarea2">Describe el cargo y funciones</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!--End File 2-->
+
+                    <!--File 3-->
+                    <div class="row g-2">
+
+
+
+                        <div class="col-sm-12 col-md-3">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text dates" for="inputGroupSelect01">Año inicio</label>
+                                <select name="yearini" formControlName="yearini" class="form-select" id="inputGroupSelect01">
+                              <option selected>Año</option>
+                              <option *ngFor="let year of years" >{{year}}</option>
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-3">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text dates" for="inputGroupSelect01">Mes inicio</label>
+                                <select name="mesini" formControlName="mesini" class="form-select" id="inputGroupSelect01">
                               <option selected>Mes</option>
-                              <option *ngFor="let mes of meses" value="1">{{mes}}</option>
+                              <option *ngFor="let mes of meses">{{mes}}</option>
                              
                             </select>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-sm-12 col-md-3">
-                        <div class="input-group mb-3">
-                            <label class="input-group-text dates" for="inputGroupSelect01">Año fin</label>
-                            <select class="form-select" id="inputGroupSelect01">
+                        <div class="col-sm-12 col-md-3">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text dates" for="inputGroupSelect01">Año fin</label>
+                                <select name="yearfin" formControlName="yearfin" class="form-select" id="inputGroupSelect01">
                               <option selected>Año</option>
-                              <option *ngFor="let year of years" value="1">{{year}}</option>
+                              <option *ngFor="let year of years">{{year}}</option>
                             </select>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-sm-12 col-md-3">
-                        <div class="input-group mb-3">
-                            <label class="input-group-text dates" for="inputGroupSelect01">Mes fin</label>
-                            <select class="form-select" id="inputGroupSelect01">
+                        <div class="col-sm-12 col-md-3">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text dates" for="inputGroupSelect01">Mes fin</label>
+                                <select name="mesfin" formControlName="mesfin" class="form-select" id="inputGroupSelect01">
                               <option selected>Mes</option>
-                              <option *ngFor="let mes of meses" value="1">{{mes}}</option>
+                              <option *ngFor="let mes of meses" >{{mes}}</option>
                              
                             </select>
-                        </div>
-                    </div>
-
-                </div>
-                <!--End File 3-->
-
-                <!--File 4-->
-                <div class="row g-2">
-                    <div class="col-sm-12 col-md-12">
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Actualmente</label>
+                            </div>
                         </div>
 
                     </div>
+                    <!--End File 3-->
+
+                    <!--File 4-->
+                    <div class="row g-2">
+                        <div class="col-sm-12 col-md-12">
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Actualmente</label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--End File 4-->
+
+
                 </div>
-                <!--End File 4-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    <button type="button" (click)="limpiar()" class="btn btn-success">Limpiar</button>
+                </div>
+            </form>
 
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
         </div>
     </div>
 </div>

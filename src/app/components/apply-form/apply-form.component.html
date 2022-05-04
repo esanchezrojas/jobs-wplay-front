@@ -7,17 +7,21 @@
 
 
 <div class="container mt-5">
+    <h1>{{cargo}}</h1>
 
-
-    <form>
+    <form id="registerForm" name="registerForm" [formGroup]="form" (ngSubmit)="enviar(form.value)">
         <!--End Sesion 1-->
         <div class="row ">
+
             <!--Col 1-->
+
             <div class="col-sm-5 col-md-3 text-start mt-2">
-                <h6 class="text-muted">Paso 1/4</h6>
+
                 <h2>Sobre ti</h2>
+                <h6 class="text-muted">Hablanos un poco sobre ti</h6>
 
             </div>
+
             <!--End Col 1-->
 
 
@@ -25,92 +29,114 @@
             <!--Col 2-->
             <div class="col-sm-5 col-md-9">
 
+                <div class="accordion" id="accordionExample">
 
-                <!--File 1-->
-                <div class="row g-2">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Paso 1/4
+                        </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
 
-                    <div class="col-sm-12 col-md-12">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text nr "><i class="fa-solid fa-user-tie "></i></span>
-                            <input type="text" placeholder="Nombres" aria-label="First name" class="form-control">
-                            <input type="text" placeholder="Apellidos" aria-label="Last name" class="form-control">
+
+
+
+
+
+                                <!--File 1-->
+                                <div class="row g-2">
+
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text nr "><i class="fa-solid fa-user-tie "></i></span>
+                                            <input type="text" placeholder="Nombres" formControlName="nombre" name="nombre" aria-label="First name" class="form-control">
+                                            <input type="text" placeholder="Apellidos" formControlName="apellido" name="apellido" aria-label="Last name" class="form-control">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--End File 1-->
+
+
+                                <!--File 2-->
+                                <div class="row g-2">
+
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-mobile-screen"></i></span>
+                                            <input type="text" class="form-control" placeholder="Celular" formControlName="celular" aria-label="Celular" name="celular" aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-cake-candles"></i></span>
+                                            <input type="date" name="cumpleanos" class="form-control" formControlName="cumpleanos" placeholder="Fecha de cumpleaños" aria-label="Apellidos" aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <!--End File 2-->
+
+                                <!--File 3-->
+                                <div class="row g-2">
+
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-id-card"></i></span>
+                                            <input type="text" name="cedula" formControlName="cedula" class="form-control" placeholder="Cédula" aria-label="Username" aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-envelope"></i></span>
+                                            <input type="email" formControlName="email" name="email" class="form-control" placeholder="Correo Electronico" aria-label="Username" aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <!--End File 3-->
+
+                                <!--File 3-->
+                                <div class="row g-2">
+
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-location-dot"></i></span>
+                                            <input type="text" formControlName="ciudad" name="ciudad" class="form-control" placeholder="Ciudad" aria-label="Username" aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-thumbs-up"></i></span>
+                                            <input type="text" formControlName="redsocial" name="redsocial" class="form-control" placeholder="Red social favorita" aria-label="Red Social" aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--End File 3-->
+
+
+
+
+
+
+                            </div>
+                            <!--End Col 2-->
+
+
                         </div>
                     </div>
-
                 </div>
-                <!--End File 1-->
-
-
-                <!--File 2-->
-                <div class="row g-2">
-
-                    <div class="col-sm-12 col-md-6">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-mobile-screen"></i></span>
-                            <input type="text" class="form-control" placeholder="Celular" aria-label="Celular" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 col-md-6">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-cake-candles"></i></span>
-                            <input type="date" class="form-control" placeholder="Fecha de cumpleaños" aria-label="Apellidos" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
-
-
-                </div>
-                <!--End File 2-->
-
-                <!--File 3-->
-                <div class="row g-2">
-
-                    <div class="col-sm-12 col-md-6">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-id-card"></i></span>
-                            <input type="text" class="form-control" placeholder="Cédula" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 col-md-6">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-envelope"></i></span>
-                            <input type="text" class="form-control" placeholder="Correo Electronico" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
-
-
-                </div>
-                <!--End File 3-->
-
-                <!--File 3-->
-                <div class="row g-2">
-
-                    <div class="col-sm-12 col-md-6">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-location-dot"></i></span>
-                            <input type="text" class="form-control" placeholder="Ciudad" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 col-md-6">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-thumbs-up"></i></span>
-                            <input type="text" class="form-control" placeholder="Red social favorita" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
-
-                </div>
-                <!--End File 3-->
-
-
-
 
 
             </div>
-            <!--End Col 2-->
-
-
 
         </div>
         <!--End Sesion 1-->
@@ -122,8 +148,9 @@
 
             <!--Col 1-->
             <div class="col-sm-5 col-md-3 text-start mt-2">
-                <h6 class="text-muted">Paso 2/4</h6>
+
                 <h2>Documentos</h2>
+                <h6 class="text-muted">Adjunta tus documentos</h6>
             </div>
             <!--End Col 1-->
 
@@ -132,62 +159,82 @@
             <!--Col 2-->
             <div class="col-sm-5 col-md-9">
 
+                <div class="accordion" id="accordionExample">
 
-                <!--File 1-->
-                <div class="row g-2">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading2">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                          Paso 2/4
+                        </button>
+                        </h2>
+                        <div id="collapse2" class="accordion-collapse collapse show" aria-labelledby="heading2" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
 
-                    <div class="col-sm-12 col-md-12">
-                        <div class="input-group mb-3">
-                            <label for="formFileMultiple" class="input-group fw-bold text-muted">Adjunte su hoja de vida</label>
-                            <input type="file" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                            <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-paperclip"></i></span>
+
+                                <!--File 1-->
+                                <div class="row g-2">
+
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="input-group mb-3">
+                                            <label for="formFileMultiple" class="input-group fw-bold text-muted">Adjunte su hoja de vida</label>
+                                            <input type="file" class="form-control fw-bold text-muted" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                            <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-paperclip"></i></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--End File 1-->
+
+
+
+
+                                <!--File 2-->
+                                <div class="row g-2">
+
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="input-group mb-3">
+                                            <label for="formFileMultiple" class="input-group fw-bold text-muted">Adjunte su portafolio (Opcional)</label>
+                                            <input type="file" class="form-control fw-bold text-muted" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                            <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-paperclip"></i></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--End File 2-->
+
+                                <!--File 3-->
+                                <div class="row g-2">
+
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-briefcase"></i></span>
+                                            <input type="text" class="form-control" placeholder="Link portafolio o alguno de tus mejores trabajos (Opcional)" aria-label="Username" aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--End File 3-->
+
+
+
+
+
+
+
+
+
+
+                            </div>
+                            <!--End Col 2-->
+
+
+
                         </div>
                     </div>
-
                 </div>
-                <!--End File 1-->
-
-
-
-
-                <!--File 2-->
-                <div class="row g-2">
-
-                    <div class="col-sm-12 col-md-12">
-                        <div class="input-group mb-3">
-                            <label for="formFileMultiple" class="input-group fw-bold text-muted">Adjunte su portafolio (Opcional)</label>
-                            <input type="file" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                            <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-paperclip"></i></span>
-                        </div>
-                    </div>
-
-                </div>
-                <!--End File 2-->
-
-                <!--File 3-->
-                <div class="row g-2">
-
-                    <div class="col-sm-12 col-md-12">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-briefcase"></i></span>
-                            <input type="text" class="form-control" placeholder="Link portafolio o alguno de tus mejores trabajos (Opcional)" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
-
-                </div>
-                <!--End File 3-->
-
-
-
-
-
-
-
-
 
 
             </div>
-            <!--End Col 2-->
 
 
         </div>
@@ -200,8 +247,9 @@
 
             <!--Col 1-->
             <div class="col-sm-5 col-md-3 text-start mt-2">
-                <h6 class="text-muted">Paso 3/4</h6>
+
                 <h2>Experiencia</h2>
+                <h6 class="text-muted">Cuentanos un poco de tu experiencia laboral</h6>
             </div>
             <!--End Col 1-->
 
@@ -210,60 +258,78 @@
             <!--Col 2-->
             <div class="col-sm-5 col-md-9">
 
-                <app-modal-experiencia></app-modal-experiencia>
-                <div class="row g-2">
+                <div class="accordion" id="accordionExample">
 
-                    <div class="table-responsive">
-                        <table class="table table-dark table-hover text-center">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Empresa</th>
-                                    <th scope="col">Cargo</th>
-                                    <th scope="col">Ciudad</th>
-                                    <th scope="col">Año inicio</th>
-                                    <th scope="col">Mes inicio</th>
-                                    <th scope="col">Año fin</th>
-                                    <th scope="col">Mes fin</th>
-                                    <th scope="col">Descripción</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading3">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                          Paso 3/4
+                        </button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse collapse show" aria-labelledby="heading3" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
 
-                            </tbody>
-                        </table>
+
+                                <app-modal-experiencia></app-modal-experiencia>
+                                <div class="row g-2">
+
+
+                                    <div class="table-responsive">
+                                        <table class="table table-dark table-hover text-center">
+                                            <thead>
+
+
+                                                <tr>
+                                                    <th scope="col">Empresa</th>
+                                                    <th scope="col">Cargo</th>
+                                                    <th scope="col">Ciudad</th>
+                                                    <th scope="col">Mes-Año inicio</th>
+                                                    <th scope="col">Mes-Año fin</th>
+                                                    <th scope="col">Descripción</th>
+                                                </tr>
+
+
+
+
+
+
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let item of listaExperiencia">
+                                                    <td>{{item.empresa}}</td>
+                                                    <td>{{item.cargo}}</td>
+                                                    <td>{{item.ciudad}}</td>
+                                                    <td>{{item.mesini}}-{{item.yearini}}</td>
+                                                    <td>{{item.mesfin}}-{{item.yearfin}}</td>
+                                                    <td>{{item.funciones}}</td>
+                                                </tr>
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                                <!--File 1-->
+                                <div class="row g-2 mt-2">
+                                    <div class="col-sm-12 col-md-12">
+                                        <button type="button" class="btn btn-info rounded-pill fw-bold" data-bs-toggle="modal" data-bs-target="#modalExperiencia">Agregar +</button>
+                                    </div>
+                                </div>
+                                <!--End File 1-->
+                            </div>
+                            <!--End Col 2-->
+
+
+                        </div>
                     </div>
-
                 </div>
 
-                <!--File 1-->
-                <div class="row g-2">
-                    <div class="col-sm-12 col-md-12">
-                        <button type="button" class="btn btn-outline-info rounded-pill" data-bs-toggle="modal" data-bs-target="#modalExperiencia">Agregar +</button>
-                    </div>
-                </div>
-                <!--End File 1-->
+
             </div>
-            <!--End Col 2-->
+
+
         </div>
         <!--End Sesion 3-->
 
@@ -274,8 +340,9 @@
 
             <!--Col 1-->
             <div class="col-sm-5 col-md-3 text-start mt-2">
-                <h6 class="text-muted">Paso 4/4</h6>
+
                 <h2>Formación</h2>
+                <h6 class="text-muted">Cuentanos de tu formación y conocimientos</h6>
             </div>
             <!--End Col 1-->
 
@@ -284,68 +351,110 @@
             <!--Col 2-->
             <div class="col-sm-5 col-md-9">
 
+                <div class="accordion" id="accordionExample">
 
-                <!--File 1-->
-                <div class="row g-2">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading4">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+                          Paso 4/4
+                        </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse show" aria-labelledby="heading4" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
 
 
-                    <div class="table-responsive">
-                        <table class="table table-dark table-hover text-center">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Nombre de la Institución</th>
-                                    <th scope="col">Programa Académico</th>
-                                    <th scope="col">Nivel</th>
-                                    <th scope="col">Estado</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>@mdo</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <td>@mdo</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
+                                <!--File 1-->
+                                <div class="row g-2">
 
-                            </tbody>
-                        </table>
+
+                                    <div class="table-responsive">
+                                        <table class="table table-dark table-hover text-center">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Nombre de la Institución</th>
+                                                    <th scope="col">Programa Académico</th>
+                                                    <th scope="col">Nivel</th>
+                                                    <th scope="col">Estado</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>@mdo</td>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@mdo</td>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+
+
+                                </div>
+                                <!--End File 1-->
+
+
+
+
+
+
+                                <app-modal-formacion></app-modal-formacion>
+                                <!--File 2-->
+                                <div class="row g-2">
+                                    <div class="col-sm-12 col-md-12">
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-info rounded-pill fw-bold" data-bs-toggle="modal" data-bs-target="#modalFormacion">Agregar +</button>
+                                    </div>
+                                </div>
+                                <!--End File 2-->
+                            </div>
+                            <!--End Col 2-->
+
+
+                        </div>
                     </div>
-
-
-
                 </div>
-                <!--End File 1-->
 
 
-
-
-
-
-                <app-modal-formacion></app-modal-formacion>
-                <!--File 2-->
-                <div class="row g-2">
-                    <div class="col-sm-12 col-md-12">
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-outline-info rounded-pill" data-bs-toggle="modal" data-bs-target="#modalFormacion">Agregar +</button>
-                    </div>
-                </div>
-                <!--End File 2-->
             </div>
-            <!--End Col 2-->
+
+
+
         </div>
         <!--End Sesion 4-->
 
         <hr>
 
+        <div class="row">
+            <div class="col-sm-5 col-md-6  mt-2">
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Autoriza a WPLAY.CO para realizar el tratamiento y manejo de tus datos personales conforme a nuestra Politica de Privacidad.</label>
+                </div>
+            </div>
+            <div class="col-sm-5 col-md-6  mt-2">
+
+
+                <button type="button" class="btn btn-success btn-lg">ENVIAR</button>
+
+
+            </div>
+        </div>
+
+
+
+
+
 
     </form>
 </div>
-<div class="col">
+<div class="col mt-5">
     <app-footer></app-footer>
 </div>
