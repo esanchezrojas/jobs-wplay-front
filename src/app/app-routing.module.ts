@@ -30,10 +30,7 @@ const routes: Routes = [
   path: 'oferta/:variable',
   component: ItemDetailComponent
   },
-  {
-    path: 'prueba',
-    component: FormFilterComponent
-  },
+  
   {
     path: 'aplicar',
     component: ApplyFormComponent
@@ -43,7 +40,7 @@ const routes: Routes = [
     path: '**',
     redirectTo: '',
     pathMatch: 'full'
-    }
+  }
   
 
 ];

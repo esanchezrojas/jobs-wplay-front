@@ -10,3 +10,9 @@ span {
 tr:hover td {
     color: rgb(13, 202, 240);
 }
+
+.icono:hover {
+    border-color: transparent;
+    background-color: transparent;
+    color: rgb(13, 202, 240);
+}

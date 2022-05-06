@@ -17,6 +17,11 @@
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-building"></i></span>
                                 <input type="text" name="empresa" formControlName="empresa" class="form-control" placeholder="Empresa" aria-label="Empresa" aria-describedby="basic-addon1">
+                                <div class="text-danger px-1" *ngIf="form.get('empresa')?.hasError('required') && form.get('empresa')?.touched ">
+                                    <p>Este campo es <strong>obligatorio</strong></p>
+                                </div>
+
+
                             </div>
                         </div>
 
@@ -24,6 +29,11 @@
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-network-wired"></i></span>
                                 <input type="text" name="cargo" formControlName="cargo" class="form-control" placeholder="Cargo" aria-label="Cargo" aria-describedby="basic-addon1">
+
+                                <div class="text-danger px-1" *ngIf="form.get('cargo')?.hasError('required') && form.get('cargo')?.touched ">
+                                    <p>Este campo es <strong>obligatorio</strong></p>
+                                </div>
+
                             </div>
                         </div>
 
@@ -130,9 +140,9 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-                    <button type="button" (click)="limpiar()" class="btn btn-success">Limpiar</button>
+                    <button type="button" class="btn btn-secondary" (click)="limpiar()">Limpiar</button>
+                    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Guardar Cambios</button>
+
                 </div>
             </form>
 

@@ -1,78 +1,83 @@
 <!-- Modal -->
-<div class="modal fade" id="modalFormacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalFormacion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal Formación</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!--File 1-->
-                <div class="row g-2">
-
-                    <div class="col-sm-12 col-md-6">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-school"></i></span>
-                            <input type="text" class="form-control" placeholder="Nombre de la institución" aria-label="Celular" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 col-md-6">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-book"></i></span>
-                            <input type="text" class="form-control" placeholder="Programa académico" aria-label="Celular" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
-
-
+            <form id="registerForm" name="registerForm" [formGroup]="form" (ngSubmit)="enviar(form.value)">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal Formación {{listaFormacion.institucion}}</h5>
+                    <button type="button" (click)="cerrar()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
                 </div>
-                <!--End File 1-->
+                <div class="modal-body">
+                    <!--File 1-->
+                    <div class="row g-2">
+
+                        <div class="col-sm-12 col-md-6">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-school"></i></span>
+                                <input type="text" name="institucion" formControlName="institucion" class="form-control" placeholder="Nombre de la institución" aria-label="Institución" aria-describedby="basic-addon1" value="listaFormacion.institucion">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-book"></i></span>
+                                <input type="text" name="programa" formControlName="programa" class="form-control" placeholder="Programa académico" aria-label="Programa" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <!--End File 1-->
 
 
 
 
-                <!--File 2-->
-                <div class="row g-2">
+                    <!--File 2-->
+                    <div class="row g-2">
 
 
 
-                    <div class="col-sm-12 col-md-6">
+                        <div class="col-sm-12 col-md-6">
 
-                        <div class="input-group mb-3">
-                            <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-graduation-cap"></i></label>
-                            <select class="form-select" id="inputGroupSelect01">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-graduation-cap"></i></label>
+                                <select name="nivel" formControlName="nivel" class="form-select" id="inputGroupSelect01">
                               <option class="text-muted" selected>Nivel Académico</option>
-                              <option *ngFor="let nivel of niveles" value="1">{{nivel}}</option>
+                              <option *ngFor="let nivel of niveles" >{{nivel}}</option>
                              
                             </select>
+                            </div>
+
+
+
                         </div>
 
+                        <div class="col-sm-12 col-md-6">
+                            <div class="input-group mb-3">
 
 
-                    </div>
-
-                    <div class="col-sm-12 col-md-6">
-                        <div class="input-group mb-3">
-
-
-                            <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-check-to-slot"></i></label>
-                            <select class="form-select" id="inputGroupSelect01">
+                                <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-check-to-slot"></i></label>
+                                <select name="estado" formControlName="estado" class="form-select" id="inputGroupSelect01">
                               <option class="text-muted" selected>Estado</option>
-                              <option *ngFor="let estado of estados" value="1">{{estado}}</option>
+                              <option *ngFor="let estado of estados" >{{estado}}</option>
                              
                             </select>
+                            </div>
                         </div>
-                    </div>
 
+
+                    </div>
+                    <!--End File 2-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" (click)="cerrar()" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
 
                 </div>
-                <!--End File 2-->
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+            </form>
         </div>
     </div>
 </div>

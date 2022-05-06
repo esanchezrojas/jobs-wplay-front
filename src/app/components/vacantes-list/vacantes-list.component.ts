@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TagInputModule } from 'ngx-chips';
-
-//import { listenerCount } from 'process';
 //import {DataService} from '../../services/data.service';
 
 @Component({
@@ -17,8 +14,8 @@ export class VacantesListComponent implements OnInit {
   page = 1;
   totalVacantes = 0;
   */
-  model=["Medellín","Bogotá","Cartagena","Pasto","Barranquilla","Manizales","Bucaramanga"];
-  name:any;
+ 
+  
 
   
   filterPost = '';
@@ -145,7 +142,7 @@ export class VacantesListComponent implements OnInit {
   
 
   openAdd(){
-    console.log('presionando boton')
+   
   }
 
   /*

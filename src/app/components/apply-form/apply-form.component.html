@@ -177,7 +177,7 @@
                                     <div class="col-sm-12 col-md-12">
                                         <div class="input-group mb-3">
                                             <label for="formFileMultiple" class="input-group fw-bold text-muted">Adjunte su hoja de vida</label>
-                                            <input type="file" class="form-control fw-bold text-muted" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                            <input formControlName="hv" name="hv" type="file" class="form-control fw-bold text-muted" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
                                             <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-paperclip"></i></span>
                                         </div>
                                     </div>
@@ -194,7 +194,7 @@
                                     <div class="col-sm-12 col-md-12">
                                         <div class="input-group mb-3">
                                             <label for="formFileMultiple" class="input-group fw-bold text-muted">Adjunte su portafolio (Opcional)</label>
-                                            <input type="file" class="form-control fw-bold text-muted" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                            <input type="file" formControlName="pf" name="pf" class="form-control fw-bold text-muted" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
                                             <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-paperclip"></i></span>
                                         </div>
                                     </div>
@@ -208,7 +208,7 @@
                                     <div class="col-sm-12 col-md-12">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-briefcase"></i></span>
-                                            <input type="text" class="form-control" placeholder="Link portafolio o alguno de tus mejores trabajos (Opcional)" aria-label="Username" aria-describedby="basic-addon1">
+                                            <input type="text" formControlName="lpf" name="lpf" class="form-control" placeholder="Link portafolio o alguno de tus mejores trabajos (Opcional)" aria-label="Username" aria-describedby="basic-addon1">
                                         </div>
                                     </div>
 
@@ -314,6 +314,7 @@
                                 <!--File 1-->
                                 <div class="row g-2 mt-2">
                                     <div class="col-sm-12 col-md-12">
+                                        <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-info rounded-pill fw-bold" data-bs-toggle="modal" data-bs-target="#modalExperiencia">Agregar +</button>
                                     </div>
                                 </div>
@@ -342,7 +343,7 @@
             <div class="col-sm-5 col-md-3 text-start mt-2">
 
                 <h2>Formación</h2>
-                <h6 class="text-muted">Cuentanos de tu formación y conocimientos</h6>
+                <h6 class="text-muted">Cuentanos un poco de tu formación y conocimientos</h6>
             </div>
             <!--End Col 1-->
 
@@ -375,21 +376,26 @@
                                                     <th scope="col">Programa Académico</th>
                                                     <th scope="col">Nivel</th>
                                                     <th scope="col">Estado</th>
+                                                    <th scope="col">Acciones</th>
+
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>@mdo</td>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
+
+                                                <tr *ngFor="let item of listaFormacion;let indice=index">
+                                                    <td>{{item.institucion}}</td>
+                                                    <td>{{item.programa}}</td>
+                                                    <td>{{item.nivel}}</td>
+                                                    <td>{{item.estado}}</td>
+                                                    <td>
+                                                        <button type="button" (click)="editar(indice)" class="btn text-white " data-bs-toggle="modal" data-bs-target="#modalFormacion">
+                                                        <i class="fa-solid fa-pen-to-square icono ">
+                                                            
+                                                        </i></button>
+                                                        <button type="button" (click)="eliminar(indice)" class="btn text-white"><i class="fa-solid fa-trash icono"></i></button>
+                                                    </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>@mdo</td>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                </tr>
+
 
                                             </tbody>
                                         </table>
@@ -435,14 +441,15 @@
         <div class="row">
             <div class="col-sm-5 col-md-6  mt-2">
                 <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Autoriza a WPLAY.CO para realizar el tratamiento y manejo de tus datos personales conforme a nuestra Politica de Privacidad.</label>
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
+                    <label name="autorizacion" class="form-check-label" for="exampleCheck1">Autoriza a WPLAY.CO para realizar el tratamiento y manejo de sus datos personales conforme a nuestra Politica de Privacidad.</label>
                 </div>
             </div>
             <div class="col-sm-5 col-md-6  mt-2">
 
 
-                <button type="button" class="btn btn-success btn-lg">ENVIAR</button>
+                <button type="submit" class="btn btn-success btn-lg">ENVIAR</button>
+
 
 
             </div>
