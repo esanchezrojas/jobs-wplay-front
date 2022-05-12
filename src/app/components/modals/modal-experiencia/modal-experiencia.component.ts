@@ -67,8 +67,7 @@ export class ModalExperienciaComponent implements OnInit {
   }
 
   
-
-  limpiar() {
+  cerrar() {
     this.form.reset();
   }
 

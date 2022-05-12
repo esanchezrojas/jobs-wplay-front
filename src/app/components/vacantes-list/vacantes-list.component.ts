@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-//import {DataService} from '../../services/data.service';
+import {DataService} from '../../services/data.service';
 
 @Component({
   selector: 'app-vacantes-list',
@@ -9,16 +9,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class VacantesListComponent implements OnInit {
 
-  /*
+  
   vacantes: any[] = [];
   page = 1;
   totalVacantes = 0;
-  */
+  
  
   
 
   
   filterPost = '';
+  /*
   page = 1;
   vacantes = [
     {
@@ -126,13 +127,16 @@ export class VacantesListComponent implements OnInit {
   
   
   totalVacantes = this.vacantes.length;
+  */
   
-  
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private dataService: DataService,
+    private route: ActivatedRoute
+    ) { }
   ngOnInit(): void {
-    //this.getVacantes();
+    this.getVacantes();
     
-    this.openAdd();
+    
 
 
    
@@ -141,25 +145,25 @@ export class VacantesListComponent implements OnInit {
 
   
 
-  openAdd(){
-   
-  }
-
-  /*
+  
   getVacantes(){
 
-    this.dataService.getListado(3,this.page+0)
+    this.dataService.getListado()
     .subscribe((response:any)=>{
-      this.totalVacantes = response.count;
-      response.results.forEach((result: any) => {
+      let cont = response.length;
+      this.totalVacantes = response.length;
+      this.vacantes = response;
+      console.log(response)
+      console.log(cont)
+     /* response.results.forEach((result: any) => {
         this.dataService.getOnly(result.name) 
         .subscribe((unicResponse:any)=>{
             this.vacantes.push(unicResponse)
             console.log(this.vacantes); 
         });
-      });
+      });*/
       });
      }
-     */
+     
 
 }

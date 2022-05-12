@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {DataService} from '../../services/data.service';
 import { VacantesListComponent } from '../vacantes-list/vacantes-list.component';
 
 
@@ -10,7 +11,12 @@ import { VacantesListComponent } from '../vacantes-list/vacantes-list.component'
 })
 export class ItemDetailComponent implements OnInit {
   
+  vacantes: any[] = [];
   
+  totalVacantes = 0;
+  
+
+  /*
   vacantes = [
     {
       id: 0,
@@ -52,7 +58,7 @@ export class ItemDetailComponent implements OnInit {
       conocimientos: "Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable",
       horario: "Lunes a Viernes 8am - 5pm",
       tipo_de_contrato: "Indefinido",
-      beneficios:["Causación gestión y análisis de documentos","Elaboración de notas internas Elaboracion de informes","Manejo de herramientas web"]
+      beneficios:["Causación gestión y análisis de documentos","Elaboración de notas internas Elaboracion de informes","M"]
   },
   {
       id: 3,
@@ -179,10 +185,15 @@ export class ItemDetailComponent implements OnInit {
 }
 
   ];
+
+  */
   
   public id:any;
   public response:any;
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private dataService: DataService,
+    private route: ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
     
@@ -195,15 +206,29 @@ export class ItemDetailComponent implements OnInit {
     
   }
 
-  cargarData(id:number){
+  cargarData(ide:number){
 
-    //this.response = this.list.vacantes[id];
-   
-    this.response = this.vacantes[id];
+    this.dataService.getListado()
+    .subscribe((response:any)=>{
+      
+      for (let i=0; i<response.length;i++){
+      if (response[i].id == ide){
+        this.response = response[i];
+        console.log(response)
+      }
+    }
+     
+      });
+     }
+     
 
-    
 
-  }
+
+
+
+  
+
+  
 
   
   

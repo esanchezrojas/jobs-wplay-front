@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VacantesListComponent } from './components/vacantes-list/vacantes-list.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FormFilterComponent } from './components/form-filter/form-filter.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FilterPipe } from './pipes/filter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -24,7 +23,6 @@ import { ModalFormacionComponent } from './components/modals/modal-formacion/mod
     AppComponent,
     VacantesListComponent,
     HeaderComponent,
-    FormFilterComponent,
     FilterPipe,
     ItemDetailComponent,
     HomeComponent,

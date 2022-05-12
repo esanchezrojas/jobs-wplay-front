@@ -28,10 +28,10 @@
             <p>* {{response.proposito}}</p>
             <br>
             <h2>Responsabilidades:</h2>
-            <p *ngFor="let responsabilidad of response.responsabilidades ">* {{responsabilidad}}</p>
+            <p *ngFor="let responsabilidad of response.responsabilidades ">* {{responsabilidad.descripcion}}</p>
             <br>
             <h2>Conocimientos:</h2>
-            <p>{{response.conocimientos}}</p>
+            <p *ngFor="let conocimiento of response.conocimientos">* {{conocimiento.descripcion}}</p>
 
 
         </div>
@@ -44,7 +44,7 @@
                         <h6 class="text-muted">{{response.area}}</h6>
                         <h2>{{response.nombreVacante}}</h2>
 
-                        <div class="btnApply mt-3" [routerLink]="['/','aplicar']">
+                        <div class="btnApply mt-3" [routerLink]="['/','aplicar',response.id]">
                             <div class="d-grid gap-2 text-center ">
                                 <p class="rounded fw-bold py-2" style="background-color: rgb(13, 202, 240);">APLICAR A ESTA OFERTA</p>
                             </div>
@@ -64,7 +64,7 @@
                 <h6 class="text-muted">{{response.horario}}</h6>
                 <br>
                 <h2>Beneficios:</h2>
-                <h6 class="text-muted" *ngFor="let beneficio of response.beneficios">* {{beneficio}}</h6>
+                <h6 class="text-muted" *ngFor="let beneficio of response.beneficios">* {{beneficio.descripcion}}</h6>
             </div>
         </div>
     </div>

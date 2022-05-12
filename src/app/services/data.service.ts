@@ -12,8 +12,10 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   
-  getListado(limit: number, offset: number) {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}}`);
+  getListado() {
+
+
+    return this.http.get(`http://localhost:3000/api/list/`);
   }
  
 

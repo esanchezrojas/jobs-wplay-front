@@ -6,10 +6,10 @@
 
 
 
-<div class="container mt-5">
-    <h1>{{cargo}}</h1>
 
-    <form id="registerForm" name="registerForm" [formGroup]="form" (ngSubmit)="enviar(form.value)">
+<div class="container mt-5">
+
+    <form id="registerForm" name="registerForm">
         <!--End Sesion 1-->
         <div class="row ">
 
@@ -28,6 +28,10 @@
 
             <!--Col 2-->
             <div class="col-sm-5 col-md-9">
+
+                <div class="text-center mb-4">
+                    <h1>{{response.nombreVacante}}</h1>
+                </div>
 
                 <div class="accordion" id="accordionExample">
 
@@ -51,8 +55,8 @@
                                     <div class="col-sm-12 col-md-12">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text nr "><i class="fa-solid fa-user-tie "></i></span>
-                                            <input type="text" placeholder="Nombres" formControlName="nombre" name="nombre" aria-label="First name" class="form-control">
-                                            <input type="text" placeholder="Apellidos" formControlName="apellido" name="apellido" aria-label="Last name" class="form-control">
+                                            <input type="text" placeholder="Nombres" name="nombre" aria-label="First name" class="form-control">
+                                            <input type="text" placeholder="Apellidos" name="apellido" aria-label="Last name" class="form-control">
                                         </div>
                                     </div>
 
@@ -66,14 +70,14 @@
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-mobile-screen"></i></span>
-                                            <input type="text" class="form-control" placeholder="Celular" formControlName="celular" aria-label="Celular" name="celular" aria-describedby="basic-addon1">
+                                            <input type="text" class="form-control" placeholder="Celular" aria-label="Celular" name="celular" aria-describedby="basic-addon1">
                                         </div>
                                     </div>
 
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-cake-candles"></i></span>
-                                            <input type="date" name="cumpleanos" class="form-control" formControlName="cumpleanos" placeholder="Fecha de cumpleaños" aria-label="Apellidos" aria-describedby="basic-addon1">
+                                            <input type="date" name="cumpleanos" class="form-control" placeholder="Fecha de cumpleaños" aria-label="Apellidos" aria-describedby="basic-addon1">
                                         </div>
                                     </div>
 
@@ -87,14 +91,14 @@
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-id-card"></i></span>
-                                            <input type="text" name="cedula" formControlName="cedula" class="form-control" placeholder="Cédula" aria-label="Username" aria-describedby="basic-addon1">
+                                            <input type="text" name="cedula" class="form-control" placeholder="Cédula" aria-label="Username" aria-describedby="basic-addon1">
                                         </div>
                                     </div>
 
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-envelope"></i></span>
-                                            <input type="email" formControlName="email" name="email" class="form-control" placeholder="Correo Electronico" aria-label="Username" aria-describedby="basic-addon1">
+                                            <input type="email" name="email" class="form-control" placeholder="Correo Electronico" aria-label="Username" aria-describedby="basic-addon1">
                                         </div>
                                     </div>
 
@@ -108,14 +112,14 @@
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-location-dot"></i></span>
-                                            <input type="text" formControlName="ciudad" name="ciudad" class="form-control" placeholder="Ciudad" aria-label="Username" aria-describedby="basic-addon1">
+                                            <input type="text" name="ciudad" class="form-control" placeholder="Ciudad" aria-label="Username" aria-describedby="basic-addon1">
                                         </div>
                                     </div>
 
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-thumbs-up"></i></span>
-                                            <input type="text" formControlName="redsocial" name="redsocial" class="form-control" placeholder="Red social favorita" aria-label="Red Social" aria-describedby="basic-addon1">
+                                            <input type="text" name="redsocial" class="form-control" placeholder="Red social favorita" aria-label="Red Social" aria-describedby="basic-addon1">
                                         </div>
                                     </div>
 
@@ -177,7 +181,7 @@
                                     <div class="col-sm-12 col-md-12">
                                         <div class="input-group mb-3">
                                             <label for="formFileMultiple" class="input-group fw-bold text-muted">Adjunte su hoja de vida</label>
-                                            <input formControlName="hv" name="hv" type="file" class="form-control fw-bold text-muted" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                            <input name="hv" type="file" class="form-control fw-bold text-muted" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
                                             <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-paperclip"></i></span>
                                         </div>
                                     </div>
@@ -194,7 +198,7 @@
                                     <div class="col-sm-12 col-md-12">
                                         <div class="input-group mb-3">
                                             <label for="formFileMultiple" class="input-group fw-bold text-muted">Adjunte su portafolio (Opcional)</label>
-                                            <input type="file" formControlName="pf" name="pf" class="form-control fw-bold text-muted" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                            <input type="file" name="pf" class="form-control fw-bold text-muted" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
                                             <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-paperclip"></i></span>
                                         </div>
                                     </div>
@@ -208,7 +212,7 @@
                                     <div class="col-sm-12 col-md-12">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-briefcase"></i></span>
-                                            <input type="text" formControlName="lpf" name="lpf" class="form-control" placeholder="Link portafolio o alguno de tus mejores trabajos (Opcional)" aria-label="Username" aria-describedby="basic-addon1">
+                                            <input type="text" name="lpf" class="form-control" placeholder="Link portafolio o alguno de tus mejores trabajos (Opcional)" aria-label="Username" aria-describedby="basic-addon1">
                                         </div>
                                     </div>
 
@@ -270,7 +274,161 @@
                             <div class="accordion-body">
 
 
-                                <app-modal-experiencia></app-modal-experiencia>
+
+
+                                <!-- Modal Formulario Experiencia -->
+                                <div class="modal fade" id="modalExperiencia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <form [formGroup]="formE" (ngSubmit)="enviarE()">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Modal Experiencia</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+
+
+                                                    <!--File 1-->
+                                                    <div class="row g-2">
+
+                                                        <div class="col-sm-12 col-md-4">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-building"></i></span>
+                                                                <input type="text" name="empresa" formControlName="empresa" class="form-control" placeholder="Empresa" aria-label="Empresa" aria-describedby="basic-addon1">
+
+
+
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-12 col-md-4">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-network-wired"></i></span>
+                                                                <input type="text" name="cargo" formControlName="cargo" class="form-control" placeholder="Cargo" aria-label="Cargo" aria-describedby="basic-addon1">
+
+
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-12 col-md-4">
+
+
+                                                            <div class="input-group mb-3">
+                                                                <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-location-dot"></i></label>
+                                                                <select name="ciudad" formControlName="ciudad" class="form-select" id="inputGroupSelect01">
+                              <option selected>Ciudad</option>
+                              <option  *ngFor="let ciudad of ciudades">{{ciudad}}</option>
+                            </select>
+                                                            </div>
+
+
+                                                        </div>
+
+                                                    </div>
+                                                    <!--End File 1-->
+
+
+
+
+                                                    <!--File 2-->
+                                                    <div class="row g-2">
+
+
+
+                                                        <div class="col-sm-12 col-md-12">
+                                                            <div class="mb-3">
+                                                                <div class="form-floating">
+                                                                    <textarea name="funciones" formControlName="funciones" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                                                    <label for="floatingTextarea2">Describe el cargo y funciones</label>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                    <!--End File 2-->
+
+                                                    <!--File 3-->
+                                                    <div class="row g-2">
+
+
+
+                                                        <div class="col-sm-12 col-md-3">
+                                                            <div class="input-group mb-3">
+                                                                <label class="input-group-text dates" for="inputGroupSelect01">Año inicio</label>
+                                                                <select name="yearini" formControlName="yearini" class="form-select" id="inputGroupSelect01">
+                              <option selected>Año</option>
+                              <option *ngFor="let year of years" >{{year}}</option>
+                            </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-12 col-md-3">
+                                                            <div class="input-group mb-3">
+                                                                <label class="input-group-text dates" for="inputGroupSelect01">Mes inicio</label>
+                                                                <select name="mesini" formControlName="mesini" class="form-select" id="inputGroupSelect01">
+                              <option selected>Mes</option>
+                              <option *ngFor="let mes of meses">{{mes}}</option>
+                             
+                            </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-12 col-md-3">
+                                                            <div class="input-group mb-3">
+                                                                <label class="input-group-text dates" for="inputGroupSelect01">Año fin</label>
+                                                                <select name="yearfin" formControlName="yearfin" class="form-select" id="inputGroupSelect01">
+                              <option selected>Año</option>
+                              <option *ngFor="let year of years">{{year}}</option>
+                            </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-12 col-md-3">
+                                                            <div class="input-group mb-3">
+                                                                <label class="input-group-text dates" for="inputGroupSelect01">Mes fin</label>
+                                                                <select name="mesfin" formControlName="mesfin" class="form-select" id="inputGroupSelect01">
+                              <option selected>Mes</option>
+                              <option *ngFor="let mes of meses" >{{mes}}</option>
+                             
+                            </select>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <!--End File 3-->
+
+                                                    <!--File 4-->
+                                                    <div class="row g-2">
+                                                        <div class="col-sm-12 col-md-12">
+                                                            <div class="mb-3 form-check">
+                                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                                <label class="form-check-label" for="exampleCheck1">Actualmente</label>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <!--End File 4-->
+
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                    <button [disabled]="formE.invalid" type="submit" class="btn btn-primary">Guardar Cambios</button>
+
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--End Modal Formulario Experiencia -->
+
+
                                 <div class="row g-2">
 
 
@@ -286,6 +444,7 @@
                                                     <th scope="col">Mes-Año inicio</th>
                                                     <th scope="col">Mes-Año fin</th>
                                                     <th scope="col">Descripción</th>
+                                                    <th scope="col">Acciones</th>
                                                 </tr>
 
 
@@ -295,13 +454,20 @@
 
                                             </thead>
                                             <tbody>
-                                                <tr *ngFor="let item of listaExperiencia">
+                                                <tr *ngFor="let item of listaExperiencia;let indice=index">
                                                     <td>{{item.empresa}}</td>
                                                     <td>{{item.cargo}}</td>
                                                     <td>{{item.ciudad}}</td>
                                                     <td>{{item.mesini}}-{{item.yearini}}</td>
                                                     <td>{{item.mesfin}}-{{item.yearfin}}</td>
                                                     <td>{{item.funciones}}</td>
+                                                    <td>
+                                                        <button (click)="editarExperiencia(item,indice)" type="button" class="btn text-white " data-bs-toggle="modal" data-bs-target="#modalExperiencia">
+                                                        <i class="fa-solid fa-pen-to-square icono ">
+                                                            
+                                                        </i></button>
+                                                        <button (click)="eliminarExperiencia(indice)" type="button" class="btn text-white"><i class="fa-solid fa-trash icono"></i></button>
+                                                    </td>
                                                 </tr>
 
 
@@ -315,7 +481,7 @@
                                 <div class="row g-2 mt-2">
                                     <div class="col-sm-12 col-md-12">
                                         <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-info rounded-pill fw-bold" data-bs-toggle="modal" data-bs-target="#modalExperiencia">Agregar +</button>
+                                        <button (click)="agregarExperiencia()" type="button" class="btn btn-info rounded-pill fw-bold" data-bs-toggle="modal" data-bs-target="#modalExperiencia">Agregar +</button>
                                     </div>
                                 </div>
                                 <!--End File 1-->
@@ -360,8 +526,85 @@
                           Paso 4/4
                         </button>
                         </h2>
+
+                        <!--Accordion collapse-->
                         <div id="collapse4" class="accordion-collapse collapse show" aria-labelledby="heading4" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
+
+
+
+
+
+
+                                <!-- Modal Formulario Formación -->
+                                <div class="modal fade" id="modalFormacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+
+                                            <form [formGroup]="formF" (ngSubmit)="enviarF()">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Modal Formación {{listaFormacion.institucion}}</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <!--File 1-->
+                                                    <div class="row g-2">
+
+                                                        <div class="col-sm-12 col-md-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-school"></i></span>
+                                                                <input type="text" name="institucion" formControlName="institucion" class="form-control" placeholder="Nombre de la institución" aria-label="Institución" aria-describedby="basic-addon1">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-12 col-md-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-book"></i></span>
+                                                                <input type="text" name="programa" formControlName="programa" class="form-control" placeholder="Programa académico" aria-label="Programa" aria-describedby="basic-addon1">
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <!--End File 1-->
+
+                                                    <!--File 2-->
+                                                    <div class="row g-2">
+
+                                                        <div class="col-sm-12 col-md-6">
+                                                            <div class="input-group mb-3">
+                                                                <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-graduation-cap"></i></label>
+                                                                <select name="nivel" formControlName="nivel" class="form-select" id="inputGroupSelect01">
+                              <option class="text-muted" selected>Nivel Académico</option>
+                              <option *ngFor="let nivel of niveles" >{{nivel}}</option>
+                             </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-12 col-md-6">
+                                                            <div class="input-group mb-3">
+
+
+                                                                <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-check-to-slot"></i></label>
+                                                                <select name="estado" formControlName="estado" class="form-select" id="inputGroupSelect01">
+                              <option class="text-muted" selected>Estado</option>
+                              <option  *ngFor="let estado of estados" >{{estado}}</option>
+                              </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--End File 2-->
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                    <button [disabled]="formF.invalid" type="submit" class="btn btn-primary">Guardar Cambios</button>
+
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--End Modal Formulario Formación -->
 
 
                                 <!--File 1-->
@@ -388,43 +631,33 @@
                                                     <td>{{item.nivel}}</td>
                                                     <td>{{item.estado}}</td>
                                                     <td>
-                                                        <button type="button" (click)="editar(indice)" class="btn text-white " data-bs-toggle="modal" data-bs-target="#modalFormacion">
+                                                        <button (click)="editarFormacion(item,indice)" type="button" class="btn text-white " data-bs-toggle="modal" data-bs-target="#modalFormacion">
                                                         <i class="fa-solid fa-pen-to-square icono ">
                                                             
                                                         </i></button>
-                                                        <button type="button" (click)="eliminar(indice)" class="btn text-white"><i class="fa-solid fa-trash icono"></i></button>
+                                                        <button (click)="eliminarFormacion(indice)" type="button" class="btn text-white"><i class="fa-solid fa-trash icono"></i></button>
                                                     </td>
                                                 </tr>
-
-
                                             </tbody>
                                         </table>
                                     </div>
-
-
 
                                 </div>
                                 <!--End File 1-->
 
 
-
-
-
-
-                                <app-modal-formacion></app-modal-formacion>
                                 <!--File 2-->
                                 <div class="row g-2">
                                     <div class="col-sm-12 col-md-12">
                                         <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-info rounded-pill fw-bold" data-bs-toggle="modal" data-bs-target="#modalFormacion">Agregar +</button>
+                                        <button (click)="agregarFormacion()" type="button" class="btn btn-info rounded-pill fw-bold" data-bs-toggle="modal" data-bs-target="#modalFormacion">Agregar +</button>
                                     </div>
                                 </div>
                                 <!--End File 2-->
                             </div>
                             <!--End Col 2-->
-
-
                         </div>
+                        <!--End Accordion collapse-->
                     </div>
                 </div>
 

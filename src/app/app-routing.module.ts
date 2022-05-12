@@ -2,7 +2,6 @@ import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 import { HomeComponent } from './components/home/home.component';
-import { FormFilterComponent } from './components/form-filter/form-filter.component';
 import { ApplyFormComponent } from './components/apply-form/apply-form.component';
 
 
@@ -32,7 +31,7 @@ const routes: Routes = [
   },
   
   {
-    path: 'aplicar',
+    path: 'aplicar/:var',
     component: ApplyFormComponent
 
   },

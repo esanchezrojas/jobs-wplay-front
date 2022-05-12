@@ -1,0 +1,1004 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>jobs-wplay documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">jobs-wplay documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  ModalExperienciaComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/modals/modal-experiencia/modal-experiencia.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-modal-experiencia</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./modal-experiencia.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./modal-experiencia.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#ciudades" >ciudades</a>
+                            </li>
+                            <li>
+                                <a href="#data" >data</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#estados" >estados</a>
+                            </li>
+                            <li>
+                                <a href="#form" >form</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#meses" >meses</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#niveles" >niveles</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#years" >years</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#createForm" >createForm</a>
+                            </li>
+                            <li>
+                                <a href="#enviar" >enviar</a>
+                            </li>
+                            <li>
+                                <a href="#limpiar" >limpiar</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(serviceExperiencia: <a href="../injectables/DataModalsService.html" target="_self">DataModalsService</a>, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/modals/modal-experiencia/modal-experiencia.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>serviceExperiencia</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DataModalsService.html" target="_self" >DataModalsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createForm"></a>
+                    <span class="name">
+                        <span ><b>createForm</b></span>
+                        <a href="#createForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createForm()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/components/modals/modal-experiencia/modal-experiencia.component.ts:34</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enviar"></a>
+                    <span class="name">
+                        <span ><b>enviar</b></span>
+                        <a href="#enviar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>enviar(form: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/components/modals/modal-experiencia/modal-experiencia.component.ts:51</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>form</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="limpiar"></a>
+                    <span class="name">
+                        <span ><b>limpiar</b></span>
+                        <a href="#limpiar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>limpiar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/components/modals/modal-experiencia/modal-experiencia.component.ts:71</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/components/modals/modal-experiencia/modal-experiencia.component.ts:29</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ciudades"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>ciudades</b></span>
+                        <a href="#ciudades"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>GeneralData.CIUDADES</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/modals/modal-experiencia/modal-experiencia.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="data"></a>
+                    <span class="name">
+                        <span ><b>data</b></span>
+                        <a href="#data"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/modals/modal-experiencia/modal-experiencia.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="estados"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>estados</b></span>
+                        <a href="#estados"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>GeneralData.ESTADOS_FORMACION</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/modals/modal-experiencia/modal-experiencia.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="form"></a>
+                    <span class="name">
+                        <span ><b>form</b></span>
+                        <a href="#form"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormGroup({})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/modals/modal-experiencia/modal-experiencia.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="meses"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>meses</b></span>
+                        <a href="#meses"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>GeneralData.MESES</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/modals/modal-experiencia/modal-experiencia.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="niveles"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>niveles</b></span>
+                        <a href="#niveles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>GeneralData.NIVELES_ACADEMICOS</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/modals/modal-experiencia/modal-experiencia.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="years"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>years</b></span>
+                        <a href="#years"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>GeneralData.YEARS</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/components/modals/modal-experiencia/modal-experiencia.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { GeneralData } from &#x27;src/app/config/general-data&#x27;;
+import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { RegistroExperiencia } from &#x27;../../../models/form-experiencia.model&#x27;;
+import { DataModalsService } from &#x27;src/app/services/data-modals.service&#x27;;
+
+@Component({
+  selector: &#x27;app-modal-experiencia&#x27;,
+  templateUrl: &#x27;./modal-experiencia.component.html&#x27;,
+  styleUrls: [&#x27;./modal-experiencia.component.css&#x27;]
+})
+export class ModalExperienciaComponent implements OnInit {
+
+  public meses &#x3D; GeneralData.MESES;
+  public years &#x3D; GeneralData.YEARS;
+  public niveles &#x3D; GeneralData.NIVELES_ACADEMICOS;
+  public estados &#x3D; GeneralData.ESTADOS_FORMACION;
+  public ciudades &#x3D; GeneralData.CIUDADES;
+  form: FormGroup &#x3D; new FormGroup({});
+  data: any &#x3D; {};
+
+
+
+  constructor(
+    private serviceExperiencia: DataModalsService,
+    private fb: FormBuilder,
+  ) { }
+
+  ngOnInit(): void {
+    this.createForm();
+  }
+
+
+  createForm() {
+    this.form &#x3D; this.fb.group({
+
+      empresa: [&quot;&quot;, [Validators.required]],
+      cargo: [&quot;&quot;, [Validators.required]],
+      ciudad: [&quot;&quot;, [Validators.required]],
+      funciones: [&quot;&quot;, [Validators.required]],
+      yearini: [&quot;&quot;, [Validators.required]],
+      mesini: [&quot;&quot;, [Validators.required]],
+      yearfin: [&quot;&quot;, [Validators.required]],
+      mesfin: [&quot;&quot;, [Validators.required]]
+
+
+
+    });
+  }
+
+  enviar(form: any) {
+
+    this.data &#x3D; form;
+
+    this.serviceExperiencia.disparadorExperiencia.emit({ data: this.data })
+
+    //en this.profileForm.value tenemos el valor del form para poder manipularlo a nuestro gusto. Si queremos acceder a, por ejemplo, un control especifico, podemos hacerlo con this.profileForm.controls[&#x27;nombreControl&#x27;]
+    console.log(this.data);
+    if (this.form.invalid) {
+      // alert(&#x27;Mensaje invalido&#x27;);
+    } else {
+      //alert(&#x27;Mensaje Valido&#x27;);
+      this.form.reset();
+
+    }
+
+  }
+
+  
+
+  limpiar() {
+    this.form.reset();
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- Modal --&gt;
+&lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;modalExperiencia&quot; tabindex&#x3D;&quot;-1&quot; aria-labelledby&#x3D;&quot;exampleModalLabel&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-dialog modal-lg&quot;&gt;
+        &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+            &lt;form id&#x3D;&quot;registerForm&quot; name&#x3D;&quot;registerForm&quot; [formGroup]&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;enviar(form.value)&quot;&gt;
+                &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                    &lt;h5 class&#x3D;&quot;modal-title&quot; id&#x3D;&quot;exampleModalLabel&quot;&gt;Modal Experiencia&lt;/h5&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn-close&quot; data-bs-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;&gt;&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+
+
+                    &lt;!--File 1--&gt;
+                    &lt;div class&#x3D;&quot;row g-2&quot;&gt;
+
+                        &lt;div class&#x3D;&quot;col-sm-12 col-md-4&quot;&gt;
+                            &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+                                &lt;span class&#x3D;&quot;input-group-text&quot; id&#x3D;&quot;basic-addon1&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-building&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                                &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;empresa&quot; formControlName&#x3D;&quot;empresa&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Empresa&quot; aria-label&#x3D;&quot;Empresa&quot; aria-describedby&#x3D;&quot;basic-addon1&quot;&gt;
+                                &lt;div class&#x3D;&quot;text-danger px-1&quot; *ngIf&#x3D;&quot;form.get(&#x27;empresa&#x27;)?.hasError(&#x27;required&#x27;) &amp;&amp; form.get(&#x27;empresa&#x27;)?.touched &quot;&gt;
+                                    &lt;p&gt;Este campo es &lt;strong&gt;obligatorio&lt;/strong&gt;&lt;/p&gt;
+                                &lt;/div&gt;
+
+
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class&#x3D;&quot;col-sm-12 col-md-4&quot;&gt;
+                            &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+                                &lt;span class&#x3D;&quot;input-group-text&quot; id&#x3D;&quot;basic-addon1&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-network-wired&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                                &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;cargo&quot; formControlName&#x3D;&quot;cargo&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Cargo&quot; aria-label&#x3D;&quot;Cargo&quot; aria-describedby&#x3D;&quot;basic-addon1&quot;&gt;
+
+                                &lt;div class&#x3D;&quot;text-danger px-1&quot; *ngIf&#x3D;&quot;form.get(&#x27;cargo&#x27;)?.hasError(&#x27;required&#x27;) &amp;&amp; form.get(&#x27;cargo&#x27;)?.touched &quot;&gt;
+                                    &lt;p&gt;Este campo es &lt;strong&gt;obligatorio&lt;/strong&gt;&lt;/p&gt;
+                                &lt;/div&gt;
+
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class&#x3D;&quot;col-sm-12 col-md-4&quot;&gt;
+
+
+                            &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+                                &lt;label class&#x3D;&quot;input-group-text dates&quot; for&#x3D;&quot;inputGroupSelect01&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-location-dot&quot;&gt;&lt;/i&gt;&lt;/label&gt;
+                                &lt;select name&#x3D;&quot;ciudad&quot; formControlName&#x3D;&quot;ciudad&quot; class&#x3D;&quot;form-select&quot; id&#x3D;&quot;inputGroupSelect01&quot;&gt;
+                              &lt;option selected&gt;Ciudad&lt;/option&gt;
+                              &lt;option  *ngFor&#x3D;&quot;let ciudad of ciudades&quot;&gt;{{ciudad}}&lt;/option&gt;
+                            &lt;/select&gt;
+                            &lt;/div&gt;
+
+
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+                    &lt;!--End File 1--&gt;
+
+
+
+
+                    &lt;!--File 2--&gt;
+                    &lt;div class&#x3D;&quot;row g-2&quot;&gt;
+
+
+
+                        &lt;div class&#x3D;&quot;col-sm-12 col-md-12&quot;&gt;
+                            &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+                                &lt;div class&#x3D;&quot;form-floating&quot;&gt;
+                                    &lt;textarea name&#x3D;&quot;funciones&quot; formControlName&#x3D;&quot;funciones&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Leave a comment here&quot; id&#x3D;&quot;floatingTextarea2&quot; style&#x3D;&quot;height: 100px&quot;&gt;&lt;/textarea&gt;
+                                    &lt;label for&#x3D;&quot;floatingTextarea2&quot;&gt;Describe el cargo y funciones&lt;/label&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+
+                    &lt;/div&gt;
+                    &lt;!--End File 2--&gt;
+
+                    &lt;!--File 3--&gt;
+                    &lt;div class&#x3D;&quot;row g-2&quot;&gt;
+
+
+
+                        &lt;div class&#x3D;&quot;col-sm-12 col-md-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+                                &lt;label class&#x3D;&quot;input-group-text dates&quot; for&#x3D;&quot;inputGroupSelect01&quot;&gt;Año inicio&lt;/label&gt;
+                                &lt;select name&#x3D;&quot;yearini&quot; formControlName&#x3D;&quot;yearini&quot; class&#x3D;&quot;form-select&quot; id&#x3D;&quot;inputGroupSelect01&quot;&gt;
+                              &lt;option selected&gt;Año&lt;/option&gt;
+                              &lt;option *ngFor&#x3D;&quot;let year of years&quot; &gt;{{year}}&lt;/option&gt;
+                            &lt;/select&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class&#x3D;&quot;col-sm-12 col-md-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+                                &lt;label class&#x3D;&quot;input-group-text dates&quot; for&#x3D;&quot;inputGroupSelect01&quot;&gt;Mes inicio&lt;/label&gt;
+                                &lt;select name&#x3D;&quot;mesini&quot; formControlName&#x3D;&quot;mesini&quot; class&#x3D;&quot;form-select&quot; id&#x3D;&quot;inputGroupSelect01&quot;&gt;
+                              &lt;option selected&gt;Mes&lt;/option&gt;
+                              &lt;option *ngFor&#x3D;&quot;let mes of meses&quot;&gt;{{mes}}&lt;/option&gt;
+                             
+                            &lt;/select&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class&#x3D;&quot;col-sm-12 col-md-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+                                &lt;label class&#x3D;&quot;input-group-text dates&quot; for&#x3D;&quot;inputGroupSelect01&quot;&gt;Año fin&lt;/label&gt;
+                                &lt;select name&#x3D;&quot;yearfin&quot; formControlName&#x3D;&quot;yearfin&quot; class&#x3D;&quot;form-select&quot; id&#x3D;&quot;inputGroupSelect01&quot;&gt;
+                              &lt;option selected&gt;Año&lt;/option&gt;
+                              &lt;option *ngFor&#x3D;&quot;let year of years&quot;&gt;{{year}}&lt;/option&gt;
+                            &lt;/select&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class&#x3D;&quot;col-sm-12 col-md-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+                                &lt;label class&#x3D;&quot;input-group-text dates&quot; for&#x3D;&quot;inputGroupSelect01&quot;&gt;Mes fin&lt;/label&gt;
+                                &lt;select name&#x3D;&quot;mesfin&quot; formControlName&#x3D;&quot;mesfin&quot; class&#x3D;&quot;form-select&quot; id&#x3D;&quot;inputGroupSelect01&quot;&gt;
+                              &lt;option selected&gt;Mes&lt;/option&gt;
+                              &lt;option *ngFor&#x3D;&quot;let mes of meses&quot; &gt;{{mes}}&lt;/option&gt;
+                             
+                            &lt;/select&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+                    &lt;!--End File 3--&gt;
+
+                    &lt;!--File 4--&gt;
+                    &lt;div class&#x3D;&quot;row g-2&quot;&gt;
+                        &lt;div class&#x3D;&quot;col-sm-12 col-md-12&quot;&gt;
+                            &lt;div class&#x3D;&quot;mb-3 form-check&quot;&gt;
+                                &lt;input type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;form-check-input&quot; id&#x3D;&quot;exampleCheck1&quot;&gt;
+                                &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;exampleCheck1&quot;&gt;Actualmente&lt;/label&gt;
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;!--End File 4--&gt;
+
+
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;limpiar()&quot;&gt;Limpiar&lt;/button&gt;
+                    &lt;button [disabled]&#x3D;&quot;form.invalid&quot; type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Guardar Cambios&lt;/button&gt;
+
+                &lt;/div&gt;
+            &lt;/form&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./modal-experiencia.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">span {
+    background-color: rgb(13, 202, 240);
+}
+
+.dates {
+    background-color: rgb(13, 202, 240);
+    font-weight: bold;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- Modal --><div class="modal fade" id="modalExperiencia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">    <div class="modal-dialog modal-lg">        <div class="modal-content">            <form id="registerForm" name="registerForm" [formGroup]="form" (ngSubmit)="enviar(form.value)">                <div class="modal-header">                    <h5 class="modal-title" id="exampleModalLabel">Modal Experiencia</h5>                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>                </div>                <div class="modal-body">                    <!--File 1-->                    <div class="row g-2">                        <div class="col-sm-12 col-md-4">                            <div class="input-group mb-3">                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-building"></i></span>                                <input type="text" name="empresa" formControlName="empresa" class="form-control" placeholder="Empresa" aria-label="Empresa" aria-describedby="basic-addon1">                                <div class="text-danger px-1" *ngIf="form.get(\'empresa\')?.hasError(\'required\') && form.get(\'empresa\')?.touched ">                                    <p>Este campo es <strong>obligatorio</strong></p>                                </div>                            </div>                        </div>                        <div class="col-sm-12 col-md-4">                            <div class="input-group mb-3">                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-network-wired"></i></span>                                <input type="text" name="cargo" formControlName="cargo" class="form-control" placeholder="Cargo" aria-label="Cargo" aria-describedby="basic-addon1">                                <div class="text-danger px-1" *ngIf="form.get(\'cargo\')?.hasError(\'required\') && form.get(\'cargo\')?.touched ">                                    <p>Este campo es <strong>obligatorio</strong></p>                                </div>                            </div>                        </div>                        <div class="col-sm-12 col-md-4">                            <div class="input-group mb-3">                                <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-location-dot"></i></label>                                <select name="ciudad" formControlName="ciudad" class="form-select" id="inputGroupSelect01">                              <option selected>Ciudad</option>                              <option  *ngFor="let ciudad of ciudades">{{ciudad}}</option>                            </select>                            </div>                        </div>                    </div>                    <!--End File 1-->                    <!--File 2-->                    <div class="row g-2">                        <div class="col-sm-12 col-md-12">                            <div class="mb-3">                                <div class="form-floating">                                    <textarea name="funciones" formControlName="funciones" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>                                    <label for="floatingTextarea2">Describe el cargo y funciones</label>                                </div>                            </div>                        </div>                    </div>                    <!--End File 2-->                    <!--File 3-->                    <div class="row g-2">                        <div class="col-sm-12 col-md-3">                            <div class="input-group mb-3">                                <label class="input-group-text dates" for="inputGroupSelect01">Año inicio</label>                                <select name="yearini" formControlName="yearini" class="form-select" id="inputGroupSelect01">                              <option selected>Año</option>                              <option *ngFor="let year of years" >{{year}}</option>                            </select>                            </div>                        </div>                        <div class="col-sm-12 col-md-3">                            <div class="input-group mb-3">                                <label class="input-group-text dates" for="inputGroupSelect01">Mes inicio</label>                                <select name="mesini" formControlName="mesini" class="form-select" id="inputGroupSelect01">                              <option selected>Mes</option>                              <option *ngFor="let mes of meses">{{mes}}</option>                                                         </select>                            </div>                        </div>                        <div class="col-sm-12 col-md-3">                            <div class="input-group mb-3">                                <label class="input-group-text dates" for="inputGroupSelect01">Año fin</label>                                <select name="yearfin" formControlName="yearfin" class="form-select" id="inputGroupSelect01">                              <option selected>Año</option>                              <option *ngFor="let year of years">{{year}}</option>                            </select>                            </div>                        </div>                        <div class="col-sm-12 col-md-3">                            <div class="input-group mb-3">                                <label class="input-group-text dates" for="inputGroupSelect01">Mes fin</label>                                <select name="mesfin" formControlName="mesfin" class="form-select" id="inputGroupSelect01">                              <option selected>Mes</option>                              <option *ngFor="let mes of meses" >{{mes}}</option>                                                         </select>                            </div>                        </div>                    </div>                    <!--End File 3-->                    <!--File 4-->                    <div class="row g-2">                        <div class="col-sm-12 col-md-12">                            <div class="mb-3 form-check">                                <input type="checkbox" class="form-check-input" id="exampleCheck1">                                <label class="form-check-label" for="exampleCheck1">Actualmente</label>                            </div>                        </div>                    </div>                    <!--End File 4-->                </div>                <div class="modal-footer">                    <button type="button" class="btn btn-secondary" (click)="limpiar()">Limpiar</button>                    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Guardar Cambios</button>                </div>            </form>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ApplyFormComponent', 'selector': 'app-apply-form'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ItemDetailComponent', 'selector': 'app-item-detail'},{'name': 'ModalExperienciaComponent', 'selector': 'app-modal-experiencia'},{'name': 'ModalFormacionComponent', 'selector': 'app-modal-formacion'},{'name': 'VacantesListComponent', 'selector': 'app-vacantes-list'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ModalExperienciaComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ModalExperienciaComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
