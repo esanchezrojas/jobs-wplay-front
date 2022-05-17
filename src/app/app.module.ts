@@ -14,8 +14,6 @@ import { ItemDetailComponent } from './components/item-detail/item-detail.compon
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ApplyFormComponent } from './components/apply-form/apply-form.component';
-import { ModalExperienciaComponent } from './components/modals/modal-experiencia/modal-experiencia.component';
-import { ModalFormacionComponent } from './components/modals/modal-formacion/modal-formacion.component';
 
 
 @NgModule({
@@ -27,9 +25,7 @@ import { ModalFormacionComponent } from './components/modals/modal-formacion/mod
     ItemDetailComponent,
     HomeComponent,
     FooterComponent,
-    ApplyFormComponent,
-    ModalExperienciaComponent,
-    ModalFormacionComponent
+    ApplyFormComponent
   ],
   imports: [
     BrowserModule,

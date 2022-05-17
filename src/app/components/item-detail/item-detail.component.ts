@@ -189,7 +189,7 @@ export class ItemDetailComponent implements OnInit {
   */
   
   public id:any;
-  public response:any;
+  public response:any = [];
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute
@@ -209,12 +209,12 @@ export class ItemDetailComponent implements OnInit {
   cargarData(ide:number){
 
     this.dataService.getListado()
-    .subscribe((response:any)=>{
+    .subscribe((res:any)=>{
       
-      for (let i=0; i<response.length;i++){
-      if (response[i].id == ide){
-        this.response = response[i];
-        console.log(response)
+      for (let i=0; i<res.length;i++){
+      if (res[i].id == ide){
+        this.response = res[i];
+        console.log(res)
       }
     }
      

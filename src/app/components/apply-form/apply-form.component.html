@@ -280,7 +280,7 @@
                                 <div class="modal fade" id="modalExperiencia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
-                                            <form [formGroup]="formE" (ngSubmit)="enviarE()">
+                                            <form [formGroup]="formE" (ngSubmit)="enviarE(formE.value)">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="exampleModalLabel">Modal Experiencia</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -295,21 +295,24 @@
                                                             <div class="input-group mb-3">
                                                                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-building"></i></span>
                                                                 <input type="text" name="empresa" formControlName="empresa" class="form-control" placeholder="Empresa" aria-label="Empresa" aria-describedby="basic-addon1">
-
-
-
-
                                                             </div>
+
+                                                            <div class="text-danger px-1" *ngIf="formE.get('empresa')?.hasError('required') && formE.get('empresa')?.touched ">
+                                                                <p>Este campo es obligatorio</p>
+                                                            </div>
+
                                                         </div>
 
                                                         <div class="col-sm-12 col-md-4">
                                                             <div class="input-group mb-3">
                                                                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-network-wired"></i></span>
                                                                 <input type="text" name="cargo" formControlName="cargo" class="form-control" placeholder="Cargo" aria-label="Cargo" aria-describedby="basic-addon1">
-
-
-
                                                             </div>
+
+                                                            <div class="text-danger px-1" *ngIf="formE.get('cargo')?.hasError('required') && formE.get('cargo')?.touched ">
+                                                                <p>Este campo es obligatorio</p>
+                                                            </div>
+
                                                         </div>
 
                                                         <div class="col-sm-12 col-md-4">
@@ -318,11 +321,14 @@
                                                             <div class="input-group mb-3">
                                                                 <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-location-dot"></i></label>
                                                                 <select name="ciudad" formControlName="ciudad" class="form-select" id="inputGroupSelect01">
-                              <option selected>Ciudad</option>
-                              <option  *ngFor="let ciudad of ciudades">{{ciudad}}</option>
-                            </select>
+                                                                  <option selected>Ciudad</option>
+                                                                  <option  *ngFor="let ciudad of ciudades">{{ciudad}}</option>
+                                                                 </select>
                                                             </div>
 
+                                                            <div class="text-danger px-1" *ngIf="formE.get('ciudad')?.hasError('required') && formE.get('ciudad')?.touched ">
+                                                                <p>Este campo es obligatorio</p>
+                                                            </div>
 
                                                         </div>
 
@@ -343,9 +349,12 @@
                                                                     <textarea name="funciones" formControlName="funciones" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                                                                     <label for="floatingTextarea2">Describe el cargo y funciones</label>
                                                                 </div>
-
-
                                                             </div>
+
+                                                            <div class="text-danger px-1" *ngIf="formE.get('funciones')?.hasError('required') && formE.get('funciones')?.touched ">
+                                                                <p>Este campo es obligatorio</p>
+                                                            </div>
+
                                                         </div>
 
 
@@ -361,42 +370,60 @@
                                                             <div class="input-group mb-3">
                                                                 <label class="input-group-text dates" for="inputGroupSelect01">Año inicio</label>
                                                                 <select name="yearini" formControlName="yearini" class="form-select" id="inputGroupSelect01">
-                              <option selected>Año</option>
-                              <option *ngFor="let year of years" >{{year}}</option>
-                            </select>
+                                                                 <option selected>Año</option>
+                                                                 <option *ngFor="let year of years" >{{year}}</option>
+                                                                 </select>
                                                             </div>
+
+                                                            <div class="text-danger px-1" *ngIf="formE.get('yearini')?.hasError('required') && formE.get('yearini')?.touched ">
+                                                                <p>Este campo es obligatorio</p>
+                                                            </div>
+
                                                         </div>
 
                                                         <div class="col-sm-12 col-md-3">
                                                             <div class="input-group mb-3">
                                                                 <label class="input-group-text dates" for="inputGroupSelect01">Mes inicio</label>
                                                                 <select name="mesini" formControlName="mesini" class="form-select" id="inputGroupSelect01">
-                              <option selected>Mes</option>
-                              <option *ngFor="let mes of meses">{{mes}}</option>
-                             
-                            </select>
+                                                                 <option selected>Mes</option>
+                                                                 <option *ngFor="let mes of meses">{{mes}}</option>
+                                                                </select>
                                                             </div>
+
+                                                            <div class="text-danger px-1" *ngIf="formE.get('mesini')?.hasError('required') && formE.get('mesini')?.touched ">
+                                                                <p>Este campo es obligatorio</p>
+                                                            </div>
+
                                                         </div>
 
                                                         <div class="col-sm-12 col-md-3">
                                                             <div class="input-group mb-3">
                                                                 <label class="input-group-text dates" for="inputGroupSelect01">Año fin</label>
                                                                 <select name="yearfin" formControlName="yearfin" class="form-select" id="inputGroupSelect01">
-                              <option selected>Año</option>
-                              <option *ngFor="let year of years">{{year}}</option>
-                            </select>
+                                                                 <option selected>Año</option>
+                                                                 <option *ngFor="let year of years">{{year}}</option>
+                                                                </select>
                                                             </div>
+
+                                                            <div class="text-danger px-1" *ngIf="formE.get('yearfin')?.hasError('required') && formE.get('yearfin')?.touched ">
+                                                                <p>Este campo es obligatorio</p>
+                                                            </div>
+
                                                         </div>
 
                                                         <div class="col-sm-12 col-md-3">
                                                             <div class="input-group mb-3">
                                                                 <label class="input-group-text dates" for="inputGroupSelect01">Mes fin</label>
                                                                 <select name="mesfin" formControlName="mesfin" class="form-select" id="inputGroupSelect01">
-                              <option selected>Mes</option>
-                              <option *ngFor="let mes of meses" >{{mes}}</option>
-                             
-                            </select>
+                                                                <option selected>Mes</option>
+                                                                <option *ngFor="let mes of meses" >{{mes}}</option>
+                                                                </select>
                                                             </div>
+
+                                                            <div class="text-danger px-1" *ngIf="formE.get('mesfin')?.hasError('required') && formE.get('mesfin')?.touched ">
+                                                                <p>Este campo es obligatorio</p>
+                                                            </div>
+
                                                         </div>
 
                                                     </div>
@@ -419,7 +446,6 @@
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                                     <button [disabled]="formE.invalid" type="submit" class="btn btn-primary">Guardar Cambios</button>
-
                                                 </div>
                                             </form>
 
@@ -541,7 +567,7 @@
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
 
-                                            <form [formGroup]="formF" (ngSubmit)="enviarF()">
+                                            <form [formGroup]="formF" (ngSubmit)="enviarF(formF.value)">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="exampleModalLabel">Modal Formación {{listaFormacion.institucion}}</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

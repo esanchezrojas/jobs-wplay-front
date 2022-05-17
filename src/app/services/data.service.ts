@@ -15,7 +15,7 @@ export class DataService {
   getListado() {
 
 
-    return this.http.get(`http://localhost:3000/api/list/`);
+    return this.http.get(`http://localhost:3000/api/publicVacantes/`);
   }
  
 

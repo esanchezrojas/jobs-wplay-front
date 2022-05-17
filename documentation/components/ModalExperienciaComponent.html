@@ -172,13 +172,13 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#cerrar" >cerrar</a>
+                            </li>
+                            <li>
                                 <a href="#createForm" >createForm</a>
                             </li>
                             <li>
                                 <a href="#enviar" >enviar</a>
-                            </li>
-                            <li>
-                                <a href="#limpiar" >limpiar</a>
                             </li>
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
@@ -265,6 +265,43 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cerrar"></a>
+                    <span class="name">
+                        <span ><b>cerrar</b></span>
+                        <a href="#cerrar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cerrar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/components/modals/modal-experiencia/modal-experiencia.component.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -366,43 +403,6 @@
                     </div>
                     <div class="io-description">
                         
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="limpiar"></a>
-                    <span class="name">
-                        <span ><b>limpiar</b></span>
-                        <a href="#limpiar"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>limpiar()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="71"
-                            class="link-to-prism">src/app/components/modals/modal-experiencia/modal-experiencia.component.ts:71</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
                     </div>
                 </td>
             </tr>
@@ -718,8 +718,7 @@ export class ModalExperienciaComponent implements OnInit {
   }
 
   
-
-  limpiar() {
+  cerrar() {
     this.form.reset();
   }
 
@@ -728,7 +727,7 @@ export class ModalExperienciaComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;!-- Modal --&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;!-- Modal Formulario Experiencia --&gt;
 &lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;modalExperiencia&quot; tabindex&#x3D;&quot;-1&quot; aria-labelledby&#x3D;&quot;exampleModalLabel&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
     &lt;div class&#x3D;&quot;modal-dialog modal-lg&quot;&gt;
         &lt;div class&#x3D;&quot;modal-content&quot;&gt;
@@ -747,6 +746,7 @@ export class ModalExperienciaComponent implements OnInit {
                             &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
                                 &lt;span class&#x3D;&quot;input-group-text&quot; id&#x3D;&quot;basic-addon1&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-building&quot;&gt;&lt;/i&gt;&lt;/span&gt;
                                 &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;empresa&quot; formControlName&#x3D;&quot;empresa&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Empresa&quot; aria-label&#x3D;&quot;Empresa&quot; aria-describedby&#x3D;&quot;basic-addon1&quot;&gt;
+
                                 &lt;div class&#x3D;&quot;text-danger px-1&quot; *ngIf&#x3D;&quot;form.get(&#x27;empresa&#x27;)?.hasError(&#x27;required&#x27;) &amp;&amp; form.get(&#x27;empresa&#x27;)?.touched &quot;&gt;
                                     &lt;p&gt;Este campo es &lt;strong&gt;obligatorio&lt;/strong&gt;&lt;/p&gt;
                                 &lt;/div&gt;
@@ -797,6 +797,10 @@ export class ModalExperienciaComponent implements OnInit {
                                 &lt;div class&#x3D;&quot;form-floating&quot;&gt;
                                     &lt;textarea name&#x3D;&quot;funciones&quot; formControlName&#x3D;&quot;funciones&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Leave a comment here&quot; id&#x3D;&quot;floatingTextarea2&quot; style&#x3D;&quot;height: 100px&quot;&gt;&lt;/textarea&gt;
                                     &lt;label for&#x3D;&quot;floatingTextarea2&quot;&gt;Describe el cargo y funciones&lt;/label&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class&#x3D;&quot;text-danger px-1&quot; *ngIf&#x3D;&quot;form.get(&#x27;funciones&#x27;)?.hasError(&#x27;required&#x27;) &amp;&amp; form.get(&#x27;empresa&#x27;)?.touched &quot;&gt;
+                                    &lt;p&gt;Este campo es &lt;strong&gt;obligatorio&lt;/strong&gt;&lt;/p&gt;
                                 &lt;/div&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
@@ -870,7 +874,7 @@ export class ModalExperienciaComponent implements OnInit {
 
                 &lt;/div&gt;
                 &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
-                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;limpiar()&quot;&gt;Limpiar&lt;/button&gt;
+                    &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;cerrar()&quot; class&#x3D;&quot;btn btn-secondary&quot; data-bs-dismiss&#x3D;&quot;modal&quot;&gt;Cerrar&lt;/button&gt;
                     &lt;button [disabled]&#x3D;&quot;form.invalid&quot; type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Guardar Cambios&lt;/button&gt;
 
                 &lt;/div&gt;
@@ -878,7 +882,10 @@ export class ModalExperienciaComponent implements OnInit {
 
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+
+
+&lt;!--End Modal Formulario Experiencia --&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -920,7 +927,7 @@ export class ModalExperienciaComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Modal --><div class="modal fade" id="modalExperiencia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">    <div class="modal-dialog modal-lg">        <div class="modal-content">            <form id="registerForm" name="registerForm" [formGroup]="form" (ngSubmit)="enviar(form.value)">                <div class="modal-header">                    <h5 class="modal-title" id="exampleModalLabel">Modal Experiencia</h5>                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>                </div>                <div class="modal-body">                    <!--File 1-->                    <div class="row g-2">                        <div class="col-sm-12 col-md-4">                            <div class="input-group mb-3">                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-building"></i></span>                                <input type="text" name="empresa" formControlName="empresa" class="form-control" placeholder="Empresa" aria-label="Empresa" aria-describedby="basic-addon1">                                <div class="text-danger px-1" *ngIf="form.get(\'empresa\')?.hasError(\'required\') && form.get(\'empresa\')?.touched ">                                    <p>Este campo es <strong>obligatorio</strong></p>                                </div>                            </div>                        </div>                        <div class="col-sm-12 col-md-4">                            <div class="input-group mb-3">                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-network-wired"></i></span>                                <input type="text" name="cargo" formControlName="cargo" class="form-control" placeholder="Cargo" aria-label="Cargo" aria-describedby="basic-addon1">                                <div class="text-danger px-1" *ngIf="form.get(\'cargo\')?.hasError(\'required\') && form.get(\'cargo\')?.touched ">                                    <p>Este campo es <strong>obligatorio</strong></p>                                </div>                            </div>                        </div>                        <div class="col-sm-12 col-md-4">                            <div class="input-group mb-3">                                <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-location-dot"></i></label>                                <select name="ciudad" formControlName="ciudad" class="form-select" id="inputGroupSelect01">                              <option selected>Ciudad</option>                              <option  *ngFor="let ciudad of ciudades">{{ciudad}}</option>                            </select>                            </div>                        </div>                    </div>                    <!--End File 1-->                    <!--File 2-->                    <div class="row g-2">                        <div class="col-sm-12 col-md-12">                            <div class="mb-3">                                <div class="form-floating">                                    <textarea name="funciones" formControlName="funciones" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>                                    <label for="floatingTextarea2">Describe el cargo y funciones</label>                                </div>                            </div>                        </div>                    </div>                    <!--End File 2-->                    <!--File 3-->                    <div class="row g-2">                        <div class="col-sm-12 col-md-3">                            <div class="input-group mb-3">                                <label class="input-group-text dates" for="inputGroupSelect01">Año inicio</label>                                <select name="yearini" formControlName="yearini" class="form-select" id="inputGroupSelect01">                              <option selected>Año</option>                              <option *ngFor="let year of years" >{{year}}</option>                            </select>                            </div>                        </div>                        <div class="col-sm-12 col-md-3">                            <div class="input-group mb-3">                                <label class="input-group-text dates" for="inputGroupSelect01">Mes inicio</label>                                <select name="mesini" formControlName="mesini" class="form-select" id="inputGroupSelect01">                              <option selected>Mes</option>                              <option *ngFor="let mes of meses">{{mes}}</option>                                                         </select>                            </div>                        </div>                        <div class="col-sm-12 col-md-3">                            <div class="input-group mb-3">                                <label class="input-group-text dates" for="inputGroupSelect01">Año fin</label>                                <select name="yearfin" formControlName="yearfin" class="form-select" id="inputGroupSelect01">                              <option selected>Año</option>                              <option *ngFor="let year of years">{{year}}</option>                            </select>                            </div>                        </div>                        <div class="col-sm-12 col-md-3">                            <div class="input-group mb-3">                                <label class="input-group-text dates" for="inputGroupSelect01">Mes fin</label>                                <select name="mesfin" formControlName="mesfin" class="form-select" id="inputGroupSelect01">                              <option selected>Mes</option>                              <option *ngFor="let mes of meses" >{{mes}}</option>                                                         </select>                            </div>                        </div>                    </div>                    <!--End File 3-->                    <!--File 4-->                    <div class="row g-2">                        <div class="col-sm-12 col-md-12">                            <div class="mb-3 form-check">                                <input type="checkbox" class="form-check-input" id="exampleCheck1">                                <label class="form-check-label" for="exampleCheck1">Actualmente</label>                            </div>                        </div>                    </div>                    <!--End File 4-->                </div>                <div class="modal-footer">                    <button type="button" class="btn btn-secondary" (click)="limpiar()">Limpiar</button>                    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Guardar Cambios</button>                </div>            </form>        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- Modal Formulario Experiencia --><div class="modal fade" id="modalExperiencia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">    <div class="modal-dialog modal-lg">        <div class="modal-content">            <form id="registerForm" name="registerForm" [formGroup]="form" (ngSubmit)="enviar(form.value)">                <div class="modal-header">                    <h5 class="modal-title" id="exampleModalLabel">Modal Experiencia</h5>                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>                </div>                <div class="modal-body">                    <!--File 1-->                    <div class="row g-2">                        <div class="col-sm-12 col-md-4">                            <div class="input-group mb-3">                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-building"></i></span>                                <input type="text" name="empresa" formControlName="empresa" class="form-control" placeholder="Empresa" aria-label="Empresa" aria-describedby="basic-addon1">                                <div class="text-danger px-1" *ngIf="form.get(\'empresa\')?.hasError(\'required\') && form.get(\'empresa\')?.touched ">                                    <p>Este campo es <strong>obligatorio</strong></p>                                </div>                            </div>                        </div>                        <div class="col-sm-12 col-md-4">                            <div class="input-group mb-3">                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-network-wired"></i></span>                                <input type="text" name="cargo" formControlName="cargo" class="form-control" placeholder="Cargo" aria-label="Cargo" aria-describedby="basic-addon1">                                <div class="text-danger px-1" *ngIf="form.get(\'cargo\')?.hasError(\'required\') && form.get(\'cargo\')?.touched ">                                    <p>Este campo es <strong>obligatorio</strong></p>                                </div>                            </div>                        </div>                        <div class="col-sm-12 col-md-4">                            <div class="input-group mb-3">                                <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-location-dot"></i></label>                                <select name="ciudad" formControlName="ciudad" class="form-select" id="inputGroupSelect01">                              <option selected>Ciudad</option>                              <option  *ngFor="let ciudad of ciudades">{{ciudad}}</option>                            </select>                            </div>                        </div>                    </div>                    <!--End File 1-->                    <!--File 2-->                    <div class="row g-2">                        <div class="col-sm-12 col-md-12">                            <div class="mb-3">                                <div class="form-floating">                                    <textarea name="funciones" formControlName="funciones" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>                                    <label for="floatingTextarea2">Describe el cargo y funciones</label>                                </div>                                <div class="text-danger px-1" *ngIf="form.get(\'funciones\')?.hasError(\'required\') && form.get(\'empresa\')?.touched ">                                    <p>Este campo es <strong>obligatorio</strong></p>                                </div>                            </div>                        </div>                    </div>                    <!--End File 2-->                    <!--File 3-->                    <div class="row g-2">                        <div class="col-sm-12 col-md-3">                            <div class="input-group mb-3">                                <label class="input-group-text dates" for="inputGroupSelect01">Año inicio</label>                                <select name="yearini" formControlName="yearini" class="form-select" id="inputGroupSelect01">                              <option selected>Año</option>                              <option *ngFor="let year of years" >{{year}}</option>                            </select>                            </div>                        </div>                        <div class="col-sm-12 col-md-3">                            <div class="input-group mb-3">                                <label class="input-group-text dates" for="inputGroupSelect01">Mes inicio</label>                                <select name="mesini" formControlName="mesini" class="form-select" id="inputGroupSelect01">                              <option selected>Mes</option>                              <option *ngFor="let mes of meses">{{mes}}</option>                                                         </select>                            </div>                        </div>                        <div class="col-sm-12 col-md-3">                            <div class="input-group mb-3">                                <label class="input-group-text dates" for="inputGroupSelect01">Año fin</label>                                <select name="yearfin" formControlName="yearfin" class="form-select" id="inputGroupSelect01">                              <option selected>Año</option>                              <option *ngFor="let year of years">{{year}}</option>                            </select>                            </div>                        </div>                        <div class="col-sm-12 col-md-3">                            <div class="input-group mb-3">                                <label class="input-group-text dates" for="inputGroupSelect01">Mes fin</label>                                <select name="mesfin" formControlName="mesfin" class="form-select" id="inputGroupSelect01">                              <option selected>Mes</option>                              <option *ngFor="let mes of meses" >{{mes}}</option>                                                         </select>                            </div>                        </div>                    </div>                    <!--End File 3-->                    <!--File 4-->                    <div class="row g-2">                        <div class="col-sm-12 col-md-12">                            <div class="mb-3 form-check">                                <input type="checkbox" class="form-check-input" id="exampleCheck1">                                <label class="form-check-label" for="exampleCheck1">Actualmente</label>                            </div>                        </div>                    </div>                    <!--End File 4-->                </div>                <div class="modal-footer">                    <button type="button" (click)="cerrar()" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>                    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Guardar Cambios</button>                </div>            </form>        </div>    </div></div><!--End Modal Formulario Experiencia --></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ApplyFormComponent', 'selector': 'app-apply-form'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ItemDetailComponent', 'selector': 'app-item-detail'},{'name': 'ModalExperienciaComponent', 'selector': 'app-modal-experiencia'},{'name': 'ModalFormacionComponent', 'selector': 'app-modal-formacion'},{'name': 'VacantesListComponent', 'selector': 'app-vacantes-list'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ModalExperienciaComponent'};

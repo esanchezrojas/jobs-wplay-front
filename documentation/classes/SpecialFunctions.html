@@ -28,7 +28,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content injectable">
+               <div class="content class">
                    <div class="content-data">
 
 
@@ -38,9 +38,13 @@
 
 
 
+
+
+
+
 <ol class="breadcrumb">
-  <li>Injectables</li>
-  <li >DataModalsService</li>
+  <li>Classes</li>
+  <li >SpecialFunctions</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -58,7 +62,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/services/data-modals.service.ts</code>
+            <code>src/app/config/special-functions.ts</code>
         </p>
 
 
@@ -67,23 +71,112 @@
 
 
             <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+                        <h6><b>Methods</b></h6>
                     </td>
                 </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/services/data-modals.service.ts:11</a></div>
-                            </td>
-                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#formatoFecha" >formatoFecha</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
-            </tbody>
-        </table>
+
+
+
+
+        </tbody>
+    </table>
 </section>
+
+
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formatoFecha"></a>
+                    <span class="name">
+                        <span ><b>formatoFecha</b></span>
+                        <a href="#formatoFecha"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>formatoFecha(fecha: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="3"
+                            class="link-to-prism">src/app/config/special-functions.ts:3</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fecha</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
 
 
 
@@ -91,28 +184,21 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, Output, EventEmitter } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export class SpecialFunctions {
 
-@Injectable({
-  providedIn: &#x27;root&#x27;
-})
-export class DataModalsService {
+formatoFecha(fecha:any){
+   
+    const offset &#x3D; fecha.getTimezoneOffset()
+    fecha &#x3D; new Date(fecha.getTime() - (offset*60*1000))
+    return fecha.toISOString().split(&#x27;T&#x27;)[0]
 
-  @Output() disparadorExperiencia: EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
-  @Output() disparadorFormacion: EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
-  @Output() disparadorFormacion2: EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
-  @Output() disparadorFormacion3: EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
-
-  constructor() { }
 }
-</code></pre>
+
+
+
+}</code></pre>
     </div>
-
 </div>
-
-
-
-
 
 
 
@@ -147,8 +233,8 @@ export class DataModalsService {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'DataModalsService.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'SpecialFunctions.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

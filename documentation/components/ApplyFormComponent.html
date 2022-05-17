@@ -134,21 +134,30 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#cargo" >cargo</a>
+                                <a href="#array" >array</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#ciudades" >ciudades</a>
                             </li>
                             <li>
-                                <a href="#data" >data</a>
-                            </li>
-                            <li>
                                     <span class="modifier">Public</span>
                                 <a href="#estados" >estados</a>
                             </li>
                             <li>
-                                <a href="#form" >form</a>
+                                <a href="#formato" >formato</a>
+                            </li>
+                            <li>
+                                <a href="#formE" >formE</a>
+                            </li>
+                            <li>
+                                <a href="#formF" >formF</a>
+                            </li>
+                            <li>
+                                <a href="#indiceE" >indiceE</a>
+                            </li>
+                            <li>
+                                <a href="#indiceF" >indiceF</a>
                             </li>
                             <li>
                                 <a href="#listaExperiencia" >listaExperiencia</a>
@@ -169,7 +178,13 @@
                                 <a href="#response" >response</a>
                             </li>
                             <li>
-                                <a href="#vacantes" >vacantes</a>
+                                <a href="#swe" >swe</a>
+                            </li>
+                            <li>
+                                <a href="#swf" >swf</a>
+                            </li>
+                            <li>
+                                <a href="#uuid" >uuid</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -188,25 +203,43 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#agregarExperiencia" >agregarExperiencia</a>
+                            </li>
+                            <li>
+                                <a href="#agregarFormacion" >agregarFormacion</a>
+                            </li>
+                            <li>
                                 <a href="#cargarData" >cargarData</a>
                             </li>
                             <li>
-                                <a href="#createForm" >createForm</a>
+                                <a href="#crearFormE" >crearFormE</a>
                             </li>
                             <li>
-                                <a href="#editar" >editar</a>
+                                <a href="#crearFormF" >crearFormF</a>
                             </li>
                             <li>
-                                <a href="#eliminar" >eliminar</a>
+                                <a href="#editarExperiencia" >editarExperiencia</a>
                             </li>
                             <li>
-                                <a href="#enviar" >enviar</a>
+                                <a href="#editarFormacion" >editarFormacion</a>
+                            </li>
+                            <li>
+                                <a href="#eliminarExperiencia" >eliminarExperiencia</a>
+                            </li>
+                            <li>
+                                <a href="#eliminarFormacion" >eliminarFormacion</a>
+                            </li>
+                            <li>
+                                <a href="#enviarE" >enviarE</a>
+                            </li>
+                            <li>
+                                <a href="#enviarF" >enviarF</a>
                             </li>
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                             <li>
-                                <a href="#registro" >registro</a>
+                                <a href="#registrarExperiencia" >registrarExperiencia</a>
                             </li>
                         </ul>
                     </td>
@@ -226,12 +259,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(serviceModal: <a href="../injectables/DataModalsService.html" target="_self">DataModalsService</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>)</code>
+<code>constructor(dataService: <a href="../injectables/DataService.html" target="_self">DataService</a>, serviceModal: <a href="../injectables/DataModalsService.html" target="_self">DataModalsService</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, registroE: <a href="../injectables/RegistroVacanteService.html" target="_self">RegistroVacanteService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="203" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:203</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:52</a></div>
                             </td>
                         </tr>
 
@@ -248,6 +281,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                                <tr>
+                                                        <td>dataService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DataService.html" target="_self" >DataService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                                 <tr>
                                                         <td>serviceModal</td>
                                                   
@@ -296,6 +341,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>registroE</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RegistroVacanteService.html" target="_self" >RegistroVacanteService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -318,6 +375,84 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="agregarExperiencia"></a>
+                    <span class="name">
+                        <span ><b>agregarExperiencia</b></span>
+                        <a href="#agregarExperiencia"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>agregarExperiencia()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="294"
+                            class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:294</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Inicia la propiedad global sw en false para para indicar que se va a ingresar un registro nuevo</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="agregarFormacion"></a>
+                    <span class="name">
+                        <span ><b>agregarFormacion</b></span>
+                        <a href="#agregarFormacion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>agregarFormacion()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="303"
+                            class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:303</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Inicia la propiedad global sw en false para para indicar que se va a ingresar un registro nuevo</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="cargarData"></a>
                     <span class="name">
                         <span ><b>cargarData</b></span>
@@ -327,21 +462,23 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>cargarData(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>cargarData(ide: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="258"
-                            class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:258</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:87</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Carga el id de la oferta mediante route</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -352,11 +489,12 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>id</td>
+                                    <td>ide</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                     </td>
@@ -366,6 +504,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Es el valor del id de la oferta</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -387,30 +529,32 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="createForm"></a>
+                    <a name="crearFormE"></a>
                     <span class="name">
-                        <span ><b>createForm</b></span>
-                        <a href="#createForm"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>crearFormE</b></span>
+                        <a href="#crearFormE"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>createForm()</code>
+<code>crearFormE()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="268"
-                            class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:268</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="105"
+                            class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:105</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Se crea form group para realizar validaciones de formulario experiencia</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -424,30 +568,407 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="editar"></a>
+                    <a name="crearFormF"></a>
                     <span class="name">
-                        <span ><b>editar</b></span>
-                        <a href="#editar"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>crearFormF</b></span>
+                        <a href="#crearFormF"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>editar(indice: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+<code>crearFormF()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="319"
-                            class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:319</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="123"
+                            class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:123</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Se crea form group para realizar validaciones de formulario formación</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editarExperiencia"></a>
+                    <span class="name">
+                        <span ><b>editarExperiencia</b></span>
+                        <a href="#editarExperiencia"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>editarExperiencia(item: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, indice: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="315"
+                            class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:315</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Agrega el registro seleccionado al arreglo para ser editado</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>item</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Es el registro seleccionado desde el html</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>indice</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Es la posicion en el arreglo</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editarFormacion"></a>
+                    <span class="name">
+                        <span ><b>editarFormacion</b></span>
+                        <a href="#editarFormacion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>editarFormacion(item: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, indice: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="329"
+                            class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:329</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Agrega el registro seleccionado al arreglo para ser editado</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>item</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Es el registro seleccionado desde el html</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>indice</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Es la posicion en el arreglo</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminarExperiencia"></a>
+                    <span class="name">
+                        <span ><b>eliminarExperiencia</b></span>
+                        <a href="#eliminarExperiencia"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eliminarExperiencia(indice: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="240"
+                            class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:240</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Elimina un registro de la tabla obteniendo una posición</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>indice</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Es la pocicion en el arreglo que se envia para eliminar en la tabla</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminarFormacion"></a>
+                    <span class="name">
+                        <span ><b>eliminarFormacion</b></span>
+                        <a href="#eliminarFormacion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eliminarFormacion(indice: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="267"
+                            class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:267</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Elimina un registro de la tabla obteniendo una posición</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>indice</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Es la pocicion en el arreglo que se envia para eliminar en la tabla</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enviarE"></a>
+                    <span class="name">
+                        <span ><b>enviarE</b></span>
+                        <a href="#enviarE"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>enviarE(datos: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="135"
+                            class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:135</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Valida que swe sea verdadero para agregar un nuevo registro</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -462,7 +983,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>indice</td>
+                                    <td>datos</td>
                                     <td>
                                                 <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
                                     </td>
@@ -493,30 +1014,32 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="eliminar"></a>
+                    <a name="enviarF"></a>
                     <span class="name">
-                        <span ><b>eliminar</b></span>
-                        <a href="#eliminar"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>enviarF</b></span>
+                        <a href="#enviarF"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>eliminar(indice: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+<code>enviarF(datos: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="339"
-                            class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:339</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="188"
+                            class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:188</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Valida que swf sea verdadero para agregar un nuevo registro</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -531,76 +1054,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>indice</td>
-                                    <td>
-                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="enviar"></a>
-                    <span class="name">
-                        <span ><b>enviar</b></span>
-                        <a href="#enviar"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>enviar(form: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="290"
-                            class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:290</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>form</td>
+                                    <td>datos</td>
                                     <td>
                                                 <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
                                     </td>
@@ -647,8 +1101,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="215"
-                            class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:215</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="67"
+                            class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:67</a></div>
                 </td>
             </tr>
 
@@ -668,24 +1122,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="registro"></a>
+                    <a name="registrarExperiencia"></a>
                     <span class="name">
-                        <span ><b>registro</b></span>
-                        <a href="#registro"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>registrarExperiencia</b></span>
+                        <a href="#registrarExperiencia"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>registro()</code>
+<code>registrarExperiencia(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="363"
-                            class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:363</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="147"
+                            class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:147</a></div>
                 </td>
             </tr>
 
@@ -694,8 +1148,40 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -711,10 +1197,10 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="cargo"></a>
+                    <a name="array"></a>
                     <span class="name">
-                        <span ><b>cargo</b></span>
-                        <a href="#cargo"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>array</b></span>
+                        <a href="#array"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -726,12 +1212,12 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                        <i>Default value : </i><code>{}</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="201" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:201</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:42</a></div>
                         </td>
                     </tr>
 
@@ -757,38 +1243,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="197" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:197</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="data"></a>
-                    <span class="name">
-                        <span ><b>data</b></span>
-                        <a href="#data"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>{}</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="200" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:200</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:34</a></div>
                         </td>
                     </tr>
 
@@ -814,7 +1269,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="196" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:196</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:33</a></div>
                         </td>
                     </tr>
 
@@ -825,10 +1280,41 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="form"></a>
+                    <a name="formato"></a>
                     <span class="name">
-                        <span ><b>form</b></span>
-                        <a href="#form"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>formato</b></span>
+                        <a href="#formato"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/SpecialFunctions.html" target="_self" >SpecialFunctions</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new SpecialFunctions()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formE"></a>
+                    <span class="name">
+                        <span ><b>formE</b></span>
+                        <a href="#formE"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -845,7 +1331,100 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="199" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:199</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formF"></a>
+                    <span class="name">
+                        <span ><b>formF</b></span>
+                        <a href="#formF"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormGroup({})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="indiceE"></a>
+                    <span class="name">
+                        <span ><b>indiceE</b></span>
+                        <a href="#indiceE"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="indiceF"></a>
+                    <span class="name">
+                        <span ><b>indiceF</b></span>
+                        <a href="#indiceF"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:46</a></div>
                         </td>
                     </tr>
 
@@ -876,7 +1455,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="202" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:202</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:40</a></div>
                         </td>
                     </tr>
 
@@ -907,7 +1486,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="203" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:203</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:41</a></div>
                         </td>
                     </tr>
 
@@ -933,10 +1512,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="193" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:193</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:30</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Variables del formulario experiencia</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -959,7 +1544,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="195" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:195</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:32</a></div>
                         </td>
                     </tr>
 
@@ -986,7 +1571,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="190" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:190</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:25</a></div>
                         </td>
                     </tr>
 
@@ -997,194 +1582,84 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="vacantes"></a>
+                    <a name="swe"></a>
                     <span class="name">
-                        <span ><b>vacantes</b></span>
-                        <a href="#vacantes"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>swe</b></span>
+                        <a href="#swe"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>    <code>[]</code>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>[
-    {
-      id: 0,
-      area: &quot;Operativa&quot;,
-      nombreVacante: &quot;Agente de soporte&quot;,
-      descripcion: &quot;Encargado de brindar el soporte en el chat online a los jugadores de la plataforma&quot;,
-      ciudad: &quot;Medellín&quot;,
-      imagen: &quot;https://drive.google.com/uc?id&#x3D;10rOP6RR1l0feMS0G6UyQDixE1pEa7MLS&quot;,
-      proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-      responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;,&quot;Manejo de herramientas web&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;,
-      beneficios:[&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;,&quot;Manejo de herramientas web&quot;]
-  },
-  {
-      id: 1,
-      area: &quot;Marketing Digital&quot;,
-      nombreVacante: &quot;Community Manager&quot;,
-      descripcion: &quot;Encargado de administrar el CEO del sitio web y las estadisticas de Google Analytics &quot;,
-      ciudad: &quot;Medellín&quot;,
-      imagen: &quot;https://img.freepik.com/foto-gratis/empresario-analizando-informe-financiero-empresa-graficos-realidad-aumentada_34141-360.jpg?w&#x3D;740&quot;,
-      proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-      responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;,
-      beneficios:[&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;,&quot;Manejo de herramientas web&quot;]
-  },
-  {
-      id: 2,
-      area: &quot;Tecnología&quot;,
-      nombreVacante: &quot;Desarrollador web&quot;,
-      descripcion: &quot;Encargado de desarrollar las aplicaciones de la intranet corporativa en PHP&quot;,
-      ciudad: &quot;Medellín&quot;,
-      imagen: &quot;https://drive.google.com/uc?id&#x3D;1m8WFw86NQYipYOCparyMvnR4Kk3MQMIF&quot;,
-      proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-      responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;,
-      beneficios:[&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;,&quot;Manejo de herramientas web&quot;]
-  },
-  {
-      id: 3,
-      area: &quot;Contabilidad&quot;,
-      nombreVacante: &quot;Practicante de contabilidad&quot;,
-      descripcion: &quot;Encargado de asistir en los registros contables PUC y los libros de mayor&quot;,
-      ciudad: &quot;Bogotá&quot;,
-      imagen: &quot;https://img.freepik.com/foto-gratis/contador-calculando-ganancias-graficas-analisis-financiero_74855-4937.jpg?t&#x3D;st&#x3D;1650654964~exp&#x3D;1650655564~hmac&#x3D;27a76086c94b56d8670d94667fbadedcd7dd8a0209c302610594c7dcf9d1ae69&amp;w&#x3D;740&quot;,
-      proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-      responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;,
-      beneficios:[&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;,&quot;Manejo de herramientas web&quot;]
-  },
-  {
-    id: 4,
-    area: &quot;Operativa&quot;,
-    nombreVacante: &quot;Agente de soporte&quot;,
-    descripcion: &quot;Encargado de brindar el soporte en el chat online a los jugadores de la plataforma&quot;,
-    ciudad: &quot;Medellín&quot;,
-    imagen: &quot;https://img.freepik.com/foto-gratis/empleados-estan-sonriendo-trabajando-computadoras_85574-2756.jpg?w&#x3D;740&quot;,
-    proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-    responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;,
-      beneficios:[&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;,&quot;Manejo de herramientas web&quot;]
-},
-{
-    id: 5,
-    area: &quot;Marketing Digital&quot;,
-    nombreVacante: &quot;Community Manager&quot;,
-    descripcion: &quot;Encargado de administrar el CEO del sitio web y las estadisticas de Google Analytics &quot;,
-    ciudad: &quot;Medellín&quot;,
-    imagen: &quot;https://img.freepik.com/foto-gratis/empresario-analizando-informe-financiero-empresa-graficos-realidad-aumentada_34141-360.jpg?w&#x3D;740&quot;,
-    proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-    responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;,
-      beneficios:[&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;,&quot;Manejo de herramientas web&quot;]
-},
-{
-    id: 6,
-    area: &quot;Tecnología&quot;,
-    nombreVacante: &quot;Desarrollador web&quot;,
-    descripcion: &quot;Encargado de desarrollar las aplicaciones de la intranet corporativa en PHP&quot;,
-    ciudad: &quot;Medellín&quot;,
-    imagen: &quot;https://img.freepik.com/foto-gratis/ingeniero-ti-analizando-codigo_1098-21513.jpg?w&#x3D;740&quot;,
-    proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-    responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;,
-      beneficios:[&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;,&quot;Manejo de herramientas web&quot;]
-},
-{
-    id: 7,
-    area: &quot;Contabilidad&quot;,
-    nombreVacante: &quot;Practicante de contabilidad&quot;,
-    descripcion: &quot;Encargado de asistir en los registros contables PUC y los libros de mayor&quot;,
-    ciudad: &quot;Bogotá&quot;,
-    imagen: &quot;https://img.freepik.com/foto-gratis/contador-calculando-ganancias-graficas-analisis-financiero_74855-4937.jpg?t&#x3D;st&#x3D;1650654964~exp&#x3D;1650655564~hmac&#x3D;27a76086c94b56d8670d94667fbadedcd7dd8a0209c302610594c7dcf9d1ae69&amp;w&#x3D;740&quot;,
-    proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-    responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;,
-      beneficios:[&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;,&quot;Manejo de herramientas web&quot;]
-},
-{
-  id: 8,
-  area: &quot;Operativa&quot;,
-  nombreVacante: &quot;Agente de soporte&quot;,
-  descripcion: &quot;Encargado de brindar el soporte en el chat online a los jugadores de la plataforma&quot;,
-  ciudad: &quot;Medellín&quot;,
-  imagen: &quot;https://img.freepik.com/foto-gratis/empleados-estan-sonriendo-trabajando-computadoras_85574-2756.jpg?w&#x3D;740&quot;,
-  proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-  responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;,
-      beneficios:[&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;,&quot;Manejo de herramientas web&quot;]
-},
-{
-  id: 9,
-  area: &quot;Marketing Digital&quot;,
-  nombreVacante: &quot;Community Manager&quot;,
-  descripcion: &quot;Encargado de administrar el CEO del sitio web y las estadisticas de Google Analytics &quot;,
-  ciudad: &quot;Medellín&quot;,
-  imagen: &quot;https://img.freepik.com/foto-gratis/empresario-analizando-informe-financiero-empresa-graficos-realidad-aumentada_34141-360.jpg?w&#x3D;740&quot;,
-  proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-  responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;
-},
-{
-  id: 10,
-  area: &quot;Tecnología&quot;,
-  nombreVacante: &quot;Desarrollador web&quot;,
-  descripcion: &quot;Encargado de desarrollar las aplicaciones de la intranet corporativa en PHP&quot;,
-  ciudad: &quot;Medellín&quot;,
-  imagen: &quot;https://img.freepik.com/foto-gratis/ingeniero-ti-analizando-codigo_1098-21513.jpg?w&#x3D;740&quot;,
-  proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-  responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;
-},
-{
-  id: 11,
-  area: &quot;Contabilidad&quot;,
-  nombreVacante: &quot;Practicante de contabilidad&quot;,
-  descripcion: &quot;Encargado de asistir en los registros contables PUC y los libros de mayor&quot;,
-  ciudad: &quot;Bogotá&quot;,
-  imagen: &quot;https://img.freepik.com/foto-gratis/contador-calculando-ganancias-graficas-analisis-financiero_74855-4937.jpg?t&#x3D;st&#x3D;1650654964~exp&#x3D;1650655564~hmac&#x3D;27a76086c94b56d8670d94667fbadedcd7dd8a0209c302610594c7dcf9d1ae69&amp;w&#x3D;740&quot;,
-  proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-  responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;
-}
-
-  ]</code>
+                        <i>Default value : </i><code>false</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="swf"></a>
+                    <span class="name">
+                        <span ><b>swf</b></span>
+                        <a href="#swf"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="uuid"></a>
+                    <span class="name">
+                        <span ><b>uuid</b></span>
+                        <a href="#uuid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:36</a></div>
                         </td>
                     </tr>
 
@@ -1210,7 +1685,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="194" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:194</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/components/apply-form/apply-form.component.ts:31</a></div>
                         </td>
                     </tr>
 
@@ -1223,13 +1698,17 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { SpecialFunctions } from &#x27;./../../config/special-functions&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
 import { GeneralData } from &#x27;src/app/config/general-data&#x27;;
-import { FormBuilder,FormGroup,Validators } from &#x27;@angular/forms&#x27;;
-import {RegistroExperiencia} from &#x27;../../models/form-experiencia.model&#x27;
+import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
 import { DataModalsService } from &#x27;src/app/services/data-modals.service&#x27;;
 import Swal from &#x27;sweetalert2&#x27;;
+import { DataService } from &#x27;src/app/services/data.service&#x27;;
+import { RegistroExperiencia } from &#x27;src/app/models/form-experiencia.model&#x27;;
+import {RegistroVacanteService} from &#x27;src/app/services/registro-vacante.service&#x27;;
+import { v4 as uuidv4 } from &#x27;uuid&#x27;;
 
 
 
@@ -1242,355 +1721,318 @@ import Swal from &#x27;sweetalert2&#x27;;
 
 export class ApplyFormComponent implements OnInit {
 
-  vacantes &#x3D; [
-    {
-      id: 0,
-      area: &quot;Operativa&quot;,
-      nombreVacante: &quot;Agente de soporte&quot;,
-      descripcion: &quot;Encargado de brindar el soporte en el chat online a los jugadores de la plataforma&quot;,
-      ciudad: &quot;Medellín&quot;,
-      imagen: &quot;https://drive.google.com/uc?id&#x3D;10rOP6RR1l0feMS0G6UyQDixE1pEa7MLS&quot;,
-      proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-      responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;,&quot;Manejo de herramientas web&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;,
-      beneficios:[&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;,&quot;Manejo de herramientas web&quot;]
-  },
-  {
-      id: 1,
-      area: &quot;Marketing Digital&quot;,
-      nombreVacante: &quot;Community Manager&quot;,
-      descripcion: &quot;Encargado de administrar el CEO del sitio web y las estadisticas de Google Analytics &quot;,
-      ciudad: &quot;Medellín&quot;,
-      imagen: &quot;https://img.freepik.com/foto-gratis/empresario-analizando-informe-financiero-empresa-graficos-realidad-aumentada_34141-360.jpg?w&#x3D;740&quot;,
-      proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-      responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;,
-      beneficios:[&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;,&quot;Manejo de herramientas web&quot;]
-  },
-  {
-      id: 2,
-      area: &quot;Tecnología&quot;,
-      nombreVacante: &quot;Desarrollador web&quot;,
-      descripcion: &quot;Encargado de desarrollar las aplicaciones de la intranet corporativa en PHP&quot;,
-      ciudad: &quot;Medellín&quot;,
-      imagen: &quot;https://drive.google.com/uc?id&#x3D;1m8WFw86NQYipYOCparyMvnR4Kk3MQMIF&quot;,
-      proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-      responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;,
-      beneficios:[&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;,&quot;Manejo de herramientas web&quot;]
-  },
-  {
-      id: 3,
-      area: &quot;Contabilidad&quot;,
-      nombreVacante: &quot;Practicante de contabilidad&quot;,
-      descripcion: &quot;Encargado de asistir en los registros contables PUC y los libros de mayor&quot;,
-      ciudad: &quot;Bogotá&quot;,
-      imagen: &quot;https://img.freepik.com/foto-gratis/contador-calculando-ganancias-graficas-analisis-financiero_74855-4937.jpg?t&#x3D;st&#x3D;1650654964~exp&#x3D;1650655564~hmac&#x3D;27a76086c94b56d8670d94667fbadedcd7dd8a0209c302610594c7dcf9d1ae69&amp;w&#x3D;740&quot;,
-      proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-      responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;,
-      beneficios:[&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;,&quot;Manejo de herramientas web&quot;]
-  },
-  {
-    id: 4,
-    area: &quot;Operativa&quot;,
-    nombreVacante: &quot;Agente de soporte&quot;,
-    descripcion: &quot;Encargado de brindar el soporte en el chat online a los jugadores de la plataforma&quot;,
-    ciudad: &quot;Medellín&quot;,
-    imagen: &quot;https://img.freepik.com/foto-gratis/empleados-estan-sonriendo-trabajando-computadoras_85574-2756.jpg?w&#x3D;740&quot;,
-    proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-    responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;,
-      beneficios:[&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;,&quot;Manejo de herramientas web&quot;]
-},
-{
-    id: 5,
-    area: &quot;Marketing Digital&quot;,
-    nombreVacante: &quot;Community Manager&quot;,
-    descripcion: &quot;Encargado de administrar el CEO del sitio web y las estadisticas de Google Analytics &quot;,
-    ciudad: &quot;Medellín&quot;,
-    imagen: &quot;https://img.freepik.com/foto-gratis/empresario-analizando-informe-financiero-empresa-graficos-realidad-aumentada_34141-360.jpg?w&#x3D;740&quot;,
-    proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-    responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;,
-      beneficios:[&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;,&quot;Manejo de herramientas web&quot;]
-},
-{
-    id: 6,
-    area: &quot;Tecnología&quot;,
-    nombreVacante: &quot;Desarrollador web&quot;,
-    descripcion: &quot;Encargado de desarrollar las aplicaciones de la intranet corporativa en PHP&quot;,
-    ciudad: &quot;Medellín&quot;,
-    imagen: &quot;https://img.freepik.com/foto-gratis/ingeniero-ti-analizando-codigo_1098-21513.jpg?w&#x3D;740&quot;,
-    proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-    responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;,
-      beneficios:[&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;,&quot;Manejo de herramientas web&quot;]
-},
-{
-    id: 7,
-    area: &quot;Contabilidad&quot;,
-    nombreVacante: &quot;Practicante de contabilidad&quot;,
-    descripcion: &quot;Encargado de asistir en los registros contables PUC y los libros de mayor&quot;,
-    ciudad: &quot;Bogotá&quot;,
-    imagen: &quot;https://img.freepik.com/foto-gratis/contador-calculando-ganancias-graficas-analisis-financiero_74855-4937.jpg?t&#x3D;st&#x3D;1650654964~exp&#x3D;1650655564~hmac&#x3D;27a76086c94b56d8670d94667fbadedcd7dd8a0209c302610594c7dcf9d1ae69&amp;w&#x3D;740&quot;,
-    proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-    responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;,
-      beneficios:[&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;,&quot;Manejo de herramientas web&quot;]
-},
-{
-  id: 8,
-  area: &quot;Operativa&quot;,
-  nombreVacante: &quot;Agente de soporte&quot;,
-  descripcion: &quot;Encargado de brindar el soporte en el chat online a los jugadores de la plataforma&quot;,
-  ciudad: &quot;Medellín&quot;,
-  imagen: &quot;https://img.freepik.com/foto-gratis/empleados-estan-sonriendo-trabajando-computadoras_85574-2756.jpg?w&#x3D;740&quot;,
-  proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-  responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;,
-      beneficios:[&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;,&quot;Manejo de herramientas web&quot;]
-},
-{
-  id: 9,
-  area: &quot;Marketing Digital&quot;,
-  nombreVacante: &quot;Community Manager&quot;,
-  descripcion: &quot;Encargado de administrar el CEO del sitio web y las estadisticas de Google Analytics &quot;,
-  ciudad: &quot;Medellín&quot;,
-  imagen: &quot;https://img.freepik.com/foto-gratis/empresario-analizando-informe-financiero-empresa-graficos-realidad-aumentada_34141-360.jpg?w&#x3D;740&quot;,
-  proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-  responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;
-},
-{
-  id: 10,
-  area: &quot;Tecnología&quot;,
-  nombreVacante: &quot;Desarrollador web&quot;,
-  descripcion: &quot;Encargado de desarrollar las aplicaciones de la intranet corporativa en PHP&quot;,
-  ciudad: &quot;Medellín&quot;,
-  imagen: &quot;https://img.freepik.com/foto-gratis/ingeniero-ti-analizando-codigo_1098-21513.jpg?w&#x3D;740&quot;,
-  proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-  responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;
-},
-{
-  id: 11,
-  area: &quot;Contabilidad&quot;,
-  nombreVacante: &quot;Practicante de contabilidad&quot;,
-  descripcion: &quot;Encargado de asistir en los registros contables PUC y los libros de mayor&quot;,
-  ciudad: &quot;Bogotá&quot;,
-  imagen: &quot;https://img.freepik.com/foto-gratis/contador-calculando-ganancias-graficas-analisis-financiero_74855-4937.jpg?t&#x3D;st&#x3D;1650654964~exp&#x3D;1650655564~hmac&#x3D;27a76086c94b56d8670d94667fbadedcd7dd8a0209c302610594c7dcf9d1ae69&amp;w&#x3D;740&quot;,
-  proposito: &quot;Proteger la estabilidad económica de la comunidad&quot;,
-  responsabilidades: [&quot;Causación gestión y análisis de documentos&quot;,&quot;Elaboración de notas internas Elaboracion de informes&quot;],
-      conocimientos: &quot;Estudiante de últimos semestres de contaduría pública. Nivel intermedio de excel Conocimiento basico normatividad fiscal y contable&quot;,
-      horario: &quot;Lunes a Viernes 8am - 5pm&quot;,
-      tipo_de_contrato: &quot;Indefinido&quot;
-}
+  /** */
+  public response: any;
 
-  ];
-  
-
-  public response:any;
-
-
+  /**
+   * Variables del formulario experiencia
+   */
   public meses &#x3D; GeneralData.MESES;
   public years &#x3D; GeneralData.YEARS;
   public niveles &#x3D; GeneralData.NIVELES_ACADEMICOS;
   public estados &#x3D; GeneralData.ESTADOS_FORMACION;
   public ciudades &#x3D; GeneralData.CIUDADES;
 
-  form: FormGroup &#x3D; new FormGroup({});
-  data:any &#x3D; {};
-  cargo:any&#x3D;&#x27;&#x27;;
-  listaExperiencia:any&#x3D;[];
-  listaFormacion:any&#x3D;[];
+  uuid :any;
+
+
+
+  listaExperiencia: any &#x3D; [];
+  listaFormacion: any &#x3D; [];
+  array: any &#x3D; {};
+  swe:boolean &#x3D; false;
+  swf:boolean &#x3D; false;
+  indiceE: any &#x3D; &quot;&quot;;
+  indiceF: any &#x3D; &quot;&quot;;
+
+
+  formE: FormGroup &#x3D; new FormGroup({});//formulario experiencia
+  formF: FormGroup &#x3D; new FormGroup({});//formulario formacion
+
+  formato:SpecialFunctions &#x3D; new SpecialFunctions();
+
 
   constructor(
-    
+
+  
+    private dataService: DataService,
     private serviceModal: DataModalsService,
     private route: ActivatedRoute,
     private router: Router,
     private fb: FormBuilder,
-   // private registerService: RegisterUserService
-    
-    ) { }
+    private registroE: RegistroVacanteService
+
+  ) { }
 
   ngOnInit(): void {
 
-    
+    let fecha &#x3D; this.formato.formatoFecha(new Date())
+    console.log(fecha)
 
-    this.serviceModal.disparadorExperiencia
-    .subscribe(data &#x3D;&gt;{
-     this.listaExperiencia.push(data.data);
-    //  console.log(&#x27;Reciviendo data: &#x27;,this.listaExperiencia);
-        } );
-
-
-    this.serviceModal.disparadorFormacion
-    .subscribe(data &#x3D;&gt;{
-      this.listaFormacion.push(data.data);
-    //  console.log(&#x27;Reciviendo data: &#x27;,this.listaFormacion);
-        } );
-        
-
-    /*
-
-    this.route.paramMap.subscribe( (paramMap:any) &#x3D;&gt;{
-      const {params} &#x3D; paramMap
-      console.log(params.variable)
-      this.cargarData(params.variable)
-      let registro &#x3D; new RegistroExperiencia();
-      this.cargo &#x3D; registro.cargo
-      console.log(&#x27;este es el cargo&#x27;+ this.cargo)
-    });
-*/
-
-    this.createForm();
-
-    this.route.paramMap.subscribe( (paramMap:any) &#x3D;&gt;{
-      const {params} &#x3D; paramMap
-      console.log(params)
+    this.route.paramMap.subscribe((paramMap: any) &#x3D;&gt; {
+      const { params } &#x3D; paramMap
       console.log(params.var)
-     
       this.cargarData(params.var)
-    })
+    });
+
+    this.crearFormE();
+    this.crearFormF();
+  }
+
+
+  /**
+  * Carga el id de la oferta mediante route
+  * @param ide Es el valor del id de la oferta
+  */
+  cargarData(ide: number) {
+
+    this.dataService.getListado()
+      .subscribe((response: any) &#x3D;&gt; {
+
+        for (let i &#x3D; 0; i &lt; response.length; i++) {
+          if (response[i].id &#x3D;&#x3D; ide) {
+            this.response &#x3D; response[i];
+            console.log(response)
+          }
+        }
+
+      });
+  }
+
+  /**
+    * Se crea form group para realizar validaciones de formulario experiencia
+    */
+  crearFormE() {
+    this.formE &#x3D; this.fb.group({
+      empresa: [&quot;&quot;, [Validators.required]],
+      cargo: [&quot;&quot;, [Validators.required]],
+      ciudad: [&quot;&quot;, [Validators.required]],
+      funciones: [&quot;&quot;, [Validators.required]],
+      yearini: [&quot;&quot;, [Validators.required]],
+      mesini: [&quot;&quot;, [Validators.required]],
+      yearfin: [&quot;&quot;, [Validators.required]],
+      mesfin: [&quot;&quot;, [Validators.required]]
+
+
+    });
+  }
+
+  /**
+     * Se crea form group para realizar validaciones de formulario formación
+     */
+  crearFormF() {
+    this.formF &#x3D; this.fb.group({
+      institucion: [&quot;&quot;, [Validators.required]],
+      programa: [&quot;&quot;, [Validators.required]],
+      nivel: [&quot;&quot;, [Validators.required]],
+      estado: [&quot;&quot;, [Validators.required]]
+    });
+  }
+
+  /**
+    * Valida que swe sea verdadero para agregar un nuevo registro
+    */
+  enviarE(datos:any) {
+
+    if (this.swe &#x3D;&#x3D; false) {
+      this.listaExperiencia.push(this.formE.value);
+ } else {
+      this.listaExperiencia[this.indiceE] &#x3D; this.formE.value;
+    }
+
+    this.formE.reset();
+    this.registrarExperiencia(datos);
+  }
+
+  registrarExperiencia(data:any){
+
+    this.uuid &#x3D; uuidv4();
+    console.log(&#x27;este es el uuid&#x27;, this.uuid);
+
+    
+
+    
+    console.log(new Date())
+
+    let modelE &#x3D; new RegistroExperiencia();
+
+
+    modelE.setvacantehv_id(this.uuid);
+    modelE.setcargo(data.cargo);
+    modelE.setempresa(data.empresa);
+    modelE.setdescripcion(data.funciones);
+    
+    
+
+    
+    
+    this.registroE.registroE(modelE).subscribe({
+      next: (data:any) &#x3D;&gt; {
+        alert(&#x27;se ejecuto correctamente&#x27;)
+        console.log(JSON.stringify(data.message)+ &#x27; mensaje back&#x27;)
+        alert(JSON.stringify(data));
+      },
+      error:(error:any) &#x3D;&gt;{
+        //alert(error+GeneralData.ERROR_GENERAL_MESSAGE);
+      }
+    });
 
 
   }
 
-  cargarData(id:number){
 
-    //this.response &#x3D; this.list.vacantes[id];
-   
-    this.response &#x3D; this.vacantes[id];
+
+  /**
+   * Valida que swf sea verdadero para agregar un nuevo registro
+   */
+  enviarF(datos:any) {
+    if (this.swf &#x3D;&#x3D; false) {
+
+      this.listaFormacion.push(this.formF.value);
+
+    } else {
+
+      this.listaFormacion[this.indiceF] &#x3D; this.formF.value;
+    }
+
+    this.formF.reset();
 
     
 
   }
 
-  createForm(){
-    
+
+  
+
+  /*
+  createFormDatosPersonales() {
+
     this.form &#x3D; this.fb.group({
 
-     
-      nombre: [&quot;&quot;,[Validators.required]],
-      apellido: [&quot;&quot;,[Validators.required]],
-      celular: [&quot;&quot;,[Validators.required]],
-      cumpleanos:[&quot;&quot;,[Validators.required]],
-      cedula: [&quot;&quot;,[Validators.required]],
-      email: [&quot;&quot;,[Validators.required]],
-      ciudad: [&quot;&quot;,[Validators.required]],
-      redsocial: [&quot;&quot;,[Validators.required]],
-      hv:[&quot;&quot;,[Validators.required]],
-      pf: [&quot;&quot;,[Validators.required]],
-      lpf: [&quot;&quot;,[Validators.required]]
-     
+
+      nombre: [&quot;&quot;, [Validators.required]],
+      apellido: [&quot;&quot;, [Validators.required]],
+      celular: [&quot;&quot;, [Validators.required]],
+      cumpleanos: [&quot;&quot;, [Validators.required]],
+      cedula: [&quot;&quot;, [Validators.required]],
+      email: [&quot;&quot;, [Validators.required]],
+      ciudad: [&quot;&quot;, [Validators.required]],
+      redsocial: [&quot;&quot;, [Validators.required]],
+      hv: [&quot;&quot;, [Validators.required]],
+      pf: [&quot;&quot;, [Validators.required]],
+      lpf: [&quot;&quot;, [Validators.required]]
+
 
     });
-    
+
   }
 
-  enviar(form:any){
 
-    this.data &#x3D; form;
-    this.data.formacion &#x3D; this.listaFormacion;
-    this.data.experiencia &#x3D; this.listaExperiencia;
+  /**
+   * Elimina el registro seleccionado en la tabla experiencia
+   * @param indice Es la pocicion del array que se va a eliminar
+   */
 
-    console.log(this.data); //en this.profileForm.value tenemos el valor del form para poder manipularlo a nuestro gusto. Si queremos acceder a, por ejemplo, un control especifico, podemos hacerlo con this.profileForm.controls[&#x27;nombreControl&#x27;]
-    if(this.form.invalid){
-      /*
-      Swal.fire({
-        title:&#x27;Faltan campos por llenar&#x27;,
-        icon: &#x27;warning&#x27;,
-        showCloseButton: true
-       });
-*/
-     
+  /**
+   * Elimina un registro de la tabla obteniendo una posición
+   * @param indice Es la pocicion en el arreglo que se envia para eliminar en la tabla
+   */
+  eliminarExperiencia(indice: any) {
 
-    }else{
-     
+    Swal.fire({
+      title: &#x27;Desea Eliminar este registro?&#x27;,
+      text: &quot;No se podra revertir!&quot;,
+      icon: &#x27;warning&#x27;,
+      showCancelButton: true,
+      confirmButtonColor: &#x27;#3085d6&#x27;,
+      cancelButtonColor: &#x27;#d33&#x27;,
+      confirmButtonText: &#x27;Sí, eliminar!&#x27;,
+      cancelButtonText: &#x27;Cancelar&#x27;
+    }).then((result) &#x3D;&gt; {
+      if (result.isConfirmed) {
+        Swal.fire(
+          &#x27;Eliminado!&#x27;,
+          &#x27;Este registro se ha eliminado.&#x27;,
+          &#x27;success&#x27;
+        )
+        this.listaExperiencia.splice(indice, 1);
+      }
+    });
+  }
 
-      this.router.navigate([&#x27;/&#x27;]);
-    }
+  /**
+    * Elimina un registro de la tabla obteniendo una posición
+    * @param indice Es la pocicion en el arreglo que se envia para eliminar en la tabla
+    */
+  eliminarFormacion(indice: any) {
 
-    
+    Swal.fire({
+      title: &#x27;Desea Eliminar este registro?&#x27;,
+      text: &quot;No se podra revertir!&quot;,
+      icon: &#x27;warning&#x27;,
+      showCancelButton: true,
+      confirmButtonColor: &#x27;#3085d6&#x27;,
+      cancelButtonColor: &#x27;#d33&#x27;,
+      confirmButtonText: &#x27;Sí, eliminar!&#x27;,
+      cancelButtonText: &#x27;Cancelar&#x27;
+    }).then((result) &#x3D;&gt; {
+      if (result.isConfirmed) {
+        Swal.fire(
+          &#x27;Eliminado!&#x27;,
+          &#x27;Este registro se ha eliminado.&#x27;,
+          &#x27;success&#x27;
+        )
+        this.listaFormacion.splice(indice, 1);
+      }
+    });
 
-   
-}
+  }
 
+  /**
+   * Inicia la propiedad global sw en false para para indicar que se va a ingresar un registro nuevo
+   */
+  agregarExperiencia() {
 
-editar(indice:any){
-  
-  //for (let i &#x3D; 0; i &lt; this.data.length; i++) {}
+    this.swe &#x3D; false;
 
-  this.listaFormacion[indice];
-  let array:any &#x3D; [];
-  array.push(this.listaFormacion[indice])
-  array.push(indice)
- 
+  }
 
-//console.log(this.listaFormacion[indice])
-this.serviceModal.disparadorFormacion2.emit({data:this.listaFormacion[indice]})
+  /**
+   * Inicia la propiedad global sw en false para para indicar que se va a ingresar un registro nuevo
+   */
+  agregarFormacion() {
 
-  console.log();
-  
-}
+    this.swf &#x3D; false;
 
-
-
-
-eliminar(indice:any){
-  Swal.fire({
-    title: &#x27;Desea Eliminar este registro?&#x27;,
-    text: &quot;No se podra revertir!&quot;,
-    icon: &#x27;warning&#x27;,
-    showCancelButton: true,
-    confirmButtonColor: &#x27;#3085d6&#x27;,
-    cancelButtonColor: &#x27;#d33&#x27;,
-    confirmButtonText: &#x27;Sí, eliminar!&#x27;,
-    cancelButtonText: &#x27;Cancelar&#x27;
-  }).then((result) &#x3D;&gt; {
-    if (result.isConfirmed) {
-      Swal.fire(
-        &#x27;Eliminado!&#x27;,
-        &#x27;Este registro se ha eliminado.&#x27;,
-        &#x27;success&#x27;
-      )
-      this.listaFormacion.splice(indice, 1);
-    }
-  })
-
-  //this.listaFormacion.splice(indice, 1);
-}
-
-registro(){
-
-}
+  }
 
 
+  /**
+    * Agrega el registro seleccionado al arreglo para ser editado
+    * @param item Es el registro seleccionado desde el html
+    * @param indice Es la posicion en el arreglo
+    */
+  editarExperiencia(item: any, indice: any) {
 
+    this.swe &#x3D; true;
+    this.formE.setValue(item);
+    this.indiceE &#x3D; indice;
+
+  }
+
+
+  /**
+   * Agrega el registro seleccionado al arreglo para ser editado
+   * @param item Es el registro seleccionado desde el html
+   * @param indice Es la posicion en el arreglo
+   */
+  editarFormacion(item: any, indice: any) {
+
+    this.swf &#x3D; true;
+    this.formF.setValue(item);
+    this.indiceF &#x3D; indice;
+
+  }
 
 }</code></pre>
     </div>
@@ -1607,7 +2049,7 @@ registro(){
 
 &lt;div class&#x3D;&quot;container mt-5&quot;&gt;
 
-    &lt;form id&#x3D;&quot;registerForm&quot; name&#x3D;&quot;registerForm&quot; [formGroup]&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;enviar(form.value)&quot;&gt;
+    &lt;form id&#x3D;&quot;registerForm&quot; name&#x3D;&quot;registerForm&quot;&gt;
         &lt;!--End Sesion 1--&gt;
         &lt;div class&#x3D;&quot;row &quot;&gt;
 
@@ -1653,8 +2095,8 @@ registro(){
                                     &lt;div class&#x3D;&quot;col-sm-12 col-md-12&quot;&gt;
                                         &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
                                             &lt;span class&#x3D;&quot;input-group-text nr &quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-user-tie &quot;&gt;&lt;/i&gt;&lt;/span&gt;
-                                            &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Nombres&quot; formControlName&#x3D;&quot;nombre&quot; name&#x3D;&quot;nombre&quot; aria-label&#x3D;&quot;First name&quot; class&#x3D;&quot;form-control&quot;&gt;
-                                            &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Apellidos&quot; formControlName&#x3D;&quot;apellido&quot; name&#x3D;&quot;apellido&quot; aria-label&#x3D;&quot;Last name&quot; class&#x3D;&quot;form-control&quot;&gt;
+                                            &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Nombres&quot; name&#x3D;&quot;nombre&quot; aria-label&#x3D;&quot;First name&quot; class&#x3D;&quot;form-control&quot;&gt;
+                                            &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Apellidos&quot; name&#x3D;&quot;apellido&quot; aria-label&#x3D;&quot;Last name&quot; class&#x3D;&quot;form-control&quot;&gt;
                                         &lt;/div&gt;
                                     &lt;/div&gt;
 
@@ -1668,14 +2110,14 @@ registro(){
                                     &lt;div class&#x3D;&quot;col-sm-12 col-md-6&quot;&gt;
                                         &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
                                             &lt;span class&#x3D;&quot;input-group-text&quot; id&#x3D;&quot;basic-addon1&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-mobile-screen&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-                                            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Celular&quot; formControlName&#x3D;&quot;celular&quot; aria-label&#x3D;&quot;Celular&quot; name&#x3D;&quot;celular&quot; aria-describedby&#x3D;&quot;basic-addon1&quot;&gt;
+                                            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Celular&quot; aria-label&#x3D;&quot;Celular&quot; name&#x3D;&quot;celular&quot; aria-describedby&#x3D;&quot;basic-addon1&quot;&gt;
                                         &lt;/div&gt;
                                     &lt;/div&gt;
 
                                     &lt;div class&#x3D;&quot;col-sm-12 col-md-6&quot;&gt;
                                         &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
                                             &lt;span class&#x3D;&quot;input-group-text&quot; id&#x3D;&quot;basic-addon1&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-cake-candles&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-                                            &lt;input type&#x3D;&quot;date&quot; name&#x3D;&quot;cumpleanos&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;cumpleanos&quot; placeholder&#x3D;&quot;Fecha de cumpleaños&quot; aria-label&#x3D;&quot;Apellidos&quot; aria-describedby&#x3D;&quot;basic-addon1&quot;&gt;
+                                            &lt;input type&#x3D;&quot;date&quot; name&#x3D;&quot;cumpleanos&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Fecha de cumpleaños&quot; aria-label&#x3D;&quot;Apellidos&quot; aria-describedby&#x3D;&quot;basic-addon1&quot;&gt;
                                         &lt;/div&gt;
                                     &lt;/div&gt;
 
@@ -1689,14 +2131,14 @@ registro(){
                                     &lt;div class&#x3D;&quot;col-sm-12 col-md-6&quot;&gt;
                                         &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
                                             &lt;span class&#x3D;&quot;input-group-text&quot; id&#x3D;&quot;basic-addon1&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-id-card&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-                                            &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;cedula&quot; formControlName&#x3D;&quot;cedula&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Cédula&quot; aria-label&#x3D;&quot;Username&quot; aria-describedby&#x3D;&quot;basic-addon1&quot;&gt;
+                                            &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;cedula&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Cédula&quot; aria-label&#x3D;&quot;Username&quot; aria-describedby&#x3D;&quot;basic-addon1&quot;&gt;
                                         &lt;/div&gt;
                                     &lt;/div&gt;
 
                                     &lt;div class&#x3D;&quot;col-sm-12 col-md-6&quot;&gt;
                                         &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
                                             &lt;span class&#x3D;&quot;input-group-text&quot; id&#x3D;&quot;basic-addon1&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-envelope&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-                                            &lt;input type&#x3D;&quot;email&quot; formControlName&#x3D;&quot;email&quot; name&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Correo Electronico&quot; aria-label&#x3D;&quot;Username&quot; aria-describedby&#x3D;&quot;basic-addon1&quot;&gt;
+                                            &lt;input type&#x3D;&quot;email&quot; name&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Correo Electronico&quot; aria-label&#x3D;&quot;Username&quot; aria-describedby&#x3D;&quot;basic-addon1&quot;&gt;
                                         &lt;/div&gt;
                                     &lt;/div&gt;
 
@@ -1710,14 +2152,14 @@ registro(){
                                     &lt;div class&#x3D;&quot;col-sm-12 col-md-6&quot;&gt;
                                         &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
                                             &lt;span class&#x3D;&quot;input-group-text&quot; id&#x3D;&quot;basic-addon1&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-location-dot&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-                                            &lt;input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;ciudad&quot; name&#x3D;&quot;ciudad&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Ciudad&quot; aria-label&#x3D;&quot;Username&quot; aria-describedby&#x3D;&quot;basic-addon1&quot;&gt;
+                                            &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;ciudad&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Ciudad&quot; aria-label&#x3D;&quot;Username&quot; aria-describedby&#x3D;&quot;basic-addon1&quot;&gt;
                                         &lt;/div&gt;
                                     &lt;/div&gt;
 
                                     &lt;div class&#x3D;&quot;col-sm-12 col-md-6&quot;&gt;
                                         &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
                                             &lt;span class&#x3D;&quot;input-group-text&quot; id&#x3D;&quot;basic-addon1&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-thumbs-up&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-                                            &lt;input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;redsocial&quot; name&#x3D;&quot;redsocial&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Red social favorita&quot; aria-label&#x3D;&quot;Red Social&quot; aria-describedby&#x3D;&quot;basic-addon1&quot;&gt;
+                                            &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;redsocial&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Red social favorita&quot; aria-label&#x3D;&quot;Red Social&quot; aria-describedby&#x3D;&quot;basic-addon1&quot;&gt;
                                         &lt;/div&gt;
                                     &lt;/div&gt;
 
@@ -1779,7 +2221,7 @@ registro(){
                                     &lt;div class&#x3D;&quot;col-sm-12 col-md-12&quot;&gt;
                                         &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
                                             &lt;label for&#x3D;&quot;formFileMultiple&quot; class&#x3D;&quot;input-group fw-bold text-muted&quot;&gt;Adjunte su hoja de vida&lt;/label&gt;
-                                            &lt;input formControlName&#x3D;&quot;hv&quot; name&#x3D;&quot;hv&quot; type&#x3D;&quot;file&quot; class&#x3D;&quot;form-control fw-bold text-muted&quot; placeholder&#x3D;&quot;Recipient&#x27;s username&quot; aria-label&#x3D;&quot;Recipient&#x27;s username&quot; aria-describedby&#x3D;&quot;basic-addon2&quot;&gt;
+                                            &lt;input name&#x3D;&quot;hv&quot; type&#x3D;&quot;file&quot; class&#x3D;&quot;form-control fw-bold text-muted&quot; placeholder&#x3D;&quot;Recipient&#x27;s username&quot; aria-label&#x3D;&quot;Recipient&#x27;s username&quot; aria-describedby&#x3D;&quot;basic-addon2&quot;&gt;
                                             &lt;span class&#x3D;&quot;input-group-text&quot; id&#x3D;&quot;basic-addon2&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-paperclip&quot;&gt;&lt;/i&gt;&lt;/span&gt;
                                         &lt;/div&gt;
                                     &lt;/div&gt;
@@ -1796,7 +2238,7 @@ registro(){
                                     &lt;div class&#x3D;&quot;col-sm-12 col-md-12&quot;&gt;
                                         &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
                                             &lt;label for&#x3D;&quot;formFileMultiple&quot; class&#x3D;&quot;input-group fw-bold text-muted&quot;&gt;Adjunte su portafolio (Opcional)&lt;/label&gt;
-                                            &lt;input type&#x3D;&quot;file&quot; formControlName&#x3D;&quot;pf&quot; name&#x3D;&quot;pf&quot; class&#x3D;&quot;form-control fw-bold text-muted&quot; placeholder&#x3D;&quot;Recipient&#x27;s username&quot; aria-label&#x3D;&quot;Recipient&#x27;s username&quot; aria-describedby&#x3D;&quot;basic-addon2&quot;&gt;
+                                            &lt;input type&#x3D;&quot;file&quot; name&#x3D;&quot;pf&quot; class&#x3D;&quot;form-control fw-bold text-muted&quot; placeholder&#x3D;&quot;Recipient&#x27;s username&quot; aria-label&#x3D;&quot;Recipient&#x27;s username&quot; aria-describedby&#x3D;&quot;basic-addon2&quot;&gt;
                                             &lt;span class&#x3D;&quot;input-group-text&quot; id&#x3D;&quot;basic-addon2&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-paperclip&quot;&gt;&lt;/i&gt;&lt;/span&gt;
                                         &lt;/div&gt;
                                     &lt;/div&gt;
@@ -1810,7 +2252,7 @@ registro(){
                                     &lt;div class&#x3D;&quot;col-sm-12 col-md-12&quot;&gt;
                                         &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
                                             &lt;span class&#x3D;&quot;input-group-text&quot; id&#x3D;&quot;basic-addon1&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-briefcase&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-                                            &lt;input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;lpf&quot; name&#x3D;&quot;lpf&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Link portafolio o alguno de tus mejores trabajos (Opcional)&quot; aria-label&#x3D;&quot;Username&quot; aria-describedby&#x3D;&quot;basic-addon1&quot;&gt;
+                                            &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;lpf&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Link portafolio o alguno de tus mejores trabajos (Opcional)&quot; aria-label&#x3D;&quot;Username&quot; aria-describedby&#x3D;&quot;basic-addon1&quot;&gt;
                                         &lt;/div&gt;
                                     &lt;/div&gt;
 
@@ -1872,7 +2314,187 @@ registro(){
                             &lt;div class&#x3D;&quot;accordion-body&quot;&gt;
 
 
-                                &lt;app-modal-experiencia&gt;&lt;/app-modal-experiencia&gt;
+
+
+                                &lt;!-- Modal Formulario Experiencia --&gt;
+                                &lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;modalExperiencia&quot; tabindex&#x3D;&quot;-1&quot; aria-labelledby&#x3D;&quot;exampleModalLabel&quot; aria-hidden&#x3D;&quot;true&quot; data-bs-backdrop&#x3D;&quot;static&quot; data-bs-keyboard&#x3D;&quot;false&quot;&gt;
+                                    &lt;div class&#x3D;&quot;modal-dialog modal-lg&quot;&gt;
+                                        &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+                                            &lt;form [formGroup]&#x3D;&quot;formE&quot; (ngSubmit)&#x3D;&quot;enviarE(formE.value)&quot;&gt;
+                                                &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                                                    &lt;h5 class&#x3D;&quot;modal-title&quot; id&#x3D;&quot;exampleModalLabel&quot;&gt;Modal Experiencia&lt;/h5&gt;
+                                                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn-close&quot; data-bs-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;&gt;&lt;/button&gt;
+                                                &lt;/div&gt;
+                                                &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+
+
+                                                    &lt;!--File 1--&gt;
+                                                    &lt;div class&#x3D;&quot;row g-2&quot;&gt;
+
+                                                        &lt;div class&#x3D;&quot;col-sm-12 col-md-4&quot;&gt;
+                                                            &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+                                                                &lt;span class&#x3D;&quot;input-group-text&quot; id&#x3D;&quot;basic-addon1&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-building&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                                                                &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;empresa&quot; formControlName&#x3D;&quot;empresa&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Empresa&quot; aria-label&#x3D;&quot;Empresa&quot; aria-describedby&#x3D;&quot;basic-addon1&quot;&gt;
+                                                            &lt;/div&gt;
+
+                                                            &lt;div class&#x3D;&quot;text-danger px-1&quot; *ngIf&#x3D;&quot;formE.get(&#x27;empresa&#x27;)?.hasError(&#x27;required&#x27;) &amp;&amp; formE.get(&#x27;empresa&#x27;)?.touched &quot;&gt;
+                                                                &lt;p&gt;Este campo es obligatorio&lt;/p&gt;
+                                                            &lt;/div&gt;
+
+                                                        &lt;/div&gt;
+
+                                                        &lt;div class&#x3D;&quot;col-sm-12 col-md-4&quot;&gt;
+                                                            &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+                                                                &lt;span class&#x3D;&quot;input-group-text&quot; id&#x3D;&quot;basic-addon1&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-network-wired&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                                                                &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;cargo&quot; formControlName&#x3D;&quot;cargo&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Cargo&quot; aria-label&#x3D;&quot;Cargo&quot; aria-describedby&#x3D;&quot;basic-addon1&quot;&gt;
+                                                            &lt;/div&gt;
+
+                                                            &lt;div class&#x3D;&quot;text-danger px-1&quot; *ngIf&#x3D;&quot;formE.get(&#x27;cargo&#x27;)?.hasError(&#x27;required&#x27;) &amp;&amp; formE.get(&#x27;cargo&#x27;)?.touched &quot;&gt;
+                                                                &lt;p&gt;Este campo es obligatorio&lt;/p&gt;
+                                                            &lt;/div&gt;
+
+                                                        &lt;/div&gt;
+
+                                                        &lt;div class&#x3D;&quot;col-sm-12 col-md-4&quot;&gt;
+
+
+                                                            &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+                                                                &lt;label class&#x3D;&quot;input-group-text dates&quot; for&#x3D;&quot;inputGroupSelect01&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-location-dot&quot;&gt;&lt;/i&gt;&lt;/label&gt;
+                                                                &lt;select name&#x3D;&quot;ciudad&quot; formControlName&#x3D;&quot;ciudad&quot; class&#x3D;&quot;form-select&quot; id&#x3D;&quot;inputGroupSelect01&quot;&gt;
+                                                                  &lt;option selected&gt;Ciudad&lt;/option&gt;
+                                                                  &lt;option  *ngFor&#x3D;&quot;let ciudad of ciudades&quot;&gt;{{ciudad}}&lt;/option&gt;
+                                                                 &lt;/select&gt;
+                                                            &lt;/div&gt;
+
+                                                            &lt;div class&#x3D;&quot;text-danger px-1&quot; *ngIf&#x3D;&quot;formE.get(&#x27;ciudad&#x27;)?.hasError(&#x27;required&#x27;) &amp;&amp; formE.get(&#x27;ciudad&#x27;)?.touched &quot;&gt;
+                                                                &lt;p&gt;Este campo es obligatorio&lt;/p&gt;
+                                                            &lt;/div&gt;
+
+                                                        &lt;/div&gt;
+
+                                                    &lt;/div&gt;
+                                                    &lt;!--End File 1--&gt;
+
+
+
+
+                                                    &lt;!--File 2--&gt;
+                                                    &lt;div class&#x3D;&quot;row g-2&quot;&gt;
+
+
+
+                                                        &lt;div class&#x3D;&quot;col-sm-12 col-md-12&quot;&gt;
+                                                            &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+                                                                &lt;div class&#x3D;&quot;form-floating&quot;&gt;
+                                                                    &lt;textarea name&#x3D;&quot;funciones&quot; formControlName&#x3D;&quot;funciones&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Leave a comment here&quot; id&#x3D;&quot;floatingTextarea2&quot; style&#x3D;&quot;height: 100px&quot;&gt;&lt;/textarea&gt;
+                                                                    &lt;label for&#x3D;&quot;floatingTextarea2&quot;&gt;Describe el cargo y funciones&lt;/label&gt;
+                                                                &lt;/div&gt;
+                                                            &lt;/div&gt;
+
+                                                            &lt;div class&#x3D;&quot;text-danger px-1&quot; *ngIf&#x3D;&quot;formE.get(&#x27;funciones&#x27;)?.hasError(&#x27;required&#x27;) &amp;&amp; formE.get(&#x27;funciones&#x27;)?.touched &quot;&gt;
+                                                                &lt;p&gt;Este campo es obligatorio&lt;/p&gt;
+                                                            &lt;/div&gt;
+
+                                                        &lt;/div&gt;
+
+
+                                                    &lt;/div&gt;
+                                                    &lt;!--End File 2--&gt;
+
+                                                    &lt;!--File 3--&gt;
+                                                    &lt;div class&#x3D;&quot;row g-2&quot;&gt;
+
+
+
+                                                        &lt;div class&#x3D;&quot;col-sm-12 col-md-3&quot;&gt;
+                                                            &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+                                                                &lt;label class&#x3D;&quot;input-group-text dates&quot; for&#x3D;&quot;inputGroupSelect01&quot;&gt;Año inicio&lt;/label&gt;
+                                                                &lt;select name&#x3D;&quot;yearini&quot; formControlName&#x3D;&quot;yearini&quot; class&#x3D;&quot;form-select&quot; id&#x3D;&quot;inputGroupSelect01&quot;&gt;
+                                                                 &lt;option selected&gt;Año&lt;/option&gt;
+                                                                 &lt;option *ngFor&#x3D;&quot;let year of years&quot; &gt;{{year}}&lt;/option&gt;
+                                                                 &lt;/select&gt;
+                                                            &lt;/div&gt;
+
+                                                            &lt;div class&#x3D;&quot;text-danger px-1&quot; *ngIf&#x3D;&quot;formE.get(&#x27;yearini&#x27;)?.hasError(&#x27;required&#x27;) &amp;&amp; formE.get(&#x27;yearini&#x27;)?.touched &quot;&gt;
+                                                                &lt;p&gt;Este campo es obligatorio&lt;/p&gt;
+                                                            &lt;/div&gt;
+
+                                                        &lt;/div&gt;
+
+                                                        &lt;div class&#x3D;&quot;col-sm-12 col-md-3&quot;&gt;
+                                                            &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+                                                                &lt;label class&#x3D;&quot;input-group-text dates&quot; for&#x3D;&quot;inputGroupSelect01&quot;&gt;Mes inicio&lt;/label&gt;
+                                                                &lt;select name&#x3D;&quot;mesini&quot; formControlName&#x3D;&quot;mesini&quot; class&#x3D;&quot;form-select&quot; id&#x3D;&quot;inputGroupSelect01&quot;&gt;
+                                                                 &lt;option selected&gt;Mes&lt;/option&gt;
+                                                                 &lt;option *ngFor&#x3D;&quot;let mes of meses&quot;&gt;{{mes}}&lt;/option&gt;
+                                                                &lt;/select&gt;
+                                                            &lt;/div&gt;
+
+                                                            &lt;div class&#x3D;&quot;text-danger px-1&quot; *ngIf&#x3D;&quot;formE.get(&#x27;mesini&#x27;)?.hasError(&#x27;required&#x27;) &amp;&amp; formE.get(&#x27;mesini&#x27;)?.touched &quot;&gt;
+                                                                &lt;p&gt;Este campo es obligatorio&lt;/p&gt;
+                                                            &lt;/div&gt;
+
+                                                        &lt;/div&gt;
+
+                                                        &lt;div class&#x3D;&quot;col-sm-12 col-md-3&quot;&gt;
+                                                            &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+                                                                &lt;label class&#x3D;&quot;input-group-text dates&quot; for&#x3D;&quot;inputGroupSelect01&quot;&gt;Año fin&lt;/label&gt;
+                                                                &lt;select name&#x3D;&quot;yearfin&quot; formControlName&#x3D;&quot;yearfin&quot; class&#x3D;&quot;form-select&quot; id&#x3D;&quot;inputGroupSelect01&quot;&gt;
+                                                                 &lt;option selected&gt;Año&lt;/option&gt;
+                                                                 &lt;option *ngFor&#x3D;&quot;let year of years&quot;&gt;{{year}}&lt;/option&gt;
+                                                                &lt;/select&gt;
+                                                            &lt;/div&gt;
+
+                                                            &lt;div class&#x3D;&quot;text-danger px-1&quot; *ngIf&#x3D;&quot;formE.get(&#x27;yearfin&#x27;)?.hasError(&#x27;required&#x27;) &amp;&amp; formE.get(&#x27;yearfin&#x27;)?.touched &quot;&gt;
+                                                                &lt;p&gt;Este campo es obligatorio&lt;/p&gt;
+                                                            &lt;/div&gt;
+
+                                                        &lt;/div&gt;
+
+                                                        &lt;div class&#x3D;&quot;col-sm-12 col-md-3&quot;&gt;
+                                                            &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+                                                                &lt;label class&#x3D;&quot;input-group-text dates&quot; for&#x3D;&quot;inputGroupSelect01&quot;&gt;Mes fin&lt;/label&gt;
+                                                                &lt;select name&#x3D;&quot;mesfin&quot; formControlName&#x3D;&quot;mesfin&quot; class&#x3D;&quot;form-select&quot; id&#x3D;&quot;inputGroupSelect01&quot;&gt;
+                                                                &lt;option selected&gt;Mes&lt;/option&gt;
+                                                                &lt;option *ngFor&#x3D;&quot;let mes of meses&quot; &gt;{{mes}}&lt;/option&gt;
+                                                                &lt;/select&gt;
+                                                            &lt;/div&gt;
+
+                                                            &lt;div class&#x3D;&quot;text-danger px-1&quot; *ngIf&#x3D;&quot;formE.get(&#x27;mesfin&#x27;)?.hasError(&#x27;required&#x27;) &amp;&amp; formE.get(&#x27;mesfin&#x27;)?.touched &quot;&gt;
+                                                                &lt;p&gt;Este campo es obligatorio&lt;/p&gt;
+                                                            &lt;/div&gt;
+
+                                                        &lt;/div&gt;
+
+                                                    &lt;/div&gt;
+                                                    &lt;!--End File 3--&gt;
+
+                                                    &lt;!--File 4--&gt;
+                                                    &lt;div class&#x3D;&quot;row g-2&quot;&gt;
+                                                        &lt;div class&#x3D;&quot;col-sm-12 col-md-12&quot;&gt;
+                                                            &lt;div class&#x3D;&quot;mb-3 form-check&quot;&gt;
+                                                                &lt;input type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;form-check-input&quot; id&#x3D;&quot;exampleCheck1&quot;&gt;
+                                                                &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;exampleCheck1&quot;&gt;Actualmente&lt;/label&gt;
+                                                            &lt;/div&gt;
+
+                                                        &lt;/div&gt;
+                                                    &lt;/div&gt;
+                                                    &lt;!--End File 4--&gt;
+
+
+                                                &lt;/div&gt;
+                                                &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+                                                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; data-bs-dismiss&#x3D;&quot;modal&quot;&gt;Cerrar&lt;/button&gt;
+                                                    &lt;button [disabled]&#x3D;&quot;formE.invalid&quot; type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Guardar Cambios&lt;/button&gt;
+                                                &lt;/div&gt;
+                                            &lt;/form&gt;
+
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!--End Modal Formulario Experiencia --&gt;
+
+
                                 &lt;div class&#x3D;&quot;row g-2&quot;&gt;
 
 
@@ -1888,6 +2510,7 @@ registro(){
                                                     &lt;th scope&#x3D;&quot;col&quot;&gt;Mes-Año inicio&lt;/th&gt;
                                                     &lt;th scope&#x3D;&quot;col&quot;&gt;Mes-Año fin&lt;/th&gt;
                                                     &lt;th scope&#x3D;&quot;col&quot;&gt;Descripción&lt;/th&gt;
+                                                    &lt;th scope&#x3D;&quot;col&quot;&gt;Acciones&lt;/th&gt;
                                                 &lt;/tr&gt;
 
 
@@ -1897,13 +2520,20 @@ registro(){
 
                                             &lt;/thead&gt;
                                             &lt;tbody&gt;
-                                                &lt;tr *ngFor&#x3D;&quot;let item of listaExperiencia&quot;&gt;
+                                                &lt;tr *ngFor&#x3D;&quot;let item of listaExperiencia;let indice&#x3D;index&quot;&gt;
                                                     &lt;td&gt;{{item.empresa}}&lt;/td&gt;
                                                     &lt;td&gt;{{item.cargo}}&lt;/td&gt;
                                                     &lt;td&gt;{{item.ciudad}}&lt;/td&gt;
                                                     &lt;td&gt;{{item.mesini}}-{{item.yearini}}&lt;/td&gt;
                                                     &lt;td&gt;{{item.mesfin}}-{{item.yearfin}}&lt;/td&gt;
                                                     &lt;td&gt;{{item.funciones}}&lt;/td&gt;
+                                                    &lt;td&gt;
+                                                        &lt;button (click)&#x3D;&quot;editarExperiencia(item,indice)&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn text-white &quot; data-bs-toggle&#x3D;&quot;modal&quot; data-bs-target&#x3D;&quot;#modalExperiencia&quot;&gt;
+                                                        &lt;i class&#x3D;&quot;fa-solid fa-pen-to-square icono &quot;&gt;
+                                                            
+                                                        &lt;/i&gt;&lt;/button&gt;
+                                                        &lt;button (click)&#x3D;&quot;eliminarExperiencia(indice)&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn text-white&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-trash icono&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                                                    &lt;/td&gt;
                                                 &lt;/tr&gt;
 
 
@@ -1917,7 +2547,7 @@ registro(){
                                 &lt;div class&#x3D;&quot;row g-2 mt-2&quot;&gt;
                                     &lt;div class&#x3D;&quot;col-sm-12 col-md-12&quot;&gt;
                                         &lt;!-- Button trigger modal --&gt;
-                                        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-info rounded-pill fw-bold&quot; data-bs-toggle&#x3D;&quot;modal&quot; data-bs-target&#x3D;&quot;#modalExperiencia&quot;&gt;Agregar +&lt;/button&gt;
+                                        &lt;button (click)&#x3D;&quot;agregarExperiencia()&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-info rounded-pill fw-bold&quot; data-bs-toggle&#x3D;&quot;modal&quot; data-bs-target&#x3D;&quot;#modalExperiencia&quot;&gt;Agregar +&lt;/button&gt;
                                     &lt;/div&gt;
                                 &lt;/div&gt;
                                 &lt;!--End File 1--&gt;
@@ -1962,8 +2592,85 @@ registro(){
                           Paso 4/4
                         &lt;/button&gt;
                         &lt;/h2&gt;
+
+                        &lt;!--Accordion collapse--&gt;
                         &lt;div id&#x3D;&quot;collapse4&quot; class&#x3D;&quot;accordion-collapse collapse show&quot; aria-labelledby&#x3D;&quot;heading4&quot; data-bs-parent&#x3D;&quot;#accordionExample&quot;&gt;
                             &lt;div class&#x3D;&quot;accordion-body&quot;&gt;
+
+
+
+
+
+
+                                &lt;!-- Modal Formulario Formación --&gt;
+                                &lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;modalFormacion&quot; tabindex&#x3D;&quot;-1&quot; aria-labelledby&#x3D;&quot;exampleModalLabel&quot; aria-hidden&#x3D;&quot;true&quot; data-bs-backdrop&#x3D;&quot;static&quot; data-bs-keyboard&#x3D;&quot;false&quot;&gt;
+                                    &lt;div class&#x3D;&quot;modal-dialog modal-lg&quot;&gt;
+                                        &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+
+                                            &lt;form [formGroup]&#x3D;&quot;formF&quot; (ngSubmit)&#x3D;&quot;enviarF(formF.value)&quot;&gt;
+                                                &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                                                    &lt;h5 class&#x3D;&quot;modal-title&quot; id&#x3D;&quot;exampleModalLabel&quot;&gt;Modal Formación {{listaFormacion.institucion}}&lt;/h5&gt;
+                                                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn-close&quot; data-bs-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;&gt;&lt;/button&gt;
+                                                &lt;/div&gt;
+                                                &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+                                                    &lt;!--File 1--&gt;
+                                                    &lt;div class&#x3D;&quot;row g-2&quot;&gt;
+
+                                                        &lt;div class&#x3D;&quot;col-sm-12 col-md-6&quot;&gt;
+                                                            &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+                                                                &lt;span class&#x3D;&quot;input-group-text&quot; id&#x3D;&quot;basic-addon1&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-school&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                                                                &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;institucion&quot; formControlName&#x3D;&quot;institucion&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Nombre de la institución&quot; aria-label&#x3D;&quot;Institución&quot; aria-describedby&#x3D;&quot;basic-addon1&quot;&gt;
+                                                            &lt;/div&gt;
+                                                        &lt;/div&gt;
+
+                                                        &lt;div class&#x3D;&quot;col-sm-12 col-md-6&quot;&gt;
+                                                            &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+                                                                &lt;span class&#x3D;&quot;input-group-text&quot; id&#x3D;&quot;basic-addon1&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-book&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                                                                &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;programa&quot; formControlName&#x3D;&quot;programa&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Programa académico&quot; aria-label&#x3D;&quot;Programa&quot; aria-describedby&#x3D;&quot;basic-addon1&quot;&gt;
+                                                            &lt;/div&gt;
+                                                        &lt;/div&gt;
+
+                                                    &lt;/div&gt;
+                                                    &lt;!--End File 1--&gt;
+
+                                                    &lt;!--File 2--&gt;
+                                                    &lt;div class&#x3D;&quot;row g-2&quot;&gt;
+
+                                                        &lt;div class&#x3D;&quot;col-sm-12 col-md-6&quot;&gt;
+                                                            &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+                                                                &lt;label class&#x3D;&quot;input-group-text dates&quot; for&#x3D;&quot;inputGroupSelect01&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-graduation-cap&quot;&gt;&lt;/i&gt;&lt;/label&gt;
+                                                                &lt;select name&#x3D;&quot;nivel&quot; formControlName&#x3D;&quot;nivel&quot; class&#x3D;&quot;form-select&quot; id&#x3D;&quot;inputGroupSelect01&quot;&gt;
+                              &lt;option class&#x3D;&quot;text-muted&quot; selected&gt;Nivel Académico&lt;/option&gt;
+                              &lt;option *ngFor&#x3D;&quot;let nivel of niveles&quot; &gt;{{nivel}}&lt;/option&gt;
+                             &lt;/select&gt;
+                                                            &lt;/div&gt;
+                                                        &lt;/div&gt;
+
+                                                        &lt;div class&#x3D;&quot;col-sm-12 col-md-6&quot;&gt;
+                                                            &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+
+
+                                                                &lt;label class&#x3D;&quot;input-group-text dates&quot; for&#x3D;&quot;inputGroupSelect01&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-check-to-slot&quot;&gt;&lt;/i&gt;&lt;/label&gt;
+                                                                &lt;select name&#x3D;&quot;estado&quot; formControlName&#x3D;&quot;estado&quot; class&#x3D;&quot;form-select&quot; id&#x3D;&quot;inputGroupSelect01&quot;&gt;
+                              &lt;option class&#x3D;&quot;text-muted&quot; selected&gt;Estado&lt;/option&gt;
+                              &lt;option  *ngFor&#x3D;&quot;let estado of estados&quot; &gt;{{estado}}&lt;/option&gt;
+                              &lt;/select&gt;
+                                                            &lt;/div&gt;
+                                                        &lt;/div&gt;
+                                                    &lt;/div&gt;
+                                                    &lt;!--End File 2--&gt;
+
+                                                &lt;/div&gt;
+                                                &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+                                                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; data-bs-dismiss&#x3D;&quot;modal&quot;&gt;Cerrar&lt;/button&gt;
+                                                    &lt;button [disabled]&#x3D;&quot;formF.invalid&quot; type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Guardar Cambios&lt;/button&gt;
+
+                                                &lt;/div&gt;
+                                            &lt;/form&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!--End Modal Formulario Formación --&gt;
 
 
                                 &lt;!--File 1--&gt;
@@ -1990,43 +2697,33 @@ registro(){
                                                     &lt;td&gt;{{item.nivel}}&lt;/td&gt;
                                                     &lt;td&gt;{{item.estado}}&lt;/td&gt;
                                                     &lt;td&gt;
-                                                        &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;editar(indice)&quot; class&#x3D;&quot;btn text-white &quot; data-bs-toggle&#x3D;&quot;modal&quot; data-bs-target&#x3D;&quot;#modalFormacion&quot;&gt;
+                                                        &lt;button (click)&#x3D;&quot;editarFormacion(item,indice)&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn text-white &quot; data-bs-toggle&#x3D;&quot;modal&quot; data-bs-target&#x3D;&quot;#modalFormacion&quot;&gt;
                                                         &lt;i class&#x3D;&quot;fa-solid fa-pen-to-square icono &quot;&gt;
                                                             
                                                         &lt;/i&gt;&lt;/button&gt;
-                                                        &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;eliminar(indice)&quot; class&#x3D;&quot;btn text-white&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-trash icono&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                                                        &lt;button (click)&#x3D;&quot;eliminarFormacion(indice)&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn text-white&quot;&gt;&lt;i class&#x3D;&quot;fa-solid fa-trash icono&quot;&gt;&lt;/i&gt;&lt;/button&gt;
                                                     &lt;/td&gt;
                                                 &lt;/tr&gt;
-
-
                                             &lt;/tbody&gt;
                                         &lt;/table&gt;
                                     &lt;/div&gt;
-
-
 
                                 &lt;/div&gt;
                                 &lt;!--End File 1--&gt;
 
 
-
-
-
-
-                                &lt;app-modal-formacion&gt;&lt;/app-modal-formacion&gt;
                                 &lt;!--File 2--&gt;
                                 &lt;div class&#x3D;&quot;row g-2&quot;&gt;
                                     &lt;div class&#x3D;&quot;col-sm-12 col-md-12&quot;&gt;
                                         &lt;!-- Button trigger modal --&gt;
-                                        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-info rounded-pill fw-bold&quot; data-bs-toggle&#x3D;&quot;modal&quot; data-bs-target&#x3D;&quot;#modalFormacion&quot;&gt;Agregar +&lt;/button&gt;
+                                        &lt;button (click)&#x3D;&quot;agregarFormacion()&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-info rounded-pill fw-bold&quot; data-bs-toggle&#x3D;&quot;modal&quot; data-bs-target&#x3D;&quot;#modalFormacion&quot;&gt;Agregar +&lt;/button&gt;
                                     &lt;/div&gt;
                                 &lt;/div&gt;
                                 &lt;!--End File 2--&gt;
                             &lt;/div&gt;
                             &lt;!--End Col 2--&gt;
-
-
                         &lt;/div&gt;
+                        &lt;!--End Accordion collapse--&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
 
@@ -2118,8 +2815,8 @@ tr:hover td {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><header>    <app-header></app-header></header><div class="container mt-5">    <form id="registerForm" name="registerForm" [formGroup]="form" (ngSubmit)="enviar(form.value)">        <!--End Sesion 1-->        <div class="row ">            <!--Col 1-->            <div class="col-sm-5 col-md-3 text-start mt-2">                <h2>Sobre ti</h2>                <h6 class="text-muted">Hablanos un poco sobre ti</h6>            </div>            <!--End Col 1-->            <!--Col 2-->            <div class="col-sm-5 col-md-9">                <div class="text-center mb-4">                    <h1>{{response.nombreVacante}}</h1>                </div>                <div class="accordion" id="accordionExample">                    <div class="accordion-item">                        <h2 class="accordion-header" id="headingOne">                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">                          Paso 1/4                        </button>                        </h2>                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">                            <div class="accordion-body">                                <!--File 1-->                                <div class="row g-2">                                    <div class="col-sm-12 col-md-12">                                        <div class="input-group mb-3">                                            <span class="input-group-text nr "><i class="fa-solid fa-user-tie "></i></span>                                            <input type="text" placeholder="Nombres" formControlName="nombre" name="nombre" aria-label="First name" class="form-control">                                            <input type="text" placeholder="Apellidos" formControlName="apellido" name="apellido" aria-label="Last name" class="form-control">                                        </div>                                    </div>                                </div>                                <!--End File 1-->                                <!--File 2-->                                <div class="row g-2">                                    <div class="col-sm-12 col-md-6">                                        <div class="input-group mb-3">                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-mobile-screen"></i></span>                                            <input type="text" class="form-control" placeholder="Celular" formControlName="celular" aria-label="Celular" name="celular" aria-describedby="basic-addon1">                                        </div>                                    </div>                                    <div class="col-sm-12 col-md-6">                                        <div class="input-group mb-3">                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-cake-candles"></i></span>                                            <input type="date" name="cumpleanos" class="form-control" formControlName="cumpleanos" placeholder="Fecha de cumpleaños" aria-label="Apellidos" aria-describedby="basic-addon1">                                        </div>                                    </div>                                </div>                                <!--End File 2-->                                <!--File 3-->                                <div class="row g-2">                                    <div class="col-sm-12 col-md-6">                                        <div class="input-group mb-3">                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-id-card"></i></span>                                            <input type="text" name="cedula" formControlName="cedula" class="form-control" placeholder="Cédula" aria-label="Username" aria-describedby="basic-addon1">                                        </div>                                    </div>                                    <div class="col-sm-12 col-md-6">                                        <div class="input-group mb-3">                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-envelope"></i></span>                                            <input type="email" formControlName="email" name="email" class="form-control" placeholder="Correo Electronico" aria-label="Username" aria-describedby="basic-addon1">                                        </div>                                    </div>                                </div>                                <!--End File 3-->                                <!--File 3-->                                <div class="row g-2">                                    <div class="col-sm-12 col-md-6">                                        <div class="input-group mb-3">                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-location-dot"></i></span>                                            <input type="text" formControlName="ciudad" name="ciudad" class="form-control" placeholder="Ciudad" aria-label="Username" aria-describedby="basic-addon1">                                        </div>                                    </div>                                    <div class="col-sm-12 col-md-6">                                        <div class="input-group mb-3">                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-thumbs-up"></i></span>                                            <input type="text" formControlName="redsocial" name="redsocial" class="form-control" placeholder="Red social favorita" aria-label="Red Social" aria-describedby="basic-addon1">                                        </div>                                    </div>                                </div>                                <!--End File 3-->                            </div>                            <!--End Col 2-->                        </div>                    </div>                </div>            </div>        </div>        <!--End Sesion 1-->        <hr>        <!--Sesion 2-->        <div class="row">            <!--Col 1-->            <div class="col-sm-5 col-md-3 text-start mt-2">                <h2>Documentos</h2>                <h6 class="text-muted">Adjunta tus documentos</h6>            </div>            <!--End Col 1-->            <!--Col 2-->            <div class="col-sm-5 col-md-9">                <div class="accordion" id="accordionExample">                    <div class="accordion-item">                        <h2 class="accordion-header" id="heading2">                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">                          Paso 2/4                        </button>                        </h2>                        <div id="collapse2" class="accordion-collapse collapse show" aria-labelledby="heading2" data-bs-parent="#accordionExample">                            <div class="accordion-body">                                <!--File 1-->                                <div class="row g-2">                                    <div class="col-sm-12 col-md-12">                                        <div class="input-group mb-3">                                            <label for="formFileMultiple" class="input-group fw-bold text-muted">Adjunte su hoja de vida</label>                                            <input formControlName="hv" name="hv" type="file" class="form-control fw-bold text-muted" placeholder="Recipient\'s username" aria-label="Recipient\'s username" aria-describedby="basic-addon2">                                            <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-paperclip"></i></span>                                        </div>                                    </div>                                </div>                                <!--End File 1-->                                <!--File 2-->                                <div class="row g-2">                                    <div class="col-sm-12 col-md-12">                                        <div class="input-group mb-3">                                            <label for="formFileMultiple" class="input-group fw-bold text-muted">Adjunte su portafolio (Opcional)</label>                                            <input type="file" formControlName="pf" name="pf" class="form-control fw-bold text-muted" placeholder="Recipient\'s username" aria-label="Recipient\'s username" aria-describedby="basic-addon2">                                            <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-paperclip"></i></span>                                        </div>                                    </div>                                </div>                                <!--End File 2-->                                <!--File 3-->                                <div class="row g-2">                                    <div class="col-sm-12 col-md-12">                                        <div class="input-group mb-3">                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-briefcase"></i></span>                                            <input type="text" formControlName="lpf" name="lpf" class="form-control" placeholder="Link portafolio o alguno de tus mejores trabajos (Opcional)" aria-label="Username" aria-describedby="basic-addon1">                                        </div>                                    </div>                                </div>                                <!--End File 3-->                            </div>                            <!--End Col 2-->                        </div>                    </div>                </div>            </div>        </div>        <!--End Sesion 2-->        <hr>        <!--Sesion 3-->        <div class="row">            <!--Col 1-->            <div class="col-sm-5 col-md-3 text-start mt-2">                <h2>Experiencia</h2>                <h6 class="text-muted">Cuentanos un poco de tu experiencia laboral</h6>            </div>            <!--End Col 1-->            <!--Col 2-->            <div class="col-sm-5 col-md-9">                <div class="accordion" id="accordionExample">                    <div class="accordion-item">                        <h2 class="accordion-header" id="heading3">                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">                          Paso 3/4                        </button>                        </h2>                        <div id="collapse3" class="accordion-collapse collapse show" aria-labelledby="heading3" data-bs-parent="#accordionExample">                            <div class="accordion-body">                                <app-modal-experiencia></app-modal-experiencia>                                <div class="row g-2">                                    <div class="table-responsive">                                        <table class="table table-dark table-hover text-center">                                            <thead>                                                <tr>                                                    <th scope="col">Empresa</th>                                                    <th scope="col">Cargo</th>                                                    <th scope="col">Ciudad</th>                                                    <th scope="col">Mes-Año inicio</th>                                                    <th scope="col">Mes-Año fin</th>                                                    <th scope="col">Descripción</th>                                                </tr>                                            </thead>                                            <tbody>                                                <tr *ngFor="let item of listaExperiencia">                                                    <td>{{item.empresa}}</td>                                                    <td>{{item.cargo}}</td>                                                    <td>{{item.ciudad}}</td>                                                    <td>{{item.mesini}}-{{item.yearini}}</td>                                                    <td>{{item.mesfin}}-{{item.yearfin}}</td>                                                    <td>{{item.funciones}}</td>                                                </tr>                                            </tbody>                                        </table>                                    </div>                                </div>                                <!--File 1-->                                <div class="row g-2 mt-2">                                    <div class="col-sm-12 col-md-12">                                        <!-- Button trigger modal -->                                        <button type="button" class="btn btn-info rounded-pill fw-bold" data-bs-toggle="modal" data-bs-target="#modalExperiencia">Agregar +</button>                                    </div>                                </div>                                <!--End File 1-->                            </div>                            <!--End Col 2-->                        </div>                    </div>                </div>            </div>        </div>        <!--End Sesion 3-->        <hr>        <!--Sesion 4-->        <div class="row">            <!--Col 1-->            <div class="col-sm-5 col-md-3 text-start mt-2">                <h2>Formación</h2>                <h6 class="text-muted">Cuentanos un poco de tu formación y conocimientos</h6>            </div>            <!--End Col 1-->            <!--Col 2-->            <div class="col-sm-5 col-md-9">                <div class="accordion" id="accordionExample">                    <div class="accordion-item">                        <h2 class="accordion-header" id="heading4">                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">                          Paso 4/4                        </button>                        </h2>                        <div id="collapse4" class="accordion-collapse collapse show" aria-labelledby="heading4" data-bs-parent="#accordionExample">                            <div class="accordion-body">                                <!--File 1-->                                <div class="row g-2">                                    <div class="table-responsive">                                        <table class="table table-dark table-hover text-center">                                            <thead>                                                <tr>                                                    <th scope="col">Nombre de la Institución</th>                                                    <th scope="col">Programa Académico</th>                                                    <th scope="col">Nivel</th>                                                    <th scope="col">Estado</th>                                                    <th scope="col">Acciones</th>                                                </tr>                                            </thead>                                            <tbody>                                                <tr *ngFor="let item of listaFormacion;let indice=index">                                                    <td>{{item.institucion}}</td>                                                    <td>{{item.programa}}</td>                                                    <td>{{item.nivel}}</td>                                                    <td>{{item.estado}}</td>                                                    <td>                                                        <button type="button" (click)="editar(indice)" class="btn text-white " data-bs-toggle="modal" data-bs-target="#modalFormacion">                                                        <i class="fa-solid fa-pen-to-square icono ">                                                                                                                    </i></button>                                                        <button type="button" (click)="eliminar(indice)" class="btn text-white"><i class="fa-solid fa-trash icono"></i></button>                                                    </td>                                                </tr>                                            </tbody>                                        </table>                                    </div>                                </div>                                <!--End File 1-->                                <app-modal-formacion></app-modal-formacion>                                <!--File 2-->                                <div class="row g-2">                                    <div class="col-sm-12 col-md-12">                                        <!-- Button trigger modal -->                                        <button type="button" class="btn btn-info rounded-pill fw-bold" data-bs-toggle="modal" data-bs-target="#modalFormacion">Agregar +</button>                                    </div>                                </div>                                <!--End File 2-->                            </div>                            <!--End Col 2-->                        </div>                    </div>                </div>            </div>        </div>        <!--End Sesion 4-->        <hr>        <div class="row">            <div class="col-sm-5 col-md-6  mt-2">                <div class="mb-3 form-check">                    <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>                    <label name="autorizacion" class="form-check-label" for="exampleCheck1">Autoriza a WPLAY.CO para realizar el tratamiento y manejo de sus datos personales conforme a nuestra Politica de Privacidad.</label>                </div>            </div>            <div class="col-sm-5 col-md-6  mt-2">                <button type="submit" class="btn btn-success btn-lg">ENVIAR</button>            </div>        </div>    </form></div><div class="col mt-5">    <app-footer></app-footer></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ApplyFormComponent', 'selector': 'app-apply-form'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ItemDetailComponent', 'selector': 'app-item-detail'},{'name': 'ModalExperienciaComponent', 'selector': 'app-modal-experiencia'},{'name': 'ModalFormacionComponent', 'selector': 'app-modal-formacion'},{'name': 'VacantesListComponent', 'selector': 'app-vacantes-list'}];
+        var COMPONENT_TEMPLATE = '<div><header>    <app-header></app-header></header><div class="container mt-5">    <form id="registerForm" name="registerForm">        <!--End Sesion 1-->        <div class="row ">            <!--Col 1-->            <div class="col-sm-5 col-md-3 text-start mt-2">                <h2>Sobre ti</h2>                <h6 class="text-muted">Hablanos un poco sobre ti</h6>            </div>            <!--End Col 1-->            <!--Col 2-->            <div class="col-sm-5 col-md-9">                <div class="text-center mb-4">                    <h1>{{response.nombreVacante}}</h1>                </div>                <div class="accordion" id="accordionExample">                    <div class="accordion-item">                        <h2 class="accordion-header" id="headingOne">                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">                          Paso 1/4                        </button>                        </h2>                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">                            <div class="accordion-body">                                <!--File 1-->                                <div class="row g-2">                                    <div class="col-sm-12 col-md-12">                                        <div class="input-group mb-3">                                            <span class="input-group-text nr "><i class="fa-solid fa-user-tie "></i></span>                                            <input type="text" placeholder="Nombres" name="nombre" aria-label="First name" class="form-control">                                            <input type="text" placeholder="Apellidos" name="apellido" aria-label="Last name" class="form-control">                                        </div>                                    </div>                                </div>                                <!--End File 1-->                                <!--File 2-->                                <div class="row g-2">                                    <div class="col-sm-12 col-md-6">                                        <div class="input-group mb-3">                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-mobile-screen"></i></span>                                            <input type="text" class="form-control" placeholder="Celular" aria-label="Celular" name="celular" aria-describedby="basic-addon1">                                        </div>                                    </div>                                    <div class="col-sm-12 col-md-6">                                        <div class="input-group mb-3">                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-cake-candles"></i></span>                                            <input type="date" name="cumpleanos" class="form-control" placeholder="Fecha de cumpleaños" aria-label="Apellidos" aria-describedby="basic-addon1">                                        </div>                                    </div>                                </div>                                <!--End File 2-->                                <!--File 3-->                                <div class="row g-2">                                    <div class="col-sm-12 col-md-6">                                        <div class="input-group mb-3">                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-id-card"></i></span>                                            <input type="text" name="cedula" class="form-control" placeholder="Cédula" aria-label="Username" aria-describedby="basic-addon1">                                        </div>                                    </div>                                    <div class="col-sm-12 col-md-6">                                        <div class="input-group mb-3">                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-envelope"></i></span>                                            <input type="email" name="email" class="form-control" placeholder="Correo Electronico" aria-label="Username" aria-describedby="basic-addon1">                                        </div>                                    </div>                                </div>                                <!--End File 3-->                                <!--File 3-->                                <div class="row g-2">                                    <div class="col-sm-12 col-md-6">                                        <div class="input-group mb-3">                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-location-dot"></i></span>                                            <input type="text" name="ciudad" class="form-control" placeholder="Ciudad" aria-label="Username" aria-describedby="basic-addon1">                                        </div>                                    </div>                                    <div class="col-sm-12 col-md-6">                                        <div class="input-group mb-3">                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-thumbs-up"></i></span>                                            <input type="text" name="redsocial" class="form-control" placeholder="Red social favorita" aria-label="Red Social" aria-describedby="basic-addon1">                                        </div>                                    </div>                                </div>                                <!--End File 3-->                            </div>                            <!--End Col 2-->                        </div>                    </div>                </div>            </div>        </div>        <!--End Sesion 1-->        <hr>        <!--Sesion 2-->        <div class="row">            <!--Col 1-->            <div class="col-sm-5 col-md-3 text-start mt-2">                <h2>Documentos</h2>                <h6 class="text-muted">Adjunta tus documentos</h6>            </div>            <!--End Col 1-->            <!--Col 2-->            <div class="col-sm-5 col-md-9">                <div class="accordion" id="accordionExample">                    <div class="accordion-item">                        <h2 class="accordion-header" id="heading2">                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">                          Paso 2/4                        </button>                        </h2>                        <div id="collapse2" class="accordion-collapse collapse show" aria-labelledby="heading2" data-bs-parent="#accordionExample">                            <div class="accordion-body">                                <!--File 1-->                                <div class="row g-2">                                    <div class="col-sm-12 col-md-12">                                        <div class="input-group mb-3">                                            <label for="formFileMultiple" class="input-group fw-bold text-muted">Adjunte su hoja de vida</label>                                            <input name="hv" type="file" class="form-control fw-bold text-muted" placeholder="Recipient\'s username" aria-label="Recipient\'s username" aria-describedby="basic-addon2">                                            <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-paperclip"></i></span>                                        </div>                                    </div>                                </div>                                <!--End File 1-->                                <!--File 2-->                                <div class="row g-2">                                    <div class="col-sm-12 col-md-12">                                        <div class="input-group mb-3">                                            <label for="formFileMultiple" class="input-group fw-bold text-muted">Adjunte su portafolio (Opcional)</label>                                            <input type="file" name="pf" class="form-control fw-bold text-muted" placeholder="Recipient\'s username" aria-label="Recipient\'s username" aria-describedby="basic-addon2">                                            <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-paperclip"></i></span>                                        </div>                                    </div>                                </div>                                <!--End File 2-->                                <!--File 3-->                                <div class="row g-2">                                    <div class="col-sm-12 col-md-12">                                        <div class="input-group mb-3">                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-briefcase"></i></span>                                            <input type="text" name="lpf" class="form-control" placeholder="Link portafolio o alguno de tus mejores trabajos (Opcional)" aria-label="Username" aria-describedby="basic-addon1">                                        </div>                                    </div>                                </div>                                <!--End File 3-->                            </div>                            <!--End Col 2-->                        </div>                    </div>                </div>            </div>        </div>        <!--End Sesion 2-->        <hr>        <!--Sesion 3-->        <div class="row">            <!--Col 1-->            <div class="col-sm-5 col-md-3 text-start mt-2">                <h2>Experiencia</h2>                <h6 class="text-muted">Cuentanos un poco de tu experiencia laboral</h6>            </div>            <!--End Col 1-->            <!--Col 2-->            <div class="col-sm-5 col-md-9">                <div class="accordion" id="accordionExample">                    <div class="accordion-item">                        <h2 class="accordion-header" id="heading3">                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">                          Paso 3/4                        </button>                        </h2>                        <div id="collapse3" class="accordion-collapse collapse show" aria-labelledby="heading3" data-bs-parent="#accordionExample">                            <div class="accordion-body">                                <!-- Modal Formulario Experiencia -->                                <div class="modal fade" id="modalExperiencia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">                                    <div class="modal-dialog modal-lg">                                        <div class="modal-content">                                            <form [formGroup]="formE" (ngSubmit)="enviarE(formE.value)">                                                <div class="modal-header">                                                    <h5 class="modal-title" id="exampleModalLabel">Modal Experiencia</h5>                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>                                                </div>                                                <div class="modal-body">                                                    <!--File 1-->                                                    <div class="row g-2">                                                        <div class="col-sm-12 col-md-4">                                                            <div class="input-group mb-3">                                                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-building"></i></span>                                                                <input type="text" name="empresa" formControlName="empresa" class="form-control" placeholder="Empresa" aria-label="Empresa" aria-describedby="basic-addon1">                                                            </div>                                                            <div class="text-danger px-1" *ngIf="formE.get(\'empresa\')?.hasError(\'required\') && formE.get(\'empresa\')?.touched ">                                                                <p>Este campo es obligatorio</p>                                                            </div>                                                        </div>                                                        <div class="col-sm-12 col-md-4">                                                            <div class="input-group mb-3">                                                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-network-wired"></i></span>                                                                <input type="text" name="cargo" formControlName="cargo" class="form-control" placeholder="Cargo" aria-label="Cargo" aria-describedby="basic-addon1">                                                            </div>                                                            <div class="text-danger px-1" *ngIf="formE.get(\'cargo\')?.hasError(\'required\') && formE.get(\'cargo\')?.touched ">                                                                <p>Este campo es obligatorio</p>                                                            </div>                                                        </div>                                                        <div class="col-sm-12 col-md-4">                                                            <div class="input-group mb-3">                                                                <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-location-dot"></i></label>                                                                <select name="ciudad" formControlName="ciudad" class="form-select" id="inputGroupSelect01">                                                                  <option selected>Ciudad</option>                                                                  <option  *ngFor="let ciudad of ciudades">{{ciudad}}</option>                                                                 </select>                                                            </div>                                                            <div class="text-danger px-1" *ngIf="formE.get(\'ciudad\')?.hasError(\'required\') && formE.get(\'ciudad\')?.touched ">                                                                <p>Este campo es obligatorio</p>                                                            </div>                                                        </div>                                                    </div>                                                    <!--End File 1-->                                                    <!--File 2-->                                                    <div class="row g-2">                                                        <div class="col-sm-12 col-md-12">                                                            <div class="mb-3">                                                                <div class="form-floating">                                                                    <textarea name="funciones" formControlName="funciones" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>                                                                    <label for="floatingTextarea2">Describe el cargo y funciones</label>                                                                </div>                                                            </div>                                                            <div class="text-danger px-1" *ngIf="formE.get(\'funciones\')?.hasError(\'required\') && formE.get(\'funciones\')?.touched ">                                                                <p>Este campo es obligatorio</p>                                                            </div>                                                        </div>                                                    </div>                                                    <!--End File 2-->                                                    <!--File 3-->                                                    <div class="row g-2">                                                        <div class="col-sm-12 col-md-3">                                                            <div class="input-group mb-3">                                                                <label class="input-group-text dates" for="inputGroupSelect01">Año inicio</label>                                                                <select name="yearini" formControlName="yearini" class="form-select" id="inputGroupSelect01">                                                                 <option selected>Año</option>                                                                 <option *ngFor="let year of years" >{{year}}</option>                                                                 </select>                                                            </div>                                                            <div class="text-danger px-1" *ngIf="formE.get(\'yearini\')?.hasError(\'required\') && formE.get(\'yearini\')?.touched ">                                                                <p>Este campo es obligatorio</p>                                                            </div>                                                        </div>                                                        <div class="col-sm-12 col-md-3">                                                            <div class="input-group mb-3">                                                                <label class="input-group-text dates" for="inputGroupSelect01">Mes inicio</label>                                                                <select name="mesini" formControlName="mesini" class="form-select" id="inputGroupSelect01">                                                                 <option selected>Mes</option>                                                                 <option *ngFor="let mes of meses">{{mes}}</option>                                                                </select>                                                            </div>                                                            <div class="text-danger px-1" *ngIf="formE.get(\'mesini\')?.hasError(\'required\') && formE.get(\'mesini\')?.touched ">                                                                <p>Este campo es obligatorio</p>                                                            </div>                                                        </div>                                                        <div class="col-sm-12 col-md-3">                                                            <div class="input-group mb-3">                                                                <label class="input-group-text dates" for="inputGroupSelect01">Año fin</label>                                                                <select name="yearfin" formControlName="yearfin" class="form-select" id="inputGroupSelect01">                                                                 <option selected>Año</option>                                                                 <option *ngFor="let year of years">{{year}}</option>                                                                </select>                                                            </div>                                                            <div class="text-danger px-1" *ngIf="formE.get(\'yearfin\')?.hasError(\'required\') && formE.get(\'yearfin\')?.touched ">                                                                <p>Este campo es obligatorio</p>                                                            </div>                                                        </div>                                                        <div class="col-sm-12 col-md-3">                                                            <div class="input-group mb-3">                                                                <label class="input-group-text dates" for="inputGroupSelect01">Mes fin</label>                                                                <select name="mesfin" formControlName="mesfin" class="form-select" id="inputGroupSelect01">                                                                <option selected>Mes</option>                                                                <option *ngFor="let mes of meses" >{{mes}}</option>                                                                </select>                                                            </div>                                                            <div class="text-danger px-1" *ngIf="formE.get(\'mesfin\')?.hasError(\'required\') && formE.get(\'mesfin\')?.touched ">                                                                <p>Este campo es obligatorio</p>                                                            </div>                                                        </div>                                                    </div>                                                    <!--End File 3-->                                                    <!--File 4-->                                                    <div class="row g-2">                                                        <div class="col-sm-12 col-md-12">                                                            <div class="mb-3 form-check">                                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">                                                                <label class="form-check-label" for="exampleCheck1">Actualmente</label>                                                            </div>                                                        </div>                                                    </div>                                                    <!--End File 4-->                                                </div>                                                <div class="modal-footer">                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>                                                    <button [disabled]="formE.invalid" type="submit" class="btn btn-primary">Guardar Cambios</button>                                                </div>                                            </form>                                        </div>                                    </div>                                </div>                                <!--End Modal Formulario Experiencia -->                                <div class="row g-2">                                    <div class="table-responsive">                                        <table class="table table-dark table-hover text-center">                                            <thead>                                                <tr>                                                    <th scope="col">Empresa</th>                                                    <th scope="col">Cargo</th>                                                    <th scope="col">Ciudad</th>                                                    <th scope="col">Mes-Año inicio</th>                                                    <th scope="col">Mes-Año fin</th>                                                    <th scope="col">Descripción</th>                                                    <th scope="col">Acciones</th>                                                </tr>                                            </thead>                                            <tbody>                                                <tr *ngFor="let item of listaExperiencia;let indice=index">                                                    <td>{{item.empresa}}</td>                                                    <td>{{item.cargo}}</td>                                                    <td>{{item.ciudad}}</td>                                                    <td>{{item.mesini}}-{{item.yearini}}</td>                                                    <td>{{item.mesfin}}-{{item.yearfin}}</td>                                                    <td>{{item.funciones}}</td>                                                    <td>                                                        <button (click)="editarExperiencia(item,indice)" type="button" class="btn text-white " data-bs-toggle="modal" data-bs-target="#modalExperiencia">                                                        <i class="fa-solid fa-pen-to-square icono ">                                                                                                                    </i></button>                                                        <button (click)="eliminarExperiencia(indice)" type="button" class="btn text-white"><i class="fa-solid fa-trash icono"></i></button>                                                    </td>                                                </tr>                                            </tbody>                                        </table>                                    </div>                                </div>                                <!--File 1-->                                <div class="row g-2 mt-2">                                    <div class="col-sm-12 col-md-12">                                        <!-- Button trigger modal -->                                        <button (click)="agregarExperiencia()" type="button" class="btn btn-info rounded-pill fw-bold" data-bs-toggle="modal" data-bs-target="#modalExperiencia">Agregar +</button>                                    </div>                                </div>                                <!--End File 1-->                            </div>                            <!--End Col 2-->                        </div>                    </div>                </div>            </div>        </div>        <!--End Sesion 3-->        <hr>        <!--Sesion 4-->        <div class="row">            <!--Col 1-->            <div class="col-sm-5 col-md-3 text-start mt-2">                <h2>Formación</h2>                <h6 class="text-muted">Cuentanos un poco de tu formación y conocimientos</h6>            </div>            <!--End Col 1-->            <!--Col 2-->            <div class="col-sm-5 col-md-9">                <div class="accordion" id="accordionExample">                    <div class="accordion-item">                        <h2 class="accordion-header" id="heading4">                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">                          Paso 4/4                        </button>                        </h2>                        <!--Accordion collapse-->                        <div id="collapse4" class="accordion-collapse collapse show" aria-labelledby="heading4" data-bs-parent="#accordionExample">                            <div class="accordion-body">                                <!-- Modal Formulario Formación -->                                <div class="modal fade" id="modalFormacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">                                    <div class="modal-dialog modal-lg">                                        <div class="modal-content">                                            <form [formGroup]="formF" (ngSubmit)="enviarF(formF.value)">                                                <div class="modal-header">                                                    <h5 class="modal-title" id="exampleModalLabel">Modal Formación {{listaFormacion.institucion}}</h5>                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>                                                </div>                                                <div class="modal-body">                                                    <!--File 1-->                                                    <div class="row g-2">                                                        <div class="col-sm-12 col-md-6">                                                            <div class="input-group mb-3">                                                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-school"></i></span>                                                                <input type="text" name="institucion" formControlName="institucion" class="form-control" placeholder="Nombre de la institución" aria-label="Institución" aria-describedby="basic-addon1">                                                            </div>                                                        </div>                                                        <div class="col-sm-12 col-md-6">                                                            <div class="input-group mb-3">                                                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-book"></i></span>                                                                <input type="text" name="programa" formControlName="programa" class="form-control" placeholder="Programa académico" aria-label="Programa" aria-describedby="basic-addon1">                                                            </div>                                                        </div>                                                    </div>                                                    <!--End File 1-->                                                    <!--File 2-->                                                    <div class="row g-2">                                                        <div class="col-sm-12 col-md-6">                                                            <div class="input-group mb-3">                                                                <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-graduation-cap"></i></label>                                                                <select name="nivel" formControlName="nivel" class="form-select" id="inputGroupSelect01">                              <option class="text-muted" selected>Nivel Académico</option>                              <option *ngFor="let nivel of niveles" >{{nivel}}</option>                             </select>                                                            </div>                                                        </div>                                                        <div class="col-sm-12 col-md-6">                                                            <div class="input-group mb-3">                                                                <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-check-to-slot"></i></label>                                                                <select name="estado" formControlName="estado" class="form-select" id="inputGroupSelect01">                              <option class="text-muted" selected>Estado</option>                              <option  *ngFor="let estado of estados" >{{estado}}</option>                              </select>                                                            </div>                                                        </div>                                                    </div>                                                    <!--End File 2-->                                                </div>                                                <div class="modal-footer">                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>                                                    <button [disabled]="formF.invalid" type="submit" class="btn btn-primary">Guardar Cambios</button>                                                </div>                                            </form>                                        </div>                                    </div>                                </div>                                <!--End Modal Formulario Formación -->                                <!--File 1-->                                <div class="row g-2">                                    <div class="table-responsive">                                        <table class="table table-dark table-hover text-center">                                            <thead>                                                <tr>                                                    <th scope="col">Nombre de la Institución</th>                                                    <th scope="col">Programa Académico</th>                                                    <th scope="col">Nivel</th>                                                    <th scope="col">Estado</th>                                                    <th scope="col">Acciones</th>                                                </tr>                                            </thead>                                            <tbody>                                                <tr *ngFor="let item of listaFormacion;let indice=index">                                                    <td>{{item.institucion}}</td>                                                    <td>{{item.programa}}</td>                                                    <td>{{item.nivel}}</td>                                                    <td>{{item.estado}}</td>                                                    <td>                                                        <button (click)="editarFormacion(item,indice)" type="button" class="btn text-white " data-bs-toggle="modal" data-bs-target="#modalFormacion">                                                        <i class="fa-solid fa-pen-to-square icono ">                                                                                                                    </i></button>                                                        <button (click)="eliminarFormacion(indice)" type="button" class="btn text-white"><i class="fa-solid fa-trash icono"></i></button>                                                    </td>                                                </tr>                                            </tbody>                                        </table>                                    </div>                                </div>                                <!--End File 1-->                                <!--File 2-->                                <div class="row g-2">                                    <div class="col-sm-12 col-md-12">                                        <!-- Button trigger modal -->                                        <button (click)="agregarFormacion()" type="button" class="btn btn-info rounded-pill fw-bold" data-bs-toggle="modal" data-bs-target="#modalFormacion">Agregar +</button>                                    </div>                                </div>                                <!--End File 2-->                            </div>                            <!--End Col 2-->                        </div>                        <!--End Accordion collapse-->                    </div>                </div>            </div>        </div>        <!--End Sesion 4-->        <hr>        <div class="row">            <div class="col-sm-5 col-md-6  mt-2">                <div class="mb-3 form-check">                    <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>                    <label name="autorizacion" class="form-check-label" for="exampleCheck1">Autoriza a WPLAY.CO para realizar el tratamiento y manejo de sus datos personales conforme a nuestra Politica de Privacidad.</label>                </div>            </div>            <div class="col-sm-5 col-md-6  mt-2">                <button type="submit" class="btn btn-success btn-lg">ENVIAR</button>            </div>        </div>    </form></div><div class="col mt-5">    <app-footer></app-footer></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ApplyFormComponent', 'selector': 'app-apply-form'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ItemDetailComponent', 'selector': 'app-item-detail'},{'name': 'VacantesListComponent', 'selector': 'app-vacantes-list'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ApplyFormComponent'};
 </script>
