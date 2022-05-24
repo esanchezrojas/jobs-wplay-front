@@ -9,7 +9,7 @@
 
 <div class="container mt-5">
 
-    <form id="registerForm" name="registerForm">
+    <form [formGroup]="formT" (ngSubmit)="enviarTodo(formT.value)">
         <!--End Sesion 1-->
         <div class="row ">
 
@@ -55,9 +55,24 @@
                                     <div class="col-sm-12 col-md-12">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text nr "><i class="fa-solid fa-user-tie "></i></span>
-                                            <input type="text" placeholder="Nombres" name="nombre" aria-label="First name" class="form-control">
-                                            <input type="text" placeholder="Apellidos" name="apellido" aria-label="Last name" class="form-control">
+                                            <input type="text" placeholder="Nombres" formControlName="nombre" name="nombre" aria-label="First name" class="form-control" [ngClass]="{'is-invalid': formT.get('nombre')?.hasError('required')&&formT.get('nombre')?.dirty && formT.get('nombre')?.touched }">
+
+                                            <input type="text" placeholder="Apellidos" formControlName="apellido" name="apellido" aria-label="Last name" class="form-control" [ngClass]="{'is-invalid': formT.get('apellido')?.hasError('required')&&formT.get('apellido')?.dirty && formT.get('apellido')?.touched }">
                                         </div>
+
+
+
+                                        <div class="text-danger px-1 col-6 float-start " *ngIf="formT.get('nombre')?.hasError('required')&&formT.get('nombre')?.dirty && formT.get('nombre')?.touched ">
+                                            <p>Este campo es obligatorio</p>
+                                        </div>
+
+
+
+                                        <div class="text-danger px-4 col-6 float-end" *ngIf="formT.get('apellido')?.hasError('required')&&formT.get('apellido')?.dirty && formT.get('apellido')?.touched ">
+                                            <p>Este campo es obligatorio</p>
+                                        </div>
+
+
                                     </div>
 
                                 </div>
@@ -70,15 +85,25 @@
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-mobile-screen"></i></span>
-                                            <input type="text" class="form-control" placeholder="Celular" aria-label="Celular" name="celular" aria-describedby="basic-addon1">
+                                            <input type="text" class="form-control " placeholder="Celular" aria-label="Celular" formControlName="celular" name="celular" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get('celular')?.hasError('required')&&formT.get('celular')?.dirty && formT.get('celular')?.touched }">
+                                        </div>
+
+                                        <div class="text-danger px-1 col-6 float-start " *ngIf="formT.get('celular')?.hasError('required')&&formT.get('celular')?.dirty && formT.get('celular')?.touched ">
+
+                                            <p>Este campo es obligatorio</p>
                                         </div>
                                     </div>
 
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-cake-candles"></i></span>
-                                            <input type="date" name="cumpleanos" class="form-control" placeholder="Fecha de cumpleaños" aria-label="Apellidos" aria-describedby="basic-addon1">
+                                            <input type="date" formControlName="cumpleanios" name="cumpleanios" class="form-control" placeholder="Fecha de cumpleaños" aria-label="cumpleanios" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get('cumpleanios')?.hasError('required')&&formT.get('cumpleanios')?.dirty && formT.get('cumpleanios')?.touched }">
                                         </div>
+
+                                        <div class="text-danger px-1 col-6 float-start " *ngIf="formT.get('cumpleanios')?.hasError('required')&&formT.get('cumpleanios')?.dirty && formT.get('cumpleanios')?.touched ">
+                                            <p>Este campo es obligatorio</p>
+                                        </div>
+
                                     </div>
 
 
@@ -91,15 +116,29 @@
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-id-card"></i></span>
-                                            <input type="text" name="cedula" class="form-control" placeholder="Cédula" aria-label="Username" aria-describedby="basic-addon1">
+                                            <input type="text" name="cedula" formControlName="cedula" class="form-control" placeholder="Cédula" aria-label="Username" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get('cedula')?.hasError('required')&&formT.get('cedula')?.dirty && formT.get('cedula')?.touched || formT.get('cedula')?.hasError('maxlength') }">
                                         </div>
+
+                                        <div class="text-danger px-1 col-6 float-start " *ngIf="formT.get('cedula')?.hasError('required')&&formT.get('cedula')?.dirty && formT.get('cedula')?.touched  ">
+                                            <p>Este campo es obligatorio</p>
+                                        </div>
+
+                                        <div class="text-danger px-1 col-6 float-start " *ngIf="formT.get('cedula')?.hasError('maxlength')">
+                                            <p>El campo debe tener maximo 11 caracteres</p>
+                                        </div>
+
                                     </div>
 
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-envelope"></i></span>
-                                            <input type="email" name="email" class="form-control" placeholder="Correo Electronico" aria-label="Username" aria-describedby="basic-addon1">
+                                            <input type="email" name="email" formControlName="email" class="form-control" placeholder="Correo Electronico" aria-label="Username" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get('email')?.hasError('required')&&formT.get('email')?.dirty && formT.get('email')?.touched }">
                                         </div>
+
+                                        <div class="text-danger px-1 col-6 float-start " *ngIf="formT.get('email')?.hasError('required')&&formT.get('email')?.dirty && formT.get('email')?.touched ">
+                                            <p>Este campo es obligatorio</p>
+                                        </div>
+
                                     </div>
 
 
@@ -112,16 +151,28 @@
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-location-dot"></i></span>
-                                            <input type="text" name="ciudad" class="form-control" placeholder="Ciudad" aria-label="Username" aria-describedby="basic-addon1">
+                                            <input type="text" name="ciudad" formControlName="ciudad" class="form-control" placeholder="Ciudad" aria-label="Username" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get('ciudad')?.hasError('required')&&formT.get('ciudad')?.dirty && formT.get('ciudad')?.touched }">
                                         </div>
+
+                                        <div class="text-danger px-1 col-6 float-start " *ngIf="formT.get('ciudad')?.hasError('required')&&formT.get('ciudad')?.dirty && formT.get('ciudad')?.touched ">
+                                            <p>Este campo es obligatorio</p>
+                                        </div>
+
+
                                     </div>
 
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-thumbs-up"></i></span>
-                                            <input type="text" name="redsocial" class="form-control" placeholder="Red social favorita" aria-label="Red Social" aria-describedby="basic-addon1">
+                                            <input type="text" name="redsocial" formControlName="redsocial" class="form-control" placeholder="Red social favorita" aria-label="Red Social" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get('redsocial')?.hasError('required')&&formT.get('redsocial')?.dirty && formT.get('redsocial')?.touched }">
                                         </div>
+
+                                        <div class="text-danger px-1 col-6 float-start " *ngIf="formT.get('redsocial')?.hasError('required')&&formT.get('redsocial')?.dirty && formT.get('redsocial')?.touched ">
+                                            <p>Este campo es obligatorio</p>
+                                        </div>
+
                                     </div>
+
 
                                 </div>
                                 <!--End File 3-->
@@ -181,8 +232,16 @@
                                     <div class="col-sm-12 col-md-12">
                                         <div class="input-group mb-3">
                                             <label for="formFileMultiple" class="input-group fw-bold text-muted">Adjunte su hoja de vida</label>
-                                            <input name="hv" type="file" class="form-control fw-bold text-muted" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                            <input (change)="capturarFile($event)" name="hv" formControlName="hv" type="file" class="form-control fw-bold text-muted" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
                                             <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-paperclip"></i></span>
+
+                                            <button (click)="subirArchivo()" type="button" [disabled]="loading" class="btn btn-primary">{{(loading)?'Cargando...': 'Subir Archivo'}}</button>
+
+                                        </div>
+
+                                        <!--Preview-->
+                                        <div *ngIf="myimage">
+                                            <img [src]="myimage | async" width="100px" height="100px" alt="" />
                                         </div>
                                     </div>
 
@@ -198,7 +257,7 @@
                                     <div class="col-sm-12 col-md-12">
                                         <div class="input-group mb-3">
                                             <label for="formFileMultiple" class="input-group fw-bold text-muted">Adjunte su portafolio (Opcional)</label>
-                                            <input type="file" name="pf" class="form-control fw-bold text-muted" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                            <input type="file" name="pf" formControlName="pf" class="form-control fw-bold text-muted" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
                                             <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-paperclip"></i></span>
                                         </div>
                                     </div>
@@ -212,9 +271,12 @@
                                     <div class="col-sm-12 col-md-12">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-briefcase"></i></span>
-                                            <input type="text" name="lpf" class="form-control" placeholder="Link portafolio o alguno de tus mejores trabajos (Opcional)" aria-label="Username" aria-describedby="basic-addon1">
+                                            <input type="text" name="lpf" formControlName="lpf" class="form-control" placeholder="Link portafolio o alguno de tus mejores trabajos (Opcional)" aria-label="Username" aria-describedby="basic-addon1">
                                         </div>
                                     </div>
+
+
+
 
                                 </div>
                                 <!--End File 3-->
@@ -320,13 +382,13 @@
 
                                                             <div class="input-group mb-3">
                                                                 <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-location-dot"></i></label>
-                                                                <select name="ciudad" formControlName="ciudad" class="form-select" id="inputGroupSelect01">
+                                                                <select name="ciudad_id" formControlName="ciudad_id" class="form-select" id="inputGroupSelect01">
                                                                   <option selected>Ciudad</option>
                                                                   <option  *ngFor="let ciudad of ciudades">{{ciudad}}</option>
                                                                  </select>
                                                             </div>
 
-                                                            <div class="text-danger px-1" *ngIf="formE.get('ciudad')?.hasError('required') && formE.get('ciudad')?.touched ">
+                                                            <div class="text-danger px-1" *ngIf="formE.get('ciudad_id')?.hasError('required') && formE.get('ciudad_id')?.touched ">
                                                                 <p>Este campo es obligatorio</p>
                                                             </div>
 
@@ -346,12 +408,12 @@
                                                         <div class="col-sm-12 col-md-12">
                                                             <div class="mb-3">
                                                                 <div class="form-floating">
-                                                                    <textarea name="funciones" formControlName="funciones" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                                                    <textarea name="descripcion" formControlName="descripcion" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                                                                     <label for="floatingTextarea2">Describe el cargo y funciones</label>
                                                                 </div>
                                                             </div>
 
-                                                            <div class="text-danger px-1" *ngIf="formE.get('funciones')?.hasError('required') && formE.get('funciones')?.touched ">
+                                                            <div class="text-danger px-1" *ngIf="formE.get('descripcion')?.hasError('required') && formE.get('descripcion')?.touched ">
                                                                 <p>Este campo es obligatorio</p>
                                                             </div>
 
@@ -369,13 +431,13 @@
                                                         <div class="col-sm-12 col-md-3">
                                                             <div class="input-group mb-3">
                                                                 <label class="input-group-text dates" for="inputGroupSelect01">Año inicio</label>
-                                                                <select name="yearini" formControlName="yearini" class="form-select" id="inputGroupSelect01">
+                                                                <select name="anio_ini" formControlName="anio_ini" class="form-select" id="inputGroupSelect01">
                                                                  <option selected>Año</option>
                                                                  <option *ngFor="let year of years" >{{year}}</option>
                                                                  </select>
                                                             </div>
 
-                                                            <div class="text-danger px-1" *ngIf="formE.get('yearini')?.hasError('required') && formE.get('yearini')?.touched ">
+                                                            <div class="text-danger px-1" *ngIf="formE.get('anio_ini')?.hasError('required') && formE.get('anio_ini')?.touched ">
                                                                 <p>Este campo es obligatorio</p>
                                                             </div>
 
@@ -384,13 +446,13 @@
                                                         <div class="col-sm-12 col-md-3">
                                                             <div class="input-group mb-3">
                                                                 <label class="input-group-text dates" for="inputGroupSelect01">Mes inicio</label>
-                                                                <select name="mesini" formControlName="mesini" class="form-select" id="inputGroupSelect01">
+                                                                <select name="mes_ini" formControlName="mes_ini" class="form-select" id="inputGroupSelect01">
                                                                  <option selected>Mes</option>
                                                                  <option *ngFor="let mes of meses">{{mes}}</option>
                                                                 </select>
                                                             </div>
 
-                                                            <div class="text-danger px-1" *ngIf="formE.get('mesini')?.hasError('required') && formE.get('mesini')?.touched ">
+                                                            <div class="text-danger px-1" *ngIf="formE.get('mes_ini')?.hasError('required') && formE.get('mes_ini')?.touched ">
                                                                 <p>Este campo es obligatorio</p>
                                                             </div>
 
@@ -399,13 +461,13 @@
                                                         <div class="col-sm-12 col-md-3">
                                                             <div class="input-group mb-3">
                                                                 <label class="input-group-text dates" for="inputGroupSelect01">Año fin</label>
-                                                                <select name="yearfin" formControlName="yearfin" class="form-select" id="inputGroupSelect01">
+                                                                <select name="anio_fin" formControlName="anio_fin" class="form-select" id="inputGroupSelect01">
                                                                  <option selected>Año</option>
                                                                  <option *ngFor="let year of years">{{year}}</option>
                                                                 </select>
                                                             </div>
 
-                                                            <div class="text-danger px-1" *ngIf="formE.get('yearfin')?.hasError('required') && formE.get('yearfin')?.touched ">
+                                                            <div class="text-danger px-1" *ngIf="formE.get('anio_fin')?.hasError('required') && formE.get('anio_fin')?.touched ">
                                                                 <p>Este campo es obligatorio</p>
                                                             </div>
 
@@ -414,13 +476,13 @@
                                                         <div class="col-sm-12 col-md-3">
                                                             <div class="input-group mb-3">
                                                                 <label class="input-group-text dates" for="inputGroupSelect01">Mes fin</label>
-                                                                <select name="mesfin" formControlName="mesfin" class="form-select" id="inputGroupSelect01">
+                                                                <select name="mes_fin" formControlName="mes_fin" class="form-select" id="inputGroupSelect01">
                                                                 <option selected>Mes</option>
                                                                 <option *ngFor="let mes of meses" >{{mes}}</option>
                                                                 </select>
                                                             </div>
 
-                                                            <div class="text-danger px-1" *ngIf="formE.get('mesfin')?.hasError('required') && formE.get('mesfin')?.touched ">
+                                                            <div class="text-danger px-1" *ngIf="formE.get('mes_fin')?.hasError('required') && formE.get('mes_fin')?.touched ">
                                                                 <p>Este campo es obligatorio</p>
                                                             </div>
 
@@ -483,10 +545,10 @@
                                                 <tr *ngFor="let item of listaExperiencia;let indice=index">
                                                     <td>{{item.empresa}}</td>
                                                     <td>{{item.cargo}}</td>
-                                                    <td>{{item.ciudad}}</td>
-                                                    <td>{{item.mesini}}-{{item.yearini}}</td>
-                                                    <td>{{item.mesfin}}-{{item.yearfin}}</td>
-                                                    <td>{{item.funciones}}</td>
+                                                    <td>{{item.ciudad_id}}</td>
+                                                    <td>{{item.mes_ini}}-{{item.anio_ini}}</td>
+                                                    <td>{{item.mes_fin}}-{{item.anio_fin}}</td>
+                                                    <td>{{item.descripcion}}</td>
                                                     <td>
                                                         <button (click)="editarExperiencia(item,indice)" type="button" class="btn text-white " data-bs-toggle="modal" data-bs-target="#modalExperiencia">
                                                         <i class="fa-solid fa-pen-to-square icono ">
@@ -505,10 +567,15 @@
 
                                 <!--File 1-->
                                 <div class="row g-2 mt-2">
-                                    <div class="col-sm-12 col-md-12">
+                                    <div class="col-sm-6 col-md-6">
+
                                         <!-- Button trigger modal -->
                                         <button (click)="agregarExperiencia()" type="button" class="btn btn-info rounded-pill fw-bold" data-bs-toggle="modal" data-bs-target="#modalExperiencia">Agregar +</button>
+
+
                                     </div>
+
+
                                 </div>
                                 <!--End File 1-->
                             </div>
@@ -579,14 +646,14 @@
                                                         <div class="col-sm-12 col-md-6">
                                                             <div class="input-group mb-3">
                                                                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-school"></i></span>
-                                                                <input type="text" name="institucion" formControlName="institucion" class="form-control" placeholder="Nombre de la institución" aria-label="Institución" aria-describedby="basic-addon1">
+                                                                <input type="text" name="nombre_institucion" formControlName="nombre_institucion" class="form-control" placeholder="Nombre de la institución" aria-label="Institución" aria-describedby="basic-addon1">
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12 col-md-6">
                                                             <div class="input-group mb-3">
                                                                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-book"></i></span>
-                                                                <input type="text" name="programa" formControlName="programa" class="form-control" placeholder="Programa académico" aria-label="Programa" aria-describedby="basic-addon1">
+                                                                <input type="text" name="programa_academico" formControlName="programa_academico" class="form-control" placeholder="Programa académico" aria-label="Programa" aria-describedby="basic-addon1">
                                                             </div>
                                                         </div>
 
@@ -599,7 +666,7 @@
                                                         <div class="col-sm-12 col-md-6">
                                                             <div class="input-group mb-3">
                                                                 <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-graduation-cap"></i></label>
-                                                                <select name="nivel" formControlName="nivel" class="form-select" id="inputGroupSelect01">
+                                                                <select name="nivel_id" formControlName="nivel_id" class="form-select" id="inputGroupSelect01">
                               <option class="text-muted" selected>Nivel Académico</option>
                               <option *ngFor="let nivel of niveles" >{{nivel}}</option>
                              </select>
@@ -611,7 +678,7 @@
 
 
                                                                 <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-check-to-slot"></i></label>
-                                                                <select name="estado" formControlName="estado" class="form-select" id="inputGroupSelect01">
+                                                                <select name="estado_id" formControlName="estado_id" class="form-select" id="inputGroupSelect01">
                               <option class="text-muted" selected>Estado</option>
                               <option  *ngFor="let estado of estados" >{{estado}}</option>
                               </select>
@@ -652,10 +719,10 @@
                                             <tbody>
 
                                                 <tr *ngFor="let item of listaFormacion;let indice=index">
-                                                    <td>{{item.institucion}}</td>
-                                                    <td>{{item.programa}}</td>
-                                                    <td>{{item.nivel}}</td>
-                                                    <td>{{item.estado}}</td>
+                                                    <td>{{item.nombre_institucion}}</td>
+                                                    <td>{{item.programa_academico}}</td>
+                                                    <td>{{item.nivel_id}}</td>
+                                                    <td>{{item.estado_id}}</td>
                                                     <td>
                                                         <button (click)="editarFormacion(item,indice)" type="button" class="btn text-white " data-bs-toggle="modal" data-bs-target="#modalFormacion">
                                                         <i class="fa-solid fa-pen-to-square icono ">
@@ -673,11 +740,13 @@
 
 
                                 <!--File 2-->
-                                <div class="row g-2">
-                                    <div class="col-sm-12 col-md-12">
+                                <div class="row g-2 mt-2">
+                                    <div class="col-sm-6 col-md-6">
                                         <!-- Button trigger modal -->
                                         <button (click)="agregarFormacion()" type="button" class="btn btn-info rounded-pill fw-bold" data-bs-toggle="modal" data-bs-target="#modalFormacion">Agregar +</button>
                                     </div>
+
+
                                 </div>
                                 <!--End File 2-->
                             </div>
@@ -700,14 +769,14 @@
         <div class="row">
             <div class="col-sm-5 col-md-6  mt-2">
                 <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
-                    <label name="autorizacion" class="form-check-label" for="exampleCheck1">Autoriza a WPLAY.CO para realizar el tratamiento y manejo de sus datos personales conforme a nuestra Politica de Privacidad.</label>
+                    <input name="autorizacion" formControlName="autorizacion" type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Autoriza a WPLAY.CO para realizar el tratamiento y manejo de sus datos personales conforme a nuestra Politica de Privacidad.</label>
                 </div>
             </div>
             <div class="col-sm-5 col-md-6  mt-2">
 
 
-                <button type="submit" class="btn btn-success btn-lg">ENVIAR</button>
+                <button [disabled]="!formT.get('autorizacion')?.hasError('required') == false" type="submit" class="btn btn-success btn-lg">ENVIAR</button>
 
 
 

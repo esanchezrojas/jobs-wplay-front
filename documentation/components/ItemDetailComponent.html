@@ -404,6 +404,11 @@
 
                     </td>
                 </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
                     <tr>
                         <td class="col-md-4">
                                 <div class="io-line">Defined in <a href="" data-line="192" class="link-to-prism">src/app/components/item-detail/item-detail.component.ts:192</a></div>
@@ -672,7 +677,7 @@ export class ItemDetailComponent implements OnInit {
   */
   
   public id:any;
-  public response:any;
+  public response:any &#x3D; [];
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute
@@ -692,12 +697,12 @@ export class ItemDetailComponent implements OnInit {
   cargarData(ide:number){
 
     this.dataService.getListado()
-    .subscribe((response:any)&#x3D;&gt;{
+    .subscribe((res:any)&#x3D;&gt;{
       
-      for (let i&#x3D;0; i&lt;response.length;i++){
-      if (response[i].id &#x3D;&#x3D; ide){
-        this.response &#x3D; response[i];
-        console.log(response)
+      for (let i&#x3D;0; i&lt;res.length;i++){
+      if (res[i].id &#x3D;&#x3D; ide){
+        this.response &#x3D; res[i];
+        console.log(res)
       }
     }
      

@@ -93,10 +93,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#editRegistro" >editRegistro</a>
+                                <a href="#editarE" >editarE</a>
                             </li>
                             <li>
-                                <a href="#registroE" >registroE</a>
+                                <a href="#guardarE" >guardarE</a>
                             </li>
                         </ul>
                     </td>
@@ -168,16 +168,16 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="editRegistro"></a>
+                    <a name="editarE"></a>
                     <span class="name">
-                        <span ><b>editRegistro</b></span>
-                        <a href="#editRegistro"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>editarE</b></span>
+                        <a href="#editarE"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>editRegistro(url: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, datos: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+<code>editarE(datos: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                 </td>
             </tr>
 
@@ -206,18 +206,6 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>url</td>
-                                    <td>
-                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
                                     <td>datos</td>
                                     <td>
                                                 <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -235,7 +223,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                     <div class="io-description">
@@ -249,16 +237,16 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="registroE"></a>
+                    <a name="guardarE"></a>
                     <span class="name">
-                        <span ><b>registroE</b></span>
-                        <a href="#registroE"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>guardarE</b></span>
+                        <a href="#guardarE"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>registroE(datos: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+<code>guardarE(datos: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                 </td>
             </tr>
 
@@ -373,12 +361,12 @@ export class RegistroVacanteService {
     private http: HttpClient
   ) { }
 
-    registroE(datos:any):Observable&lt;any&gt;{
+    guardarE(datos:any):Observable&lt;any&gt;{
       return this.http.post(&#x60;${this.url}&#x60;,datos);
     }
 
-    editRegistro(url:any,datos:any){
-      this.http.put(url,datos);
+    editarE(datos:any){
+     return this.http.put(&#x60;${this.url}&#x60;,datos);
     }
 
 }

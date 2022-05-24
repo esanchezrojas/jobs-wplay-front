@@ -14,7 +14,7 @@ export class RegistroVacanteService {
     private http: HttpClient
   ) { }
 
-    guardarE(datos:any):Observable<any>{
+    guardarT(datos:any):Observable<any>{
       return this.http.post(`${this.url}`,datos);
     }
 

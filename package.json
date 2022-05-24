@@ -8,6 +8,8 @@
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
         "prod": "ng build --prod",
+        "server": "cd .. && cd jobs_wplay_back && npm run start",
+        "dev": "concurrently \"npm run server\" \"npm run start\"",
         "compodoc:build": "compodoc -p tsconfig.doc.json",
         "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s",
         "compodoc:serve": "compodoc -s"
@@ -27,6 +29,7 @@
         "@popperjs/core": "^2.11.5",
         "animate.css": "^4.1.1",
         "bootstrap": "^5.1.3",
+        "concurrently": "^7.2.0",
         "font-awesome": "^4.7.0",
         "jquery": "^3.6.0",
         "ngx-chips": "^3.0.0",

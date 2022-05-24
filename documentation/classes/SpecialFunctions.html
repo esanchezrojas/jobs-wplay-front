@@ -74,6 +74,21 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#meses" >meses</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -83,6 +98,9 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
+                            <li>
+                                <a href="#calcularMes" >calcularMes</a>
+                            </li>
                             <li>
                                 <a href="#formatoFecha" >formatoFecha</a>
                             </li>
@@ -99,12 +117,113 @@
 </section>
 
 
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="meses"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>meses</b></span>
+                        <a href="#meses"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>GeneralData.MESES</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/app/config/special-functions.ts:6</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
             <section>
     
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="calcularMes"></a>
+                    <span class="name">
+                        <span ><b>calcularMes</b></span>
+                        <a href="#calcularMes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>calcularMes(mes: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/config/special-functions.ts:18</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>mes</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -125,8 +244,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="3"
-                            class="link-to-prism">src/app/config/special-functions.ts:3</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="8"
+                            class="link-to-prism">src/app/config/special-functions.ts:8</a></div>
                 </td>
             </tr>
 
@@ -184,15 +303,34 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export class SpecialFunctions {
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { GeneralData } from &#x27;src/app/config/general-data&#x27;;
 
-formatoFecha(fecha:any){
-   
-    const offset &#x3D; fecha.getTimezoneOffset()
-    fecha &#x3D; new Date(fecha.getTime() - (offset*60*1000))
-    return fecha.toISOString().split(&#x27;T&#x27;)[0]
 
-}
+export class SpecialFunctions {
+
+    public meses &#x3D; GeneralData.MESES;
+
+    formatoFecha(fecha: any) {
+        GeneralData
+
+
+        const offset &#x3D; fecha.getTimezoneOffset()
+        fecha &#x3D; new Date(fecha.getTime() - (offset * 60 * 1000))
+        return fecha.toISOString().split(&#x27;T&#x27;)[0]
+
+    }
+
+    calcularMes(mes: any): number {
+        let indice &#x3D; 0;
+        for (let i &#x3D; 0; i &lt; this.meses.length; i++) {
+            if (this.meses &#x3D;&#x3D; mes) {
+                indice &#x3D; (i+1);
+                break;
+            }
+
+        }
+        return indice;
+    }
 
 
 

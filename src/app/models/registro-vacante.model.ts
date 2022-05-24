@@ -1,10 +1,15 @@
-export class RegistroUsuarioModel{
-    identity?: string;
-    firstname?: string;
-    lastname?: string;
-    email?: string;
-    mobile?: string;
-    evento?: string;
+export class RegistroVanteModel{
+     
+    registroIni?:object;
+    experiencia?:object;
+    formacion?:object;
+
+
+
+
+
+
+
    
    
    }

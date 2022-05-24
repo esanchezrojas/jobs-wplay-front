@@ -1,14 +1,19 @@
+
 import { SpecialFunctions } from './../../config/special-functions';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GeneralData } from 'src/app/config/general-data';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DataModalsService } from 'src/app/services/data-modals.service';
 import Swal from 'sweetalert2';
 import { DataService } from 'src/app/services/data.service';
-import { RegistroExperiencia } from 'src/app/models/form-experiencia.model';
 import { RegistroVacanteService } from 'src/app/services/registro-vacante.service';
 import { v4 as uuidv4 } from 'uuid';
+import { DatosBasicos } from 'src/app/models/form.databasic.model';
+import { ModeloExperiencia } from 'src/app/models/form-experiencia.model';
+import { ModeloFormacion } from 'src/app/models/form-formacion.model';
+import { RegistroVanteModel } from 'src/app/models/registro-vacante.model';
+import { Observable, Subscriber } from 'rxjs';
+
 
 
 
@@ -34,6 +39,8 @@ export class ApplyFormComponent implements OnInit {
   public ciudades = GeneralData.CIUDADES;
 
   uuid: any;
+  myimage: Observable<any> | undefined;
+  loading: boolean | undefined;
 
 
 
@@ -48,6 +55,7 @@ export class ApplyFormComponent implements OnInit {
 
   formE: FormGroup = new FormGroup({});//formulario experiencia
   formF: FormGroup = new FormGroup({});//formulario formacion
+  formT: FormGroup = new FormGroup({});//formulario todo
 
   formato: SpecialFunctions = new SpecialFunctions();
 
@@ -56,11 +64,12 @@ export class ApplyFormComponent implements OnInit {
 
 
     private dataService: DataService,
-    private serviceModal: DataModalsService,
+
     private route: ActivatedRoute,
     private router: Router,
     private fb: FormBuilder,
-    private registroE: RegistroVacanteService
+    private registroT: RegistroVacanteService
+
 
   ) { }
 
@@ -76,6 +85,7 @@ export class ApplyFormComponent implements OnInit {
 
     this.crearFormE();
     this.crearFormF();
+    this.createFormT();
   }
 
 
@@ -98,6 +108,37 @@ export class ApplyFormComponent implements OnInit {
       });
   }
 
+
+
+
+  createFormT() {
+
+    this.formT = this.fb.group({
+
+
+      nombre: ["", [Validators.required, Validators.maxLength(150)]],
+      apellido: ["", [Validators.required, Validators.maxLength(150)]],
+      celular: ["", [Validators.required, Validators.maxLength(10)]],
+      cumpleanios: ["", [Validators.required]],
+      cedula: ["", [Validators.required, Validators.maxLength(11), Validators.minLength(6)]],
+      email: ["", [Validators.required, Validators.email, Validators.maxLength(150)]],
+      ciudad: ["", [Validators.required]],
+      redsocial: ["", [Validators.required]],
+      hv: [""],
+      pf: [""],
+      lpf: ["", [Validators.required]],
+      autorizacion: [true, [Validators.required, Validators.requiredTrue]]
+
+
+
+    });
+
+  }
+
+
+
+
+
   /**
     * Se crea form group para realizar validaciones de formulario experiencia
     */
@@ -105,12 +146,14 @@ export class ApplyFormComponent implements OnInit {
     this.formE = this.fb.group({
       empresa: ["", [Validators.required]],
       cargo: ["", [Validators.required]],
-      ciudad: ["", [Validators.required]],
-      funciones: ["", [Validators.required]],
-      yearini: ["", [Validators.required]],
-      mesini: ["", [Validators.required]],
-      yearfin: ["", [Validators.required]],
-      mesfin: ["", [Validators.required]]
+      ciudad_id: ["", [Validators.required]],
+      descripcion: ["", [Validators.required]],
+      anio_ini: ["", [Validators.required]],
+      mes_ini: ["", [Validators.required]],
+      anio_fin: ["", [Validators.required]],
+      mes_fin: ["", [Validators.required]],
+      vacantehv_id: [""]
+
 
 
     });
@@ -121,66 +164,86 @@ export class ApplyFormComponent implements OnInit {
      */
   crearFormF() {
     this.formF = this.fb.group({
-      institucion: ["", [Validators.required]],
-      programa: ["", [Validators.required]],
-      nivel: ["", [Validators.required]],
-      estado: ["", [Validators.required]]
+      nombre_institucion: ["", [Validators.required]],
+      programa_academico: ["", [Validators.required]],
+      nivel_id: ["", [Validators.required]],
+      estado_id: ["", [Validators.required]]
     });
   }
 
-/**
- * Se ejecuta al presionar el boton guardar cambios
- * @param datos Es el valor de los datos enviado desde el formulario
- */
-  async enviarE(datos: any) {
 
-    let modelE = new RegistroExperiencia();
+  enviarTodo(datos: any) {
 
-    //modelE.setvacantehvexper_id = this.response.id;
-    modelE.setvacantehv_id(this.uuid);
-    modelE.setcargo(datos.cargo);
-    modelE.setempresa(datos.empresa);
-    modelE.setdescripcion(datos.funciones);
-    modelE.setanio_ini(datos.yearini);
-    modelE.setanio_fin(datos.yearfin);
-
-    modelE.setmes_ini(2);
-    modelE.setmes_fin(3);
-
-    await this.registroE.guardarE(modelE).subscribe({
-      next: (data: any) => {
-
-          this.registrarExperiencia(datos);
-          alert('se ejecuto correctamente')
-          console.log(JSON.stringify(data.message) + ' mensaje back')
-          // alert(JSON.stringify(data));
-    },
-      error: (error: any) => {
-        alert(error + GeneralData.ERROR_GENERAL_MESSAGE);
-      }
-    });
+    let uuid = uuidv4();
+    let modelDatosB = new DatosBasicos();
+    modelDatosB.num_unico_hv = uuid;
+    modelDatosB.nombres = datos.nombre;
+    modelDatosB.apellidos = datos.apellido;
+    modelDatosB.cedula = datos.cedula;
+    modelDatosB.celular = datos.celular;
+    modelDatosB.email = datos.email;
+    modelDatosB.fecha_cumple = datos.cumpleanios;
+    modelDatosB.link_redsoc_fav = datos.redsocial;
 
 
 
+    let registro = new RegistroVanteModel();
+
+    if (this.listaExperiencia.length > 0 && this.listaFormacion.length > 0) {
+
+      registro.registroIni = modelDatosB;
+      registro.formacion = this.listaFormacion;
+      registro.experiencia = this.listaExperiencia;
+
+      console.log('iniciales ', registro.registroIni)
+      console.log('formacion ', registro.formacion)
+      console.log('experiencia ', registro.experiencia)
+
+
+
+      this.registroT.guardarT(registro)
+        .subscribe((res: any) => {
+
+          alert(res.message);
+        });
+
+    } else {
+      alert('debes agregar al menos una formacion y al menos una experiencia')
+    }
+
+
+    console.log(this.formT);
   }
 
-  
   /**
-   * Cuando swe es verdadero quiere decir que se esta editando un registro
-   * Cuando swe es falso quiere decir que se esta agregando un registro nuevo
-   * @param datos Es el valor de los datos enviados desde el formulario
+   * Se ejecuta al presionar el boton guardar cambios
+   * @param datos Es el valor de los datos enviado desde el formulario
    */
-  registrarExperiencia(datos: any) {
+  enviarE(datos: any) {
+
+    let modelE = new ModeloExperiencia();
+    let uuid = uuidv4();
+
+    modelE.vacantehv_id = uuid;
+    modelE.empresa = datos.empresa;
+    modelE.cargo = datos.cargo;
+    modelE.ciudad_id = datos.ciudad_id;
+    modelE.descripcion = datos.descripcion;
+    modelE.anio_ini = datos.anio_ini;
+    modelE.anio_fin = datos.anio_fin;
+    modelE.mes_ini = datos.mes_ini;
+    modelE.mes_fin = datos.mes_fin;
+
 
     if (!this.swe) {
-      this.listaExperiencia.push(this.formE.value);
+      this.listaExperiencia.push(modelE);
+      console.log('nuevo ', modelE)
     } else {
-      this.listaExperiencia[this.indiceE] = this.formE.value;
+      this.listaExperiencia[this.indiceE] = modelE;
+      console.log('editado ', modelE)
     }
 
     this.formE.reset();
-    // this.registrarExperiencia(datos);
-
 
 
   }
@@ -191,13 +254,24 @@ export class ApplyFormComponent implements OnInit {
    * Valida que swf sea verdadero para agregar un nuevo registro
    */
   enviarF(datos: any) {
+
+    let modelF = new ModeloFormacion();
+    let uuid = uuidv4();
+
+    modelF.vacantehv_id = uuid;
+    modelF.nombre_institucion = datos.nombre_institucion;
+    modelF.programa_academico = datos.programa_academico;
+    modelF.nivel_id = datos.nivel_id;
+    modelF.estado_id = datos.estado_id;
+
+
     if (!this.swf) {
 
-      this.listaFormacion.push(this.formF.value);
+      this.listaFormacion.push(modelF);
 
     } else {
 
-      this.listaFormacion[this.indiceF] = this.formF.value;
+      this.listaFormacion[this.indiceF] = modelF;
     }
 
     this.formF.reset();
@@ -209,34 +283,6 @@ export class ApplyFormComponent implements OnInit {
 
 
 
-  /*
-  createFormDatosPersonales() {
-
-    this.form = this.fb.group({
-
-
-      nombre: ["", [Validators.required]],
-      apellido: ["", [Validators.required]],
-      celular: ["", [Validators.required]],
-      cumpleanos: ["", [Validators.required]],
-      cedula: ["", [Validators.required]],
-      email: ["", [Validators.required]],
-      ciudad: ["", [Validators.required]],
-      redsocial: ["", [Validators.required]],
-      hv: ["", [Validators.required]],
-      pf: ["", [Validators.required]],
-      lpf: ["", [Validators.required]]
-
-
-    });
-
-  }
-
-
-  /**
-   * Elimina el registro seleccionado en la tabla experiencia
-   * @param indice Es la pocicion del array que se va a eliminar
-   */
 
   /**
    * Elimina un registro de la tabla obteniendo una posición
@@ -317,38 +363,14 @@ export class ApplyFormComponent implements OnInit {
     * @param item Es el registro seleccionado desde el html
     * @param indice Es la posicion en el arreglo
     */
-  async editarExperiencia(item: any, indice: any) {
+  editarExperiencia(item: any, indice: any) {
 
-    let modelE = new RegistroExperiencia();
 
-    //modelE.setvacantehvexper_id = this.response.id;
-    modelE.setvacantehv_id(this.response.id);
-    modelE.setcargo(item.cargo);
-    modelE.setempresa(item.empresa);
-    modelE.setdescripcion(item.funciones);
-    modelE.setanio_ini(item.yearini);
-    modelE.setanio_fin(item.yearfin);
-
-    modelE.setmes_ini(2);
-    modelE.setmes_fin(3);
-
-    
     this.swe = true;
     this.formE.setValue(item);
     this.indiceE = indice;
 
-    await this.registroE.editarE(item).subscribe({
-      next: (data: any) => {
 
-          this.registrarExperiencia(item);
-          alert('se ejecuto correctamente')
-          console.log(JSON.stringify(data.message) + 'mensaje back')
-          // alert(JSON.stringify(data));
-    },
-      error: (error: any) => {
-        alert(error + GeneralData.ERROR_GENERAL_MESSAGE);
-      }
-    });
 
   }
 
@@ -365,5 +387,76 @@ export class ApplyFormComponent implements OnInit {
     this.indiceF = indice;
 
   }
+
+
+  capturarFile(event: any) {
+
+    let sizeByte: number = 0;
+    let siezekiloByte: number = 0;
+
+    const file = event.target.files[0];
+
+    sizeByte = file.size;
+    siezekiloByte = sizeByte / 1024;
+
+    let imageType = file.type;
+
+    var match = ["application/pdf"];
+    
+    console.log(sizeByte, ' este es el tamaño')
+    console.log(siezekiloByte, ' este es el tamaño en kb')
+    console.log(imageType, ' este es el tipo de extencion')
+    //this.convertToBase64(file);
+    var maxSize = 2048;// Establecer peso máximo (2048 kbytes / 2mb)
+
+    if (!match.includes(imageType)) {
+      alert("Solo se admite formato pdf");
+      // Se usa this para restablecer el campo que disparó el evento
+      
+     
+    
+    }
+
+    if (siezekiloByte > maxSize) {
+      console.log(sizeByte, ' este es el tamaño')
+      alert('El tamaño permitido es 2mb su archivo pesa '+ sizeByte+'mb');
+      file.setValue= "";
+      }
+   
+
+
+
+  }
+
+
+  convertToBase64(file: File) {
+    this.myimage = new Observable((subscriber: Subscriber<any>) => {
+      this.readFile(file, subscriber);
+    });
+    console.log(this.myimage, ' Esta es la img')
+  }
+
+  readFile(file: File, subscriber: Subscriber<any>) {
+    const filereader = new FileReader();
+    filereader.readAsDataURL(file);
+
+    filereader.onload = () => {
+      subscriber.next(filereader.result);
+      subscriber.complete();
+    };
+    filereader.onerror = (error) => {
+      subscriber.error(error);
+      subscriber.complete();
+    };
+  }
+
+
+
+  subirArchivo() {
+
+  }
+
+
+
 
 }
