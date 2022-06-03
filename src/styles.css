@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import '~animate.css/animate.min';
+@import 'tippy.js/dist/tippy.css';
 h1,
 h2,
 h6 {
@@ -11,20 +13,21 @@ p {
 }
 
 body {
-    background: #f0f0f0;
+    /* background-image: url('https://brandemia.org/contenido/subidas/2018/09/cabecera-uefa_2-960x640.jpg');*/
+    background: #022174;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #D3CBB8, #f0f0f0);
+    background: -webkit-linear-gradient(to top, #070B17, #e2e4ec);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #D3CBB8, #f0f0f0);
+    background: linear-gradient(to top, #070B17, #e2e4ec);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .card {
-    background: #ffffff;
+    background: #c2c8d8;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #e6e4df, #ffffff);
+    background: -webkit-linear-gradient(to top, #d2d3d8, #e2e4ec);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #e6e4df, #ffffff);
+    background: linear-gradient(to top, #c0c5d6, #e2e4ec);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -36,4 +39,8 @@ body {
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #e6e4df, #ffffff);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.btn:focus {
+    box-shadow: none;
 }

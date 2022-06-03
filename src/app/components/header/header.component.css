@@ -1,3 +1,21 @@
 .navbar ul li a:hover {
-    border-bottom: 1px solid rgb(41, 39, 170);
+    /* border-bottom: 1px solid rgb(41, 39, 170);*/
+    transform: scale(1.1);
+    text-decoration: underline;
+    color: #FFC952;
+}
+
+.navbar {
+    /*background-color: #1C2741;*/
+    background-image: url('https://pbs.twimg.com/profile_images/1493751760636108803/eZimWuVK_400x400.jpg');
+    background: #022174;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #c0c0c0, #022174);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #252525, #022174);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.titulos {
+    color: #FFC952;
 }

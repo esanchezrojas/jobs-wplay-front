@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgxTippyModule } from 'ngx-tippy-wrapper';
 
 import {HttpClientModule} from '@angular/common/http';
 
@@ -14,6 +15,7 @@ import { ItemDetailComponent } from './components/item-detail/item-detail.compon
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ApplyFormComponent } from './components/apply-form/apply-form.component';
+import { FilterCityPipe } from './pipes/filter-city.pipe';
 
 
 @NgModule({
@@ -25,14 +27,17 @@ import { ApplyFormComponent } from './components/apply-form/apply-form.component
     ItemDetailComponent,
     HomeComponent,
     FooterComponent,
-    ApplyFormComponent
+    ApplyFormComponent,
+    FilterCityPipe
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
-    FormsModule,ReactiveFormsModule
+    FormsModule,ReactiveFormsModule,
+    NgxTippyModule
 
   ],
   providers: [],

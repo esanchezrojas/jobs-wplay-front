@@ -96,7 +96,7 @@
                                 <a href="#editarE" >editarE</a>
                             </li>
                             <li>
-                                <a href="#guardarE" >guardarE</a>
+                                <a href="#guardarT" >guardarT</a>
                             </li>
                         </ul>
                     </td>
@@ -237,16 +237,16 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="guardarE"></a>
+                    <a name="guardarT"></a>
                     <span class="name">
-                        <span ><b>guardarE</b></span>
-                        <a href="#guardarE"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>guardarT</b></span>
+                        <a href="#guardarT"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>guardarE(datos: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+<code>guardarT(datos: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                 </td>
             </tr>
 
@@ -361,7 +361,7 @@ export class RegistroVacanteService {
     private http: HttpClient
   ) { }
 
-    guardarE(datos:any):Observable&lt;any&gt;{
+    guardarT(datos:any):Observable&lt;any&gt;{
       return this.http.post(&#x60;${this.url}&#x60;,datos);
     }
 

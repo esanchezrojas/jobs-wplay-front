@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { GeneralData } from 'src/app/config/general-data';
+import { catchError, throwError } from 'rxjs';
 
 
 @Injectable({
@@ -7,21 +9,28 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
- 
+ url= GeneralData.DOMINIO;
 
   constructor(private http: HttpClient) { }
+
+  static handleError(error: HttpErrorResponse): any {
+    console.log(error);
+    return throwError(() => new Error('Ha ocurrido un error.'))
+    //return throwError('Ha ocurrido un error.');
+  }
 
   
   getListado() {
 
 
-    return this.http.get(`http://localhost:3000/api/publicVacantes/`);
+    return this.http.get(`${this.url}/api/publicVacantes/`).pipe(
+      catchError(DataService.handleError));
   }
  
+  getListas(){
 
+    return this.http.get(`${this.url}/api/listas/`);
 
-  //get more  data
-  getOnly(name: string){
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
   }
+
 }

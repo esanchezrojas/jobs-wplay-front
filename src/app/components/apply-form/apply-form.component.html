@@ -54,7 +54,7 @@
 
                                     <div class="col-sm-12 col-md-12">
                                         <div class="input-group mb-3">
-                                            <span class="input-group-text nr "><i class="fa-solid fa-user-tie "></i></span>
+                                            <span class="input-group-text nr " ngxTippy data-tippy-content="Ingrese sus nombres y apellidos completos"><i class="fa-solid fa-user-tie " ></i></span>
                                             <input type="text" placeholder="Nombres" formControlName="nombre" name="nombre" aria-label="First name" class="form-control" [ngClass]="{'is-invalid': formT.get('nombre')?.hasError('required')&&formT.get('nombre')?.dirty && formT.get('nombre')?.touched }">
 
                                             <input type="text" placeholder="Apellidos" formControlName="apellido" name="apellido" aria-label="Last name" class="form-control" [ngClass]="{'is-invalid': formT.get('apellido')?.hasError('required')&&formT.get('apellido')?.dirty && formT.get('apellido')?.touched }">
@@ -84,19 +84,29 @@
 
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
-                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-mobile-screen"></i></span>
-                                            <input type="text" class="form-control " placeholder="Celular" aria-label="Celular" formControlName="celular" name="celular" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get('celular')?.hasError('required')&&formT.get('celular')?.dirty && formT.get('celular')?.touched }">
+                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese su número de celular"><i class="fa-solid fa-mobile-screen"></i></span>
+                                            <input type="text" class="form-control " placeholder="Celular" aria-label="Celular" formControlName="celular" name="celular" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get('celular')?.hasError('required')&&formT.get('celular')?.dirty && formT.get('celular')?.touched || formT.get('celular')?.hasError('maxlength') }">
                                         </div>
 
                                         <div class="text-danger px-1 col-6 float-start " *ngIf="formT.get('celular')?.hasError('required')&&formT.get('celular')?.dirty && formT.get('celular')?.touched ">
-
                                             <p>Este campo es obligatorio</p>
                                         </div>
+
+                                        <div class="text-danger px-1 col-6 float-start " *ngIf="formT.get('celular')?.hasError('maxlength')">
+                                            <p>El campo debe tener maximo 10 caracteres</p>
+                                        </div>
+
+                                        <div class="text-danger px-1 col-6 float-start " *ngIf="formT.get('celular')?.hasError('minlength')">
+                                            <p>El campo debe tener minimo 10 caracteres</p>
+                                        </div>
+
+
+
                                     </div>
 
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
-                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-cake-candles"></i></span>
+                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese su fecha de cumpleaños"><i class="fa-solid fa-cake-candles"></i></span>
                                             <input type="date" formControlName="cumpleanios" name="cumpleanios" class="form-control" placeholder="Fecha de cumpleaños" aria-label="cumpleanios" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get('cumpleanios')?.hasError('required')&&formT.get('cumpleanios')?.dirty && formT.get('cumpleanios')?.touched }">
                                         </div>
 
@@ -115,8 +125,8 @@
 
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
-                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-id-card"></i></span>
-                                            <input type="text" name="cedula" formControlName="cedula" class="form-control" placeholder="Cédula" aria-label="Username" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get('cedula')?.hasError('required')&&formT.get('cedula')?.dirty && formT.get('cedula')?.touched || formT.get('cedula')?.hasError('maxlength') }">
+                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese su número de cédula"><i class="fa-solid fa-id-card"></i></span>
+                                            <input type="text" name="cedula" formControlName="cedula" class="form-control" placeholder="Cédula" aria-label="Username" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get('cedula')?.hasError('required')&&formT.get('cedula')?.dirty && formT.get('cedula')?.touched || formT.get('cedula')?.hasError('maxlength') || formT.get('cedula')?.hasError('minlength') }">
                                         </div>
 
                                         <div class="text-danger px-1 col-6 float-start " *ngIf="formT.get('cedula')?.hasError('required')&&formT.get('cedula')?.dirty && formT.get('cedula')?.touched  ">
@@ -127,12 +137,20 @@
                                             <p>El campo debe tener maximo 11 caracteres</p>
                                         </div>
 
+                                        <div class="text-danger px-1 col-6 float-start " *ngIf="formT.get('cedula')?.hasError('minlength')">
+                                            <p>El campo debe tener minimo 6 caracteres</p>
+                                        </div>
+
                                     </div>
 
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
-                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-envelope"></i></span>
-                                            <input type="email" name="email" formControlName="email" class="form-control" placeholder="Correo Electronico" aria-label="Username" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get('email')?.hasError('required')&&formT.get('email')?.dirty && formT.get('email')?.touched }">
+                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese su email"><i class="fa-solid fa-envelope"></i></span>
+                                            <input type="email" name="email" formControlName="email" class="form-control" placeholder="Correo Electronico" aria-label="Username" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get('email')?.hasError('required')&&formT.get('email')?.dirty && formT.get('email')?.touched || formT.get('email')?.hasError('email') }">
+                                        </div>
+
+                                        <div class="text-danger px-1 col-6 float-start " *ngIf="formT.get('email')?.hasError('email') ">
+                                            <p>Este campo debe ser un email</p>
                                         </div>
 
                                         <div class="text-danger px-1 col-6 float-start " *ngIf="formT.get('email')?.hasError('required')&&formT.get('email')?.dirty && formT.get('email')?.touched ">
@@ -150,8 +168,11 @@
 
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
-                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-location-dot"></i></span>
-                                            <input type="text" name="ciudad" formControlName="ciudad" class="form-control" placeholder="Ciudad" aria-label="Username" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get('ciudad')?.hasError('required')&&formT.get('ciudad')?.dirty && formT.get('ciudad')?.touched }">
+                                            <label class="input-group-text dates" for="inputGroupSelect01" ngxTippy data-tippy-content="Ingrese la ciudad donde vive"><i class="fa-solid fa-location-dot"></i></label>
+                                            <select [ngClass]="{'is-invalid': formT.get('ciudad')?.hasError('required')&&formT.get('ciudad')?.dirty && formT.get('ciudad')?.touched || formT.get('required')?.hasError('ciudad') }" name="ciudad" formControlName="ciudad" class="form-select" id="inputGroupSelect01">
+                                              <option selected value="">Ciudad</option>
+                                              <option  *ngFor="let ciu of city" [value]="ciu.ciudad_id">{{ciu.ciudad}}</option>
+                                             </select>
                                         </div>
 
                                         <div class="text-danger px-1 col-6 float-start " *ngIf="formT.get('ciudad')?.hasError('required')&&formT.get('ciudad')?.dirty && formT.get('ciudad')?.touched ">
@@ -163,7 +184,7 @@
 
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
-                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-thumbs-up"></i></span>
+                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese su red social favorita"><i class="fa-solid fa-thumbs-up"></i></span>
                                             <input type="text" name="redsocial" formControlName="redsocial" class="form-control" placeholder="Red social favorita" aria-label="Red Social" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get('redsocial')?.hasError('required')&&formT.get('redsocial')?.dirty && formT.get('redsocial')?.touched }">
                                         </div>
 
@@ -233,9 +254,12 @@
                                         <div class="input-group mb-3">
                                             <label for="formFileMultiple" class="input-group fw-bold text-muted">Adjunte su hoja de vida</label>
                                             <input (change)="capturarFile($event)" name="hv" formControlName="hv" type="file" class="form-control fw-bold text-muted" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                            <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-paperclip"></i></span>
+                                            <span class="input-group-text" id="basic-addon2" ngxTippy data-tippy-content="Adjunte su hoja de vida o cv"><i class="fa-solid fa-paperclip"></i></span>
 
-                                            <button (click)="subirArchivo()" type="button" [disabled]="loading" class="btn btn-primary">{{(loading)?'Cargando...': 'Subir Archivo'}}</button>
+                                            <!--
+                                            <button (click)="subirArchivo()" type="button" [disabled]="loading" class="btn btn-primary">{{(loading)?'Cargando...': 'Subir Archivo'}}</button>-->
+
+                                            <button (click)="subirArchivo()" type="button" class="btn btn-primary">subir</button>
 
                                         </div>
 
@@ -258,7 +282,7 @@
                                         <div class="input-group mb-3">
                                             <label for="formFileMultiple" class="input-group fw-bold text-muted">Adjunte su portafolio (Opcional)</label>
                                             <input type="file" name="pf" formControlName="pf" class="form-control fw-bold text-muted" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                            <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-paperclip"></i></span>
+                                            <span class="input-group-text" id="basic-addon2" ngxTippy data-tippy-content="Adjunte su portafolio"><i class="fa-solid fa-paperclip"></i></span>
                                         </div>
                                     </div>
 
@@ -270,13 +294,10 @@
 
                                     <div class="col-sm-12 col-md-12">
                                         <div class="input-group mb-3">
-                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-briefcase"></i></span>
+                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese el link de su portafolio o alguno de sus trabajos"><i class="fa-solid fa-briefcase"></i></span>
                                             <input type="text" name="lpf" formControlName="lpf" class="form-control" placeholder="Link portafolio o alguno de tus mejores trabajos (Opcional)" aria-label="Username" aria-describedby="basic-addon1">
                                         </div>
                                     </div>
-
-
-
 
                                 </div>
                                 <!--End File 3-->
@@ -383,8 +404,8 @@
                                                             <div class="input-group mb-3">
                                                                 <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-location-dot"></i></label>
                                                                 <select name="ciudad_id" formControlName="ciudad_id" class="form-select" id="inputGroupSelect01">
-                                                                  <option selected>Ciudad</option>
-                                                                  <option  *ngFor="let ciudad of ciudades">{{ciudad}}</option>
+                                                                    <option selected value="">Ciudad</option>
+                                                                    <option  *ngFor="let ciu of city" [value]="[ciu.ciudad]">{{ciu.ciudad}}</option>
                                                                  </select>
                                                             </div>
 
@@ -432,7 +453,7 @@
                                                             <div class="input-group mb-3">
                                                                 <label class="input-group-text dates" for="inputGroupSelect01">Año inicio</label>
                                                                 <select name="anio_ini" formControlName="anio_ini" class="form-select" id="inputGroupSelect01">
-                                                                 <option selected>Año</option>
+                                                                 <option selected value="">Año</option>
                                                                  <option *ngFor="let year of years" >{{year}}</option>
                                                                  </select>
                                                             </div>
@@ -447,7 +468,7 @@
                                                             <div class="input-group mb-3">
                                                                 <label class="input-group-text dates" for="inputGroupSelect01">Mes inicio</label>
                                                                 <select name="mes_ini" formControlName="mes_ini" class="form-select" id="inputGroupSelect01">
-                                                                 <option selected>Mes</option>
+                                                                 <option selected value="">Mes</option>
                                                                  <option *ngFor="let mes of meses">{{mes}}</option>
                                                                 </select>
                                                             </div>
@@ -462,14 +483,16 @@
                                                             <div class="input-group mb-3">
                                                                 <label class="input-group-text dates" for="inputGroupSelect01">Año fin</label>
                                                                 <select name="anio_fin" formControlName="anio_fin" class="form-select" id="inputGroupSelect01">
-                                                                 <option selected>Año</option>
-                                                                 <option *ngFor="let year of years">{{year}}</option>
+                                                                 <option selected value="">Año</option>
+                                                                 <option *ngFor="let year of years">{{(!formE.get('actualmente')?.value)? year: ''}}</option>
                                                                 </select>
                                                             </div>
 
+                                                            <!--
                                                             <div class="text-danger px-1" *ngIf="formE.get('anio_fin')?.hasError('required') && formE.get('anio_fin')?.touched ">
                                                                 <p>Este campo es obligatorio</p>
                                                             </div>
+                                                            -->
 
                                                         </div>
 
@@ -477,14 +500,15 @@
                                                             <div class="input-group mb-3">
                                                                 <label class="input-group-text dates" for="inputGroupSelect01">Mes fin</label>
                                                                 <select name="mes_fin" formControlName="mes_fin" class="form-select" id="inputGroupSelect01">
-                                                                <option selected>Mes</option>
-                                                                <option *ngFor="let mes of meses" >{{mes}}</option>
+                                                                <option selected value="">Mes</option>
+                                                                <option *ngFor="let mes of meses"  >{{(!formE.get('actualmente')?.value)? mes: ''}}</option>
                                                                 </select>
                                                             </div>
-
+                                                            <!--
                                                             <div class="text-danger px-1" *ngIf="formE.get('mes_fin')?.hasError('required') && formE.get('mes_fin')?.touched ">
                                                                 <p>Este campo es obligatorio</p>
                                                             </div>
+                                                            -->
 
                                                         </div>
 
@@ -495,7 +519,7 @@
                                                     <div class="row g-2">
                                                         <div class="col-sm-12 col-md-12">
                                                             <div class="mb-3 form-check">
-                                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                                <input formControlName="actualmente" type="checkbox" class="form-check-input" id="exampleCheck1">
                                                                 <label class="form-check-label" for="exampleCheck1">Actualmente</label>
                                                             </div>
 
@@ -507,7 +531,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                                    <button [disabled]="formE.invalid" type="submit" class="btn btn-primary">Guardar Cambios</button>
+                                                    <button [disabled]="formE.invalid" type="submit" class="btn btn-primary">{{(swe)?'Actualizar': 'Guardar'}}</button>
                                                 </div>
                                             </form>
 
@@ -520,7 +544,7 @@
                                 <div class="row g-2">
 
 
-                                    <div class="table-responsive">
+                                    <div class="table-responsive ">
                                         <table class="table table-dark table-hover text-center">
                                             <thead>
 
@@ -570,7 +594,7 @@
                                     <div class="col-sm-6 col-md-6">
 
                                         <!-- Button trigger modal -->
-                                        <button (click)="agregarExperiencia()" type="button" class="btn btn-info rounded-pill fw-bold" data-bs-toggle="modal" data-bs-target="#modalExperiencia">Agregar +</button>
+                                        <button (click)="agregarExperiencia()" type="button" class="btn btn-info rounded-pill fw-bold " data-bs-toggle="modal" data-bs-target="#modalExperiencia">Agregar +</button>
 
 
                                     </div>
@@ -667,8 +691,8 @@
                                                             <div class="input-group mb-3">
                                                                 <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-graduation-cap"></i></label>
                                                                 <select name="nivel_id" formControlName="nivel_id" class="form-select" id="inputGroupSelect01">
-                              <option class="text-muted" selected>Nivel Académico</option>
-                              <option *ngFor="let nivel of niveles" >{{nivel}}</option>
+                              <option class="text-muted" selected value="">Nivel Académico</option>
+                              <option *ngFor="let nivel of niveles" [value]="nivel.clasificador_id" >{{nivel.descripcion}}</option>
                              </select>
                                                             </div>
                                                         </div>
@@ -679,7 +703,7 @@
 
                                                                 <label class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-check-to-slot"></i></label>
                                                                 <select name="estado_id" formControlName="estado_id" class="form-select" id="inputGroupSelect01">
-                              <option class="text-muted" selected>Estado</option>
+                              <option class="text-muted" selected value="">Estado</option>
                               <option  *ngFor="let estado of estados" >{{estado}}</option>
                               </select>
                                                             </div>
@@ -690,7 +714,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                                    <button [disabled]="formF.invalid" type="submit" class="btn btn-primary">Guardar Cambios</button>
+                                                    <button [disabled]="formF.invalid" type="submit" class="btn btn-primary">{{(swf)?'Actualizar': 'Guardar'}}</button>
 
                                                 </div>
                                             </form>
@@ -776,7 +800,7 @@
             <div class="col-sm-5 col-md-6  mt-2">
 
 
-                <button [disabled]="!formT.get('autorizacion')?.hasError('required') == false" type="submit" class="btn btn-success btn-lg">ENVIAR</button>
+                <button [disabled]="!formT.get('autorizacion')?.value" type="submit" class="btn btn-success btn-lg ">ENVIAR</button>
 
 
 

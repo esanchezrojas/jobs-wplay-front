@@ -43,7 +43,7 @@
 
 <ol class="breadcrumb">
   <li>Pipes</li>
-  <li >FilterPipe</li>
+  <li >FilterCityPipe</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,7 +62,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/pipes/filter.pipe.ts</code>
+            <code>src/app/pipes/filter-city.pipe.ts</code>
         </p>
 
 
@@ -74,7 +74,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-3">Name</td>
-                        <td class="col-md-9">filter</td>
+                        <td class="col-md-9">filterCity</td>
                     </tr>
                 </tbody>
             </table>
@@ -98,7 +98,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>transform(value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, arg: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+<code>transform(products: any[], category: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -106,7 +106,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="8"
-                            class="link-to-prism">src/app/pipes/filter.pipe.ts:8</a></div>
+                            class="link-to-prism">src/app/pipes/filter-city.pipe.ts:8</a></div>
                 </td>
             </tr>
 
@@ -127,9 +127,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>value</td>
+                                    <td>products</td>
                                     <td>
-                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            <code>any[]</code>
                                     </td>
 
                                     <td>
@@ -139,9 +139,9 @@
 
                                 </tr>
                                 <tr>
-                                    <td>arg</td>
+                                    <td>category</td>
                                     <td>
-                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
@@ -175,24 +175,16 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Pipe, PipeTransform } from &#x27;@angular/core&#x27;;
 
 @Pipe({
-  name: &#x27;filter&#x27;
+  name: &#x27;filterCity&#x27;
 })
-export class FilterPipe implements PipeTransform {
+export class FilterCityPipe implements PipeTransform {
 
-  transform(value: any, arg : any): any {
-   
-    const resultPosts &#x3D; [];
-    if(arg &#x3D;&#x3D; &#x27;&#x27; || arg.length &lt; 2) return value;
-    for(const pos of value){
-      if(pos.nombreVacante.toLowerCase().indexOf(arg.toLowerCase())&gt; -1){
-          resultPosts.push(pos);
-      }
-    }
-    return resultPosts;
-  
+  transform(products: any[], category: string): any {
+   // return products.filter(p &#x3D;&gt; p.category &#x3D;&#x3D; category);
+   return null;
+  }
 }
-
-}</code></pre>
+</code></pre>
     </div>
 
 </div>
@@ -232,7 +224,7 @@ export class FilterPipe implements PipeTransform {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'pipe';
-            var COMPODOC_CURRENT_PAGE_URL = 'FilterPipe.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'FilterCityPipe.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
