@@ -7,7 +7,7 @@ export class ModeloExperiencia {
     descripcion?: string;
     anio_ini?: string;
     mes_ini?: string;
-    actualmente?: boolean;
+    actualmente?: string;
     anio_fin?: string;
     mes_fin?: string;
     

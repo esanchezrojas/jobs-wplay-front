@@ -8,6 +8,8 @@ export namespace GeneralData {
     export const CIUDADES_LIST = [{ nombre: "Medellín" }, { nombre: "Bogotá" }, { nombre: "Cartagena" }];
     export const URL_REGISTRO = "http://localhost:3000/api/publicVacantes";
     export const ERROR_GENERAL_MESSAGE = "Hubo un error";
+    //export const DOMINIO = "https://nodejobs.wplay.co";
     export const DOMINIO = "http://localhost:3004";
+   
 
 }

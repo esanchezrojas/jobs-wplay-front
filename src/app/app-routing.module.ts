@@ -1,8 +1,13 @@
+import { AuthGuard } from './guards/auth.guard';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 import { HomeComponent } from './components/home/home.component';
 import { ApplyFormComponent } from './components/apply-form/apply-form.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { Loading2Component } from './components/loading2/loading2.component';
+import { LoginComponent } from './components/login/login.component';
+import { PrivateComponent } from './components/private/private.component';
 
 
 
@@ -27,13 +32,33 @@ const routes: Routes = [
   },
   {
   path: 'oferta/:variable',
-  component: ItemDetailComponent
+  component: ItemDetailComponent,
+  canActivate: [AuthGuard]
   },
   
   {
     path: 'aplicar/:var',
     component: ApplyFormComponent
 
+  },
+  {
+    path: 'loader',
+    component: LoaderComponent
+
+  },
+  {
+    path: 'loader2',
+    component: Loading2Component
+
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'private',
+    component: PrivateComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: '**',

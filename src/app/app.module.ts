@@ -15,7 +15,14 @@ import { ItemDetailComponent } from './components/item-detail/item-detail.compon
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ApplyFormComponent } from './components/apply-form/apply-form.component';
+import { LoaderComponent } from './components/loader/loader.component';
 import { FilterCityPipe } from './pipes/filter-city.pipe';
+import { Loading2Component } from './components/loading2/loading2.component';
+import { LoginComponent } from './components/login/login.component';
+
+//Providers
+import { JwtHelperService, JWT_OPTIONS }  from '@auth0/angular-jwt';
+
 
 
 @NgModule({
@@ -28,7 +35,14 @@ import { FilterCityPipe } from './pipes/filter-city.pipe';
     HomeComponent,
     FooterComponent,
     ApplyFormComponent,
-    FilterCityPipe
+    FilterCityPipe,
+    LoaderComponent,
+    Loading2Component,
+    LoginComponent
+    
+  
+    
+
     
   ],
   imports: [
@@ -40,7 +54,12 @@ import { FilterCityPipe } from './pipes/filter-city.pipe';
     NgxTippyModule
 
   ],
-  providers: [],
+  providers: [
+     // JWT
+     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+     JwtHelperService,
+     
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

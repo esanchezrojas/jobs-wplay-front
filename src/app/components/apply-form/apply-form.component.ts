@@ -42,7 +42,7 @@ export class ApplyFormComponent implements OnInit {
 
   uuid: any;
   myimage: Observable<any> | undefined;
-  loading: boolean | undefined;
+  loading: boolean= false;
 
 
   city: any;
@@ -69,12 +69,11 @@ export class ApplyFormComponent implements OnInit {
 
   constructor(
 
-
-    private dataService: DataService,
     private route: ActivatedRoute,
     private router: Router,
     private fb: FormBuilder,
-    private registroT: RegistroVacanteService,
+    private dataService: DataService,
+    private serviceRegistro: RegistroVacanteService,
     private serviceUpload: UploadService
 
 
@@ -99,8 +98,7 @@ export class ApplyFormComponent implements OnInit {
 
         this.city = res.ciudad;
         this.niveles = res.nivel;
-        console.log(this.city);
-        console.log(this.niveles)
+       
       });
 
     this.route.paramMap.subscribe((paramMap: any) => {
@@ -124,7 +122,7 @@ export class ApplyFormComponent implements OnInit {
         for (let i = 0; i < res.length; i++) {
           if (res[i].id == ide) {
             this.response = res[i];
-            console.log(res)
+            
           }
         }
 
@@ -141,16 +139,16 @@ export class ApplyFormComponent implements OnInit {
     this.formT = this.fb.group({
       nombre: ["", [Validators.required, Validators.maxLength(150)]],
       apellido: ["", [Validators.required, Validators.maxLength(150)]],
-      celular: ["", [Validators.required, Validators.maxLength(10), Validators.minLength(10)]],
+      celular: ["", [Validators.required, Validators.maxLength(10), Validators.minLength(10),Validators.pattern(/^[0-9]+$/)]],
       cumpleanios: ["", [Validators.required]],
-      cedula: ["", [Validators.required, Validators.maxLength(11), Validators.minLength(6)]],
+      cedula: ["", [Validators.required, Validators.maxLength(11), Validators.minLength(6),Validators.pattern(/^[0-9]+$/)]],
       email: ["", [Validators.required, Validators.email, Validators.maxLength(150)]],
       ciudad: ["", [Validators.required]],
-      redsocial: ["", [Validators.required]],
-      hv: [""],
+      redsocial: [""],
+      hv: ["",[Validators.required]],
       pf: [""],
-      lpf: ["", [Validators.required]],
-      autorizacion: [true, [Validators.requiredTrue]]
+      lpf: [""],
+      autorizacion: [true]
     });
 
   }
@@ -171,7 +169,7 @@ export class ApplyFormComponent implements OnInit {
       anio_fin: [""],
       mes_fin: [""],
       vacantehv_id: [""],
-      actualmente: [false]
+      actualmente: [""]
 
 
 
@@ -192,7 +190,7 @@ export class ApplyFormComponent implements OnInit {
   }
 
 
-  enviarTodo(datos: any) {
+   enviarTodo(datos: any) {
 
     //this.router.navigate(['/inicio']);
 
@@ -212,9 +210,10 @@ export class ApplyFormComponent implements OnInit {
 
     if (this.listaExperiencia.length > 0 && this.listaFormacion.length > 0) {
 
-      // if (this.formE.valid && this.formF.valid && this.formE.valid) {
+       //if (this.formT.valid) {
       if (true) {
         console.log('Es valido');
+        
 
         var formData = new FormData();
     /*
@@ -226,10 +225,7 @@ export class ApplyFormComponent implements OnInit {
     
     formData.append('files', this.files)
 
-    //Array.from(this.file).forEach((f:any) => formData.append('file', f))
-       
-
-
+    
         registro.registroIni = modelDatosB;
         registro.formacion = this.listaFormacion;
         registro.experiencia = this.listaExperiencia;
@@ -240,8 +236,10 @@ export class ApplyFormComponent implements OnInit {
         console.log('experiencia ', registro.experiencia)
 
 
-
-        this.registroT.guardarT(registro)
+      try{
+        //Estado de spinner
+        this.loading = true;
+        this.serviceRegistro.guardarT(registro)
           .subscribe((res: any) => {
 
             //alert(res.message);
@@ -253,14 +251,33 @@ export class ApplyFormComponent implements OnInit {
               timer: 2500
             })
             // this.router.navigate(['/inicio']);
+            this.loading = false;
           });
 
+        }catch(error){
+          console.log('Error ',error)
+          this.loading = false;
+        }
+
+
+        this.subirArchivo();
+      
+
       } else {
-        alert('Validar campos requeridos')
+        Swal.fire({
+          icon: 'info',
+          title: 'Se deben validar los campos obligatorios',
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+          }
+        })
       }
 
     } else {
-      // alert('debes agregar al menos una formacion y al menos una experiencia')
+    
       Swal.fire({
         icon: 'info',
         title: 'Se debe agregar al menos una formación y al menos una experiencia',
@@ -277,6 +294,7 @@ export class ApplyFormComponent implements OnInit {
     console.log(this.formT);
   }
 
+
   /**
    * Se ejecuta al presionar el boton guardar cambios
    * @param datos Es el valor de los datos enviado desde el formulario
@@ -286,7 +304,7 @@ export class ApplyFormComponent implements OnInit {
 
     let modelE = new ModeloExperiencia();
 
-    if (datos.actualmente) {
+    if (datos.actualmente === 'S') {
       modelE.anio_fin = '';
       modelE.mes_fin = '';
       console.log('ingresó al check')
@@ -294,6 +312,7 @@ export class ApplyFormComponent implements OnInit {
     } else {
       modelE.anio_fin = datos.anio_fin;
       modelE.mes_fin = datos.mes_fin;
+      console.log('No ingresó al check')
     }
 
     modelE.vacantehv_id = this.response.id;
@@ -304,6 +323,8 @@ export class ApplyFormComponent implements OnInit {
     modelE.anio_ini = datos.anio_ini;
     modelE.mes_ini = datos.mes_ini;
     modelE.actualmente = datos.actualmente;
+
+    console.log(modelE.actualmente, 'actualmente')
 
 
 
@@ -517,16 +538,27 @@ export class ApplyFormComponent implements OnInit {
       console.log(archivo)
     });
     */
-   
+   try{
     formData.append('files', this.files)
 console.log(this.files)
-
+ this.loading = true;
     this.serviceUpload.upload(formData)
           .subscribe((res: any) => {
 
-           alert('mensaje'+res.message)
+           //alert('mensaje'+res.message)
+           Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: res.message,
+            showConfirmButton: false,
+            timer: 2500
+          })
+           this.loading = false;
           });
-
+        }catch(error){
+          console.log(error)
+          this.loading = false;
+        }
      
   }
 
@@ -567,7 +599,7 @@ console.log(this.files)
         }
       });
       // Se usa this para restablecer el campo que disparó el evento
-
+      this.formT.get('hv')?.setValue(null)
     }
 
     //Validación tamaño maxímo
@@ -584,7 +616,7 @@ console.log(this.files)
           popup: 'animate__animated animate__fadeOutUp'
         }
       });
-      //file.setValue = "";
+      this.formT.get('hv')?.setValue(null)
     }
 
     return file;
