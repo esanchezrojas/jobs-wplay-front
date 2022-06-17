@@ -1,4 +1,4 @@
-.login-seccion {
+.abs-center {
     /*
     display: flex;
     align-items: center;
@@ -12,11 +12,8 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.social:hover {
-    background: transparent;
-    color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #03e9f4, 0 0 5px #03e9f4, 0 0 10px #03e9f4, 0 0 3px #03e9f4;
+.form {
+    width: 450px;
 }
 
 .card {
@@ -26,32 +23,60 @@
 }
 
 .login-box {
-    width: 500px;
+    width: 450px;
 }
 
-.user input {
-    background: transparent !important;
+.user-box {
+    background: transparent;
+    border: none;
+}
+
+.login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
     color: #fff;
+    text-align: center;
+}
+
+.login-box .user-box {
+    position: relative;
+}
+
+.login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
     border: none;
     border-bottom: 1px solid #fff;
-    border-radius: 0%;
     outline: none;
-    text-decoration: none;
-    box-shadow: none;
+    background: transparent !important;
 }
 
-.user label {
+.login-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
     color: #03e9f4;
+    pointer-events: none;
+    transition: .5s;
 }
 
-.user input:focus {
-    outline: none;
+.login-box .user-box input:focus~label,
+.login-box .user-box input:valid~label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
 }
 
 .login-box form a {
     position: relative;
     display: inline-block;
-    padding: 10px 50px;
+    padding: 10px 20px;
     color: #fffbfb;
     font-size: 16px;
     text-decoration: none;

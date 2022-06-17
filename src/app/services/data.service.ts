@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { GeneralData } from 'src/app/config/general-data';
-import { catchError, throwError } from 'rxjs';
+
 
 
 @Injectable({
@@ -13,18 +13,15 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  static handleError(error: HttpErrorResponse): any {
-    console.log(error);
-    return throwError(() => new Error('Ha ocurrido un error.'))
-    //return throwError('Ha ocurrido un error.');
-  }
+  
 
   
   getListado() {
 
+    //let params = new HttpParams().append('page','2');
+    //params = params.append('nombre','Edwin');
 
-    return this.http.get(`${this.url}/api/publicVacantes/`).pipe(
-      catchError(DataService.handleError));
+    return this.http.get(`${this.url}/api/publicVacantes/`)
   }
  
   getListas(){
@@ -32,5 +29,8 @@ export class DataService {
     return this.http.get(`${this.url}/api/listas/`);
 
   }
+
+
+  
 
 }

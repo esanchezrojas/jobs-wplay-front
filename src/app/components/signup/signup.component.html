@@ -1,59 +1,54 @@
 <app-header></app-header>
-
-
-
 <section class="vh-100">
     <div class="container-fluid">
         <div class="row">
-
-
-            <div class="col-sm-6 text-black login-seccion">
+            <div class="col-sm-6 text-black abs-center">
 
                 <div class="px-5 ms-xl-4 mt-5">
                     <img src="../../../assets/img/Wplay-Logo-blanco.png" alt="Login image" style="width: 150px; height: 50px;">
+                    <!-- <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>-->
+
                 </div>
 
                 <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
                     <div class="login-box">
                         <div class="card shadow p-3 mb-5  rounded">
                             <div class="card-body">
-
                                 <form>
                                     <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start ">
-                                        <p class="lead fw-normal mb-0 me-4 text-white">Sign in</p>
-                                        <button type="button" class="btn btn-info btn-floating mx-1 rounded-circle social">
+                                        <p class="lead fw-normal mb-0 me-3 text-white">Registrate y aplica</p>
+                                        <button type="button" class="btn btn-info btn-floating mx-1 rounded-circle">
                                           <i class="fab fa-facebook-f"></i>
                                         </button>
 
-                                        <button type="button" class="btn btn-info btn-floating mx-1 rounded-circle social">
+                                        <button type="button" class="btn btn-info btn-floating mx-1 rounded-circle">
                                           <i class="fab fa-twitter"></i>
                                         </button>
 
-                                        <button type="button" class="btn btn-info btn-floating mx-1 rounded-circle social">
+                                        <button type="button" class="btn btn-info btn-floating mx-1 rounded-circle">
                                           <i class="fab fa-linkedin-in"></i>
                                         </button>
                                     </div>
-
-                                    <div class="form-floating mt-5 mb-3 user">
-                                        <input name="nom_usuario" [(ngModel)]="user.nom_usuario" type="email" class="form-control " id="floatingInput" placeholder="user">
-                                        <label for="floatingInput">Usuario</label>
-                                    </div>
-                                    <div class="form-floating user">
-                                        <input name="clave" [(ngModel)]="user.clave" type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                                        <label for="floatingPassword">Contraseña</label>
+                                    <div class="user-box mt-5">
+                                        <input [(ngModel)]="user.correo" type="email" name="correo" required="">
+                                        <label>Correo</label>
                                     </div>
 
+                                    <div class="user-box ">
+                                        <input [(ngModel)]="user.nom_usuario" type="text" name="nom_usuario" required="">
+                                        <label>Nombre Completo</label>
+                                    </div>
+                                    <div class="user-box">
+                                        <input [(ngModel)]="user.clave" type="password" name="clave" required="">
+                                        <label>Contraseña</label>
+                                    </div>
                                     <div class="d-flex justify-content-center">
-                                        <a (click)="logIn()" type="button">
+                                        <a (click)="registro()" type="button">
                                             <span></span>
                                             <span></span>
                                             <span></span>
                                             <span></span> Enviar
                                         </a>
-                                    </div>
-                                    <div class="d-flex justify-content-center text-center">
-                                        <p><a [routerLink]="['/registro']" [routerLinkActive]="['is-active']">¿No tienes cuenta? Registrate aquí</a>
-                                        </p>
                                     </div>
                                 </form>
                             </div>
@@ -63,10 +58,8 @@
                 </div>
 
             </div>
-
-
             <div class="col-sm-6 px-0 d-none d-sm-block">
-                <img src="https://blog.wplay.co/wp-content/uploads/2019/07/WhatsApp-Image-2019-07-08-at-4.51.43-PM.jpeg" alt="Login image" class="w-100 vh-100" style="object-fit:cover; object-position: left;">
+                <img src="https://blog.wplay.co/wp-content/uploads/2019/07/WhatsApp-Image-2019-07-08-at-4.51.43-PM.jpeg" alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
             </div>
         </div>
     </div>

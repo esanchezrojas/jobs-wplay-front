@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {DataService} from '../../services/data.service';
 import { GeneralData } from 'src/app/config/general-data';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-vacantes-list',
@@ -26,7 +27,8 @@ export class VacantesListComponent implements OnInit {
   
   constructor(
     private dataService: DataService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
     ) { }
   ngOnInit(): void {
     this.getVacantes();
@@ -40,23 +42,44 @@ export class VacantesListComponent implements OnInit {
   }
   
   getVacantes(){
-
+    
     this.dataService.getListado()
-    .subscribe((res:any)=>{
+    .subscribe({
+      next: (res:any) => {
       let cont = res.length;
       this.totalVacantes = res.length;
       this.vacantes = res;
       console.log(res)
       console.log(cont)
-     /* response.results.forEach((result: any) => {
-        this.dataService.getOnly(result.name) 
-        .subscribe((unicResponse:any)=>{
-            this.vacantes.push(unicResponse)
-            console.log(this.vacantes); 
-        });
-      });*/
-      });
-     }
-     
+    
 
-}
+    },
+    error: (err:any) =>{
+     //if(err.status === 0){
+      // this.router.navigate(['/loader'])
+       //alert('error de conexión con el servidor')
+     //}
+    // alert(err)
+     Swal.fire({
+      title: err,
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    })
+      
+    }
+    });
+
+    }
+  
+    
+
+    
+
+     }
+
+    
+     

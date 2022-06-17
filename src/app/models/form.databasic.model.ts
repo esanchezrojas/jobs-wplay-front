@@ -4,6 +4,8 @@ export class DatosBasicos{
     nombres?:string ;
     apellidos?:string ;
     cedula?: number;
+    fechaexped_cc?:string;
+    lugarexped_cc?:string;
     celular?: number ;
     ciudad_id?: number;
     email?: string;

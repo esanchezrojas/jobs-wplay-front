@@ -68,7 +68,7 @@
                             <img [src]="vacante.imagen" alt="" class="card-img-top">
                             <h6 class="fw-bold text-start card-title">{{vacante.nombreVacante}} </h6>
 
-                            <span class="badge rounded-pill bg-info text-dark">{{vacante.c_vacantes}}</span>
+                            <span *ngIf="vacante.c_vacantes > 1" class="badge rounded-pill bg-info text-dark">{{vacante.c_vacantes}} Vacantes</span>
 
 
                             <p class="card-text text-muted text-start">{{vacante.descripcion}}

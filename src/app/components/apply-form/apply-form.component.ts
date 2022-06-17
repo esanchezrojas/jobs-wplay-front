@@ -18,6 +18,7 @@ import { Observable, Subscriber } from 'rxjs';
 
 
 
+
 @Component({
   selector: 'app-apply-form',
   templateUrl: './apply-form.component.html',
@@ -27,7 +28,9 @@ import { Observable, Subscriber } from 'rxjs';
 
 export class ApplyFormComponent implements OnInit {
 
-  /** */
+  /**
+   * En esta propiedad se guarda la informacion de la vacante
+   */
   response: any = [];
 
   /**
@@ -42,22 +45,26 @@ export class ApplyFormComponent implements OnInit {
 
   uuid: any;
   myimage: Observable<any> | undefined;
-  loading: boolean= false;
+  loading: boolean = false;
 
 
   city: any;
   niveles: any;
+  estadosF: any;
+  medios: any;
   listaExperiencia: any = [];
   listaExperienciaBD: any = [];
   listaFormacion: any = [];
   listaFormacionBD: any = [];
-  files: any;
+  fileHv: any;
+  filePf: any;
   archivos: any = [];
   array: any = {};
   swe: boolean = false;
   swf: boolean = false;
   indiceE: any = "";
   indiceF: any = "";
+  uuidG: string = "";
 
 
   formE: FormGroup = new FormGroup({});//formulario experiencia
@@ -85,6 +92,7 @@ export class ApplyFormComponent implements OnInit {
     this.crearFormE();
     this.crearFormF();
     this.createFormT();
+
   }
 
   /**
@@ -98,9 +106,15 @@ export class ApplyFormComponent implements OnInit {
 
         this.city = res.ciudad;
         this.niveles = res.nivel;
-       
+        this.estadosF = res.estado;
+        this.medios = res.medio;
+        console.log(this.estadosF, this.medios)
+
       });
 
+    /**
+     * Consulta atravez de un parametro enviado a la url el id de la vacante para luego traer la información
+     */
     this.route.paramMap.subscribe((paramMap: any) => {
       const { params } = paramMap
       console.log(params.var)
@@ -122,7 +136,7 @@ export class ApplyFormComponent implements OnInit {
         for (let i = 0; i < res.length; i++) {
           if (res[i].id == ide) {
             this.response = res[i];
-            
+
           }
         }
 
@@ -139,13 +153,17 @@ export class ApplyFormComponent implements OnInit {
     this.formT = this.fb.group({
       nombre: ["", [Validators.required, Validators.maxLength(150)]],
       apellido: ["", [Validators.required, Validators.maxLength(150)]],
-      celular: ["", [Validators.required, Validators.maxLength(10), Validators.minLength(10),Validators.pattern(/^[0-9]+$/)]],
+      celular: ["", [Validators.required, Validators.maxLength(10), Validators.minLength(10), Validators.pattern(/^[0-9]+$/)]],
       cumpleanios: ["", [Validators.required]],
-      cedula: ["", [Validators.required, Validators.maxLength(11), Validators.minLength(6),Validators.pattern(/^[0-9]+$/)]],
+      cedula: ["", [Validators.required, Validators.maxLength(11), Validators.minLength(6), Validators.pattern(/^[0-9]+$/)]],
+      fechaexped_cc: ["", [Validators.required]],
+      lugarexped_cc: ["", [Validators.required]],
       email: ["", [Validators.required, Validators.email, Validators.maxLength(150)]],
       ciudad: ["", [Validators.required]],
+      mediovac_id: ["", [Validators.required]],
       redsocial: [""],
-      hv: ["",[Validators.required]],
+      mejor_hacer: ["", [Validators.required]],
+      hv: ["", [Validators.required]],
       pf: [""],
       lpf: [""],
       autorizacion: [true]
@@ -163,6 +181,7 @@ export class ApplyFormComponent implements OnInit {
       empresa: ["", [Validators.required]],
       cargo: ["", [Validators.required]],
       ciudad_id: ["", [Validators.required]],
+      ciudad_nom: [""],
       descripcion: ["", [Validators.required]],
       anio_ini: ["", [Validators.required]],
       mes_ini: ["", [Validators.required]],
@@ -190,7 +209,7 @@ export class ApplyFormComponent implements OnInit {
   }
 
 
-   enviarTodo(datos: any) {
+  enviarTodo(datos: any) {
 
     //this.router.navigate(['/inicio']);
 
@@ -200,47 +219,54 @@ export class ApplyFormComponent implements OnInit {
     modelDatosB.nombres = datos.nombre;
     modelDatosB.apellidos = datos.apellido;
     modelDatosB.cedula = datos.cedula;
+    modelDatosB.fechaexped_cc = datos.fechaexped_cc;
+    modelDatosB.lugarexped_cc = datos.lugarexped_cc;
     modelDatosB.celular = datos.celular;
     modelDatosB.ciudad_id = datos.ciudad;
     modelDatosB.email = datos.email;
     modelDatosB.fecha_cumple = datos.cumpleanios;
+    modelDatosB.mediovac_id = datos.mediovac_id;
     modelDatosB.link_redsoc_fav = datos.redsocial;
+    modelDatosB.mejor_hacer = datos.mejor_hacer;
 
     let registro = new RegistroVanteModel();
 
     if (this.listaExperiencia.length > 0 && this.listaFormacion.length > 0) {
 
-       //if (this.formT.valid) {
-      if (true) {
-        console.log('Es valido');
-        
-
-        var formData = new FormData();
-    /*
-    this.archivos.array.forEach((archivo: any) => {
-      formData.append('files', archivo)
-      console.log(archivo)
-    });
-    */
-    
-    formData.append('files', this.files)
-
-    
-        registro.registroIni = modelDatosB;
-        registro.formacion = this.listaFormacion;
-        registro.experiencia = this.listaExperiencia;
-        registro.archivo = formData;
-
-        console.log('iniciales ', registro.registroIni)
-        console.log('formacion ', registro.formacion)
-        console.log('experiencia ', registro.experiencia)
+      //if (this.formT.valid) {
+      // if (true) {
+      console.log('Es valido');
 
 
-      try{
-        //Estado de spinner
-        this.loading = true;
-        this.serviceRegistro.guardarT(registro)
-          .subscribe((res: any) => {
+      var formData = new FormData();
+      /*
+      this.archivos.array.forEach((archivo: any) => {
+        formData.append('files', archivo)
+        console.log(archivo)
+      });
+      */
+
+      formData.append('files', this.fileHv)
+
+
+      registro.registroIni = modelDatosB;
+      registro.formacion = this.listaFormacion;
+      registro.experiencia = this.listaExperiencia;
+      // registro.archivo = formData;
+
+      console.log('iniciales ', registro.registroIni)
+      console.log('formacion ', registro.formacion)
+      console.log('experiencia ', registro.experiencia)
+
+
+
+      //Estado de spinner
+      this.loading = true;
+      this.serviceRegistro.guardarT(registro)
+        .subscribe({
+          next: (res: any) => {
+
+
 
             //alert(res.message);
             Swal.fire({
@@ -252,32 +278,27 @@ export class ApplyFormComponent implements OnInit {
             })
             // this.router.navigate(['/inicio']);
             this.loading = false;
-          });
 
-        }catch(error){
-          console.log('Error ',error)
-          this.loading = false;
-        }
+           
 
-
-        this.subirArchivo();
-      
-
-      } else {
-        Swal.fire({
-          icon: 'info',
-          title: 'Se deben validar los campos obligatorios',
-          showClass: {
-            popup: 'animate__animated animate__fadeInDown'
+        console.log(this.formT);
           },
-          hideClass: {
-            popup: 'animate__animated animate__fadeOutUp'
+          error: (err: any) => {
+            console.log(err)
           }
-        })
-      }
+
+
+        });
+      //End Suscribe
+
+          this.subirArchivo(this.fileHv);
+
+            //if (this.filePf) {
+            // this.subirArchivo(this.filePf);
+            //}
+
 
     } else {
-    
       Swal.fire({
         icon: 'info',
         title: 'Se debe agregar al menos una formación y al menos una experiencia',
@@ -287,12 +308,11 @@ export class ApplyFormComponent implements OnInit {
         hideClass: {
           popup: 'animate__animated animate__fadeOutUp'
         }
-      })
+      });
     }
-
-
-    console.log(this.formT);
   }
+
+
 
 
   /**
@@ -489,20 +509,35 @@ export class ApplyFormComponent implements OnInit {
   }
 
 
-  capturarFile(event: Event) {
+  capturarFileHv(event: Event) {
 
-    
-    let file:any;
+
+    let file: any;
     const element = event.currentTarget as HTMLInputElement;
     let fileList: FileList | null = element.files;
 
-    
+
     if (fileList) {
       file = fileList[0];
-     this.files = this.validacionUpload(file)
+      let nomId = 'hv';
+      this.fileHv = this.validacionUpload(file, nomId)
       console.log("FileUpload -> file", file);
     }
-    
+
+  }
+
+  capturarFilePf(event: Event) {
+    let file: any;
+    const element = event.currentTarget as HTMLInputElement;
+    let fileList: FileList | null = element.files;
+
+
+    if (fileList) {
+      file = fileList[0];
+      let nomId = 'pf';
+      this.filePf = this.validacionUpload(file, nomId)
+      console.log("FileUpload -> file", file);
+    }
   }
 
 
@@ -529,47 +564,47 @@ export class ApplyFormComponent implements OnInit {
 
 
 
-  subirArchivo() {
+  async subirArchivo(file: File) {
 
-    var formData = new FormData();
-    /*
-    this.archivos.array.forEach((archivo: any) => {
-      formData.append('files', archivo)
-      console.log(archivo)
-    });
-    */
-   try{
-    formData.append('files', this.files)
-console.log(this.files)
- this.loading = true;
-    this.serviceUpload.upload(formData)
-          .subscribe((res: any) => {
+    const formData = new FormData();
 
-           //alert('mensaje'+res.message)
-           Swal.fire({
+    
+      formData.append('files', file)
+      console.log(file)
+      this.loading = true;
+
+      this.serviceUpload.upload(formData)
+        .subscribe({
+          next:
+          (res: any) => {
+
+          //alert('mensaje'+res.message)
+          Swal.fire({
             position: 'center',
             icon: 'success',
             title: res.message,
             showConfirmButton: false,
             timer: 2500
           })
-           this.loading = false;
-          });
-        }catch(error){
-          console.log(error)
           this.loading = false;
+
+        },
+        error:(err)=>{
+          console.log(err)
         }
-     
+        });
+   
+
   }
 
 
 
-  validacionUpload(file:File){
+  validacionUpload(file: File, nomId: string) {
 
     let sizeByte: number = 0;
     let siezekiloByte: number = 0;
     let maxSize = 2048;// Establecer peso máximo (2048 kbytes / 2mb)
-   
+
     //Tamaño actual
     sizeByte = file.size;
     //Tamaño para convertido a mb para comparar
@@ -584,7 +619,7 @@ console.log(this.files)
     console.log(archivoType, ' este es el tipo de extencion')
     //funcion para convertir en base64
     //this.convertToBase64(file);
-    
+
     //Validación Tipo de archivo
     if (!match.includes(archivoType)) {
       //alert("Solo se admite formato pdf");
@@ -599,13 +634,13 @@ console.log(this.files)
         }
       });
       // Se usa this para restablecer el campo que disparó el evento
-      this.formT.get('hv')?.setValue(null)
+      this.formT.get(nomId)?.setValue(null)
     }
 
     //Validación tamaño maxímo
     if (siezekiloByte > maxSize) {
       console.log(sizeByte, ' este es el tamaño')
-     // alert('El tamaño permitido es 2mb su archivo pesa ' + sizeByte + 'mb');
+      // alert('El tamaño permitido es 2mb su archivo pesa ' + sizeByte + 'mb');
       Swal.fire({
         icon: 'info',
         title: 'El tamaño maxímo permitido es 2mb',
@@ -616,12 +651,12 @@ console.log(this.files)
           popup: 'animate__animated animate__fadeOutUp'
         }
       });
-      this.formT.get('hv')?.setValue(null)
+      this.formT.get(nomId)?.setValue(null)
     }
 
     return file;
 
-   
+
 
   }
 

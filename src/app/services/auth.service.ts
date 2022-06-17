@@ -17,7 +17,7 @@ export class AuthService {
     ) { }
 
   singin(user:any){
-    return this.http.post(`${this.URL}/api/singin`,user);
+    return this.http.post(`${this.URL}/api/signin`,user);
   }
 
   isAuth():boolean{
@@ -26,7 +26,7 @@ export class AuthService {
     //console.log(tok, 'este es el token')
     //const isExpired = this.jwtHelper.isTokenExpired(token);
     //console.log(isExpired)
-    //console.log('expiro')
+   
 
     if(this.jwtHelper.isTokenExpired(token) || !localStorage.getItem('token')){
       

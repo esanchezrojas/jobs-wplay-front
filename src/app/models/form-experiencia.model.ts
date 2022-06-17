@@ -4,6 +4,7 @@ export class ModeloExperiencia {
     empresa?: string;
     cargo?: string;
     ciudad_id?:string;
+    ciudad_nom?:string;
     descripcion?: string;
     anio_ini?: string;
     mes_ini?: string;

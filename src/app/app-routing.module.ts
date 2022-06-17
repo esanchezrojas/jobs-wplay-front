@@ -8,6 +8,8 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { Loading2Component } from './components/loading2/loading2.component';
 import { LoginComponent } from './components/login/login.component';
 import { PrivateComponent } from './components/private/private.component';
+import { Login2Component } from './components/login2/login2.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 
 
@@ -32,13 +34,14 @@ const routes: Routes = [
   },
   {
   path: 'oferta/:variable',
-  component: ItemDetailComponent,
-  canActivate: [AuthGuard]
+  component: ItemDetailComponent
+  
   },
   
   {
     path: 'aplicar/:var',
-    component: ApplyFormComponent
+    component: ApplyFormComponent,
+    canActivate: [AuthGuard]
 
   },
   {
@@ -54,6 +57,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'registro',
+    component: SignupComponent
   },
   {
     path: 'private',
