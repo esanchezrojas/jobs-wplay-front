@@ -17,3 +17,6 @@ tr:hover td {
     color: rgb(13, 202, 240);
 }
 
+.animate__animated.animate__fadeIn {
+    --animate-duration: 5s;
+}

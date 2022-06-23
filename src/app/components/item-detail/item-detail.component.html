@@ -2,13 +2,13 @@
 <header>
     <app-header></app-header>
 
-    <div class="banner " style="background-image: url('{{response.imagen}}');">
+    <div class="banner animate__animated animate__fadeIn " style="background-image: url('{{response.imagen}}');">
 
         <div class="container mt-5 rounded" style="background-color: rgba(0, 0, 0, 0.1);">
             <div class="d-flex  h-100">
                 <div class="text-white mt-5">
-                    <h1 class="mb-3">{{response.nombreVacante}}</h1>
-                    <p class="mb-4">{{response.descripcion}}</p>
+                    <h1 class="mb-3 animate__animated animate__fadeInDown">{{response.nombreVacante}}</h1>
+                    <p class="mb-4 animate__animated animate__fadeInDown">{{response.descripcion}}</p>
 
                 </div>
             </div>
@@ -24,14 +24,14 @@
 
 
         <div class="card shadow p-3 bg-body rounded col-sm-5 col-md-8 mb-2">
-            <h2>Proposito:</h2>
-            <p>* {{response.proposito}}</p>
+            <h2 class="animate__animated animate__fadeInUp">Proposito:</h2>
+            <p class="animate__animated animate__fadeInUp">* {{response.proposito}}</p>
             <br>
-            <h2>Responsabilidades:</h2>
-            <p *ngFor="let responsabilidad of response.responsabilidades ">* {{responsabilidad.descripcion}}</p>
+            <h2 class="animate__animated animate__fadeInUp">Responsabilidades:</h2>
+            <p *ngFor="let responsabilidad of response.responsabilidades " class="animate__animated animate__fadeInUp">* {{responsabilidad.descripcion}}</p>
             <br>
-            <h2>Conocimientos:</h2>
-            <p *ngFor="let conocimiento of response.conocimientos">* {{conocimiento.descripcion}}</p>
+            <h2 class="animate__animated animate__fadeInUp">Conocimientos:</h2>
+            <p *ngFor="let conocimiento of response.conocimientos" class="animate__animated animate__fadeInUp">* {{conocimiento.descripcion}}</p>
 
 
         </div>
@@ -41,10 +41,10 @@
             <div class="row mb-2">
                 <div class="col-12">
                     <div class="card shadow p-3 bg-body rounded ">
-                        <h6 class="text-muted">{{response.area}}</h6>
-                        <h2>{{response.nombreVacante}}</h2>
+                        <h6 class="text-muted animate__animated animate__fadeInUp">{{response.area}}</h6>
+                        <h2 class="animate__animated animate__fadeInUp">{{response.nombreVacante}}</h2>
 
-                        <div class="btnApply mt-3" [routerLink]="['/','aplicar',response.id]">
+                        <div class="btnApply mt-3 animate__animated animate__fadeIn" [routerLink]="['/','aplicar',response.id]">
                             <div class="d-grid gap-2 text-center ">
                                 <p class="rounded fw-bold py-2" style="background-color: rgb(13, 202, 240);">ÉCHALE UN VISTAZO A NUESTRO FICHAJE</p>
                             </div>
@@ -57,14 +57,14 @@
             </div>
 
             <div class="card shadow p-3 bg-body rounded px-4">
-                <h2>Tipo de contrato:</h2>
-                <h6 class="text-muted">{{response.tipo_de_contrato}}</h6>
+                <h2 class="animate__animated animate__fadeInUp">Tipo de contrato:</h2>
+                <h6 class="text-muted animate__animated animate__fadeInUp">{{response.tipo_de_contrato}}</h6>
                 <br>
-                <h2>Horario:</h2>
-                <h6 class="text-muted">{{response.horario}}</h6>
+                <h2 class="animate__animated animate__fadeInUp">Horario:</h2>
+                <h6 class="text-muted animate__animated animate__fadeInUp">{{response.horario}}</h6>
                 <br>
-                <h2>Beneficios:</h2>
-                <h6 class="text-muted" *ngFor="let beneficio of response.beneficios">* {{beneficio.descripcion}}</h6>
+                <h2 class="animate__animated animate__fadeInUp">Beneficios:</h2>
+                <h6 class="text-muted animate__animated animate__fadeInUp" *ngFor="let beneficio of response.beneficios">* {{beneficio.descripcion}}</h6>
             </div>
         </div>
     </div>

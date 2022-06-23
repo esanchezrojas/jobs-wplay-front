@@ -38,7 +38,7 @@
                         <div class="mb-3">
                             <select class="form-select" aria-label="Default select example">
                                 <option value="" selected>Ciudad</option>
-                                <option  *ngFor="let ciudad of ciudades" >{{ciudad.nombre}}</option>
+                                <option  *ngFor="let ciudad of ciudades" >{{ciudad.ciudad}}</option>
                                
                               </select>
                         </div>
@@ -58,24 +58,24 @@
 
                 <div *ngFor="let vacante of vacantes | paginate: {itemsPerPage: 8, currentPage: page, totalItems: totalVacantes } | filter: filterPost " class="py-2 col-sm-12 col-md-6 col-lg-4   " [routerLink]="['/','oferta',vacante.id]">
 
-                    <div class="card shadow info cardw">
+                    <div class="card shadow info cardw animate__animated animate__fadeIn ">
 
                         <div class="card-body">
-                            <h6 class="card-subtitle mb-2 text-muted text-start">{{vacante.area}}</h6>
+                            <h6 class="card-subtitle mb-2 text-muted text-start animate__animated animate__fadeInDown">{{vacante.area}}</h6>
 
 
 
                             <img [src]="vacante.imagen" alt="" class="card-img-top">
-                            <h6 class="fw-bold text-start card-title">{{vacante.nombreVacante}} </h6>
+                            <h6 class="fw-bold text-start card-title  animate__animated animate__fadeInUp">{{vacante.nombreVacante}} </h6>
 
                             <span *ngIf="vacante.c_vacantes > 1" class="badge rounded-pill bg-info text-dark">{{vacante.c_vacantes}} Vacantes</span>
 
 
-                            <p class="card-text text-muted text-start">{{vacante.descripcion}}
+                            <p class="card-text text-muted text-start animate__animated animate__fadeInUp">{{vacante.descripcion}}
                             </p>
                             <hr>
 
-                            <h6 class="card-subtitle text-muted text-start">{{vacante.ciudad}}</h6>
+                            <h6 class="card-subtitle text-muted text-start animate__animated animate__fadeInDown">{{vacante.ciudad}}</h6>
                         </div>
                     </div>
                 </div>

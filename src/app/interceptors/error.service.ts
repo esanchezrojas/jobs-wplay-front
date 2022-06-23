@@ -55,6 +55,10 @@ manejarError(error:HttpErrorResponse){
   if(error.status === 404){
     return throwError(()=>new Error('Envio de peticion post'))
   }
+
+  if(error.status === 500){
+    return throwError(()=>new Error('Erro interno del servidor'))
+  }
   
 
   return throwError(() => new Error(error.statusText))

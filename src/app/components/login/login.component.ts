@@ -29,11 +29,53 @@ export class LoginComponent implements OnInit {
 
   logIn() {
 
+    if(this.user.nom_usuario == ""){
+      Swal.fire({
+        icon: 'info',
+        title: 'Usuario vacio',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      });
+    }else if(this.user.clave == ""){
+      Swal.fire({
+        icon: 'info',
+        title: 'Contraseña vacia',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      });
+    }else{
+
     console.log('click');
 
-    this.authService.singin(this.user).subscribe((res: any) => {
+    this.authService.singin(this.user).subscribe({
+      next: (res: any)  => {
 
-      if (res.status === 401) {
+        console.log(res.message)
+
+        if(res.status === 200){
+     
+      Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: res.message,
+          showConfirmButton: false,
+          timer: 2500
+        });
+
+        localStorage.setItem('token', res.token);
+        this.router.navigate(['']);
+
+      }
+
+      if(res.status === 401){
 
         Swal.fire({
           icon: 'info',
@@ -47,24 +89,25 @@ export class LoginComponent implements OnInit {
         });
 
       }
-      if (res.status === 200) {
+      
 
-        Swal.fire({
-          position: 'center',
-          icon: 'success',
-          title: res.message,
-          showConfirmButton: false,
-          timer: 2500
-        });
+    },
+    error:(err: any) => {
+      Swal.fire({
+        icon: 'info',
+        title: err,
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      });
+      console.log(err,' Este fue el error')
+    }
+   });
+  }
 
-        localStorage.setItem('token', res.token);
-        this.router.navigate(['']);
-      }
-
-
-    },(error) => {
-      console.log(error,' Este fue el error')
-    });
   }
 }
 

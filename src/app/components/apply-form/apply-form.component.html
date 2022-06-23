@@ -10,14 +10,14 @@
         <div class="row">
 
             <div class="text-center mb-4">
-                <h1>{{response.nombreVacante}}</h1>
+                <h1 class="animate__animated animate__fadeIn">{{response.nombreVacante}}</h1>
             </div>
 
             <!--Col 1-->
             <div class="col-sm-5 col-md-3 text-start mt-2">
 
-                <h2>Sobre ti</h2>
-                <h6 class="text-muted">Hablanos un poco sobre ti</h6>
+                <h2 class="animate__animated animate__fadeInDown">Sobre ti</h2>
+                <h6 class="text-muted animate__animated animate__fadeInDown">Hablanos un poco sobre ti</h6>
 
             </div>
             <!--End Col 1-->
@@ -48,7 +48,7 @@
 
                                     <div class="col-sm-12 col-md-12">
                                         <div class="input-group mb-3">
-                                            <span class="input-group-text nr " ngxTippy data-tippy-content="Ingrese sus nombres y apellidos completos"><i class="fa-solid fa-user-tie " ></i></span>
+                                            <span class="input-group-text nr " ngxTippy data-tippy-content="Ingrese sus nombres y apellidos completos"><i class="fa-solid fa-user-tie animate__animated animate__rubberBand  " ></i></span>
                                             <input type="text" placeholder="Nombres" formControlName="nombre" name="nombre" aria-label="First name" class="form-control" [ngClass]="{'is-invalid': formT.get('nombre')?.hasError('required')&&formT.get('nombre')?.dirty && formT.get('nombre')?.touched }">
 
                                             <input type="text" placeholder="Apellidos" formControlName="apellido" name="apellido" aria-label="Last name" class="form-control" [ngClass]="{'is-invalid': formT.get('apellido')?.hasError('required')&&formT.get('apellido')?.dirty && formT.get('apellido')?.touched }">
@@ -78,7 +78,7 @@
 
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
-                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese su número de celular"><i class="fa-solid fa-mobile-screen"></i></span>
+                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese su número de celular"><i class="fa-solid fa-mobile-screen animate__animated animate__rubberBand "></i></span>
                                             <input type="text" class="form-control " placeholder="Celular" aria-label="Celular" formControlName="celular" name="celular" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get('celular')?.hasError('required')&&formT.get('celular')?.dirty && formT.get('celular')?.touched || formT.get('celular')?.hasError('maxlength') ||formT.get('celular')?.hasError('pattern')  }">
                                         </div>
 
@@ -104,7 +104,7 @@
 
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
-                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese su fecha de cumpleaños"><i class="fa-solid fa-cake-candles"></i></span>
+                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese su fecha de cumpleaños"><i class="fa-solid fa-cake-candles animate__animated animate__rubberBand "></i></span>
                                             <input onfocus="(this.type='date')" onblur="(this.type= this.value ? 'date' : 'text')" formControlName="cumpleanios" name="cumpleanios" class="form-control" placeholder="Fecha de cumpleaños" aria-label="cumpleanios" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get('cumpleanios')?.hasError('required')&&formT.get('cumpleanios')?.dirty && formT.get('cumpleanios')?.touched }">
                                         </div>
 
@@ -123,7 +123,7 @@
 
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
-                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese su número de cédula"><i class="fa-solid fa-id-card"></i></span>
+                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese su número de cédula"><i class="fa-solid fa-id-card animate__animated animate__rubberBand "></i></span>
                                             <input type="text" name="cedula" formControlName="cedula" class="form-control" placeholder="Cédula" aria-label="Username" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get('cedula')?.hasError('required')&&formT.get('cedula')?.dirty && formT.get('cedula')?.touched || formT.get('cedula')?.hasError('maxlength') || formT.get('cedula')?.hasError('minlength') || formT.get('cedula')?.hasError('pattern') }">
                                         </div>
 
@@ -147,7 +147,7 @@
 
                                     <div class="col-sm-12 col-md-3">
                                         <div class="input-group mb-3">
-                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese la fecha de expedición de su cedula"><i class="fa-solid fa-calendar-days"></i></span>
+                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese la fecha de expedición de su cedula"><i class="fa-solid fa-calendar-days animate__animated animate__rubberBand "></i></span>
                                             <input onfocus="(this.type='date')" onblur="(this.type= this.value ? 'date' : 'text')" name="fechaexped_cc" formControlName="fechaexped_cc" class="form-control" placeholder="Fecha de expedición" aria-label="Username" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get(' fechaexped_cc')?.hasError('required')&&formT.get(' fechaexped_cc')?.dirty && formT.get(' fechaexped_cc')?.touched  }">
                                         </div>
 
@@ -159,7 +159,7 @@
 
                                     <div class="col-sm-12 col-md-3">
                                         <div class="input-group mb-3">
-                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese el lugar de expedición de su cedula"><i class="fa-solid fa-location-dot"></i></span>
+                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese el lugar de expedición de su cedula"><i class="fa-solid fa-location-dot animate__animated animate__rubberBand "></i></span>
                                             <input type="text" name="lugarexped_cc" formControlName="lugarexped_cc" class="form-control" placeholder="Lugar de expedición" aria-label="Username" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get('lugarexped_cc')?.hasError('required')&&formT.get('lugarexped_cc')?.dirty && formT.get('lugarexped_cc')?.touched || formT.get('lugarexped_cc')?.hasError('maxlength') || formT.get('lugarexped_cc')?.hasError('minlength') || formT.get('lugarexped_cc')?.hasError('pattern') }">
                                         </div>
 
@@ -176,7 +176,7 @@
                                 <div class="row g-2">
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
-                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese su email"><i class="fa-solid fa-envelope"></i></span>
+                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese su email"><i class="fa-solid fa-envelope animate__animated animate__rubberBand "></i></span>
                                             <input type="email" name="email" formControlName="email" class="form-control" placeholder="Correo Electronico" aria-label="Username" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get('email')?.hasError('required')&&formT.get('email')?.dirty && formT.get('email')?.touched || formT.get('email')?.hasError('email') }">
                                         </div>
 
@@ -193,10 +193,10 @@
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
 
-                                            <label class="input-group-text dates" for="inputGroupSelect01" ngxTippy data-tippy-content="Seleccione la ciudad donde vive"><i class="fa-solid fa-location-dot"></i></label>
+                                            <label class="input-group-text dates" for="inputGroupSelect01" ngxTippy data-tippy-content="Seleccione la ciudad donde vive"><i class="fa-solid fa-location-dot animate__animated animate__rubberBand "></i></label>
                                             <select [ngClass]="{'is-invalid': formT.get('ciudad')?.hasError('required')&&formT.get('ciudad')?.dirty && formT.get('ciudad')?.touched || formT.get('required')?.hasError('ciudad') }" name="ciudad" formControlName="ciudad" class="form-select" id="inputGroupSelect01">
                                               <option  value="" selected >Ciudad</option>
-                                              <option  *ngFor="let ciu of city" [value]="ciu.ciudad_id">{{ciu.ciudad}}</option>
+                                              <option  *ngFor="let ciu of ciudades" [value]="ciu.ciudad_id">{{ciu.ciudad}}</option>
                                              </select>
 
                                         </div>
@@ -220,7 +220,7 @@
 
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
-                                            <label class="input-group-text dates" for="inputGroupSelect01" ngxTippy data-tippy-content="Seleccine el medio por el cual se entero de la vacante"><i class="fa-solid fa-clipboard-question"></i></label>
+                                            <label class="input-group-text dates" for="inputGroupSelect01" ngxTippy data-tippy-content="Seleccine el medio por el cual se entero de la vacante"><i class="fa-solid fa-clipboard-question animate__animated animate__rubberBand "></i></label>
                                             <select [ngClass]="{'is-invalid': formT.get('mediovac_id')?.hasError('required')&&formT.get('mediovac_id')?.dirty && formT.get('mediovac_id')?.touched || formT.get('required')?.hasError('mediovac_id') }" name="mediovac_id" formControlName="mediovac_id"
                                                 class="form-select" id="inputGroupSelect01">
                                               <option  value="" selected >Cómo te enteraste de la vacante?</option>
@@ -237,7 +237,7 @@
 
                                     <div class="col-sm-12 col-md-6">
                                         <div class="input-group mb-3">
-                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese su red social favorita"><i class="fa-solid fa-thumbs-up"></i></span>
+                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese su red social favorita"><i class="fa-solid fa-thumbs-up animate__animated animate__rubberBand "></i></span>
                                             <input type="text" name="redsocial" formControlName="redsocial" class="form-control" placeholder="Red social favorita" aria-label="Red Social" aria-describedby="basic-addon1" [ngClass]="{'is-invalid': formT.get('redsocial')?.hasError('required')&&formT.get('redsocial')?.dirty && formT.get('redsocial')?.touched }">
                                         </div>
 
@@ -265,8 +265,8 @@
             <!--Col 1-->
             <div class="col-sm-5 col-md-3 text-start mt-2">
 
-                <h2>Habilidades</h2>
-                <h6 class="text-muted">Describe lo mejor que sabes hacer</h6>
+                <h2 class="animate__animated animate__fadeInDown">Habilidades</h2>
+                <h6 class="text-muted animate__animated animate__fadeInDown">Describe lo mejor que sabes hacer</h6>
             </div>
             <!--End Col 1-->
 
@@ -324,8 +324,8 @@
             <!--Col 1-->
             <div class="col-sm-5 col-md-3 text-start mt-2">
 
-                <h2>Documentos</h2>
-                <h6 class="text-muted">Adjunta tus documentos</h6>
+                <h2 class="animate__animated animate__fadeInDown">Documentos</h2>
+                <h6 class="text-muted animate__animated animate__fadeInDown">Adjunta tus documentos</h6>
             </div>
             <!--End Col 1-->
 
@@ -367,7 +367,7 @@
                                         </div>
 
 
-                                        <div *ngIf="loading" class="progress mb-3">
+                                        <div *ngIf="isLoading" class="progress mb-3">
                                             <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
                                         </div>
 
@@ -402,7 +402,7 @@
 
                                     <div class="col-sm-12 col-md-12">
                                         <div class="input-group mb-3">
-                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese el link de su portafolio o alguno de sus trabajos"><i class="fa-solid fa-briefcase"></i></span>
+                                            <span class="input-group-text" id="basic-addon1" ngxTippy data-tippy-content="Ingrese el link de su portafolio o alguno de sus trabajos"><i class="fa-solid fa-briefcase animate__animated animate__rubberBand"></i></span>
                                             <input type="text" name="lpf" formControlName="lpf" class="form-control" placeholder="Link portafolio o alguno de tus mejores trabajos (Opcional)" aria-label="Username" aria-describedby="basic-addon1">
                                         </div>
                                     </div>
@@ -425,8 +425,8 @@
             <!--Col 1-->
             <div class="col-sm-5 col-md-3 text-start mt-2">
 
-                <h2>Experiencia</h2>
-                <h6 class="text-muted">Cuentanos un poco de tu experiencia laboral</h6>
+                <h2 class="animate__animated animate__fadeInDown">Experiencia</h2>
+                <h6 class="text-muted animate__animated animate__fadeInDown">Cuentanos un poco de tu experiencia laboral</h6>
             </div>
             <!--End Col 1-->
 
@@ -466,7 +466,7 @@
 
                                                         <div class="col-sm-12 col-md-4">
                                                             <div class="input-group mb-3">
-                                                                <span ngxTippy data-tippy-content="Ingrese la empresa" class="input-group-text" id="basic-addon1"><i class="fa-solid fa-building"></i></span>
+                                                                <span ngxTippy data-tippy-content="Ingrese la empresa" class="input-group-text" id="basic-addon1"><i class="fa-solid fa-building animate__animated animate__rubberBand"></i></span>
                                                                 <input type="text" name="empresa" formControlName="empresa" class="form-control" placeholder="Empresa" aria-label="Empresa" aria-describedby="basic-addon1">
                                                             </div>
 
@@ -478,7 +478,7 @@
 
                                                         <div class="col-sm-12 col-md-4">
                                                             <div class="input-group mb-3">
-                                                                <span ngxTippy data-tippy-content="Ingrese el cargo" class="input-group-text" id="basic-addon1"><i class="fa-solid fa-network-wired"></i></span>
+                                                                <span ngxTippy data-tippy-content="Ingrese el cargo" class="input-group-text" id="basic-addon1"><i class="fa-solid fa-network-wired animate__animated animate__rubberBand"></i></span>
                                                                 <input type="text" name="cargo" formControlName="cargo" class="form-control" placeholder="Cargo" aria-label="Cargo" aria-describedby="basic-addon1">
                                                             </div>
 
@@ -492,10 +492,10 @@
 
 
                                                             <div class="input-group mb-3">
-                                                                <label ngxTippy data-tippy-content="Seleccione la ciudad" class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-location-dot"></i></label>
+                                                                <label ngxTippy data-tippy-content="Seleccione la ciudad" class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-location-dot animate__animated animate__rubberBand"></i></label>
                                                                 <select name="ciudad_id" formControlName="ciudad_id" class="form-select" id="inputGroupSelect01">
                                                                     <option disabled selected value="">Ciudad</option>
-                                                                    <option  *ngFor="let ciu of city">{{ciu.ciudad}}</option>
+                                                                    <option  *ngFor="let ciu of ciudades">{{ciu.ciudad}}</option>
                                                                     
                                                                  </select>
                                                             </div>
@@ -702,8 +702,8 @@
             <!--Col 1-->
             <div class="col-sm-5 col-md-3 text-start mt-2">
 
-                <h2>Formación</h2>
-                <h6 class="text-muted">Cuentanos un poco de tu formación y conocimientos</h6>
+                <h2 class="animate__animated animate__fadeInDown">Formación</h2>
+                <h6 class="text-muted animate__animated animate__fadeInDown">Cuentanos un poco de tu formación y conocimientos</h6>
             </div>
             <!--End Col 1-->
 
@@ -742,14 +742,14 @@
 
                                                         <div class="col-sm-12 col-md-6">
                                                             <div class="input-group mb-3">
-                                                                <span ngxTippy data-tippy-content="Ingrese el nombre de la institución" class="input-group-text" id="basic-addon1"><i class="fa-solid fa-school"></i></span>
+                                                                <span ngxTippy data-tippy-content="Ingrese el nombre de la institución" class="input-group-text" id="basic-addon1"><i class="fa-solid fa-school animate__animated animate__rubberBand"></i></span>
                                                                 <input type="text" name="nombre_institucion" formControlName="nombre_institucion" class="form-control" placeholder="Nombre de la institución" aria-label="Institución" aria-describedby="basic-addon1">
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12 col-md-6">
                                                             <div class="input-group mb-3">
-                                                                <span ngxTippy data-tippy-content="Ingrese el nombre del programa academico" class="input-group-text" id="basic-addon1"><i class="fa-solid fa-book"></i></span>
+                                                                <span ngxTippy data-tippy-content="Ingrese el nombre del programa academico" class="input-group-text" id="basic-addon1"><i class="fa-solid fa-book animate__animated animate__rubberBand"></i></span>
                                                                 <input type="text" name="programa_academico" formControlName="programa_academico" class="form-control" placeholder="Programa académico" aria-label="Programa" aria-describedby="basic-addon1">
                                                             </div>
                                                         </div>
@@ -762,7 +762,7 @@
 
                                                         <div class="col-sm-12 col-md-6">
                                                             <div class="input-group mb-3">
-                                                                <label ngxTippy data-tippy-content="Seleccione el nivel" class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-graduation-cap"></i></label>
+                                                                <label ngxTippy data-tippy-content="Seleccione el nivel" class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-graduation-cap animate__animated animate__rubberBand"></i></label>
                                                                 <select name="nivel_id" formControlName="nivel_id" class="form-select" id="inputGroupSelect01">
                               <option class="text-muted" selected disabled value="">Nivel Académico</option>
                               <option *ngFor="let nivel of niveles" >{{nivel.descripcion}}</option>
@@ -774,7 +774,7 @@
                                                             <div class="input-group mb-3">
 
 
-                                                                <label ngxTippy data-tippy-content="Seleccione el estado" class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-check-to-slot"></i></label>
+                                                                <label ngxTippy data-tippy-content="Seleccione el estado" class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-check-to-slot animate__animated animate__rubberBand"></i></label>
                                                                 <select name="estado_id" formControlName="estado_id" class="form-select" id="inputGroupSelect01">
                               <option class="text-muted" selected disabled value="">Estado</option>
                               <option  *ngFor="let estado of estadosF" >{{estado.descripcion}}</option>
@@ -863,13 +863,15 @@
             <div class="col-sm-5 col-md-6  mt-2">
                 <div class="mb-3 form-check">
                     <input name="autorizacion" formControlName="autorizacion" type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Autoriza a WPLAY.CO para realizar el tratamiento y manejo de sus datos personales conforme a nuestra <a class="text-primary" href="https://www.wplay.co/mas/ayuda/terminos-y-condiciones/">politica de privacidad</a>.</label>
+                    <label class="form-check-label animate__animated animate__fadeInUp" for="exampleCheck1">Autoriza a WPLAY.CO para realizar el tratamiento y manejo de sus datos personales conforme a nuestra <a class="text-primary" href="https://www.wplay.co/mas/ayuda/terminos-y-condiciones/">politica de privacidad</a>.</label>
                 </div>
             </div>
             <div class="col-sm-5 col-md-6  mt-2">
 
 
-                <button [disabled]="!formT.get('autorizacion')?.value" type="submit" class="btn btn-success btn-lg "> {{(loading)?'Cargando': 'Enviar'}}
+                <button [disabled]="!formT.get('autorizacion')?.value || isLoading " type="submit" class="btn btn-success btn-lg "><div *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div> {{(isLoading)?'Cargando': 'Enviar'}}
                   </button>
 
             </div>

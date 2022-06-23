@@ -41,14 +41,15 @@ export class ApplyFormComponent implements OnInit {
 
   //public niveles = GeneralData.NIVELES_ACADEMICOS;
   estados = GeneralData.ESTADOS_FORMACION;
-  ciudades = GeneralData.CIUDADES;
+  //ciudades = GeneralData.CIUDADES;
 
   uuid: any;
   myimage: Observable<any> | undefined;
-  loading: boolean = false;
+  isLoading: boolean = false;
+  isUpload: boolean = false;
 
 
-  city: any;
+  ciudades: any;
   niveles: any;
   estadosF: any;
   medios: any;
@@ -58,6 +59,7 @@ export class ApplyFormComponent implements OnInit {
   listaFormacionBD: any = [];
   fileHv: any;
   filePf: any;
+  files: any = [];
   archivos: any = [];
   array: any = {};
   swe: boolean = false;
@@ -104,7 +106,7 @@ export class ApplyFormComponent implements OnInit {
     this.dataService.getListas()
       .subscribe((res: any) => {
 
-        this.city = res.ciudad;
+        this.ciudades = res.ciudad;
         this.niveles = res.nivel;
         this.estadosF = res.estado;
         this.medios = res.medio;
@@ -209,7 +211,7 @@ export class ApplyFormComponent implements OnInit {
   }
 
 
-  enviarTodo(datos: any) {
+ async enviarTodo(datos: any) {
 
     //this.router.navigate(['/inicio']);
 
@@ -231,23 +233,12 @@ export class ApplyFormComponent implements OnInit {
 
     let registro = new RegistroVanteModel();
 
+    //Valida que exista por lo menos una experiencia y una formación
     if (this.listaExperiencia.length > 0 && this.listaFormacion.length > 0) {
 
       //if (this.formT.valid) {
       // if (true) {
       console.log('Es valido');
-
-
-      var formData = new FormData();
-      /*
-      this.archivos.array.forEach((archivo: any) => {
-        formData.append('files', archivo)
-        console.log(archivo)
-      });
-      */
-
-      formData.append('files', this.fileHv)
-
 
       registro.registroIni = modelDatosB;
       registro.formacion = this.listaFormacion;
@@ -258,45 +249,18 @@ export class ApplyFormComponent implements OnInit {
       console.log('formacion ', registro.formacion)
       console.log('experiencia ', registro.experiencia)
 
+      //Se guarda el registro
+    this.guardar(registro);
 
+      console.log('archivos ', this.files)
 
-      //Estado de spinner
-      this.loading = true;
-      this.serviceRegistro.guardarT(registro)
-        .subscribe({
-          next: (res: any) => {
+     this.files.forEach(async (archivo: any,index:number) => {
+        await this.subirArchivo(archivo);
+        console.log(archivo, 'archivoooo', index)
 
+      });
 
-
-            //alert(res.message);
-            Swal.fire({
-              position: 'center',
-              icon: 'success',
-              title: res.message,
-              showConfirmButton: false,
-              timer: 2500
-            })
-            // this.router.navigate(['/inicio']);
-            this.loading = false;
-
-           
-
-        console.log(this.formT);
-          },
-          error: (err: any) => {
-            console.log(err)
-          }
-
-
-        });
-      //End Suscribe
-
-          this.subirArchivo(this.fileHv);
-
-            //if (this.filePf) {
-            // this.subirArchivo(this.filePf);
-            //}
-
+      console.log('salio del foreach')
 
     } else {
       Swal.fire({
@@ -310,6 +274,7 @@ export class ApplyFormComponent implements OnInit {
         }
       });
     }
+
   }
 
 
@@ -521,6 +486,7 @@ export class ApplyFormComponent implements OnInit {
       file = fileList[0];
       let nomId = 'hv';
       this.fileHv = this.validacionUpload(file, nomId)
+      this.files.push(this.fileHv);
       console.log("FileUpload -> file", file);
     }
 
@@ -536,6 +502,7 @@ export class ApplyFormComponent implements OnInit {
       file = fileList[0];
       let nomId = 'pf';
       this.filePf = this.validacionUpload(file, nomId)
+      this.files.push(this.filePf);
       console.log("FileUpload -> file", file);
     }
   }
@@ -568,35 +535,78 @@ export class ApplyFormComponent implements OnInit {
 
     const formData = new FormData();
 
-    
-      formData.append('files', file)
-      console.log(file)
-      this.loading = true;
 
-      this.serviceUpload.upload(formData)
-        .subscribe({
-          next:
+    formData.append('file', file)
+
+
+    console.log(file)
+    this.isLoading = true;
+
+    this.serviceUpload.upload(formData)
+      .subscribe({
+        next:
           (res: any) => {
 
-          //alert('mensaje'+res.message)
-          Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: res.message,
-            showConfirmButton: false,
-            timer: 2500
-          })
-          this.loading = false;
+            //alert('mensaje'+res.message)
+            
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: res.message,
+              showConfirmButton: false,
+              timer: 2500
+            })
+            //this.isLoading = false;
+            
+            
 
-        },
-        error:(err)=>{
+          },
+        error: (err) => {
           console.log(err)
         }
-        });
-   
+      });
+
+      return true;
 
   }
 
+/**
+ * Envia los datos al controlador del servicio
+ * @param registro  
+ */
+  guardar(registro:any){
+
+    this.serviceRegistro.guardarT(registro)
+    .subscribe({
+      next: (res: any) => {
+
+ //alert(res.message);
+        Swal.fire({
+          title: 'Se ha guardado correctamente',
+          icon: 'success',
+          confirmButtonText: 'Volver al inicio',
+        }).then((result) => {
+          /* Read more about isConfirmed, isDenied below */
+          if (result.isConfirmed) {
+            this.router.navigate(['/inicio']);
+          }
+        })
+
+        this.isLoading = false;
+
+        console.log(this.formT);
+
+
+      },
+      error: (err: any) => {
+        console.log(err)
+      }
+
+
+    });
+  //End Suscribe
+
+  }
 
 
   validacionUpload(file: File, nomId: string) {

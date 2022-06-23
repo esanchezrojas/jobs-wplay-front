@@ -1,3 +1,9 @@
+.abs-center2 {
+    background: url('https://blog.wplay.co/wp-content/uploads/2019/07/WhatsApp-Image-2019-07-08-at-4.51.43-PM.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .abs-center {
     /*
     display: flex;

@@ -28,7 +28,7 @@ export class AuthService {
     //console.log(isExpired)
    
 
-    if(this.jwtHelper.isTokenExpired(token) || !localStorage.getItem('token')){
+    if(this.jwtHelper.isTokenExpired(token) || !localStorage.getItem('token') || localStorage.getItem('token') == undefined){
       
       console.log('el token no existe o expiró')
       return false;

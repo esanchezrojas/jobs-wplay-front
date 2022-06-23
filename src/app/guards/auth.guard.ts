@@ -30,6 +30,7 @@ canActivate():boolean{
       confirmButtonText: 'Iniciar Sesión',
       denyButtonText: `Registrarme`,
       cancelButtonText:'Cancelar'
+      
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
