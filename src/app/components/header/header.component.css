@@ -18,5 +18,10 @@
 }
 
 .titulos {
-    color: #FFC952;
+    color: #F7BE00;
+}
+
+.logo {
+    background: transparent;
+    color: #F7BE00;
 }

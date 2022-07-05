@@ -2,64 +2,142 @@
 <section class="vh-100">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-6 text-black abs-center">
+            <div class="d-flex justify-content-center  container-box">
 
-                <div class="px-5 ms-xl-4 mt-5">
-                    <img src="../../../assets/img/Wplay-Logo-blanco.png" alt="Login image" style="width: 150px; height: 50px;">
-                    <!-- <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>-->
+                <div class="card " style="width: 40rem;">
+                    <img src="../../../assets/img/Wplay-Logo-blanco.png" class="card-img-top mt-4 mb-4 px-4" alt="..." style="width: 210px; height: 50px;">
 
-                </div>
+                    <div class="card-body">
+                        <h5 class="card-title mb-4 text-white text-center">Registrate y aplica </h5>
 
-                <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
-                    <div class="login-box">
-                        <div class="card shadow p-3 mb-5  rounded">
-                            <div class="card-body">
-                                <form>
-                                    <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start ">
-                                        <p class="lead fw-normal mb-0 me-3 text-white">Registrate y aplica</p>
-                                        <button type="button" class="btn btn-info btn-floating mx-1 rounded-circle">
-                                          <i class="fab fa-facebook-f"></i>
-                                        </button>
+                        <form [formGroup]="formRegister" (submit)="submit(formRegister.value)">
 
-                                        <button type="button" class="btn btn-info btn-floating mx-1 rounded-circle">
-                                          <i class="fab fa-twitter"></i>
-                                        </button>
 
-                                        <button type="button" class="btn btn-info btn-floating mx-1 rounded-circle">
-                                          <i class="fab fa-linkedin-in"></i>
-                                        </button>
+                            <div class="row g-2">
+                                <div class="col-sm-12 col-md-12">
+                                    <div class="form-floating  mb-3 user">
+                                        <input formControlName="email" type="email" name="email" class="form-control " id="floatingInput" placeholder="user">
+                                        <label for="floatingInput">Correo</label>
+
+                                        <div class="text-warning px-1 col-6 float-start " *ngIf="formRegister.get('email')?.hasError('required')&&formRegister.get('email')?.dirty && formRegister.get('email')?.touched ">
+                                            <p>Este campo es obligatorio</p>
+                                        </div>
+
                                     </div>
-                                    <div class="user-box mt-5">
-                                        <input [(ngModel)]="user.correo" type="email" name="correo" required="">
-                                        <label>Correo</label>
-                                    </div>
-
-                                    <div class="user-box ">
-                                        <input [(ngModel)]="user.nom_usuario" type="text" name="nom_usuario" required="">
-                                        <label>Nombre Completo</label>
-                                    </div>
-                                    <div class="user-box">
-                                        <input [(ngModel)]="user.clave" type="password" name="clave" required="">
-                                        <label>Contraseña</label>
-                                    </div>
-                                    <div class="d-flex justify-content-center">
-                                        <a (click)="registro()" type="button">
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span> Enviar
-                                        </a>
-                                    </div>
-                                </form>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
+                            <div class="row g-2">
+                                <div class="col-sm-6 col-md-6">
+                                    <div class="form-floating  mb-3 user">
+                                        <input formControlName="nombres" type="text" name="nombres" class="form-control " id="floatingInput" placeholder="user">
+                                        <label for="floatingInput">Nombres</label>
+
+                                        <div class="text-warning px-1 col-6 float-start " *ngIf="formRegister.get('nombres')?.hasError('required')&&formRegister.get('nombres')?.dirty && formRegister.get('nombres')?.touched ">
+                                            <p>Este campo es obligatorio</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-md-6">
+                                    <div class="form-floating  mb-3 user">
+                                        <input formControlName="apellidos" type="text" name="apellidos" class="form-control " id="floatingInput" placeholder="user">
+                                        <label for="floatingInput">Apellidos</label>
+
+                                        <div class="text-warning px-1 col-6 float-start " *ngIf="formRegister.get('apellidos')?.hasError('required')&&formRegister.get('apellidos')?.dirty && formRegister.get('apellidos')?.touched ">
+                                            <p>Este campo es obligatorio</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+
+
+                            <div class="row g-2">
+                                <div class="col-sm-6 col-md-6">
+                                    <div class="form-floating mb-3 user">
+
+
+                                        <input formControlName="clave" type="password" name="clave" class="form-control" id="floatingPassword" placeholder="Password">
+                                        <label for="floatingPassword">Contraseña</label>
+
+
+                                        <div class="text-warning px-1 col-6 float-start " *ngIf="formRegister.get('clave')?.hasError('required')&&formRegister.get('clave')?.dirty && formRegister.get('clave')?.touched ">
+                                            <p>Este campo es obligatorio</p>
+                                        </div>
+
+                                        <div class="text-warning px-1 col-6 float-start " *ngIf="formRegister.get('clave')?.hasError('minlength')">
+                                            <p>El campo debe tener minimo 10 caracteres</p>
+                                        </div>
+
+                                        <div class="text-warning px-1 col-6 float-start " *ngIf="formRegister.get('clave')?.hasError('pattern')">
+                                            <p>Debe tener al menos un número una letra mayuscula y un signo especial</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-sm-6 col-md-6">
+                                    <div class="form-floating mb-3 user">
+                                        <input formControlName="confirmClave" type="password" name="confirmClave" class="form-control" id="floatingPassword" placeholder="Password">
+                                        <label for="floatingPassword">Confirmar Contraseña</label>
+
+                                        <div class="text-warning px-1 col-6 float-start " *ngIf="formRegister.get('confirmClave')?.hasError('required')&&formRegister.get('confirmClave')?.dirty && formRegister.get('confirmClave')?.touched ">
+                                            <p>Este campo es obligatorio</p>
+                                        </div>
+
+                                        <div class="text-warning px-1 col-6 float-start " *ngIf="formRegister.get('confirmClave')?.hasError('minlength')">
+                                            <p>El campo debe tener minimo 10 caracteres</p>
+                                        </div>
+                                        <div class="text-warning px-1 col-6 float-start " *ngIf="formRegister.get('confirmClave')?.hasError('pattern')">
+                                            <p>debe tener al menos un número una letra mayuscula y un signo especial</p>
+                                        </div>
+
+                                        <div class="text-warning px-1 col-6 float-start " *ngIf="formRegister.get('confirmClave')?.hasError('mustMatch')">
+                                            <p>La clave no es igual</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+
+                            <div class="mb-3 form-check mt-4">
+                                <input name="autorizacion" formControlName="autorizacion" type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1"><p class="card-text text-start text-white ">
+                                    <a href="https://www.wplay.co/mas/ayuda/terminos-y-condiciones/" target="_blank" >
+                                        <p class="card-text">Autoriza términos y condiciones</p>
+                                    </a>
+                                </p></label>
+                            </div>
+
+                            <div class="d-grid gap-2 mt-3 mb-3 login-box">
+                                <button [disabled]="!formRegister.get('autorizacion')?.value || formRegister.invalid" class="btn" type="submit">
+                                   Registrar</button>
+                            </div>
+
+
+
+                        </form>
+                        <p class="card-text text-center text-white mt-5 ">¿Ya tiene cuenta?
+                            <a href="">
+                                <p class="card-text ">Iniciar sesión</p>
+                            </a>
+                        </p>
+
+
+                    </div>
                 </div>
 
-            </div>
-            <div class="col-sm-6 text-black abs-center2">
-                <!-- <img src="https://blog.wplay.co/wp-content/uploads/2019/07/WhatsApp-Image-2019-07-08-at-4.51.43-PM.jpeg" alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">-->
             </div>
         </div>
     </div>

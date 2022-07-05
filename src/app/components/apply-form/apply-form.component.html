@@ -195,7 +195,7 @@
 
                                             <label class="input-group-text dates" for="inputGroupSelect01" ngxTippy data-tippy-content="Seleccione la ciudad donde vive"><i class="fa-solid fa-location-dot animate__animated animate__rubberBand "></i></label>
                                             <select [ngClass]="{'is-invalid': formT.get('ciudad')?.hasError('required')&&formT.get('ciudad')?.dirty && formT.get('ciudad')?.touched || formT.get('required')?.hasError('ciudad') }" name="ciudad" formControlName="ciudad" class="form-select" id="inputGroupSelect01">
-                                              <option  value="" selected >Ciudad</option>
+                                              <option class="text-muted" value="" selected >Ciudad</option>
                                               <option  *ngFor="let ciu of ciudades" [value]="ciu.ciudad_id">{{ciu.ciudad}}</option>
                                              </select>
 
@@ -223,7 +223,7 @@
                                             <label class="input-group-text dates" for="inputGroupSelect01" ngxTippy data-tippy-content="Seleccine el medio por el cual se entero de la vacante"><i class="fa-solid fa-clipboard-question animate__animated animate__rubberBand "></i></label>
                                             <select [ngClass]="{'is-invalid': formT.get('mediovac_id')?.hasError('required')&&formT.get('mediovac_id')?.dirty && formT.get('mediovac_id')?.touched || formT.get('required')?.hasError('mediovac_id') }" name="mediovac_id" formControlName="mediovac_id"
                                                 class="form-select" id="inputGroupSelect01">
-                                              <option  value="" selected >Cómo te enteraste de la vacante?</option>
+                                              <option class="text-muted" value="" selected >Cómo te enteraste de la vacante?</option>
                                               <option  *ngFor="let medio of medios" [value]="medio.clasificador_id">{{medio.descripcion}}</option>
                                              </select>
                                         </div>
@@ -494,7 +494,7 @@
                                                             <div class="input-group mb-3">
                                                                 <label ngxTippy data-tippy-content="Seleccione la ciudad" class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-location-dot animate__animated animate__rubberBand"></i></label>
                                                                 <select name="ciudad_id" formControlName="ciudad_id" class="form-select" id="inputGroupSelect01">
-                                                                    <option disabled selected value="">Ciudad</option>
+                                                                    <option class="text-muted" selected value="">Ciudad</option>
                                                                     <option  *ngFor="let ciu of ciudades">{{ciu.ciudad}}</option>
                                                                     
                                                                  </select>
@@ -542,7 +542,7 @@
                                                             <div class="input-group mb-3">
                                                                 <label ngxTippy data-tippy-content="Seleccione el año de inicio" class="input-group-text dates" for="inputGroupSelect01">Año inicio</label>
                                                                 <select name="anio_ini" formControlName="anio_ini" class="form-select" id="inputGroupSelect01">
-                                                                 <option disabled selected value="">Año</option>
+                                                                 <option class="text-muted"  selected value="">Año</option>
                                                                  <option *ngFor="let year of years" >{{year}}</option>
                                                                  </select>
                                                             </div>
@@ -557,7 +557,7 @@
                                                             <div class="input-group mb-3">
                                                                 <label ngxTippy data-tippy-content="Seleccione el mes de inicio" class="input-group-text dates" for="inputGroupSelect01">Mes inicio</label>
                                                                 <select name="mes_ini" formControlName="mes_ini" class="form-select" id="inputGroupSelect01">
-                                                                 <option disabled selected value="">Mes</option>
+                                                                 <option class="text-muted" selected value="">Mes</option>
                                                                  <option *ngFor="let mes of meses">{{mes}}</option>
                                                                 </select>
                                                             </div>
@@ -572,7 +572,7 @@
                                                             <div class="input-group mb-3">
                                                                 <label ngxTippy data-tippy-content="Seleccione el año de fin" class="input-group-text dates" for="inputGroupSelect01">Año fin</label>
                                                                 <select name="anio_fin" formControlName="anio_fin" class="form-select" id="inputGroupSelect01">
-                                                                 <option disabled selected value="">Año</option>
+                                                                 <option class="text-muted" selected value="">Año</option>
                                                                  <option *ngFor="let year of years">{{(formE.get('actualmente')?.value === 'S')? '': year}}</option>
                                                                 </select>
                                                             </div>
@@ -749,7 +749,7 @@
 
                                                         <div class="col-sm-12 col-md-6">
                                                             <div class="input-group mb-3">
-                                                                <span ngxTippy data-tippy-content="Ingrese el nombre del programa academico" class="input-group-text" id="basic-addon1"><i class="fa-solid fa-book animate__animated animate__rubberBand"></i></span>
+                                                                <span ngxTippy data-tippy-content="Ingrese el nombre del programa académico" class="input-group-text" id="basic-addon1"><i class="fa-solid fa-book animate__animated animate__rubberBand"></i></span>
                                                                 <input type="text" name="programa_academico" formControlName="programa_academico" class="form-control" placeholder="Programa académico" aria-label="Programa" aria-describedby="basic-addon1">
                                                             </div>
                                                         </div>
@@ -764,7 +764,7 @@
                                                             <div class="input-group mb-3">
                                                                 <label ngxTippy data-tippy-content="Seleccione el nivel" class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-graduation-cap animate__animated animate__rubberBand"></i></label>
                                                                 <select name="nivel_id" formControlName="nivel_id" class="form-select" id="inputGroupSelect01">
-                              <option class="text-muted" selected disabled value="">Nivel Académico</option>
+                              <option class="text-muted" selected  value="">Nivel Académico</option>
                               <option *ngFor="let nivel of niveles" >{{nivel.descripcion}}</option>
                              </select>
                                                             </div>
@@ -776,7 +776,7 @@
 
                                                                 <label ngxTippy data-tippy-content="Seleccione el estado" class="input-group-text dates" for="inputGroupSelect01"><i class="fa-solid fa-check-to-slot animate__animated animate__rubberBand"></i></label>
                                                                 <select name="estado_id" formControlName="estado_id" class="form-select" id="inputGroupSelect01">
-                              <option class="text-muted" selected disabled value="">Estado</option>
+                              <option class="text-muted" selected  value="">Estado</option>
                               <option  *ngFor="let estado of estadosF" >{{estado.descripcion}}</option>
                               </select>
                                                             </div>
@@ -863,7 +863,7 @@
             <div class="col-sm-5 col-md-6  mt-2">
                 <div class="mb-3 form-check">
                     <input name="autorizacion" formControlName="autorizacion" type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label animate__animated animate__fadeInUp" for="exampleCheck1">Autoriza a WPLAY.CO para realizar el tratamiento y manejo de sus datos personales conforme a nuestra <a class="text-primary" href="https://www.wplay.co/mas/ayuda/terminos-y-condiciones/">politica de privacidad</a>.</label>
+                    <label class="form-check-label animate__animated animate__fadeInUp" for="exampleCheck1">Autoriza a WPLAY.CO para realizar el tratamiento y manejo de sus datos personales conforme a nuestra <a class="text-primary" target="_blank" href="https://www.wplay.co/mas/ayuda/terminos-y-condiciones/">politica de privacidad</a>.</label>
                 </div>
             </div>
             <div class="col-sm-5 col-md-6  mt-2">

@@ -1,21 +1,15 @@
 <div class="px-5  contain ">
     <div class="row ">
 
-
-
         <div class="col-sm-5 col-md-3">
 
-            <div class="sticky-top py-2">
+            <div class="sticky-top py-2 mt-4">
                 <div class="card shadow p-3 mb-5 bg-body">
                     <form>
                         <div class="row text-center  py-3">
 
                             <div class="col-sm-2">
-
-
                             </div>
-
-
                             <div class="col-">
                                 <div class="card border rounded ">
                                     <h5 class=" fw-bold">{{totalVacantes}} </h5>
@@ -54,40 +48,46 @@
 
 
         <div class="col-sm-7 col-md-9">
-            <div class="row">
 
-                <div *ngFor="let vacante of vacantes | paginate: {itemsPerPage: 8, currentPage: page, totalItems: totalVacantes } | filter: filterPost " class="py-2 col-sm-12 col-md-6 col-lg-4   " [routerLink]="['/','oferta',vacante.id]">
+            <div id="cards_landscape_wrap-2">
+                <div class="container">
+                    <div class="row">
 
-                    <div class="card shadow info cardw animate__animated animate__fadeIn ">
+                        <div *ngFor="let vacante of vacantes | paginate: {itemsPerPage: 8, currentPage: page, totalItems: totalVacantes } | filter: filterPost " [routerLink]="['/','oferta',vacante.id]" class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
 
-                        <div class="card-body">
-                            <h6 class="card-subtitle mb-2 text-muted text-start animate__animated animate__fadeInDown">{{vacante.area}}</h6>
+                            <div class="card-flyer">
+                                <div class="text-box">
+                                    <div class="image-box">
+                                        <img [src]="vacante.imagen" alt="" />
+                                    </div>
+                                    <div class="text-container">
+                                        <h6 class="fw-bold text-start card-title  animate__animated animate__fadeInUp">{{vacante.nombreVacante}} </h6>
 
+                                        <span *ngIf="vacante.c_vacantes > 1" class="badge rounded-pill text-start text-dark" style="background: #F7BE00;">{{vacante.c_vacantes}} Vacantes</span>
 
-
-                            <img [src]="vacante.imagen" alt="" class="card-img-top">
-                            <h6 class="fw-bold text-start card-title  animate__animated animate__fadeInUp">{{vacante.nombreVacante}} </h6>
-
-                            <span *ngIf="vacante.c_vacantes > 1" class="badge rounded-pill bg-info text-dark">{{vacante.c_vacantes}} Vacantes</span>
-
-
-                            <p class="card-text text-muted text-start animate__animated animate__fadeInUp">{{vacante.descripcion}}
-                            </p>
-                            <hr>
-
-                            <h6 class="card-subtitle text-muted text-start animate__animated animate__fadeInDown">{{vacante.ciudad}}</h6>
+                                        <p class="card-text text-muted text-start animate__animated animate__fadeInUp">{{vacante.descripcion}}
+                                        </p>
+                                        <hr>
+                                        <p class="card-subtitle text-muted fw-bold text-start animate__animated animate__fadeInDown">{{vacante.ciudad}}</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
-                <div class="sticky-buttom align-center">
-                    <pagination-controls class="text-center my-pagination" (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
-                </div>
+            </div>
+
+            <div class="sticky-buttom align-center mt-5">
+                <pagination-controls class="text-center my-pagination" (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
             </div>
 
 
         </div>
+
     </div>
 </div>
+
 
 <div class="col">
     <app-footer></app-footer>

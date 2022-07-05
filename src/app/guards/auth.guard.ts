@@ -4,6 +4,7 @@ import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } fro
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { EmitterService } from 'src/app/services/emitter.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,8 @@ export class AuthGuard implements CanActivate {
 
 constructor(
   private authService: AuthService,
-  private router: Router
+  private router: Router,
+  private serviceEmitter: EmitterService
 ){}
 
 
@@ -42,6 +44,7 @@ canActivate():boolean{
     
     return false;
   }
+  this.serviceEmitter.disparadorLogin.emit({ data: true })
   return true;
 }
 

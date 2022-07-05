@@ -6,11 +6,4 @@ export class RegistroVanteModel{
     archivo?:object;
 
 
-
-
-
-
-
-   
-   
-   }
+  }

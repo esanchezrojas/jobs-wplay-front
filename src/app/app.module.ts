@@ -23,8 +23,9 @@ import { LoginComponent } from './components/login/login.component';
 
 //Providers
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
-import { Login2Component } from './components/login2/login2.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+
 
 
 
@@ -42,8 +43,9 @@ import { SignupComponent } from './components/signup/signup.component';
     LoaderComponent,
     Loading2Component,
     LoginComponent,
-    Login2Component,
-    SignupComponent
+    SignupComponent,
+    ForgotPasswordComponent,
+   
 
 
 

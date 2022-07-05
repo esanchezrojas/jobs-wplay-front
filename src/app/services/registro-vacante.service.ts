@@ -15,9 +15,21 @@ export class RegistroVacanteService {
     private http: HttpClient
   ) { }
 
-    guardarT(datos:any):Observable<any>{
-      return this.http.post(`${this.url}/api/publicVacantes`,datos);
+     guardarT(datos:any):Observable<any>{
+
+       
+    return this.http.post(`${this.url}/api/publicVacantes`,datos);
+    
     }
+
+
+    forgot(datos:any):Observable<any>{
+
+        return this.http.post(`${this.url}/api/recuperar`,datos);
+      
+      }
+
+      
 
     upload(datos:any):Observable<any>{
       return this.http.post(`${this.url}/api/upload`,datos);

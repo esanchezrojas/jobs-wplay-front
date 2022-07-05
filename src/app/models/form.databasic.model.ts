@@ -1,6 +1,8 @@
 export class DatosBasicos{
 
+    reqpersonal_id?:number;
     num_unico_hv?:string;
+    cod_unico_registro?:string;
     nombres?:string ;
     apellidos?:string ;
     cedula?: number;

@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 import { DataService } from 'src/app/services/data.service';
 import { UploadService } from 'src/app/services/upload.service';
 import { RegistroVacanteService } from 'src/app/services/registro-vacante.service';
+import { FormApplyService } from 'src/app/services/form-apply.service';
 import { v4 as uuidv4 } from 'uuid';
 import { DatosBasicos } from 'src/app/models/form.databasic.model';
 import { ModeloExperiencia } from 'src/app/models/form-experiencia.model';
@@ -32,6 +33,8 @@ export class ApplyFormComponent implements OnInit {
    * En esta propiedad se guarda la informacion de la vacante
    */
   response: any = [];
+  dataIni: any;
+  num_unico_hv:any;
 
   /**
    * Variables del formulario experiencia
@@ -47,6 +50,7 @@ export class ApplyFormComponent implements OnInit {
   myimage: Observable<any> | undefined;
   isLoading: boolean = false;
   isUpload: boolean = false;
+  numUnico:any;
 
 
   ciudades: any;
@@ -83,7 +87,8 @@ export class ApplyFormComponent implements OnInit {
     private fb: FormBuilder,
     private dataService: DataService,
     private serviceRegistro: RegistroVacanteService,
-    private serviceUpload: UploadService
+    private serviceUpload: UploadService,
+    private serviceForm: FormApplyService
 
 
   ) { }
@@ -94,6 +99,53 @@ export class ApplyFormComponent implements OnInit {
     this.crearFormE();
     this.crearFormF();
     this.createFormT();
+    this.registroUsuario();
+
+  }
+
+
+  registroUsuario(){
+
+    this.numUnico = localStorage.getItem('cod_unico_registro');
+    console.log(this.numUnico)
+    
+    this.serviceForm.list(this.numUnico)
+    .subscribe({
+      next:
+        (res: any) => {
+
+        
+          this.dataIni = res.datos;
+          
+         
+          //alert(JSON.stringify(res.datos))
+          
+          const fechaNacimiento = new Date(res.datos.fecha_cumple);
+          const fechaN = fechaNacimiento.toLocaleDateString();
+          const fechaexped = new Date(res.datos.fechaexped_cc);
+          const fechaEx = fechaNacimiento.toLocaleDateString();
+          
+
+          this.formT.controls['nombre'].setValue(res.datos.nombres);
+          this.formT.controls['apellido'].setValue(res.datos.apellidos);
+          this.formT.controls['email'].setValue(res.datos.email);
+          this.formT.controls['celular'].setValue((res.datos.celular > 0 ? res.datos.celular : ""));
+          this.formT.controls['cumpleanios'].setValue((fechaN == '' ? fechaN : ''));
+          this.formT.controls['cedula'].setValue((res.datos.cedula > 0 ? res.datos.cedula : ""));
+          this.formT.controls['fechaexped_cc'].setValue((fechaEx == '' ? fechaEx : ''));
+          this.formT.controls['lugarexped_cc'].setValue(res.datos.lugarexped_cc);
+          this.formT.controls['redsocial'].setValue(res.datos.link_redsoc_fav);
+          
+          
+         
+
+
+          },
+      error: (err) => {
+        console.log(err)
+        
+      }
+    });
 
   }
 
@@ -216,7 +268,10 @@ export class ApplyFormComponent implements OnInit {
     //this.router.navigate(['/inicio']);
 
     let uuid = uuidv4();
+    this.num_unico_hv = uuid;
     let modelDatosB = new DatosBasicos();
+    modelDatosB.reqpersonal_id = this.response.id;
+    modelDatosB.cod_unico_registro = this.numUnico;
     modelDatosB.num_unico_hv = uuid;
     modelDatosB.nombres = datos.nombre;
     modelDatosB.apellidos = datos.apellido;
@@ -255,7 +310,7 @@ export class ApplyFormComponent implements OnInit {
       console.log('archivos ', this.files)
 
      this.files.forEach(async (archivo: any,index:number) => {
-        await this.subirArchivo(archivo);
+        await this.subirArchivo(archivo.file,archivo.nombre);
         console.log(archivo, 'archivoooo', index)
 
       });
@@ -486,7 +541,11 @@ export class ApplyFormComponent implements OnInit {
       file = fileList[0];
       let nomId = 'hv';
       this.fileHv = this.validacionUpload(file, nomId)
-      this.files.push(this.fileHv);
+      const fileHv = {
+        file: this.fileHv,
+        nombre: nomId
+      }
+      this.files.push(fileHv);
       console.log("FileUpload -> file", file);
     }
 
@@ -502,7 +561,11 @@ export class ApplyFormComponent implements OnInit {
       file = fileList[0];
       let nomId = 'pf';
       this.filePf = this.validacionUpload(file, nomId)
-      this.files.push(this.filePf);
+      const filePf = {
+        file: this.filePf,
+        nombre: nomId
+      }
+      this.files.push(filePf);
       console.log("FileUpload -> file", file);
     }
   }
@@ -531,12 +594,14 @@ export class ApplyFormComponent implements OnInit {
 
 
 
-  async subirArchivo(file: File) {
+  async subirArchivo(file: File,nombre:string) {
 
     const formData = new FormData();
 
 
     formData.append('file', file)
+    formData.append('num_unico_hv',this.num_unico_hv)
+    formData.append('nombre',nombre)
 
 
     console.log(file)
@@ -547,22 +612,24 @@ export class ApplyFormComponent implements OnInit {
         next:
           (res: any) => {
 
-            //alert('mensaje'+res.message)
-            
             Swal.fire({
-              position: 'center',
+              title: 'Se han cargado los archivos correctamente',
               icon: 'success',
-              title: res.message,
-              showConfirmButton: false,
-              timer: 2500
+              confirmButtonText: 'Volver al inicio',
+            }).then((result) => {
+              /* Read more about isConfirmed, isDenied below */
+              if (result.isConfirmed) {
+                this.router.navigate(['/inicio']);
+              }
             })
-            //this.isLoading = false;
+            this.isLoading = false;
             
             
 
           },
         error: (err) => {
           console.log(err)
+          this.isLoading = false;
         }
       });
 
@@ -582,7 +649,7 @@ export class ApplyFormComponent implements OnInit {
 
  //alert(res.message);
         Swal.fire({
-          title: 'Se ha guardado correctamente',
+          title: 'Se guardó la vacante correctamente',
           icon: 'success',
           confirmButtonText: 'Volver al inicio',
         }).then((result) => {

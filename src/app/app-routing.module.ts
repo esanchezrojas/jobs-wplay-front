@@ -7,9 +7,11 @@ import { ApplyFormComponent } from './components/apply-form/apply-form.component
 import { LoaderComponent } from './components/loader/loader.component';
 import { Loading2Component } from './components/loading2/loading2.component';
 import { LoginComponent } from './components/login/login.component';
-import { PrivateComponent } from './components/private/private.component';
-import { Login2Component } from './components/login2/login2.component';
+
+
 import { SignupComponent } from './components/signup/signup.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+
 
 
 
@@ -49,11 +51,7 @@ const routes: Routes = [
     component: LoaderComponent
 
   },
-  {
-    path: 'loader2',
-    component: Loading2Component
-
-  },
+ 
   {
     path: 'login',
     component: LoginComponent
@@ -63,10 +61,10 @@ const routes: Routes = [
     component: SignupComponent
   },
   {
-    path: 'private',
-    component: PrivateComponent,
-    canActivate: [AuthGuard]
+    path: 'recuperar-contraseña',
+    component: ForgotPasswordComponent
   },
+  
   {
     path: '**',
     redirectTo: '',

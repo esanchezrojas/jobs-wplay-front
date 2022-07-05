@@ -22,8 +22,8 @@ export class AuthService {
 
   isAuth():boolean{
     const token:any = localStorage.getItem('token');
-    //const tok = this.jwtHelper.decodeToken(token)
-    //console.log(tok, 'este es el token')
+    const tok = this.jwtHelper.decodeToken(token)
+    console.log(tok, 'este es el token')
     //const isExpired = this.jwtHelper.isTokenExpired(token);
     //console.log(isExpired)
    
@@ -31,6 +31,8 @@ export class AuthService {
     if(this.jwtHelper.isTokenExpired(token) || !localStorage.getItem('token') || localStorage.getItem('token') == undefined){
       
       console.log('el token no existe o expiró')
+      localStorage.removeItem('cod_unico_registro');
+      localStorage.removeItem('token');
       return false;
     }
     return true;

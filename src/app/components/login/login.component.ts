@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { EmitterService } from 'src/app/services/emitter.service';
 
 
 @Component({
@@ -10,26 +11,29 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  show: boolean = false;
+  icon:string = '<i class="fa-solid fa-eye"></i>'
   user = {
-    nom_usuario: '',
+    email: '',
     clave: ''
   }
+  isLogin: boolean = false;
+
+
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private serviceEmitter: EmitterService
 
   ) { }
-
-
 
   ngOnInit(): void {
 
   }
 
-
   logIn() {
 
-    if(this.user.nom_usuario == ""){
+    if (this.user.email == "") {
       Swal.fire({
         icon: 'info',
         title: 'Usuario vacio',
@@ -40,7 +44,7 @@ export class LoginComponent implements OnInit {
           popup: 'animate__animated animate__fadeOutUp'
         }
       });
-    }else if(this.user.clave == ""){
+    } else if (this.user.clave == "") {
       Swal.fire({
         icon: 'info',
         title: 'Contraseña vacia',
@@ -51,67 +55,75 @@ export class LoginComponent implements OnInit {
           popup: 'animate__animated animate__fadeOutUp'
         }
       });
-    }else{
+    } else {
 
-    console.log('click');
+      console.log('click');
 
-    this.authService.singin(this.user).subscribe({
-      next: (res: any)  => {
+      this.authService.singin(this.user).subscribe({
+        next: (res: any) => {
 
-        console.log(res.message)
+          
+          if (res.status === 200) {
 
-        if(res.status === 200){
-     
-      Swal.fire({
-          position: 'center',
-          icon: 'success',
-          title: res.message,
-          showConfirmButton: false,
-          timer: 2500
-        });
+            const  {nombres,apellidos,cod_unico_registro} = res.registro;
 
-        localStorage.setItem('token', res.token);
-        this.router.navigate(['']);
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: `Bienvenido ${nombres} ${apellidos}`,
+              showConfirmButton: false,
+              timer: 2500
+            });
 
-      }
 
-      if(res.status === 401){
 
-        Swal.fire({
-          icon: 'info',
-          title: res.message,
-          showClass: {
-            popup: 'animate__animated animate__fadeInDown'
-          },
-          hideClass: {
-            popup: 'animate__animated animate__fadeOutUp'
+
+            localStorage.setItem('token', res.token);
+            localStorage.setItem('cod_unico_registro',cod_unico_registro);
+            // this.serviceEmitter.disparadorLogin.emit({ data: res.registro })
+            this.router.navigate(['']);
+
           }
-        });
 
-      }
-      
+          if (res.status === 401) {
 
-    },
-    error:(err: any) => {
-      Swal.fire({
-        icon: 'info',
-        title: err,
-        showClass: {
-          popup: 'animate__animated animate__fadeInDown'
+            Swal.fire({
+              icon: 'info',
+              title: res.message,
+              showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+              },
+              hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+              }
+            });
+
+          }
+
+
         },
-        hideClass: {
-          popup: 'animate__animated animate__fadeOutUp'
+        error: (err: any) => {
+          Swal.fire({
+            icon: 'info',
+            title: err,
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            }
+          });
+          console.log(err, ' Este fue el error')
         }
       });
-      console.log(err,' Este fue el error')
     }
-   });
-  }
 
   }
+
+  password(){
+
+   this.show = !this.show;
+
+  }
+
 }
-
-  
-
-
-
