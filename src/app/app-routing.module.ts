@@ -11,6 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 
 import { SignupComponent } from './components/signup/signup.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
 
 
 
@@ -64,7 +65,10 @@ const routes: Routes = [
     path: 'recuperar-contraseña',
     component: ForgotPasswordComponent
   },
-  
+  {
+    path: 'validacion-pass',
+    component: RecoverPasswordComponent
+  },
   {
     path: '**',
     redirectTo: '',

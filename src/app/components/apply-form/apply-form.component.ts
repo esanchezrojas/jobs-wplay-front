@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { DataService } from 'src/app/services/data.service';
 import { UploadService } from 'src/app/services/upload.service';
-import { RegistroVacanteService } from 'src/app/services/registro-vacante.service';
+import { RegistroVacanteService } from 'src/app/services/vacante.service';
 import { FormApplyService } from 'src/app/services/form-apply.service';
 import { v4 as uuidv4 } from 'uuid';
 import { DatosBasicos } from 'src/app/models/form.databasic.model';
@@ -15,6 +15,7 @@ import { ModeloExperiencia } from 'src/app/models/form-experiencia.model';
 import { ModeloFormacion } from 'src/app/models/form-formacion.model';
 import { RegistroVanteModel } from 'src/app/models/registro-vacante.model';
 import { Observable, Subscriber } from 'rxjs';
+import { RegistroUserExternoModel } from 'src/app/models/registro-user-externo.model';
 
 
 
@@ -34,7 +35,7 @@ export class ApplyFormComponent implements OnInit {
    */
   response: any = [];
   dataIni: any;
-  num_unico_hv:any;
+  num_unico_hv: any;
 
   /**
    * Variables del formulario experiencia
@@ -50,7 +51,7 @@ export class ApplyFormComponent implements OnInit {
   myimage: Observable<any> | undefined;
   isLoading: boolean = false;
   isUpload: boolean = false;
-  numUnico:any;
+  numUnico: any;
 
 
   ciudades: any;
@@ -104,48 +105,48 @@ export class ApplyFormComponent implements OnInit {
   }
 
 
-  registroUsuario(){
+  registroUsuario() {
 
     this.numUnico = localStorage.getItem('cod_unico_registro');
-    console.log(this.numUnico)
-    
+
+
     this.serviceForm.list(this.numUnico)
-    .subscribe({
-      next:
-        (res: any) => {
+      .subscribe({
+        next:
+          (res: any) => {
 
-        
-          this.dataIni = res.datos;
-          
-         
-          //alert(JSON.stringify(res.datos))
-          
-          const fechaNacimiento = new Date(res.datos.fecha_cumple);
-          const fechaN = fechaNacimiento.toLocaleDateString();
-          const fechaexped = new Date(res.datos.fechaexped_cc);
-          const fechaEx = fechaNacimiento.toLocaleDateString();
-          
 
-          this.formT.controls['nombre'].setValue(res.datos.nombres);
-          this.formT.controls['apellido'].setValue(res.datos.apellidos);
-          this.formT.controls['email'].setValue(res.datos.email);
-          this.formT.controls['celular'].setValue((res.datos.celular > 0 ? res.datos.celular : ""));
-          this.formT.controls['cumpleanios'].setValue((fechaN == '' ? fechaN : ''));
-          this.formT.controls['cedula'].setValue((res.datos.cedula > 0 ? res.datos.cedula : ""));
-          this.formT.controls['fechaexped_cc'].setValue((fechaEx == '' ? fechaEx : ''));
-          this.formT.controls['lugarexped_cc'].setValue(res.datos.lugarexped_cc);
-          this.formT.controls['redsocial'].setValue(res.datos.link_redsoc_fav);
-          
-          
-         
+            this.dataIni = res.datos;
+
+
+            //alert(JSON.stringify(res.datos))
+
+            const fechaNacimiento = new Date(res.datos.fecha_cumple);
+            const fechaN = fechaNacimiento.toLocaleDateString();
+            const fechaexped = new Date(res.datos.fechaexped_cc);
+            const fechaEx = fechaexped.toLocaleDateString();
+
+
+            this.formT.controls['nombre'].setValue(res.datos.nombres);
+            this.formT.controls['apellido'].setValue(res.datos.apellidos);
+            this.formT.controls['email'].setValue(res.datos.email);
+            this.formT.controls['celular'].setValue((res.datos.celular > 0 ? res.datos.celular : ""));
+            this.formT.controls['cumpleanios'].setValue((fechaN != '' ? fechaN : ''));
+            this.formT.controls['cedula'].setValue((res.datos.cedula > 0 ? res.datos.cedula : ""));
+            this.formT.controls['fechaexped_cc'].setValue((fechaEx != '' ? fechaEx : ''));
+            this.formT.controls['lugarexped_cc'].setValue(res.datos.lugarexped_cc);
+            //this.formT.controls['redsocial'].setValue(res.datos.link_redsoc_fav);
+
+
+
 
 
           },
-      error: (err) => {
-        console.log(err)
-        
-      }
-    });
+        error: (err) => {
+          console.log(err)
+
+        }
+      });
 
   }
 
@@ -162,7 +163,7 @@ export class ApplyFormComponent implements OnInit {
         this.niveles = res.nivel;
         this.estadosF = res.estado;
         this.medios = res.medio;
-        console.log(this.estadosF, this.medios)
+
 
       });
 
@@ -171,7 +172,7 @@ export class ApplyFormComponent implements OnInit {
      */
     this.route.paramMap.subscribe((paramMap: any) => {
       const { params } = paramMap
-      console.log(params.var)
+
       this.cargarData(params.var)
     });
 
@@ -263,28 +264,34 @@ export class ApplyFormComponent implements OnInit {
   }
 
 
- async enviarTodo(datos: any) {
+  async enviarTodo(datos: any) {
 
-    //this.router.navigate(['/inicio']);
 
     let uuid = uuidv4();
     this.num_unico_hv = uuid;
-    let modelDatosB = new DatosBasicos();
-    modelDatosB.reqpersonal_id = this.response.id;
-    modelDatosB.cod_unico_registro = this.numUnico;
-    modelDatosB.num_unico_hv = uuid;
-    modelDatosB.nombres = datos.nombre;
-    modelDatosB.apellidos = datos.apellido;
-    modelDatosB.cedula = datos.cedula;
-    modelDatosB.fechaexped_cc = datos.fechaexped_cc;
-    modelDatosB.lugarexped_cc = datos.lugarexped_cc;
-    modelDatosB.celular = datos.celular;
-    modelDatosB.ciudad_id = datos.ciudad;
-    modelDatosB.email = datos.email;
-    modelDatosB.fecha_cumple = datos.cumpleanios;
-    modelDatosB.mediovac_id = datos.mediovac_id;
-    modelDatosB.link_redsoc_fav = datos.redsocial;
-    modelDatosB.mejor_hacer = datos.mejor_hacer;
+
+    //Modelo Hoja de vida
+    let modelHv = new DatosBasicos();
+
+    modelHv.reqpersonal_id = this.response.id;
+    modelHv.cod_unico_registro = this.numUnico;
+    modelHv.num_unico_hv = uuid;
+    modelHv.mejor_hacer = datos.mejor_hacer;
+
+    //Modelo registro inicial
+    let modelUserexter = new RegistroUserExternoModel();
+
+  modelHv.nombres = datos.nombre;
+  modelHv.apellidos = datos.apellido;
+  modelHv.cedula = datos.cedula;
+  modelHv.fechaexped_cc = datos.fechaexped_cc;
+  modelHv.lugarexped_cc = datos.lugarexped_cc;
+  modelHv.celular = datos.celular;
+  modelHv.ciudad_id = datos.ciudad;
+  modelHv.email = datos.email;
+  modelHv.fecha_cumple = datos.cumpleanios;
+  modelHv.mediovac_id = datos.mediovac_id;
+  modelHv.link_redsoc_fav = datos.redsocial;
 
     let registro = new RegistroVanteModel();
 
@@ -293,29 +300,27 @@ export class ApplyFormComponent implements OnInit {
 
       //if (this.formT.valid) {
       // if (true) {
-      console.log('Es valido');
 
-      registro.registroIni = modelDatosB;
+      registro.registroIni = modelHv;
+      registro.usuarioExterno = modelUserexter;
       registro.formacion = this.listaFormacion;
       registro.experiencia = this.listaExperiencia;
       // registro.archivo = formData;
 
-      console.log('iniciales ', registro.registroIni)
-      console.log('formacion ', registro.formacion)
-      console.log('experiencia ', registro.experiencia)
+
 
       //Se guarda el registro
-    this.guardar(registro);
+      this.guardar(registro);
 
-      console.log('archivos ', this.files)
 
-     this.files.forEach(async (archivo: any,index:number) => {
-        await this.subirArchivo(archivo.file,archivo.nombre);
-        console.log(archivo, 'archivoooo', index)
+
+      this.files.forEach(async (archivo: any, index: number) => {
+        await this.subirArchivo(archivo.file, archivo.nombre);
+
 
       });
 
-      console.log('salio del foreach')
+
 
     } else {
       Swal.fire({
@@ -347,12 +352,12 @@ export class ApplyFormComponent implements OnInit {
     if (datos.actualmente === 'S') {
       modelE.anio_fin = '';
       modelE.mes_fin = '';
-      console.log('ingresó al check')
+
 
     } else {
       modelE.anio_fin = datos.anio_fin;
       modelE.mes_fin = datos.mes_fin;
-      console.log('No ingresó al check')
+
     }
 
     modelE.vacantehv_id = this.response.id;
@@ -364,19 +369,19 @@ export class ApplyFormComponent implements OnInit {
     modelE.mes_ini = datos.mes_ini;
     modelE.actualmente = datos.actualmente;
 
-    console.log(modelE.actualmente, 'actualmente')
+
 
 
 
     if (!this.swe) {
 
       this.listaExperiencia.push(modelE);
-      console.log('nuevo ', modelE)
+
 
     } else {
 
       this.listaExperiencia[this.indiceE] = modelE;
-      console.log('editado ', modelE)
+
     }
 
     this.formE.reset();
@@ -404,12 +409,12 @@ export class ApplyFormComponent implements OnInit {
     if (!this.swf) {
 
       this.listaFormacion.push(modelF);
-      console.log('nuevo ', modelF)
+
 
     } else {
 
       this.listaFormacion[this.indiceF] = modelF;
-      console.log('editado ', modelF)
+
     }
 
     this.formF.reset();
@@ -546,7 +551,7 @@ export class ApplyFormComponent implements OnInit {
         nombre: nomId
       }
       this.files.push(fileHv);
-      console.log("FileUpload -> file", file);
+
     }
 
   }
@@ -566,7 +571,7 @@ export class ApplyFormComponent implements OnInit {
         nombre: nomId
       }
       this.files.push(filePf);
-      console.log("FileUpload -> file", file);
+
     }
   }
 
@@ -575,7 +580,7 @@ export class ApplyFormComponent implements OnInit {
     this.myimage = new Observable((subscriber: Subscriber<any>) => {
       this.readFile(file, subscriber);
     });
-    console.log(this.myimage, ' Esta es la img')
+
   }
 
   readFile(file: File, subscriber: Subscriber<any>) {
@@ -594,17 +599,17 @@ export class ApplyFormComponent implements OnInit {
 
 
 
-  async subirArchivo(file: File,nombre:string) {
+  async subirArchivo(file: File, nombre: string) {
 
     const formData = new FormData();
 
 
     formData.append('file', file)
-    formData.append('num_unico_hv',this.num_unico_hv)
-    formData.append('nombre',nombre)
+    formData.append('num_unico_hv', this.num_unico_hv)
+    formData.append('nombre', nombre)
 
 
-    console.log(file)
+
     this.isLoading = true;
 
     this.serviceUpload.upload(formData)
@@ -623,8 +628,8 @@ export class ApplyFormComponent implements OnInit {
               }
             })
             this.isLoading = false;
-            
-            
+
+
 
           },
         error: (err) => {
@@ -633,45 +638,47 @@ export class ApplyFormComponent implements OnInit {
         }
       });
 
-      return true;
+    return true;
 
   }
 
-/**
- * Envia los datos al controlador del servicio
- * @param registro  
- */
-  guardar(registro:any){
+  /**
+   * Envia los datos al controlador del servicio
+   * @param registro  
+   */
+  guardar(registro: any) {
 
     this.serviceRegistro.guardarT(registro)
-    .subscribe({
-      next: (res: any) => {
+      .subscribe({
+        next: (res: any) => {
 
- //alert(res.message);
-        Swal.fire({
-          title: 'Se guardó la vacante correctamente',
-          icon: 'success',
-          confirmButtonText: 'Volver al inicio',
-        }).then((result) => {
-          /* Read more about isConfirmed, isDenied below */
-          if (result.isConfirmed) {
-            this.router.navigate(['/inicio']);
-          }
-        })
+          //alert(res.message);
+          Swal.fire({
+            title: 'Se guardó la vacante correctamente',
+            icon: 'success',
+            confirmButtonText: 'Volver al inicio',
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+              this.router.navigate(['/inicio']);
+            }
+          })
 
-        this.isLoading = false;
+          this.isLoading = false;
 
-        console.log(this.formT);
-
-
-      },
-      error: (err: any) => {
-        console.log(err)
-      }
+          this.formT.reset();
 
 
-    });
-  //End Suscribe
+
+
+        },
+        error: (err: any) => {
+          console.log(err)
+        }
+
+
+      });
+    //End Suscribe
 
   }
 
@@ -691,9 +698,7 @@ export class ApplyFormComponent implements OnInit {
     //Array de datos permitidos
     var match = ["application/pdf"];
 
-    console.log(sizeByte, ' este es el tamaño')
-    console.log(siezekiloByte, ' este es el tamaño en kb')
-    console.log(archivoType, ' este es el tipo de extencion')
+
     //funcion para convertir en base64
     //this.convertToBase64(file);
 
@@ -716,7 +721,7 @@ export class ApplyFormComponent implements OnInit {
 
     //Validación tamaño maxímo
     if (siezekiloByte > maxSize) {
-      console.log(sizeByte, ' este es el tamaño')
+
       // alert('El tamaño permitido es 2mb su archivo pesa ' + sizeByte + 'mb');
       Swal.fire({
         icon: 'info',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { RegistroVacanteService } from 'src/app/services/registro-vacante.service';
+import { RegistroVacanteService } from 'src/app/services/vacante.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 @Component({
@@ -50,6 +50,8 @@ submit(datos: any){
             this.router.navigate(['/inicio']);
           }
         })
+        
+        this.formForgot.reset()
       }else if (res.status === 401){
         Swal.fire({
           title:res.message,

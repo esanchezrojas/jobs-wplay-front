@@ -29,7 +29,7 @@ export class ItemDetailComponent implements OnInit {
     
     this.route.paramMap.subscribe( (paramMap:any) =>{
       const {params} = paramMap
-      console.log(params.variable)
+    
       this.cargarData(params.variable)
     })
     
@@ -44,7 +44,7 @@ export class ItemDetailComponent implements OnInit {
       for (let i=0; i<res.length;i++){
       if (res[i].id == ide){
         this.response = res[i];
-        console.log(res)
+        
       }
     }
      

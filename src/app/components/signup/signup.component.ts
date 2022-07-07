@@ -34,10 +34,15 @@ export class SignupComponent implements OnInit {
   createForm() {
 
     this.formRegister = this.fb.group({
+      email: ["", [Validators.required, Validators.email, Validators.maxLength(150)]],
       nombres: ["", [Validators.required]],
       apellidos: ["", [Validators.required]],
-
-      email: ["", [Validators.required, Validators.email, Validators.maxLength(150)]],
+      celular: ["", [Validators.required]],
+      cumpleanios: ["", [Validators.required]],
+      cedula: ["", [Validators.required]],
+      fechaexped_cc: ["", [Validators.required]],
+      lugarexped_cc: ["", [Validators.required]],
+      
 
       clave: ["", [Validators.required, Validators.minLength(10), Validators.pattern(/\d/), Validators.pattern(/[A-Z]/), Validators.pattern(/\W/)]],
 
@@ -115,12 +120,17 @@ export class SignupComponent implements OnInit {
     let uuid = uuidv4();
 
     modelregistro.cod_unico_registro = uuidv4();
+    modelregistro.email = datos.email;
     modelregistro.nombres = datos.nombres;
     modelregistro.apellidos = datos.apellidos;
-    modelregistro.email = datos.email;
+    modelregistro.celular = datos.celular;
+    modelregistro.fecha_cumple = datos.cumpleanios;
+    modelregistro.cedula = datos.cedula;
+    modelregistro.fechaexped_cc = datos.fechaexped_cc;
+    modelregistro.lugarexped_cc = datos.lugarexped_cc;
     modelregistro.clave = datos.clave;
-
-    console.log(this.user, 'Este es el user')
+   
+  
     try {
       this.signupService.registro(modelregistro).subscribe((res: any) => {
         if (res.status === 401) {
@@ -148,6 +158,7 @@ export class SignupComponent implements OnInit {
           });
 
          //localStorage.setItem('token', res.token);
+         this.formRegister.reset();
           this.router.navigate(['login']);
         }
       });

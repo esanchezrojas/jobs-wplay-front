@@ -24,5 +24,14 @@ export class FormApplyService {
     
     }
 
+    disabled(dato:any):Observable<any>{
+
+      console.log(dato,'en el service des')
+  
+         
+      return this.http.post(`${this.url}/api/disabled`,{dato:dato});
+      
+      }
+
 
 }

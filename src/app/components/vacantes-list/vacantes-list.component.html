@@ -4,7 +4,7 @@
         <div class="col-sm-5 col-md-3">
 
             <div class="sticky-top py-2 mt-4">
-                <div class="card shadow p-3 mb-5 bg-body">
+                <div class="card shadow p-3 mb-5 bg-body rounded">
                     <form>
                         <div class="row text-center  py-3">
 
@@ -22,25 +22,26 @@
                             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Palabra Clave" [(ngModel)]="filterPost" name="filterPost">
 
                         </div>
+
+
+
+
                         <div class="mb-3">
-                            <select #t (change)="datos(t.value)" class="form-select" aria-label="Default select example">
-                                <option value="" selected>Area</option>
-                                <option  *ngFor="let categoria of categorias" >{{categoria.nombre}}</option>
-                               
-                              </select>
-                        </div>
-                        <div class="mb-3">
-                            <select class="form-select" aria-label="Default select example">
-                                <option value="" selected>Ciudad</option>
-                                <option  *ngFor="let ciudad of ciudades" >{{ciudad.ciudad}}</option>
-                               
-                              </select>
+                            <div class="input-group">
+                                <select [(ngModel)]="opcionSeleccionado" name="opcionSeleccionado" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                              <option selected value="">Ciudad</option>
+                              <option  name="filterArea" *ngFor="let ciudad of ciudades" >{{ciudad.ciudad}}</option>
+                            
+                            </select>
+                                <button (click)="filtrarArea()" class="btn btn-info" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </div>
                         </div>
 
                         <div class="d-grid gap-2">
-                            <button class="btn btn-dark" type="button">LIMPIAR FILTROS</button>
+                            <button (click)="borrarFiltros()" class="btn btn-dark" type="button">Borrar Filtros</button>
 
                         </div>
+
                     </form>
                 </div>
             </div>
@@ -53,15 +54,15 @@
                 <div class="container">
                     <div class="row">
 
-                        <div *ngFor="let vacante of vacantes | paginate: {itemsPerPage: 8, currentPage: page, totalItems: totalVacantes } | filter: filterPost " [routerLink]="['/','oferta',vacante.id]" class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                        <div *ngFor="let vacante of vacantes | paginate: {itemsPerPage: 6, currentPage: page, totalItems: totalVacantes } | filter: filterPost " [routerLink]="['/','oferta',vacante.id]" class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
 
                             <div class="card-flyer">
                                 <div class="text-box">
                                     <div class="image-box">
-                                        <img [src]="vacante.imagen" alt="" />
+                                        <img [src]="'assets/card/'+vacante.imagen" alt="" />
                                     </div>
                                     <div class="text-container">
-                                        <h6 class="fw-bold text-start card-title  animate__animated animate__fadeInUp">{{vacante.nombreVacante}} </h6>
+                                        <h6 class="fw-bold c card-title  animate__animated animate__fadeInUp">{{vacante.nombreVacante}} </h6>
 
                                         <span *ngIf="vacante.c_vacantes > 1" class="badge rounded-pill text-start text-dark" style="background: #F7BE00;">{{vacante.c_vacantes}} Vacantes</span>
 
@@ -78,7 +79,7 @@
                 </div>
             </div>
 
-            <div class="sticky-buttom align-center mt-5">
+            <div *ngIf="vacantes.length > 0" class="sticky-buttom align-center mt-5">
                 <pagination-controls class="text-center my-pagination" (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
             </div>
 

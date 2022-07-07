@@ -55,6 +55,73 @@
                             </div>
 
 
+                            <div class="row g-2">
+                                <div class="col-sm-6 col-md-6">
+                                    <div class="form-floating  mb-3 user">
+                                        <input formControlName="celular" type="text" name="celular" class="form-control " id="floatingInput" placeholder="user">
+                                        <label for="floatingInput">Celular</label>
+
+                                        <div class="text-warning px-1 col-6 float-start " *ngIf="formRegister.get('celular')?.hasError('required')&&formRegister.get('celular')?.dirty && formRegister.get('celular')?.touched ">
+                                            <p>Este campo es obligatorio</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-md-6">
+                                    <div class="form-floating  mb-3 user">
+                                        <input onfocus="(this.type='date')" onblur="(this.type= this.value ? 'date' : 'text')" formControlName="cumpleanios" name="cumpleanios" class="form-control " id="floatingInput" placeholder="user">
+                                        <label for="floatingInput">Fecha de cumpleaños</label>
+
+                                        <div class="text-warning px-1 col-6 float-start " *ngIf="formRegister.get('cumpleanios')?.hasError('required')&&formRegister.get('cumpleanios')?.dirty && formRegister.get('cumpleanios')?.touched ">
+                                            <p>Este campo es obligatorio</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row g-2">
+                                <div class="col-sm-4 col-md-4">
+                                    <div class="form-floating  mb-3 user">
+                                        <input formControlName="cedula" type="text" name="cedula" class="form-control " id="floatingInput" placeholder="user">
+                                        <label for="floatingInput">Cédula</label>
+
+                                        <div class="text-warning px-1 col-6 float-start " *ngIf="formRegister.get('cedula')?.hasError('required')&&formRegister.get('cedula')?.dirty && formRegister.get('cedula')?.touched ">
+                                            <p>Este campo es obligatorio</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4 col-md-4">
+                                    <div class="form-floating  mb-3 user">
+                                        <input onfocus="(this.type='date')" onblur="(this.type= this.value ? 'date' : 'text')" formControlName="fechaexped_cc" name="fechaexped_cc" class="form-control " id="floatingInput" placeholder="user">
+                                        <label for="floatingInput">Fecha de expedicón</label>
+
+                                        <div class="text-warning px-1 col-6 float-start " *ngIf="formRegister.get('fechaexped_cc')?.hasError('required')&&formRegister.get('fechaexped_cc')?.dirty && formRegister.get('fechaexped_cc')?.touched ">
+                                            <p>Este campo es obligatorio</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4 col-md-4">
+                                    <div class="form-floating  mb-3 user">
+                                        <input formControlName="lugarexped_cc" type="text" name="lugarexped_cc" class="form-control " id="floatingInput" placeholder="user">
+                                        <label for="floatingInput">Lugar de expedicón</label>
+
+                                        <div class="text-warning px-1 col-6 float-start " *ngIf="formRegister.get('lugarexped_cc')?.hasError('required')&&formRegister.get('lugarexped_cc')?.dirty && formRegister.get('lugarexped_cc')?.touched ">
+                                            <p>Este campo es obligatorio</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
 
 
 

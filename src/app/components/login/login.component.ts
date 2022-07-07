@@ -12,7 +12,7 @@ import { EmitterService } from 'src/app/services/emitter.service';
 })
 export class LoginComponent implements OnInit {
   show: boolean = false;
-  icon:string = '<i class="fa-solid fa-eye"></i>'
+  icon: string = '<i class="fa-solid fa-eye"></i>'
   user = {
     email: '',
     clave: ''
@@ -57,15 +57,13 @@ export class LoginComponent implements OnInit {
       });
     } else {
 
-      console.log('click');
-
       this.authService.singin(this.user).subscribe({
         next: (res: any) => {
 
-          
+
           if (res.status === 200) {
 
-            const  {nombres,apellidos,cod_unico_registro} = res.registro;
+            const { nombres, apellidos, cod_unico_registro } = res.registro;
 
             Swal.fire({
               position: 'center',
@@ -79,10 +77,30 @@ export class LoginComponent implements OnInit {
 
 
             localStorage.setItem('token', res.token);
-            localStorage.setItem('cod_unico_registro',cod_unico_registro);
+            localStorage.setItem('cod_unico_registro', cod_unico_registro);
             // this.serviceEmitter.disparadorLogin.emit({ data: res.registro })
+            this.user.clave = "";
+            this.user.email = "";
             this.router.navigate(['']);
 
+          }
+
+          if(res.status == 203){
+
+            Swal.fire({
+              icon: 'info',
+              title: res.message,
+              showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+              },
+              hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+              }
+            });
+
+            this.user.clave = "";
+            this.user.email = "";
+            
           }
 
           if (res.status === 401) {
@@ -97,6 +115,9 @@ export class LoginComponent implements OnInit {
                 popup: 'animate__animated animate__fadeOutUp'
               }
             });
+
+            this.user.clave = "";
+            this.user.email = "";
 
           }
 
@@ -113,16 +134,19 @@ export class LoginComponent implements OnInit {
               popup: 'animate__animated animate__fadeOutUp'
             }
           });
-          console.log(err, ' Este fue el error')
+
+          this.user.clave = "";
+          this.user.email = "";
+
         }
       });
     }
 
   }
 
-  password(){
+  password() {
 
-   this.show = !this.show;
+    this.show = !this.show;
 
   }
 

@@ -5,7 +5,7 @@ export namespace GeneralData {
     export const ESTADOS_FORMACION = ["Finalizado", "En curso"];
     export const CIUDADES = ["Medellín", "Bogotá", "Cartagena", "Pasto", "Barranquilla", "Manizales", "Bucaramanga"];
     export const CATEGORIAS = [{ nombre: "Tecnologia" }, { nombre: "Operativa" }, { nombre: "Contabilidad" }];
-    export const CIUDADES_LIST = [{ ciudad: "Medellín" }, { ciudad: "Bogotá" }, { ciudad: "Cartagena" }];
+    export const CIUDADES_LIST = [{ ciudad: "Medellín" }, { ciudad: "Bello" }, { ciudad: "Caldas" },{ ciudad: "Córdoba" }];
     export const URL_REGISTRO = "http://localhost:3000/api/publicVacantes";
     export const ERROR_GENERAL_MESSAGE = "Hubo un error";
     //export const DOMINIO = "https://nodejobs.wplay.co";

@@ -1,11 +1,18 @@
 /* Default height for small devices */
 
 .banner {
-    height: 250px;
+    height: 310px;
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
     /*background-image: url('https://www.ctisoluciones.com/sites/default/files/styles/banner_home/public/import/article/2019/02/Tips-a-seguir-para-ofrecer-un-servicio-de-call-center-moderno.jpg');*/
+}
+
+.texto {
+    letter-spacing: 4px;
+    font-size: 60px;
+    text-transform: uppercase;
+    color: #0ECAF0;
 }
 
 #intro-example {

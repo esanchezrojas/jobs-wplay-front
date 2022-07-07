@@ -23,6 +23,11 @@ export class RegistroVacanteService {
     }
 
 
+    upload(datos:any):Observable<any>{
+      return this.http.post(`${this.url}/api/upload`,datos);
+    }
+
+
     forgot(datos:any):Observable<any>{
 
         return this.http.post(`${this.url}/api/recuperar`,datos);
@@ -31,9 +36,8 @@ export class RegistroVacanteService {
 
       
 
-    upload(datos:any):Observable<any>{
-      return this.http.post(`${this.url}/api/upload`,datos);
-    }
+    
+
 
     editarE(datos:any){
      return this.http.put(`${this.url}`,datos);

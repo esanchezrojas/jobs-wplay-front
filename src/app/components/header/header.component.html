@@ -32,7 +32,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark ">
     <div class="container-fluid px-5">
-        <a class="navbar-brand" href="#"><img alt="" class="card-img-top " src="../../../assets/img/favicon.png"></a>
+        <a class="navbar-brand" href="#"><img alt="" class="card-img-top " src="../../../assets/img/jobs-wplay3.png" style="height:30px ;width:130px"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -44,7 +44,7 @@
                 </li>
             </ul>
             <form class="d-flex">
-                <a *ngIf="!isLogged" class="btn btn-outline-success " [routerLink]="['/login']">Iniciar Sesión</a>
+                <a *ngIf="!isLogged" class="btn btn-outline-warning " [routerLink]="['/login']">Iniciar Sesión</a>
 
                 <a *ngIf="!isLogged" class="btn btn-outline-info mx-2" [routerLink]="['/registro']">Registrate</a>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -54,7 +54,7 @@
                 </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Actualizar Datos</a></li>
-                            <li><a class="dropdown-item" href="#">Desactivar Cuenta</a></li>
+                            <li><a (click)="deshabilitar()" class="dropdown-item" href="#">Desactivar Cuenta</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

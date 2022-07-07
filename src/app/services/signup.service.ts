@@ -18,4 +18,13 @@ export class SignupService {
     return this.http.post(`${this.url}/api/signup`,datos);
   }
 
+  validar(datos:any):Observable<any>{
+    return this.http.post(`${this.url}/api/recoverPass`,datos);
+  }
+
+  actualizarPass(datos:any,id:any):Observable<any>{
+    
+    return this.http.put(`${this.url}/api/recoverPass/${id}`,datos);
+  }
+
 }

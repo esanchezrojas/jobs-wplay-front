@@ -69,3 +69,7 @@
     letter-spacing: 4px;
     border-radius: 25px;
 }
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}

@@ -17,7 +17,8 @@ export class VacantesListComponent implements OnInit {
   totalVacantes = 0;
 
   categorias = GeneralData.CATEGORIAS;
-  ciudades = GeneralData.CIUDADES_LIST;
+  //ciudades = GeneralData.CIUDADES_LIST;
+  ciudades:any;
   
 
 
@@ -25,22 +26,43 @@ export class VacantesListComponent implements OnInit {
   filterPost = '';
   filterC = '';
 
+  opcionSeleccionado: string  = '';
+  temp: any[] = []
+
 
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    
   ) { }
 
   ngOnInit(): void {
     this.getVacantes();
+    this.servicesIni();
    
   }
 
 
+  servicesIni() {
+
+
+    this.dataService.getListas()
+      .subscribe((res: any) => {
+
+        this.ciudades = res.city;
+        console.log(res)
+        
+
+
+      });
+    }
+
+
+
   datos(categoria: any) {
     this.filterC = categoria;
-    console.log(this.filterC)
+   
   }
 
   getVacantes() {
@@ -51,10 +73,8 @@ export class VacantesListComponent implements OnInit {
           let cont = res.length;
           this.totalVacantes = res.length;
           this.vacantes = res;
-          console.log(res)
-          console.log(cont)
-
-
+          this.temp = res;
+         
         },
         error: (err: any) => {
 
@@ -74,8 +94,34 @@ export class VacantesListComponent implements OnInit {
 
   }
 
+  filtrarArea(){
+    
+    this.vacantes = this.temp
+    console.log('click boton')
+    let citys:any = []
+    //let ciudad = 'Medellín';
+    console.log(this.opcionSeleccionado)
+    this.vacantes.forEach((vacante) =>{
+
+     if( vacante.ciudad == this.opcionSeleccionado ){
+      citys.push(vacante)
+      console.log(citys,'este es el filtro')
+     } 
+
+    });
+
+    this.temp = this.vacantes;
+
+    this.vacantes = citys;
+
+  }
 
 
+  borrarFiltros(){
+
+    location.reload();
+
+  }
 
 
 }
